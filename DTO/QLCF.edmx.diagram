@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3df66d34ac054a54a040b500f5769ea3" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="PBL3Model.Account" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.Bill" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.Bill_Detail" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.Category" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.Product" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.Role" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.Table" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="PBL3Model.FK__Account__ID_Role__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK__Bill__ID_Account__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK__Bill__ID_Table__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK__Bill_Deta__ID_Bi__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK__Bill_Deta__ID_Pr__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK__Product__ID_Cate__440B1D61" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

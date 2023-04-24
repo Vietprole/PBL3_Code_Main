@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PBL3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="ID_Account" />
+    </Key>
+    <Property Name="ID_Account" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Phone_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Role" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="80" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__Account__ID_Role__398D8EEE" FromRole="Account" ToRole="Role" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__ID_Account__3E52440B" FromRole="Account" ToRole="Bill" />
+    <Property Name="Flag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="ID_Bill" />
+    </Key>
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Account" Type="Int32" />
+    <Property Name="ID_Table" Type="Int32" />
+    <Property Name="Pay_Status" Type="Boolean" />
+    <Property Name="Order_Day" Type="DateTime" Precision="0" />
+    <Property Name="Order_Time" Type="Time" Precision="7" />
+    <Property Name="Price" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Bill__ID_Account__3E52440B" FromRole="Bill" ToRole="Account" />
+    <NavigationProperty Name="Table" Relationship="Self.FK__Bill__ID_Table__3F466844" FromRole="Bill" ToRole="Table" />
+    <NavigationProperty Name="Bill_Detail" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill" ToRole="Bill_Detail" />
+    <Property Name="Flag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Bill_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Bill" Type="Int32" />
+    <Property Name="ID_Product" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill_Detail" ToRole="Bill" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Bill_Deta__ID_Pr__47DBAE45" FromRole="Bill_Detail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID_Category" />
+    </Key>
+    <Property Name="ID_Category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__ID_Cate__440B1D61" FromRole="Category" ToRole="Product" />
+    <Property Name="Flag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID_Product" />
+    </Key>
+    <Property Name="ID_Product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Category" Type="Int32" />
+    <Property Name="Price" Type="Int32" />
+    <NavigationProperty Name="Bill_Detail" Relationship="Self.FK__Bill_Deta__ID_Pr__47DBAE45" FromRole="Product" ToRole="Bill_Detail" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Product__ID_Cate__440B1D61" FromRole="Product" ToRole="Category" />
+    <Property Name="Flag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID_Role" />
+    </Key>
+    <Property Name="ID_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role_Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__ID_Role__398D8EEE" FromRole="Role" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="ID_Table" />
+    </Key>
+    <Property Name="ID_Table" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Position" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__ID_Table__3F466844" FromRole="Table" ToRole="Bill" />
+    <Property Name="Flag" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK__Account__ID_Role__398D8EEE">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID_Role" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="ID_Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__ID_Account__3E52440B">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="ID_Account" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="ID_Account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__ID_Table__3F466844">
+    <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table">
+        <PropertyRef Name="ID_Table" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="ID_Table" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill_Deta__ID_Bi__46E78A0C">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
+    <End Role="Bill_Detail" Type="Self.Bill_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="ID_Bill" />
+      </Principal>
+      <Dependent Role="Bill_Detail">
+        <PropertyRef Name="ID_Bill" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill_Deta__ID_Pr__47DBAE45">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Bill_Detail" Type="Self.Bill_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID_Product" />
+      </Principal>
+      <Dependent Role="Bill_Detail">
+        <PropertyRef Name="ID_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__ID_Cate__440B1D61">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID_Category" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ID_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PBL3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Bills" EntityType="Self.Bill" />
+    <EntitySet Name="Bill_Detail" EntityType="Self.Bill_Detail" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+    <AssociationSet Name="FK__Account__ID_Role__398D8EEE" Association="Self.FK__Account__ID_Role__398D8EEE">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__ID_Account__3E52440B" Association="Self.FK__Bill__ID_Account__3E52440B">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__ID_Table__3F466844" Association="Self.FK__Bill__ID_Table__3F466844">
+      <End Role="Table" EntitySet="Tables" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill_Deta__ID_Bi__46E78A0C" Association="Self.FK__Bill_Deta__ID_Bi__46E78A0C">
+      <End Role="Bill" EntitySet="Bills" />
+      <End Role="Bill_Detail" EntitySet="Bill_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill_Deta__ID_Pr__47DBAE45" Association="Self.FK__Bill_Deta__ID_Pr__47DBAE45">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Bill_Detail" EntitySet="Bill_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__ID_Cate__440B1D61" Association="Self.FK__Product__ID_Cate__440B1D61">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

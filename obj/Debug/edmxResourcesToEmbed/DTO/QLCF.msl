@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PBL3ModelStoreContainer" CdmEntityContainer="PBL3Entities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="PBL3Model.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="ID_Account" ColumnName="ID_Account" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="PBL3Model.Bill">
+        <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
+          <ScalarProperty Name="ID_Account" ColumnName="ID_Account" />
+          <ScalarProperty Name="ID_Table" ColumnName="ID_Table" />
+          <ScalarProperty Name="Pay_Status" ColumnName="Pay_Status" />
+          <ScalarProperty Name="Order_Day" ColumnName="Order_Day" />
+          <ScalarProperty Name="Order_Time" ColumnName="Order_Time" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bill_Detail">
+      <EntityTypeMapping TypeName="PBL3Model.Bill_Detail">
+        <MappingFragment StoreEntitySet="Bill_Detail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
+          <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="PBL3Model.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="PBL3Model.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="PBL3Model.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="PBL3Model.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="ID_Table" ColumnName="ID_Table" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
