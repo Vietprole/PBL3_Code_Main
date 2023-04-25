@@ -117,5 +117,15 @@ namespace PBL3CodeDemo.View
         {
 
         }
+
+        private void btnEditAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
