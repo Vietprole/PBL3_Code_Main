@@ -177,6 +177,8 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(214, 21);
             this.cbCategory.TabIndex = 3;
+            this.cbCategory.Text = "Chọn loại nước";
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // cbFood
             // 
@@ -185,6 +187,7 @@
             this.cbFood.Name = "cbFood";
             this.cbFood.Size = new System.Drawing.Size(214, 21);
             this.cbFood.TabIndex = 4;
+            this.cbFood.Text = "Chọn nước";
             // 
             // btnAddFood
             // 
@@ -242,6 +245,7 @@
             this.btnCheckOut.TabIndex = 10;
             this.btnCheckOut.Text = "Thanh Toán";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // nmDisCount
             // 

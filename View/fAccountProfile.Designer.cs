@@ -118,6 +118,7 @@
             // 
             this.txbSalary.Location = new System.Drawing.Point(200, 15);
             this.txbSalary.Name = "txbSalary";
+            this.txbSalary.ReadOnly = true;
             this.txbSalary.Size = new System.Drawing.Size(246, 20);
             this.txbSalary.TabIndex = 2;
             // 
@@ -192,6 +193,7 @@
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Cập Nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 

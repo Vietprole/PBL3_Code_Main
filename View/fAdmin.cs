@@ -99,6 +99,15 @@ namespace PBL3CodeDemo.View
         {
             QLCFBLL bll = new QLCFBLL();
             dataGridViewAcount.DataSource = bll.GetDGV_Account();
+            txbDisplayName.Text = "";
+            txbUserName.ReadOnly=false;
+            txbPassWord.Text = "";
+            txbPhone.Text = "";
+            txbSalary.Text = "";
+            txbSearchAccount.Text = "";
+            txbAdress.Text = "";
+            cbb_role.Text = "";
+            txbUserName.Text = "";
         }
 
         private void dataGridViewAcount_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,19 +122,84 @@ namespace PBL3CodeDemo.View
             cbb_role.Text = dataGridViewAcount.Rows[i].Cells[6].Value.ToString();
         }
 
+        bool CheckForm_Account()
+        {
+            return (txbUserName.Text == "" || txbDisplayName.Text == "" || txbPhone.Text == "" || txbAdress.Text == "" || txbPassWord.Text == "" || txbSalary.Text == "" || cbb_role.Text == "");
+
+        }
+        
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
+            QLCFBLL bll = new QLCFBLL();
+            string Name_Account = txbDisplayName.Text;
+            txbUserName.ReadOnly = true;
+            string User_Account = txbUserName.Text;
+            string Phone = txbPhone.Text;
+            string Salary = txbSalary.Text;
+            string Adress = txbAdress.Text;
+            string PassWord = txbPassWord.Text;
+            string Role = cbb_role.Text;
 
+            if (CheckForm_Account() == false)
+            {
+                if (bll.Add_Account(User_Account, Name_Account, Salary, Adress, PassWord, Role))
+                    MessageBox.Show("Đã thêm bàn thành công !", "Thông báo!");
+                else
+                    MessageBox.Show("Thêm Thất Bại", "Thông báo!");
+            }
+            else
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo!");
+            }
+
+            LoadDGV_Account();
         }
 
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
+            QLCFBLL bll = new QLCFBLL();
+            string Name_Account = txbDisplayName.Text;
+            txbUserName.ReadOnly = true;
+            string User_Account = txbUserName.Text;
+            string Phone = txbPhone.Text;
+            string Salary = txbSalary.Text;
+            string Adress = txbAdress.Text;
+            string PassWord = txbPassWord.Text;
+            string Role = cbb_role.Text;
 
+            if (CheckForm_Account() == false)
+            {
+                if (bll.UpdateAccount(User_Account, Name_Account, Salary,Phone, Adress, PassWord, Role))
+                    MessageBox.Show("Đã cập nhật tài khoản "+txbDisplayName.Text+" thành công !", "Thông báo!");
+                else
+                    MessageBox.Show("Cập Nhật Tài Khoản Thất Bại", "Thông báo!");
+            }
+            else
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo!");
+            }
+            LoadDGV_Account();
         }
 
         private void btnDelAccount_Click(object sender, EventArgs e)
         {
+            QLCFBLL bll = new QLCFBLL();
 
+
+            if (CheckForm_Account() == false)
+            {
+                if (bll.DeleteAccount(txbUserName.Text))
+                    MessageBox.Show("Xóa tài khoản "+ txbDisplayName.Text +" thành công !", "Thông báo!");
+                else
+                    MessageBox.Show("Xóa tài khoản Thất Bại", "Thông báo!");
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản cần xóa", "Thông báo!");
+            }
+            LoadDGV_Account();
         }
+
+       
     }
 }

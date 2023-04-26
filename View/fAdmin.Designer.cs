@@ -132,7 +132,7 @@
             this.tabPage3.Controls.Add(this.dataGridViewTable);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(768, 400);
             this.tabPage3.TabIndex = 6;
             this.tabPage3.Text = "Bàn";
@@ -151,7 +151,7 @@
             // 
             this.cbbPosition.FormattingEnabled = true;
             this.cbbPosition.Location = new System.Drawing.Point(86, 9);
-            this.cbbPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbPosition.Margin = new System.Windows.Forms.Padding(2);
             this.cbbPosition.Name = "cbbPosition";
             this.cbbPosition.Size = new System.Drawing.Size(126, 21);
             this.cbbPosition.TabIndex = 1;
@@ -254,7 +254,7 @@
             // 
             this.btnEditTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditTable.Location = new System.Drawing.Point(184, 351);
-            this.btnEditTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditTable.Name = "btnEditTable";
             this.btnEditTable.Size = new System.Drawing.Size(113, 37);
             this.btnEditTable.TabIndex = 26;
@@ -266,7 +266,7 @@
             // 
             this.btnAddTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTable.Location = new System.Drawing.Point(18, 351);
-            this.btnAddTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.Size = new System.Drawing.Size(113, 37);
             this.btnAddTable.TabIndex = 25;
@@ -296,7 +296,7 @@
             this.tabPage4.Controls.Add(this.dataGridViewProduct);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(768, 400);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Món Ăn";
@@ -400,8 +400,8 @@
             // btnDelProduct
             // 
             this.btnDelProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelProduct.Location = new System.Drawing.Point(265, 290);
-            this.btnDelProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelProduct.Location = new System.Drawing.Point(345, 351);
+            this.btnDelProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelProduct.Name = "btnDelProduct";
             this.btnDelProduct.Size = new System.Drawing.Size(113, 37);
             this.btnDelProduct.TabIndex = 27;
@@ -411,8 +411,8 @@
             // btnEditProduct
             // 
             this.btnEditProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProduct.Location = new System.Drawing.Point(139, 290);
-            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditProduct.Location = new System.Drawing.Point(182, 351);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(113, 37);
             this.btnEditProduct.TabIndex = 26;
@@ -422,8 +422,8 @@
             // btnAddProduct
             // 
             this.btnAddProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddProduct.Location = new System.Drawing.Point(22, 290);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddProduct.Location = new System.Drawing.Point(17, 351);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(113, 37);
             this.btnAddProduct.TabIndex = 25;
@@ -456,7 +456,7 @@
             this.tabPage2.Controls.Add(this.dataGridViewAcount);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(768, 400);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tài Khoản";
@@ -475,9 +475,9 @@
             // 
             this.cbb_role.FormattingEnabled = true;
             this.cbb_role.Items.AddRange(new object[] {
-            "Admin",
+            "Quản lý",
             "Thu ngân",
-            "Nhân Viên"});
+            "Nhân viên"});
             this.cbb_role.Location = new System.Drawing.Point(113, 13);
             this.cbb_role.Name = "cbb_role";
             this.cbb_role.Size = new System.Drawing.Size(167, 21);
@@ -636,7 +636,7 @@
             // 
             this.txbUserName.Location = new System.Drawing.Point(112, 7);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(127, 20);
+            this.txbUserName.Size = new System.Drawing.Size(167, 20);
             this.txbUserName.TabIndex = 2;
             // 
             // label6
@@ -681,7 +681,7 @@
             // 
             this.btnEditAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAccount.Location = new System.Drawing.Point(183, 345);
-            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(113, 37);
             this.btnEditAccount.TabIndex = 12;
@@ -693,7 +693,7 @@
             // 
             this.btnAddAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddAccount.Location = new System.Drawing.Point(19, 345);
-            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(113, 37);
             this.btnAddAccount.TabIndex = 11;
@@ -720,7 +720,7 @@
             this.tabPage1.Controls.Add(this.dateStar);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(768, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Doanh Thu";

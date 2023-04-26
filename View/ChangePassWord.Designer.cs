@@ -60,12 +60,12 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(465, 52);
             this.panel2.TabIndex = 5;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txbDisplayName
             // 
             this.txbDisplayName.Location = new System.Drawing.Point(200, 15);
             this.txbDisplayName.Name = "txbDisplayName";
+            this.txbDisplayName.ReadOnly = true;
             this.txbDisplayName.Size = new System.Drawing.Size(246, 20);
             this.txbDisplayName.TabIndex = 2;
             // 
@@ -87,7 +87,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(465, 52);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txbUserName
             // 
@@ -122,6 +121,7 @@
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Size = new System.Drawing.Size(246, 20);
             this.txbPassWord.TabIndex = 2;
+            this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -148,6 +148,7 @@
             this.txbNewPass.Name = "txbNewPass";
             this.txbNewPass.Size = new System.Drawing.Size(246, 20);
             this.txbNewPass.TabIndex = 2;
+            this.txbNewPass.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -174,6 +175,7 @@
             this.txbReEnterPass.Name = "txbReEnterPass";
             this.txbReEnterPass.Size = new System.Drawing.Size(246, 20);
             this.txbReEnterPass.TabIndex = 2;
+            this.txbReEnterPass.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -205,6 +207,7 @@
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Cập Nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // ChangePassWord
             // 
@@ -221,7 +224,6 @@
             this.Name = "ChangePassWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi Mật Khẩu";
-            this.Load += new System.EventHandler(this.ChangePassWord_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
