@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3CodeDemo.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,12 +28,37 @@ namespace PBL3CodeDemo
 
         }
         
-
+        bool checkForm()
+        {   
+            if(txbUserName.Text =="" ||txbPassWord.Text == "")
+            {
+                return true;
+            }
+            return false;
+        }
         private void Login_Click(object sender, EventArgs e)
         {
-            View.fTableManager a = new View.fTableManager();
-            a.ShowDialog();
-            this.Close();
+
+            if(checkForm()==true) 
+            {
+                MessageBox.Show("Vui lòng nhập thông tin Tài Khoản và Mật Khẩu!","Thông Báo");
+            }
+            else
+            {   
+                QLCFBLL bll = new QLCFBLL();
+                if (bll.CheckAcount(txbUserName.Text,txbPassWord.Text) == true)
+                {
+                    View.fTableManager a = new View.fTableManager(txbUserName.Text, txbPassWord.Text);
+                    a.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng thông tin đăng nhập!", "Thông Báo");
+                }
+
+                
+            }
         }
     }
 }

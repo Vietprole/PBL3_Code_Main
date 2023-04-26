@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PBL3CodeDemo.BLL;
+using PBL3CodeDemo.DTO;
+using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,31 @@ namespace PBL3CodeDemo.View
 {
     public partial class fTableManager : Form
     {
-        public fTableManager()
+        public fTableManager( string use, string pass)
         {
             InitializeComponent();
+            useName = use;
+            passWord = pass;
+            setNameForm(useName);
+            
+            setCBBCategory();            
         }
+        void setCBBCategory()
+        {
+            QLCFBLL bll = new QLCFBLL();
+
+            cbCategory.DataSource = bll.GetCBB_Category().ToArray(); 
+        }
+        void setCBBFood(int ID_Category)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            cbFood.DataSource = bll.GetCBB_Food(ID_Category).ToArray();
+           
+        }
+       
+       
+        string useName;
+         string passWord;
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -27,13 +51,13 @@ namespace PBL3CodeDemo.View
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View.fAccountProfile a = new View.fAccountProfile();    
+            View.fAccountProfile a = new View.fAccountProfile( useName, passWord);    
             a.ShowDialog();
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View.ChangePassWord a = new ChangePassWord();
+            View.ChangePassWord a = new ChangePassWord(useName, passWord);
             a.ShowDialog();
         }
 
@@ -47,14 +71,43 @@ namespace PBL3CodeDemo.View
             fLogin a = new fLogin();
             a.ShowDialog();
             this.Close();
+        }
+        QLCFBLL bll = new QLCFBLL();
+        void setNameForm(string user)
+        {
+            this.Text = bll.SetNameAcount(user);
+        }
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (bll.CheckAcount_Role(useName) == 1)
+            {
+                View.fAdmin a = new View.fAdmin();
+                a.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản này không có chức năng quản lý!","Thông báo");
+            }
 
         }
 
-        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            View.fAdmin a = new View.fAdmin();
-            a.Show();
-           
+            if(bll.CheckAcount_Role(useName) == 1 || bll.CheckAcount_Role(useName) == 2)
+            {
+                //thanh toan
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản nhân viên không có chức năng thanh toán!", "Thông báo");
+            }
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {   
+
+            setCBBFood(Convert.ToInt32(cbCategory.SelectedIndex) + 1);
+            
         }
     }
 }
