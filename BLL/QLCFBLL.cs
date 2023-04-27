@@ -1,6 +1,7 @@
 ﻿using PBL3CodeDemo.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
