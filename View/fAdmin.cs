@@ -23,7 +23,8 @@ namespace PBL3CodeDemo.View
             setCBB_ViTriBan();
             LoadDGV_Table();
             LoadDGV_Account();
-
+            LoadDGV_Product();
+            setCBBCategory();
         }
         void setCBB_ViTriBan()
         {
@@ -116,6 +117,65 @@ namespace PBL3CodeDemo.View
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
 
+        }
+        private void LoadDGV_Product()
+        {
+            QLCFBLL bll = new QLCFBLL();
+            dataGridViewProduct.DataSource = bll.Return_Product();
+        }
+        private void btnReadProduct_Click(object sender, EventArgs e)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            dataGridViewProduct.DataSource = bll.Return_Product();
+        }
+        private void setCBBCategory()
+        {
+            using (PBL3Entities db = new PBL3Entities())
+            {
+                foreach (Category i in db.Categories)
+                {
+                    cbbCategory.Items.Add(new CBB_Item
+                    {
+                        Value = i.ID_Category,
+                        Text = i.Category_Name
+                    });
+                }
+            }
+            cbbCategory.SelectedIndex = 0;
+        }
+        private void btnAddProduct_Click_1(object sender, EventArgs e)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            Product product = new Product
+            {
+                Name = txbNameProduct.Text,
+                Price = int.Parse(txbPriceProduct.Text),
+                ID_Category = cbbCategory.SelectedIndex + 1
+            };
+            bll.Add_Product(product);
+            LoadDGV_Product();
+        }
+
+        private void btnEditProduct_Click(object sender, EventArgs e)
+        {
+            Product product = new Product
+            {
+                ID_Product = int.Parse(dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString()),
+                Name = txbNameProduct.Text,
+                Price = int.Parse(txbPriceProduct.Text),
+                ID_Category = cbbCategory.SelectedIndex + 1
+            };
+            QLCFBLL bll = new QLCFBLL();
+            bll.Edit_Product(product);
+            LoadDGV_Product();
+        }
+
+        private void btnDelProduct_Click(object sender, EventArgs e)
+        {
+            int ID = int.Parse(dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString());
+            QLCFBLL bll = new QLCFBLL();
+            bll.Delete_Product(ID);
+            LoadDGV_Product();
         }
     }
 }
