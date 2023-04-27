@@ -69,7 +69,7 @@ namespace PBL3CodeDemo.View
             bool Status = checkBoxStatus.Checked;
             string Position = cbbPosition.Text;
             bool isNumber = int.TryParse(txbNameTable.Text, out New_ID_Table);
-            if( isNumber )// check xem tên bàn có chuyển được sang số nguyên hay không
+            if (isNumber)// check xem tên bàn có chuyển được sang số nguyên hay không
             {
                 New_ID_Table = int.Parse(txbNameTable.Text);
                 if (bll.UpdateTable(Old_ID_Table, New_ID_Table, Status, Position)) //Update Table thành công
@@ -77,7 +77,8 @@ namespace PBL3CodeDemo.View
                     MessageBox.Show("Đã cập nhật bàn thành công !");
                 }
                 else MessageBox.Show("Tên bàn này đã bị trùng, vui lòng chọn tên khác !");
-            }else
+            }
+            else
             {
                 MessageBox.Show("Tên bàn phải là một số nguyên, vui lòng nhập lại !");
             }
@@ -86,7 +87,7 @@ namespace PBL3CodeDemo.View
 
         private void btnDelTable_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow i in dataGridViewTable.SelectedRows)
+            foreach (DataGridViewRow i in dataGridViewTable.SelectedRows)
             {
                 int ID_Table = Convert.ToInt32(i.Cells[0].Value);
                 QLCFBLL bll = new QLCFBLL();
@@ -100,7 +101,7 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
             dataGridViewAcount.DataSource = bll.GetDGV_Account();
             txbDisplayName.Text = "";
-            txbUserName.ReadOnly=false;
+            txbUserName.ReadOnly = false;
             txbPassWord.Text = "";
             txbPhone.Text = "";
             txbSalary.Text = "";
@@ -110,24 +111,14 @@ namespace PBL3CodeDemo.View
             txbUserName.Text = "";
         }
 
-        private void dataGridViewAcount_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = dataGridViewAcount.CurrentRow.Index;
-            txbUserName.Text = dataGridViewAcount.Rows[i].Cells[0].Value.ToString();
-            txbDisplayName.Text= dataGridViewAcount.Rows[i].Cells[1].Value.ToString();
-            txbSalary.Text = dataGridViewAcount.Rows[i].Cells[2].Value.ToString();
-            txbAdress.Text = dataGridViewAcount.Rows[i].Cells[3].Value.ToString();
-            txbPhone.Text = dataGridViewAcount.Rows[i].Cells[4].Value.ToString();
-            txbPassWord.Text = dataGridViewAcount.Rows[i].Cells[5].Value.ToString();
-            cbb_role.Text = dataGridViewAcount.Rows[i].Cells[6].Value.ToString();
-        }
+
 
         bool CheckForm_Account()
         {
             return (txbUserName.Text == "" || txbDisplayName.Text == "" || txbPhone.Text == "" || txbAdress.Text == "" || txbPassWord.Text == "" || txbSalary.Text == "" || cbb_role.Text == "");
 
         }
-        
+
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
@@ -169,8 +160,8 @@ namespace PBL3CodeDemo.View
 
             if (CheckForm_Account() == false)
             {
-                if (bll.UpdateAccount(User_Account, Name_Account, Salary,Phone, Adress, PassWord, Role))
-                    MessageBox.Show("Đã cập nhật tài khoản "+txbDisplayName.Text+" thành công !", "Thông báo!");
+                if (bll.UpdateAccount(User_Account, Name_Account, Salary, Phone, Adress, PassWord, Role))
+                    MessageBox.Show("Đã cập nhật tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 else
                     MessageBox.Show("Cập Nhật Tài Khoản Thất Bại", "Thông báo!");
             }
@@ -189,7 +180,7 @@ namespace PBL3CodeDemo.View
             if (CheckForm_Account() == false)
             {
                 if (bll.DeleteAccount(txbUserName.Text))
-                    MessageBox.Show("Xóa tài khoản "+ txbDisplayName.Text +" thành công !", "Thông báo!");
+                    MessageBox.Show("Xóa tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 else
                     MessageBox.Show("Xóa tài khoản Thất Bại", "Thông báo!");
             }
@@ -200,6 +191,37 @@ namespace PBL3CodeDemo.View
             LoadDGV_Account();
         }
 
-       
+        private void dataGridViewAcount_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dataGridViewAcount.CurrentRow.Index;
+            txbUserName.Text = dataGridViewAcount.Rows[i].Cells[0].Value.ToString();
+            txbDisplayName.Text = dataGridViewAcount.Rows[i].Cells[1].Value.ToString();
+            txbSalary.Text = dataGridViewAcount.Rows[i].Cells[2].Value.ToString();
+            txbAdress.Text = dataGridViewAcount.Rows[i].Cells[3].Value.ToString();
+            txbPhone.Text = dataGridViewAcount.Rows[i].Cells[4].Value.ToString();
+            txbPassWord.Text = dataGridViewAcount.Rows[i].Cells[5].Value.ToString();
+            cbb_role.Text = dataGridViewAcount.Rows[i].Cells[6].Value.ToString();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            if (dateStar.Value.Date <= dateEnd.Value.Date)
+            { int SumPrice = 0;
+
+                chart1.Series.Clear();
+                chart1.Series.Add("Doanh Thu");
+                foreach(Revenue i in bll.Get_Revenue(dateStar.Value.Date , dateEnd.Value.Date))
+                    {
+                    chart1.Series["Doanh Thu"].Points.AddXY(i.day, i.price);
+                    SumPrice += i.price;
+                    }
+                txbRevenue.Text= SumPrice.ToString();
+            }
+            else 
+            {
+                MessageBox.Show("Ngày thống kê bị mâu thuẩn!", "Thông báo");
+            }
+        }
     }
 }
