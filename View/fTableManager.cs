@@ -21,7 +21,7 @@ namespace PBL3CodeDemo.View
             useName = use;
             passWord = pass;
             setNameForm(useName);
-            
+            LoadTable();
             setCBBCategory();            
         }
         void setCBBCategory()
@@ -39,7 +39,7 @@ namespace PBL3CodeDemo.View
        
        
         string useName;
-         string passWord;
+        string passWord;
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -108,6 +108,54 @@ namespace PBL3CodeDemo.View
 
             setCBBFood(Convert.ToInt32(cbCategory.SelectedIndex) + 1);
             
+        }
+    
+        private void LoadTable()
+        {
+            string s;
+            List<TableDataGridView> list_table = bll.LoadTable_Button();
+            int count = list_table.Count;
+            foreach (TableDataGridView table in list_table)
+            {
+                Button btn = new Button()
+                {
+                    Width = 100, Height = 100
+                };
+                if (table.Status == true)
+                {
+                    s = "Có người";
+                }
+                else s = "Trống";
+                btn.Text = "Bàn " + table.ID_Table.ToString() + Environment.NewLine + Environment.NewLine + s;
+                btn.Click += btn_Click;
+                btn.Tag = table;
+                switch (table.Status.ToString())
+                {
+                    case "False":
+                        btn.BackColor = Color.Aqua; break;
+                    default:
+                        btn.BackColor = Color.LightPink; break;
+                }
+                flbTable.Controls.Add(btn);
+            }
+           
+        }
+        private void ShowBill(int id_Table)
+        {
+            int Price = 0;
+            List<BillDetail_DataGridView> list_Bill = new List<BillDetail_DataGridView>();
+            list_Bill = bll.Get_Bill_Detail(id_Table);
+            BillTable_DGV.DataSource = list_Bill;
+            foreach(BillDetail_DataGridView bill_details in list_Bill)
+            {
+                Price += bill_details.Price;
+            }
+            textBoxPrice.Text = Price.ToString();
+        }
+         void btn_Click(object sender, EventArgs e)
+        {
+            int table_ID = ((sender as Button).Tag as TableDataGridView).ID_Table;
+            ShowBill(table_ID);
         }
     }
 }

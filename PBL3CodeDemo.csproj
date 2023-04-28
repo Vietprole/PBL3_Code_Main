@@ -63,6 +63,7 @@
     <Compile Include="DTO\Bill.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BillDetail_DataGridView.cs" />
     <Compile Include="DTO\Bill_Detail.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>

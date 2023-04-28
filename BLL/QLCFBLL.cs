@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL3CodeDemo.BLL
 {
@@ -206,7 +208,7 @@ namespace PBL3CodeDemo.BLL
                 s.Salary = Salary;
                 s.Phone_Number= Phone;
                 s.UserName = User_Account;
-                s.Password = PassWord;
+                s.Password = HashPassword(PassWord);
                 if (Name_Role == "Quản lý" || Name_Role=="1")
                 {
                     s.ID_Role = 1;
@@ -228,6 +230,20 @@ namespace PBL3CodeDemo.BLL
 
 
         }
+
+        private string HashPassword(string passWord)
+        {
+            byte[] salt;
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+            var pbkdf2 = new Rfc2898DeriveBytes(passWord, salt, 100000);
+            byte[] hash = pbkdf2.GetBytes(20);
+            byte[] hashBytes = new byte[36];
+            Array.Copy(salt, 0, hashBytes, 0, 16);
+            Array.Copy(hash, 0, hashBytes, 16, 20);
+            string savedPasswordHash = Convert.ToBase64String(hashBytes);
+            return savedPasswordHash;
+        }
+
         public bool DeleteAccount(string User_Account)
         {
             PBL3Entities db = new PBL3Entities();
@@ -250,8 +266,9 @@ namespace PBL3CodeDemo.BLL
         public bool CheckAcount(string User_Account, string PassWord_Account)
         {
             PBL3Entities db = new PBL3Entities();
+            string hashed_password = HashPassword(PassWord_Account);
             Account s = db.Accounts.Where(p => p.UserName == User_Account).FirstOrDefault();
-            if (db.Accounts.Any(p => p.UserName == User_Account && p.Password ==PassWord_Account))
+            if (db.Accounts.Any(p => p.UserName == User_Account && p.Password == PassWord_Account))
             {
                 return true;
             }
@@ -311,6 +328,82 @@ namespace PBL3CodeDemo.BLL
             PBL3Entities db = new PBL3Entities();
             var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
             return Convert.ToInt32( s.ID_Role.Value);
+        }
+        public List<TableDataGridView> LoadTable_Button()
+        {
+            List<TableDataGridView> list_table = new List<TableDataGridView>();
+            foreach (Table i in Return_Table())
+            {
+                list_table.Add(new TableDataGridView
+                {
+                    ID_Table = i.ID_Table,
+                    Status = Convert.ToBoolean(i.Status),
+                    Position = i.Position
+                });
+            }
+
+            return list_table;
+        }
+        public string Return_ProductName(int ID_Product)
+        {
+            PBL3Entities db = new PBL3Entities();
+            string result = "";
+            List<Product> list_Product = new List<Product>();
+            list_Product = db.Products.Where(p => p.ID_Product == ID_Product).Select(p => p).ToList();
+            foreach (Product i in list_Product)
+            {
+                result = i.Name.ToString();
+            }
+            return result;
+        }
+        public int Return_ProductPrice(int ID_Product)
+        {
+            PBL3Entities db = new PBL3Entities();
+            int result = 0;
+            List<Product> list_Product = new List<Product>();
+            list_Product = db.Products.Where(p => p.ID_Product == ID_Product).Select(p => p).ToList();
+            foreach (Product i in list_Product)
+            {
+                result = Convert.ToInt32(i.Price);
+            }
+            return result;
+        }
+        public List<Bill> Return_Bill()
+        {
+            PBL3Entities db = new PBL3Entities();
+            return db.Bills.Where(p => p.Flag == true).Select(p => p).ToList();
+        }
+        public List<Bill_Detail> Return_BillDetails(int id_Bill)
+        {   //Tra ve cac Bill_Detail cua Bill co id la id_Bill
+            PBL3Entities db = new PBL3Entities();
+            return db.Bill_Detail.Where(p => p.ID_Bill == id_Bill).Select(p => p).ToList();
+        }
+        public List<BillDetail_DataGridView> Get_Bill_Detail(int id_Table)
+        {
+            List<BillDetail_DataGridView> result = new List<BillDetail_DataGridView>();
+            int id_Bill = 0;
+            foreach (Bill i in Return_Bill())
+            {
+                if(i.Pay_Status == false && i.ID_Table == id_Table)
+                {
+                    
+                    id_Bill = i.ID_Bill;
+                    break;
+                }
+            }
+            //MessageBox.Show(id_Bill.ToString());
+            foreach (Bill_Detail i in Return_BillDetails(id_Bill))
+            {
+                result.Add(new BillDetail_DataGridView
+                {
+                    Food_Name = Return_ProductName(Convert.ToInt32(i.ID_Product)),
+                    Quantity = Convert.ToInt32(i.Quantity),
+                    Price = Return_ProductPrice(Convert.ToInt32(i.ID_Product))
+
+                });
+                
+            }
+            return result;
         }
     }
 }
