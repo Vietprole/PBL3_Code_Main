@@ -115,11 +115,6 @@ namespace PBL3CodeDemo.BLL
             PBL3Entities db = new PBL3Entities();
             return db.Roles.Select(p => p).ToList();
         }
-        public List<Bill> Return_Bill()
-        {
-            PBL3Entities db = new PBL3Entities();
-            return db.Bills.Where(p=> p.Flag== true).Select(p => p).ToList();
-        }
         public List<TableDataGridView> GetDGV_Table()
         {
             PBL3Entities db = new PBL3Entities();
