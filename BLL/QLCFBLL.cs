@@ -7,7 +7,8 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace PBL3CodeDemo.BLL
 {
@@ -127,6 +128,41 @@ namespace PBL3CodeDemo.BLL
                     Position = i.Position
                 });
             }
+            return result;
+        }
+
+        public List<Revenue> Get_Revenue(DateTime? startDate, DateTime? endDate)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<Revenue> result = new List<Revenue>();
+            Dictionary<DateTime, int> dailySales = new Dictionary<DateTime, int>();
+            foreach (Bill i in Return_Bill())
+            {
+                if (startDate.Value.Date <= i.Order_Day.Value.Date && i.Order_Day.Value.Date <= endDate.Value.Date)
+                {
+                    DateTime orderDay = Convert.ToDateTime(i.Order_Day);
+                    int sales = Convert.ToInt32(i.Price);
+
+                    if (dailySales.ContainsKey(orderDay))
+                    {
+                        dailySales[orderDay] += sales;
+                    }
+                    else
+                    {
+                        dailySales.Add(orderDay, sales);
+                    }
+                }
+                  
+            }
+            foreach (KeyValuePair<DateTime, int> pair in dailySales)
+            {
+                result.Add(new Revenue
+                {
+                    day = pair.Key.ToString("dd/MM"),
+                    price = Convert.ToInt32( pair.Value)
+                }) ;
+            }
+
             return result;
         }
         public List<TableDataGridView> GetDGV_Table_Search(string Table_Name)

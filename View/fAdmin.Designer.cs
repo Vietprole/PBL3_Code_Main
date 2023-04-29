@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -89,12 +92,14 @@
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.dataGridViewAcount = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dtgvThongKe = new System.Windows.Forms.DataGridView();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dateStar = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.txbRevenue = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -115,8 +120,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcount)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvThongKe)).BeginInit();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -709,11 +714,13 @@
             this.dataGridViewAcount.RowHeadersWidth = 51;
             this.dataGridViewAcount.Size = new System.Drawing.Size(473, 330);
             this.dataGridViewAcount.TabIndex = 0;
-            this.dataGridViewAcount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAcount_CellContentClick);
+            this.dataGridViewAcount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAcount_CellClick);
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dtgvThongKe);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.txbRevenue);
+            this.tabPage1.Controls.Add(this.chart1);
             this.tabPage1.Controls.Add(this.btnThongKe);
             this.tabPage1.Controls.Add(this.dateEnd);
             this.tabPage1.Controls.Add(this.label1);
@@ -726,15 +733,6 @@
             this.tabPage1.Text = "Doanh Thu";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dtgvThongKe
-            // 
-            this.dtgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvThongKe.Location = new System.Drawing.Point(30, 68);
-            this.dtgvThongKe.Name = "dtgvThongKe";
-            this.dtgvThongKe.RowHeadersWidth = 51;
-            this.dtgvThongKe.Size = new System.Drawing.Size(708, 307);
-            this.dtgvThongKe.TabIndex = 17;
-            // 
             // btnThongKe
             // 
             this.btnThongKe.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -744,6 +742,7 @@
             this.btnThongKe.TabIndex = 16;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // dateEnd
             // 
@@ -780,6 +779,41 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(776, 426);
             this.tabControl1.TabIndex = 0;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(3, 71);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(765, 326);
+            this.chart1.TabIndex = 17;
+            this.chart1.Text = "Doanh Thu";
+            // 
+            // txbRevenue
+            // 
+            this.txbRevenue.Location = new System.Drawing.Point(646, 305);
+            this.txbRevenue.Name = "txbRevenue";
+            this.txbRevenue.ReadOnly = true;
+            this.txbRevenue.Size = new System.Drawing.Size(120, 20);
+            this.txbRevenue.TabIndex = 18;
+            this.txbRevenue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(638, 272);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(128, 20);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Tổng Doanh Thu";
             // 
             // fAdmin
             // 
@@ -827,8 +861,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcount)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvThongKe)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -892,7 +926,6 @@
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.DataGridView dataGridViewAcount;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dtgvThongKe;
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.DateTimePicker dateEnd;
         private System.Windows.Forms.Label label1;
@@ -902,5 +935,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkBoxStatus;
         private System.Windows.Forms.ComboBox cbbPosition;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txbRevenue;
     }
 }
