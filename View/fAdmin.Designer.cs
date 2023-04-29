@@ -49,7 +49,7 @@
             this.dataGridViewTable = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.cbbCategory = new System.Windows.Forms.ComboBox();
+            this.txbCatogory = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.txbPriceProduct = new System.Windows.Forms.TextBox();
@@ -229,8 +229,6 @@
             // txbSearchTable
             // 
             this.txbSearchTable.Location = new System.Drawing.Point(484, 18);
-            this.txbSearchTable.Margin = new System.Windows.Forms.Padding(4);
-            this.txbSearchTable.Margin = new System.Windows.Forms.Padding(4);
             this.txbSearchTable.Name = "txbSearchTable";
             this.txbSearchTable.Size = new System.Drawing.Size(159, 20);
             this.txbSearchTable.TabIndex = 29;
@@ -247,21 +245,19 @@
             this.btnSearchTbale.Click += new System.EventHandler(this.btnSearchTbale_Click);
             // 
             // btnDelTable
+            // 
+            this.btnDelTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelTable.Location = new System.Drawing.Point(353, 351);
-            this.btnDelTable.Location = new System.Drawing.Point(487, 439);
-            this.btnDelTable.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDelTable.Location = new System.Drawing.Point(353, 351);
-            this.btnDelTable.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelTable.Name = "btnDelTable";
             this.btnDelTable.Size = new System.Drawing.Size(113, 37);
             this.btnDelTable.TabIndex = 27;
             this.btnDelTable.Text = "Xóa";
             this.btnDelTable.UseVisualStyleBackColor = true;
             this.btnDelTable.Click += new System.EventHandler(this.btnDelTable_Click);
-            this.btnEditTable.Location = new System.Drawing.Point(184, 351);
-            this.btnEditTable.Margin = new System.Windows.Forms.Padding(2);
+            // 
             // btnEditTable
-            this.btnEditTable.Location = new System.Drawing.Point(196, 357);
+            // 
+            this.btnEditTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditTable.Location = new System.Drawing.Point(184, 351);
             this.btnEditTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditTable.Name = "btnEditTable";
@@ -270,12 +266,12 @@
             this.btnEditTable.Text = "Sửa";
             this.btnEditTable.UseVisualStyleBackColor = true;
             this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
+            // 
+            // btnAddTable
+            // 
+            this.btnAddTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTable.Location = new System.Drawing.Point(18, 351);
             this.btnAddTable.Margin = new System.Windows.Forms.Padding(2);
-            // btnAddTable
-            this.btnAddTable.Location = new System.Drawing.Point(23, 357);
-            this.btnAddTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTable.Location = new System.Drawing.Point(23, 357);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.Size = new System.Drawing.Size(113, 37);
             this.btnAddTable.TabIndex = 25;
@@ -299,34 +295,32 @@
             this.tabPage4.Controls.Add(this.panel13);
             this.tabPage4.Controls.Add(this.txbSearchProduct);
             this.tabPage4.Controls.Add(this.btnSearchProduct);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Controls.Add(this.btnDelProduct);
             this.tabPage4.Controls.Add(this.btnEditProduct);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Controls.Add(this.btnAddProduct);
+            this.tabPage4.Controls.Add(this.dataGridViewProduct);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(768, 400);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Món Ăn";
             this.tabPage4.UseVisualStyleBackColor = true;
-            this.panel9.Location = new System.Drawing.Point(484, 135);
+            // 
             // panel9
             // 
-            this.panel9.Location = new System.Drawing.Point(645, 166);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
-            this.panel9.Location = new System.Drawing.Point(645, 166);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
+            this.panel9.Controls.Add(this.txbCatogory);
+            this.panel9.Controls.Add(this.label10);
+            this.panel9.Location = new System.Drawing.Point(484, 135);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(280, 40);
+            this.panel9.TabIndex = 32;
+            // 
+            // txbCatogory
+            // 
             this.txbCatogory.Location = new System.Drawing.Point(113, 9);
             this.txbCatogory.Name = "txbCatogory";
             this.txbCatogory.Size = new System.Drawing.Size(167, 20);
-            this.txbCatogory.TabIndex = 2;
-            this.txbCatogory.Margin = new System.Windows.Forms.Padding(4);
-            this.txbCatogory.Name = "txbCatogory";
-            this.txbCatogory.Size = new System.Drawing.Size(221, 22);
-            this.txbCatogory.TabIndex = 2;
-            this.txbCatogory.Size = new System.Drawing.Size(221, 22);
             this.txbCatogory.TabIndex = 2;
             // 
             // label10
@@ -363,14 +357,13 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(31, 16);
             this.label13.TabIndex = 0;
-            this.panel13.Location = new System.Drawing.Point(484, 55);
+            this.label13.Text = "Giá:";
             // 
             // panel13
             // 
-            this.panel13.Location = new System.Drawing.Point(645, 68);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4);
-            this.panel13.Location = new System.Drawing.Point(645, 68);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4);
+            this.panel13.Controls.Add(this.txbNameProduct);
+            this.panel13.Controls.Add(this.label14);
+            this.panel13.Location = new System.Drawing.Point(484, 55);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(280, 38);
             this.panel13.TabIndex = 30;
@@ -406,45 +399,41 @@
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Size = new System.Drawing.Size(113, 37);
             this.btnSearchProduct.TabIndex = 28;
-            this.btnDelProduct.Location = new System.Drawing.Point(345, 351);
-            this.btnDelProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchProduct.Text = "Tìm";
             this.btnSearchProduct.UseVisualStyleBackColor = true;
-            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // btnDelProduct
-            this.btnDelProduct.Location = new System.Drawing.Point(353, 357);
+            // 
             this.btnDelProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelProduct.Location = new System.Drawing.Point(353, 357);
+            this.btnDelProduct.Location = new System.Drawing.Point(345, 351);
+            this.btnDelProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelProduct.Name = "btnDelProduct";
             this.btnDelProduct.Size = new System.Drawing.Size(113, 37);
             this.btnDelProduct.TabIndex = 27;
-            this.btnEditProduct.Location = new System.Drawing.Point(182, 351);
-            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelProduct.Text = "Xóa";
             this.btnDelProduct.UseVisualStyleBackColor = true;
-            this.btnDelProduct.Click += new System.EventHandler(this.btnDelProduct_Click);
             // 
             // btnEditProduct
-            this.btnEditProduct.Location = new System.Drawing.Point(185, 357);
+            // 
             this.btnEditProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProduct.Location = new System.Drawing.Point(185, 357);
+            this.btnEditProduct.Location = new System.Drawing.Point(182, 351);
+            this.btnEditProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(113, 37);
             this.btnEditProduct.TabIndex = 26;
-            this.btnAddProduct.Location = new System.Drawing.Point(17, 351);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditProduct.Text = "Sửa";
             this.btnEditProduct.UseVisualStyleBackColor = true;
-            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
             // btnAddProduct
-            this.btnAddProduct.Location = new System.Drawing.Point(30, 357);
+            // 
             this.btnAddProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddProduct.Location = new System.Drawing.Point(30, 357);
+            this.btnAddProduct.Location = new System.Drawing.Point(17, 351);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(113, 37);
             this.btnAddProduct.TabIndex = 25;
             this.btnAddProduct.Text = "Thêm";
             this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // dataGridViewProduct
             // 
@@ -486,15 +475,15 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(280, 37);
             this.panel7.TabIndex = 22;
-            "Nhân viên"});
-            this.cbb_role.Location = new System.Drawing.Point(113, 13);
+            // 
+            // cbb_role
+            // 
             this.cbb_role.FormattingEnabled = true;
             this.cbb_role.Items.AddRange(new object[] {
-            "Nhân Viên"});
-            this.cbb_role.Location = new System.Drawing.Point(151, 16);
-            this.cbb_role.Margin = new System.Windows.Forms.Padding(4);
-            this.cbb_role.Location = new System.Drawing.Point(151, 16);
-            this.cbb_role.Margin = new System.Windows.Forms.Padding(4);
+            "Quản lý",
+            "Thu ngân",
+            "Nhân viên"});
+            this.cbb_role.Location = new System.Drawing.Point(113, 13);
             this.cbb_role.Name = "cbb_role";
             this.cbb_role.Size = new System.Drawing.Size(167, 21);
             this.cbb_role.TabIndex = 1;
@@ -636,41 +625,38 @@
             this.label2.Location = new System.Drawing.Point(4, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 16);
-            this.panel1.Location = new System.Drawing.Point(482, 55);
+            this.label2.TabIndex = 0;
             this.label2.Text = "Tên hiển thị:";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(643, 68);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.txbUserName.Location = new System.Drawing.Point(112, 7);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.txbUserName.Size = new System.Drawing.Size(167, 20);
+            this.panel1.Controls.Add(this.txbUserName);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(482, 55);
+            this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 38);
             this.panel1.TabIndex = 16;
             // 
-            this.txbUserName.Location = new System.Drawing.Point(149, 9);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(4);
-            this.txbUserName.Location = new System.Drawing.Point(149, 9);
-            this.txbUserName.Size = new System.Drawing.Size(168, 20);
+            // txbUserName
+            // 
+            this.txbUserName.Location = new System.Drawing.Point(112, 7);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(168, 20);
+            this.txbUserName.Size = new System.Drawing.Size(167, 20);
             this.txbUserName.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.txbSearchAccount.Location = new System.Drawing.Point(482, 18);
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(4, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Tên đăng nhập:";
             // 
-            this.txbSearchAccount.Location = new System.Drawing.Point(643, 22);
-            this.txbSearchAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.txbSearchAccount.Location = new System.Drawing.Point(643, 22);
-            this.txbSearchAccount.Margin = new System.Windows.Forms.Padding(4);
+            // txbSearchAccount
+            // 
+            this.txbSearchAccount.Location = new System.Drawing.Point(482, 18);
             this.txbSearchAccount.Name = "txbSearchAccount";
             this.txbSearchAccount.Size = new System.Drawing.Size(160, 20);
             this.txbSearchAccount.TabIndex = 15;
@@ -678,19 +664,18 @@
             // btnSearchAccount
             // 
             this.btnSearchAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelAccount.Location = new System.Drawing.Point(344, 345);
+            this.btnSearchAccount.Location = new System.Drawing.Point(648, 12);
+            this.btnSearchAccount.Name = "btnSearchAccount";
             this.btnSearchAccount.Size = new System.Drawing.Size(113, 37);
             this.btnSearchAccount.TabIndex = 14;
             this.btnSearchAccount.Text = "Tìm";
             this.btnSearchAccount.UseVisualStyleBackColor = true;
             // 
             // btnDelAccount
-            this.btnDelAccount.Location = new System.Drawing.Point(484, 439);
-            this.btnDelAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDelAccount.Location = new System.Drawing.Point(484, 439);
-            this.btnDelAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditAccount.Location = new System.Drawing.Point(183, 345);
-            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            this.btnDelAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelAccount.Location = new System.Drawing.Point(344, 345);
+            this.btnDelAccount.Name = "btnDelAccount";
             this.btnDelAccount.Size = new System.Drawing.Size(113, 37);
             this.btnDelAccount.TabIndex = 13;
             this.btnDelAccount.Text = "Xóa";
@@ -698,11 +683,11 @@
             this.btnDelAccount.Click += new System.EventHandler(this.btnDelAccount_Click);
             // 
             // btnEditAccount
-            this.btnEditAccount.Location = new System.Drawing.Point(198, 357);
+            // 
             this.btnEditAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAccount.Location = new System.Drawing.Point(198, 357);
-            this.btnAddAccount.Location = new System.Drawing.Point(19, 345);
-            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditAccount.Location = new System.Drawing.Point(183, 345);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(113, 37);
             this.btnEditAccount.TabIndex = 12;
             this.btnEditAccount.Text = "Sửa";
@@ -710,9 +695,10 @@
             this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
             // btnAddAccount
-            this.btnAddAccount.Location = new System.Drawing.Point(43, 357);
+            // 
             this.btnAddAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAccount.Location = new System.Drawing.Point(43, 357);
+            this.btnAddAccount.Location = new System.Drawing.Point(19, 345);
+            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(113, 37);
             this.btnAddAccount.TabIndex = 11;
@@ -729,7 +715,7 @@
             this.dataGridViewAcount.Size = new System.Drawing.Size(473, 330);
             this.dataGridViewAcount.TabIndex = 0;
             this.dataGridViewAcount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAcount_CellClick);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label15);
@@ -737,10 +723,9 @@
             this.tabPage1.Controls.Add(this.chart1);
             this.tabPage1.Controls.Add(this.btnThongKe);
             this.tabPage1.Controls.Add(this.dateEnd);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.dateStar);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(768, 400);
@@ -750,7 +735,7 @@
             // 
             // btnThongKe
             // 
-            this.dateEnd.Location = new System.Drawing.Point(385, 31);
+            this.btnThongKe.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.Location = new System.Drawing.Point(607, 26);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(131, 29);
@@ -759,10 +744,9 @@
             this.btnThongKe.UseVisualStyleBackColor = true;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            this.dateEnd.Location = new System.Drawing.Point(513, 38);
-            this.dateEnd.Margin = new System.Windows.Forms.Padding(4);
-            this.dateEnd.Location = new System.Drawing.Point(513, 38);
-            this.dateEnd.Margin = new System.Windows.Forms.Padding(4);
+            // dateEnd
+            // 
+            this.dateEnd.Location = new System.Drawing.Point(385, 31);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(200, 20);
             this.dateEnd.TabIndex = 15;
@@ -899,6 +883,7 @@
         private System.Windows.Forms.DataGridView dataGridViewTable;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox txbCatogory;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TextBox txbPriceProduct;
@@ -938,9 +923,6 @@
         private System.Windows.Forms.Button btnSearchAccount;
         private System.Windows.Forms.Button btnDelAccount;
         private System.Windows.Forms.Button btnEditAccount;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txbRevenue;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.DataGridView dataGridViewAcount;
         private System.Windows.Forms.TabPage tabPage1;
@@ -953,5 +935,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkBoxStatus;
         private System.Windows.Forms.ComboBox cbbPosition;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txbRevenue;
     }
 }

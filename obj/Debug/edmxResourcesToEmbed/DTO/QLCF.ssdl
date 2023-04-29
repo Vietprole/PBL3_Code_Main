@@ -35,7 +35,6 @@
     <Property Name="ID_Bill" Type="int" />
     <Property Name="ID_Product" Type="int" />
     <Property Name="Quantity" Type="int" />
-    <Property Name="Flag" Type="bit" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -61,7 +60,6 @@
     </Key>
     <Property Name="ID_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Role_Name" Type="nvarchar" MaxLength="60" />
-    <Property Name="Flag" Type="bit" />
   </EntityType>
   <EntityType Name="Table">
     <Key>
