@@ -121,12 +121,7 @@ namespace PBL3CodeDemo.View
         private void LoadDGV_Product()
         {
             QLCFBLL bll = new QLCFBLL();
-            dataGridViewProduct.DataSource = bll.Return_Product();
-        }
-        private void btnReadProduct_Click(object sender, EventArgs e)
-        {
-            QLCFBLL bll = new QLCFBLL();
-            dataGridViewProduct.DataSource = bll.Return_Product();
+            dataGridViewProduct.DataSource = bll.GetDGV_Product();
         }
         private void setCBBCategory()
         {
@@ -143,7 +138,7 @@ namespace PBL3CodeDemo.View
             }
             cbbCategory.SelectedIndex = 0;
         }
-        private void btnAddProduct_Click_1(object sender, EventArgs e)
+        private void btnAddProduct_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
             Product product = new Product
@@ -176,6 +171,20 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
             bll.Delete_Product(ID);
             LoadDGV_Product();
+        }
+
+        private void btnSearchProduct_Click(object sender, EventArgs e)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            string Product_Name = txbSearchProduct.Text;
+            if (Product_Name == "") // ALL 
+            {
+                LoadDGV_Product();
+            }
+            else
+            {
+                dataGridViewTable.DataSource = bll.GetDGV_Product_Search(Product_Name);
+            }
         }
     }
 }

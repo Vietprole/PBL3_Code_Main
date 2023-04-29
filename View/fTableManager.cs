@@ -54,7 +54,6 @@ namespace PBL3CodeDemo.View
         {
             View.fAdmin a = new View.fAdmin();
             a.Show();
-           
         }
     }
 }

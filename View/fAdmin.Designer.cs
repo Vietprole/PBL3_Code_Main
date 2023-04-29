@@ -415,6 +415,7 @@
             this.btnSearchProduct.TabIndex = 28;
             this.btnSearchProduct.Text = "Tìm";
             this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // btnDelProduct
             // 
@@ -450,7 +451,7 @@
             this.btnAddProduct.TabIndex = 25;
             this.btnAddProduct.Text = "Thêm";
             this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click_1);
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // dataGridViewProduct
             // 

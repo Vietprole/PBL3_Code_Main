@@ -353,5 +353,23 @@ namespace PBL3CodeDemo.BLL
                 db.SaveChanges();
             }
         }
+        public List<ProductDatagridview> GetDGV_Product_Search(string Product_Name)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<ProductDatagridview> result = new List<ProductDatagridview>();
+            foreach (Product i in Return_Product())
+            {
+                if (i.ID_Product.ToString() == (Product_Name))
+                {
+                    result.Add(new ProductDatagridview
+                    {
+                        Name = i.Name,
+                        Price = (int)i.Price,
+                        Category_Name = i.Category.Category_Name,
+                    });
+                }
+            }
+            return result;
+        }
     }
 }
