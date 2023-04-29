@@ -22,6 +22,7 @@ namespace PBL3CodeDemo.DTO
     
         public int ID_Role { get; set; }
         public string Role_Name { get; set; }
+        public Nullable<bool> Flag { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Account> Accounts { get; set; }
