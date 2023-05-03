@@ -389,6 +389,7 @@ namespace PBL3CodeDemo.BLL
         public List<Bill_Detail> Return_BillDetails(int id_Bill)
         {   //Tra ve cac Bill_Detail cua Bill co id la id_Bill
             PBL3Entities db = new PBL3Entities();
+            //MessageBox.Show(id_Bill.ToString());
             return db.Bill_Detail.Where(p => p.ID_Bill == id_Bill).Select(p => p).ToList();
         }
         public List<BillDetail_DataGridView> Get_Bill_Detail(int id_Table)
@@ -406,18 +407,21 @@ namespace PBL3CodeDemo.BLL
             }
             foreach (Bill_Detail i in Return_BillDetails(id_Bill))
             {
+                //MessageBox.Show(i.ID_Product.ToString());
                 if (i.Flag == true)
                 {
-
                     result.Add(new BillDetail_DataGridView
                     {
                         Food_Name = Return_ProductName(Convert.ToInt32(i.ID_Product)),
                         Quantity = Convert.ToInt32(i.Quantity),
                         Price = Return_ProductPrice(Convert.ToInt32(i.ID_Product))
-
-                    });
+                        
+                });
                 }
-                
+                else
+                {
+                }
+
 
             }
             return result;
@@ -425,10 +429,18 @@ namespace PBL3CodeDemo.BLL
         public void Add_Food_ToTable(int idTable, string foodName, int Quantity)
         {
             PBL3Entities db = new PBL3Entities();
-            List<BillDetail_DataGridView> listBill = new List<BillDetail_DataGridView>();
-            listBill = Get_Bill_Detail(idTable);
-            if (listBill.Count == 0) //Bàn này chưa có bill nào chưa thanh toán
+            int id_Bill = 0;
+            foreach (Bill i in Return_Bill())
             {
+                if (i.Pay_Status == false && i.ID_Table == idTable)
+                {
+
+                    id_Bill = i.ID_Bill; //Lấy cái idBill chưa thanh toán của bàn
+                    break;
+                }
+            }
+            if(id_Bill == 0)
+            { //Chưa có bill => Tạo bill mới
                 string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
                 string currentTime = DateTime.Now.ToString("HH:mm:ss");
                 Bill bill = new Bill();
@@ -440,9 +452,8 @@ namespace PBL3CodeDemo.BLL
                 bill.Price = 0;
                 bill.Flag = true;
                 db.Bills.Add(bill);
+                db.SaveChanges();
             }
-            Bill_Detail bill_Detail = new Bill_Detail();
-            int id_Bill = 0;
             foreach (Bill i in Return_Bill())
             {
                 if (i.Pay_Status == false && i.ID_Table == idTable)
@@ -452,6 +463,7 @@ namespace PBL3CodeDemo.BLL
                     break;
                 }
             }
+            Bill_Detail bill_Detail = new Bill_Detail();
             bill_Detail.ID_Bill = id_Bill;
             bill_Detail.ID_Product = Return_ProductId(foodName);
             bill_Detail.Quantity = Quantity;
@@ -486,7 +498,7 @@ namespace PBL3CodeDemo.BLL
             var billDetail = db.Bill_Detail.Where(p => p.ID_Product == idFood
                             && p.ID_Bill == id_Bill && p.Flag == true 
                             && p.Quantity == Quantity).FirstOrDefault();
-            billDetail.Flag = false;
+            db.Bill_Detail.Remove(billDetail);
             db.SaveChanges();
         }
 
