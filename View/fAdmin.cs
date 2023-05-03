@@ -225,9 +225,3 @@ namespace PBL3CodeDemo.View
         }
     }
 }
-        private void btnAddTable_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
-}
