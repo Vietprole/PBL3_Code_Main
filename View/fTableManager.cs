@@ -183,7 +183,7 @@ namespace PBL3CodeDemo.View
             else
             {
                 BillTable_DGV.DataSource = null;
-                //bll.SetTableStatus(id_Table, 0);
+                bll.SetTableStatus(id_Table, 0);
                 textBoxPrice.Text = "0";
             }
             
