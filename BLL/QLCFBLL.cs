@@ -22,7 +22,7 @@ namespace PBL3CodeDemo.BLL
                 {
                     Value = i.ID_Table,
                     Text = i.Position.ToString()
-                    
+
                 });
             }
             return result;
@@ -42,22 +42,22 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public List<CBB_Item> GetCBB_Food( int idcategory)
+        public List<CBB_Item> GetCBB_Food(int idcategory)
         {
             List<CBB_Item> result = new List<CBB_Item>();
             foreach (Product i in Return_Product())
             {
                 foreach (Category j in Return_Category())
                 {
-                   
-                        if (idcategory == i.ID_Category && j.ID_Category==i.ID_Category)
+
+                    if (idcategory == i.ID_Category && j.ID_Category == i.ID_Category)
+                    {
+                        result.Add(new CBB_Item
                         {
-                            result.Add(new CBB_Item
-                            {
-                                Value = i.ID_Product,
-                                Text = i.Name.ToString()
-                            });
-                        }
+                            Value = i.ID_Product,
+                            Text = i.Name.ToString()
+                        });
+                    }
                 }
             }
             return result;
@@ -93,7 +93,7 @@ namespace PBL3CodeDemo.BLL
             {
                 s.ID_Role = 3;
             }
-            s.Flag=true;
+            s.Flag = true;
             db.Accounts.Add(s);
             db.SaveChanges();
             return true;
@@ -101,13 +101,13 @@ namespace PBL3CodeDemo.BLL
         public List<Table> Return_Table()
         {
             PBL3Entities db = new PBL3Entities();
-            return db.Tables.Where(p=>p.Flag==true).Select(p => p).ToList();
+            return db.Tables.Where(p => p.Flag == true).Select(p => p).ToList();
         }
         public List<Account> Return_Account()
         {
             PBL3Entities db = new PBL3Entities();
-            
-            return db.Accounts.Where(p=>p.Flag==true).Select(p => p).ToList();
+
+            return db.Accounts.Where(p => p.Flag == true).Select(p => p).ToList();
         }
         public List<Role> Return_Role()
         {
@@ -151,7 +151,7 @@ namespace PBL3CodeDemo.BLL
         {
             PBL3Entities db = new PBL3Entities();
             bool exists = db.Tables.Any(p => p.ID_Table == New_ID_Table);
-            if(exists && Old_ID_Table != New_ID_Table) //ID nay da ton tai trong CSDL, nguoi dung phai nhap lai 
+            if (exists && Old_ID_Table != New_ID_Table) //ID nay da ton tai trong CSDL, nguoi dung phai nhap lai 
             {
                 return false;
             }
@@ -178,7 +178,7 @@ namespace PBL3CodeDemo.BLL
             List<AccountDatagridview> result = new List<AccountDatagridview>();
             foreach (Account i in Return_Account())
             {
-                foreach(Role j in Return_Role())
+                foreach (Role j in Return_Role())
                 {
                     if (i.ID_Role == j.ID_Role)
                     {
@@ -189,15 +189,15 @@ namespace PBL3CodeDemo.BLL
                             Salary = i.Salary,
                             Address = i.Address,
                             Phone_Number = i.Phone_Number,
-                            Password = i.Password,                            
+                            Password = i.Password,
                             Name_Role = j.Role_Name
                         });
                     }
                 }
             }
             return result;
-        }      
-        public bool UpdateAccount(string User_Account, string Name_Account, string Salary,string Phone, string Adress, string PassWord, string Name_Role)
+        }
+        public bool UpdateAccount(string User_Account, string Name_Account, string Salary, string Phone, string Adress, string PassWord, string Name_Role)
         {
             PBL3Entities db = new PBL3Entities();
             Account s = db.Accounts.Where(p => p.UserName == User_Account).FirstOrDefault();
@@ -206,14 +206,14 @@ namespace PBL3CodeDemo.BLL
                 s.Address = Adress;
                 s.Name = Name_Account;
                 s.Salary = Salary;
-                s.Phone_Number= Phone;
+                s.Phone_Number = Phone;
                 s.UserName = User_Account;
                 s.Password = HashPassword(PassWord);
-                if (Name_Role == "Quản lý" || Name_Role=="1")
+                if (Name_Role == "Quản lý" || Name_Role == "1")
                 {
                     s.ID_Role = 1;
                 }
-                if (Name_Role == "Thu ngân" || Name_Role =="2")
+                if (Name_Role == "Thu ngân" || Name_Role == "2")
                 {
                     s.ID_Role = 2;
                 }
@@ -221,7 +221,7 @@ namespace PBL3CodeDemo.BLL
                 {
                     s.ID_Role = 3;
                 }
-              
+
                 db.Accounts.AddOrUpdate(s);
                 db.SaveChanges();
                 return true;
@@ -250,12 +250,12 @@ namespace PBL3CodeDemo.BLL
             Account s = db.Accounts.Where(p => p.UserName == User_Account).FirstOrDefault();
             if (db.Accounts.Any(p => p.UserName == User_Account))
             {
-                s.Address ="";
+                s.Address = "";
                 s.Name = "";
                 s.Salary = "";
                 s.UserName = "";
                 s.Password = "";
-                s.ID_Role = 0;                
+                s.ID_Role = 0;
                 s.Flag = false;
                 db.Accounts.AddOrUpdate(s);
                 db.SaveChanges();
@@ -275,13 +275,13 @@ namespace PBL3CodeDemo.BLL
             return false;
         }
         public string SetNameAcount(string user)
-        {   
-            PBL3Entities db= new PBL3Entities();
+        {
+            PBL3Entities db = new PBL3Entities();
             var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
-            string rol="";
-            if(s.ID_Role== 1)
+            string rol = "";
+            if (s.ID_Role == 1)
             {
-                rol= "Quản lý";
+                rol = "Quản lý";
             }
             if (s.ID_Role == 2)
             {
@@ -291,15 +291,15 @@ namespace PBL3CodeDemo.BLL
             {
                 rol = "Nhân viên";
             }
-            
-            return "Quản lý bàn - "+ s.Name + " - " + rol;
+
+            return "Quản lý bàn - " + s.Name + " - " + rol;
         }
         public string SetAcountName(string user)
         {
             PBL3Entities db = new PBL3Entities();
             var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
-            
-            return  s.Name ;
+
+            return s.Name;
         }
         public string SetAcountAddress(string user)
         {
@@ -327,7 +327,7 @@ namespace PBL3CodeDemo.BLL
         {
             PBL3Entities db = new PBL3Entities();
             var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
-            return Convert.ToInt32( s.ID_Role.Value);
+            return Convert.ToInt32(s.ID_Role.Value);
         }
         public List<TableDataGridView> LoadTable_Button()
         {
@@ -356,6 +356,19 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
+        public int Return_ProductId(string ProductName)
+        {
+            PBL3Entities db = new PBL3Entities();
+            int result = 0;
+            List<Product> list_Product = new List<Product>();
+            list_Product = db.Products.Where(p => p.Name == ProductName && p.Flag == true).Select(p => p).ToList();
+            foreach (Product i in list_Product)
+            {
+                result = i.ID_Product;
+            }
+            return result;
+        }
+
         public int Return_ProductPrice(int ID_Product)
         {
             PBL3Entities db = new PBL3Entities();
@@ -384,26 +397,115 @@ namespace PBL3CodeDemo.BLL
             int id_Bill = 0;
             foreach (Bill i in Return_Bill())
             {
-                if(i.Pay_Status == false && i.ID_Table == id_Table)
-                {
-                    
+                if (i.Pay_Status == false && i.ID_Table == id_Table)
+                {//Chưa thanh toán 
+
                     id_Bill = i.ID_Bill;
                     break;
                 }
             }
-            //MessageBox.Show(id_Bill.ToString());
             foreach (Bill_Detail i in Return_BillDetails(id_Bill))
             {
-                result.Add(new BillDetail_DataGridView
+                if (i.Flag == true)
                 {
-                    Food_Name = Return_ProductName(Convert.ToInt32(i.ID_Product)),
-                    Quantity = Convert.ToInt32(i.Quantity),
-                    Price = Return_ProductPrice(Convert.ToInt32(i.ID_Product))
 
-                });
+                    result.Add(new BillDetail_DataGridView
+                    {
+                        Food_Name = Return_ProductName(Convert.ToInt32(i.ID_Product)),
+                        Quantity = Convert.ToInt32(i.Quantity),
+                        Price = Return_ProductPrice(Convert.ToInt32(i.ID_Product))
+
+                    });
+                }
                 
+
             }
             return result;
+        }
+        public void Add_Food_ToTable(int idTable, string foodName, int Quantity)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<BillDetail_DataGridView> listBill = new List<BillDetail_DataGridView>();
+            listBill = Get_Bill_Detail(idTable);
+            if (listBill.Count == 0) //Bàn này chưa có bill nào chưa thanh toán
+            {
+                string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+                string currentTime = DateTime.Now.ToString("HH:mm:ss");
+                Bill bill = new Bill();
+                bill.ID_Account = 1; // SỬA LẠI CHỖ NÀY !!!!!!!!!!!!!!!!!!! ID_Account là id của acc đang đăng nhập
+                bill.ID_Table = idTable;
+                bill.Pay_Status = false;
+                bill.Order_Day = DateTime.Parse(currentDate);
+                bill.Order_Time = TimeSpan.Parse(currentTime);
+                bill.Price = 0;
+                bill.Flag = true;
+                db.Bills.Add(bill);
+            }
+            Bill_Detail bill_Detail = new Bill_Detail();
+            int id_Bill = 0;
+            foreach (Bill i in Return_Bill())
+            {
+                if (i.Pay_Status == false && i.ID_Table == idTable)
+                {
+
+                    id_Bill = i.ID_Bill; //Lấy cái idBill chưa thanh toán của bàn
+                    break;
+                }
+            }
+            bill_Detail.ID_Bill = id_Bill;
+            bill_Detail.ID_Product = Return_ProductId(foodName);
+            bill_Detail.Quantity = Quantity;
+            bill_Detail.Flag = true;
+            db.Bill_Detail.Add(bill_Detail);
+            db.SaveChanges();
+        }
+
+        public void SetTableStatus(int idTable, int status)
+        {
+            PBL3Entities db = new PBL3Entities();
+            Table table = db.Tables.Find(idTable);
+            if(status == 1) table.Status = true;
+            else table.Status = false;
+            db.SaveChanges();
+        }
+
+        public void Delete_BillDetails(int idTable, string foodName, int Quantity)
+        {
+            PBL3Entities db = new PBL3Entities();
+            int idFood = Return_ProductId(foodName);
+            int id_Bill = 0;
+            foreach (Bill i in Return_Bill())
+            {
+                if (i.Pay_Status == false && i.ID_Table == idTable)
+                {//Chưa thanh toán 
+
+                    id_Bill = i.ID_Bill;
+                    break;
+                }
+            }
+            var billDetail = db.Bill_Detail.Where(p => p.ID_Product == idFood
+                            && p.ID_Bill == id_Bill && p.Flag == true 
+                            && p.Quantity == Quantity).FirstOrDefault();
+            billDetail.Flag = false;
+            db.SaveChanges();
+        }
+
+        public void CheckOut_Bill(int idTable, int Price)
+        {
+            int idBill = 0;
+            foreach (Bill i in Return_Bill())
+            {
+                if (i.Pay_Status == false && i.ID_Table == idTable)
+                {//Chưa thanh toán 
+                    idBill = i.ID_Bill;
+                    break;
+                }
+            }
+            PBL3Entities db = new PBL3Entities();
+            Bill Bill = db.Bills.Where(p => p.ID_Bill == idBill).FirstOrDefault();
+            Bill.Pay_Status = true;
+            Bill.Price = Price;
+            db.SaveChanges();
         }
     }
 }
