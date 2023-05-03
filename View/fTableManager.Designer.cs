@@ -40,6 +40,7 @@
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BillTable_DGV = new System.Windows.Forms.DataGridView();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.btnAddFood = new System.Windows.Forms.Button();
@@ -52,12 +53,13 @@
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.btnDiscount = new System.Windows.Forms.Button();
             this.flbTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.BillTable_DGV = new System.Windows.Forms.DataGridView();
+            this.id_Table_Last_Pressed = new System.Windows.Forms.Label();
+            this.bttDeleteFood = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BillTable_DGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BillTable_DGV)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -157,6 +159,16 @@
             this.panel2.Size = new System.Drawing.Size(448, 398);
             this.panel2.TabIndex = 2;
             // 
+            // BillTable_DGV
+            // 
+            this.BillTable_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BillTable_DGV.Location = new System.Drawing.Point(0, 0);
+            this.BillTable_DGV.Name = "BillTable_DGV";
+            this.BillTable_DGV.RowHeadersWidth = 51;
+            this.BillTable_DGV.RowTemplate.Height = 24;
+            this.BillTable_DGV.Size = new System.Drawing.Size(449, 395);
+            this.BillTable_DGV.TabIndex = 0;
+            // 
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
@@ -181,17 +193,18 @@
             // btnAddFood
             // 
             this.btnAddFood.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFood.Location = new System.Drawing.Point(881, 36);
+            this.btnAddFood.Location = new System.Drawing.Point(945, 33);
             this.btnAddFood.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(96, 59);
             this.btnAddFood.TabIndex = 6;
             this.btnAddFood.Text = "Thêm Món";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // nmFoodCount
             // 
-            this.nmFoodCount.Location = new System.Drawing.Point(985, 58);
+            this.nmFoodCount.Location = new System.Drawing.Point(890, 48);
             this.nmFoodCount.Margin = new System.Windows.Forms.Padding(4);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
@@ -285,6 +298,7 @@
             this.btnDiscount.TabIndex = 15;
             this.btnDiscount.Text = "Giảm Giá";
             this.btnDiscount.UseVisualStyleBackColor = true;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
             // 
             // flbTable
             // 
@@ -293,21 +307,34 @@
             this.flbTable.Size = new System.Drawing.Size(568, 469);
             this.flbTable.TabIndex = 16;
             // 
-            // BillTable_DGV
+            // id_Table_Last_Pressed
             // 
-            this.BillTable_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BillTable_DGV.Location = new System.Drawing.Point(0, 0);
-            this.BillTable_DGV.Name = "BillTable_DGV";
-            this.BillTable_DGV.RowHeadersWidth = 51;
-            this.BillTable_DGV.RowTemplate.Height = 24;
-            this.BillTable_DGV.Size = new System.Drawing.Size(449, 395);
-            this.BillTable_DGV.TabIndex = 0;
+            this.id_Table_Last_Pressed.AutoSize = true;
+            this.id_Table_Last_Pressed.Location = new System.Drawing.Point(669, 9);
+            this.id_Table_Last_Pressed.Name = "id_Table_Last_Pressed";
+            this.id_Table_Last_Pressed.Size = new System.Drawing.Size(44, 16);
+            this.id_Table_Last_Pressed.TabIndex = 17;
+            this.id_Table_Last_Pressed.Text = "label2";
+            this.id_Table_Last_Pressed.Visible = false;
+            // 
+            // bttDeleteFood
+            // 
+            this.bttDeleteFood.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttDeleteFood.Location = new System.Drawing.Point(1074, 33);
+            this.bttDeleteFood.Margin = new System.Windows.Forms.Padding(4);
+            this.bttDeleteFood.Name = "bttDeleteFood";
+            this.bttDeleteFood.Size = new System.Drawing.Size(96, 59);
+            this.bttDeleteFood.TabIndex = 6;
+            this.bttDeleteFood.Text = "Xóa Món";
+            this.bttDeleteFood.UseVisualStyleBackColor = true;
+            this.bttDeleteFood.Click += new System.EventHandler(this.bttDeleteFood_Click);
             // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1208, 519);
+            this.Controls.Add(this.id_Table_Last_Pressed);
             this.Controls.Add(this.flbTable);
             this.Controls.Add(this.btnDiscount);
             this.Controls.Add(this.textBoxPrice);
@@ -317,6 +344,7 @@
             this.Controls.Add(this.cbSwithTable);
             this.Controls.Add(this.btnSwithTable);
             this.Controls.Add(this.nmFoodCount);
+            this.Controls.Add(this.bttDeleteFood);
             this.Controls.Add(this.btnAddFood);
             this.Controls.Add(this.cbFood);
             this.Controls.Add(this.cbCategory);
@@ -330,9 +358,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BillTable_DGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDisCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BillTable_DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +393,7 @@
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flbTable;
         private System.Windows.Forms.DataGridView BillTable_DGV;
+        private System.Windows.Forms.Label id_Table_Last_Pressed;
+        private System.Windows.Forms.Button bttDeleteFood;
     }
 }

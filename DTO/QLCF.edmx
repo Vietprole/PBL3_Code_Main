@@ -40,6 +40,7 @@
           <Property Name="ID_Bill" Type="int" />
           <Property Name="ID_Product" Type="int" />
           <Property Name="Quantity" Type="int" />
+          <Property Name="Flag" Type="bit" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -65,6 +66,7 @@
           </Key>
           <Property Name="ID_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Role_Name" Type="nvarchar" MaxLength="60" />
+          <Property Name="Flag" Type="bit" />
         </EntityType>
         <EntityType Name="Table">
           <Key>
@@ -226,6 +228,7 @@
           <Property Name="Quantity" Type="Int32" />
           <NavigationProperty Name="Bill" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill_Detail" ToRole="Bill" />
           <NavigationProperty Name="Product" Relationship="Self.FK__Bill_Deta__ID_Pr__47DBAE45" FromRole="Bill_Detail" ToRole="Product" />
+          <Property Name="Flag" Type="Boolean" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -255,6 +258,7 @@
           <Property Name="ID_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Role_Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__ID_Role__398D8EEE" FromRole="Role" ToRole="Account" />
+          <Property Name="Flag" Type="Boolean" />
         </EntityType>
         <EntityType Name="Table">
           <Key>
@@ -409,6 +413,7 @@
           <EntitySetMapping Name="Bill_Detail">
             <EntityTypeMapping TypeName="PBL3Model.Bill_Detail">
               <MappingFragment StoreEntitySet="Bill_Detail">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
                 <ScalarProperty Name="ID_Product" ColumnName="ID_Product" />
@@ -439,6 +444,7 @@
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="PBL3Model.Role">
               <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
                 <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
               </MappingFragment>

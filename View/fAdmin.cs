@@ -134,7 +134,7 @@ namespace PBL3CodeDemo.View
             if (CheckForm_Account() == false)
             {
                 if (bll.Add_Account(User_Account, Name_Account, Salary, Adress, PassWord, Role))
-                    MessageBox.Show("Đã thêm bàn thành công !", "Thông báo!");
+                    MessageBox.Show("Đã thêm tài khoản thành công !", "Thông báo!");
                 else
                     MessageBox.Show("Thêm Thất Bại", "Thông báo!");
             }
@@ -222,6 +222,12 @@ namespace PBL3CodeDemo.View
             {
                 MessageBox.Show("Ngày thống kê bị mâu thuẩn!", "Thông báo");
             }
+        }
+    }
+}
+        private void btnAddTable_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

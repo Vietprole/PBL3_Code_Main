@@ -5,6 +5,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,8 @@ namespace PBL3CodeDemo.View
             passWord = pass;
             setNameForm(useName);
             LoadTable();
-            setCBBCategory();            
+            setCBBCategory();
+            textBoxPrice.Text = "0";
         }
         void setCBBCategory()
         {
@@ -93,14 +95,38 @@ namespace PBL3CodeDemo.View
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            if(bll.CheckAcount_Role(useName) == 1 || bll.CheckAcount_Role(useName) == 2)
+            if (BillTable_DGV.DataSource == null)
             {
-                //thanh toan
+                MessageBox.Show("Hóa đơn chưa có sản phẩm, vui lòng thêm ít nhất 1 sản phẩm để thanh toán", "Thông báo");
             }
             else
             {
-                MessageBox.Show("Tài khoản nhân viên không có chức năng thanh toán!", "Thông báo");
+                
+                int Price = Convert.ToInt32(textBoxPrice.Text);
+                int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
+                if (bll.CheckAcount_Role(useName) == 1 || bll.CheckAcount_Role(useName) == 2)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc là muốn thanh toán không ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        bll.CheckOut_Bill(idTable, Price);
+                        ShowBill(idTable);
+                        flbTable.Controls.Clear();
+                        bll.SetTableStatus(idTable, 0);
+                        LoadTable();
+                        nmDisCount.Value = 0;
+                    }
+                    else if (result == DialogResult.No)
+                    {
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản nhân viên không có chức năng thanh toán!", "Thông báo");
+                }
+
             }
+            
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,17 +171,100 @@ namespace PBL3CodeDemo.View
             int Price = 0;
             List<BillDetail_DataGridView> list_Bill = new List<BillDetail_DataGridView>();
             list_Bill = bll.Get_Bill_Detail(id_Table);
-            BillTable_DGV.DataSource = list_Bill;
-            foreach(BillDetail_DataGridView bill_details in list_Bill)
+            if(list_Bill.Count > 0)
             {
-                Price += bill_details.Price;
+                BillTable_DGV.DataSource = list_Bill;
+                foreach (BillDetail_DataGridView bill_details in list_Bill)
+                {
+                    Price += bill_details.Price;
+                }
+                textBoxPrice.Text = Price.ToString();
             }
-            textBoxPrice.Text = Price.ToString();
+            else
+            {
+                BillTable_DGV.DataSource = null;
+                //bll.SetTableStatus(id_Table, 0);
+                textBoxPrice.Text = "0";
+            }
+            
         }
          void btn_Click(object sender, EventArgs e)
         {
             int table_ID = ((sender as Button).Tag as TableDataGridView).ID_Table;
+            id_Table_Last_Pressed.Text = table_ID.ToString();
             ShowBill(table_ID);
+        }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            string foodName = cbFood.Text;
+            int Quantity = Convert.ToInt32(nmFoodCount.Value);
+            int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
+            bll.Add_Food_ToTable(idTable, foodName, Quantity);
+            bll.SetTableStatus(idTable, 1);
+            ShowBill(idTable);
+            flbTable.Controls.Clear();
+            LoadTable();
+        }
+
+        private void bttDeleteFood_Click(object sender, EventArgs e)
+        {
+            string foodName="";
+            int Quantity = 0;
+            int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
+            if (BillTable_DGV.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc là muốn xóa món này không ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in BillTable_DGV.SelectedRows)
+                    {
+                        foodName = row.Cells["Food_Name"].Value.ToString();
+                        Quantity = Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
+                        bll.Delete_BillDetails(idTable, foodName, Quantity);
+                    }
+                    ShowBill(idTable);
+                    flbTable.Controls.Clear();
+                    LoadTable();
+                }
+                else if (result == DialogResult.No)
+                {
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn ít nhất 1 món để xóa", "Thông báo");
+            }
+            
+        }
+        private void ResetPrice(int id_Table)
+        {
+            int Price = 0;
+            List<BillDetail_DataGridView> list_Bill = new List<BillDetail_DataGridView>();
+            list_Bill = bll.Get_Bill_Detail(id_Table);
+            if (list_Bill.Count > 0)
+            {
+                BillTable_DGV.DataSource = list_Bill;
+                foreach (BillDetail_DataGridView bill_details in list_Bill)
+                {
+                    Price += bill_details.Price;
+                }
+                textBoxPrice.Text = Price.ToString();
+            }
+
+        }
+        private void DisCount()
+        {
+            int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
+            int discount = Convert.ToInt32(nmDisCount.Value);
+            ResetPrice(idTable);
+            int Price = Convert.ToInt32(textBoxPrice.Text);
+            Price = Price - Price * discount / 100;
+            textBoxPrice.Text = Price.ToString();
+        }
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            DisCount();
         }
     }
 }
