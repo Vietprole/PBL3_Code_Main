@@ -23,8 +23,8 @@ namespace PBL3CodeDemo.View
             setCBB_ViTriBan();
             LoadDGV_Table();
             LoadDGV_Account();
-            setCBBCategory();
             LoadDGV_Product();
+            setCBBCategory();
         }
         void setCBB_ViTriBan()
         {
@@ -227,7 +227,7 @@ namespace PBL3CodeDemo.View
         void LoadDGV_Product()
         {
             QLCFBLL bll = new QLCFBLL();
-            dataGridViewTable.DataSource = bll.GetDGV_Product();
+            dataGridViewProduct.DataSource = bll.GetDGV_Product();
         }
         private void setCBBCategory()
         {
