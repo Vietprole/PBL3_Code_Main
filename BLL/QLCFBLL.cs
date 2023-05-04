@@ -555,5 +555,47 @@ namespace PBL3CodeDemo.BLL
             Bill.Price = Price;
             db.SaveChanges();
         }
+        public List<ProductDatagridview> GetDGV_Product()
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<ProductDatagridview> result = new List<ProductDatagridview>();
+            foreach (Product i in Return_Product())
+            {
+                result.Add(new ProductDatagridview
+                {
+                    ID_Product = i.ID_Product,
+                    Name = i.Name,
+                    Price = (int)i.Price,
+                    Category_Name = i.Category.Category_Name,
+                });
+            }
+            return result;
+        }
+        public void Add_Product(Product product)
+        {
+            using (PBL3Entities db = new PBL3Entities())
+            {
+                db.Products.Add(product);
+                db.SaveChanges();
+            }
+        }
+        public void Edit_Product(Product product)
+        {
+            using (PBL3Entities db = new PBL3Entities())
+            {
+                var s = db.Products.Where(p => p.ID_Product == product.ID_Product).FirstOrDefault();
+                s = product;
+                db.SaveChanges();
+            }
+        }
+        public void Delete_Product(int ID_Product)
+        {
+            using (PBL3Entities db = new PBL3Entities())
+            {
+                var s = db.Products.Where(p => p.ID_Product == ID_Product).FirstOrDefault();
+                db.Products.Remove(s);
+                db.SaveChanges();
+            }
+        }
     }
 }
