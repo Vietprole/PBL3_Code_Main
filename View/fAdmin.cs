@@ -268,6 +268,7 @@ namespace PBL3CodeDemo.View
             };
             QLCFBLL bll = new QLCFBLL();
             bll.Edit_Product(product);
+            LoadDGV_Product();
         }
 
         private void btnDelProduct_Click(object sender, EventArgs e)
@@ -275,6 +276,7 @@ namespace PBL3CodeDemo.View
             int ID = int.Parse(dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString());
             QLCFBLL bll = new QLCFBLL();
             bll.Delete_Product(ID);
+            LoadDGV_Product();
         }
 
         private void btnSearchProduct_Click(object sender, EventArgs e)
