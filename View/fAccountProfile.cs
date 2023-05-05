@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace PBL3CodeDemo.View
         QLCFBLL bll = new QLCFBLL();
         public fAccountProfile(string user, string pass)
         {
+            
             InitializeComponent();
             userName = user;
             passWord= pass;
@@ -37,8 +39,9 @@ namespace PBL3CodeDemo.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (bll.UpdateAccount(txbUserName.Text, txbDisplayName.Text, txbSalary.Text,txbPhone.Text, txbAdress.Text,passWord , bll.CheckAcount_Role(userName).ToString()))
-            {
+            if (bll.UpdateAccount(txbUserName.Text, txbDisplayName.Text, txbSalary.Text,txbPhone.Text, txbAdress.Text, bll.CheckAcount_Role(userName).ToString()))
+            {   
+                bll.UpdateAccount_PassWord(userName, passWord); 
                 MessageBox.Show("Đã cập nhật tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 this.Close();
             }
