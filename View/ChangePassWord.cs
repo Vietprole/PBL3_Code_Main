@@ -39,7 +39,7 @@ namespace PBL3CodeDemo.View
             else 
             if (txbNewPass.Text == txbReEnterPass.Text )
             {
-                if (bll.UpdateAccount( userName, bll.SetAcountName(userName), bll.SetAcountSalary(userName), bll.SetAcountPhone(userName), bll.SetAcountAddress(userName), txbNewPass.Text, bll.CheckAcount_Role(userName).ToString()) && txbPassWord.Text == passWord)
+                if (bll.UpdateAccount_PassWord( userName, txbNewPass.Text) && txbPassWord.Text == passWord)
                 {
                     MessageBox.Show("Đã cập nhật mật khẩu của tài khoản " + bll.SetAcountName(userName) + " thành công !", "Thông báo!");
                     this.Close();

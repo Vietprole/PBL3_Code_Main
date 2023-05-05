@@ -23,6 +23,7 @@ namespace PBL3CodeDemo.View
             setCBB_ViTriBan();
             LoadDGV_Table();
             LoadDGV_Account();
+            chart1.Series.Clear();
 
         }
         void setCBB_ViTriBan()
@@ -102,7 +103,7 @@ namespace PBL3CodeDemo.View
             dataGridViewAcount.DataSource = bll.GetDGV_Account();
             txbDisplayName.Text = "";
             txbUserName.ReadOnly = false;
-            txbPassWord.Text = "";
+          
             txbPhone.Text = "";
             txbSalary.Text = "";
             txbSearchAccount.Text = "";
@@ -115,7 +116,7 @@ namespace PBL3CodeDemo.View
 
         bool CheckForm_Account()
         {
-            return (txbUserName.Text == "" || txbDisplayName.Text == "" || txbPhone.Text == "" || txbAdress.Text == "" || txbPassWord.Text == "" || txbSalary.Text == "" || cbb_role.Text == "");
+            return (txbUserName.Text == "" || txbDisplayName.Text == "" || txbPhone.Text == "" || txbAdress.Text == "" ||  txbSalary.Text == "" || cbb_role.Text == "");
 
         }
 
@@ -128,12 +129,11 @@ namespace PBL3CodeDemo.View
             string Phone = txbPhone.Text;
             string Salary = txbSalary.Text;
             string Adress = txbAdress.Text;
-            string PassWord = txbPassWord.Text;
             string Role = cbb_role.Text;
 
             if (CheckForm_Account() == false)
             {
-                if (bll.Add_Account(User_Account, Name_Account, Salary, Adress, PassWord, Role))
+                if (bll.Add_Account(User_Account, Name_Account, Salary, Adress, Role))
                     MessageBox.Show("Đã thêm bàn thành công !", "Thông báo!");
                 else
                     MessageBox.Show("Thêm Thất Bại", "Thông báo!");
@@ -155,12 +155,11 @@ namespace PBL3CodeDemo.View
             string Phone = txbPhone.Text;
             string Salary = txbSalary.Text;
             string Adress = txbAdress.Text;
-            string PassWord = txbPassWord.Text;
             string Role = cbb_role.Text;
 
             if (CheckForm_Account() == false)
             {
-                if (bll.UpdateAccount(User_Account, Name_Account, Salary, Phone, Adress, PassWord, Role))
+                if (bll.UpdateAccount(User_Account, Name_Account, Salary, Phone, Adress,  Role))
                     MessageBox.Show("Đã cập nhật tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 else
                     MessageBox.Show("Cập Nhật Tài Khoản Thất Bại", "Thông báo!");
@@ -198,18 +197,17 @@ namespace PBL3CodeDemo.View
             txbDisplayName.Text = dataGridViewAcount.Rows[i].Cells[1].Value.ToString();
             txbSalary.Text = dataGridViewAcount.Rows[i].Cells[2].Value.ToString();
             txbAdress.Text = dataGridViewAcount.Rows[i].Cells[3].Value.ToString();
-            txbPhone.Text = dataGridViewAcount.Rows[i].Cells[4].Value.ToString();
-            txbPassWord.Text = dataGridViewAcount.Rows[i].Cells[5].Value.ToString();
-            cbb_role.Text = dataGridViewAcount.Rows[i].Cells[6].Value.ToString();
+            txbPhone.Text = dataGridViewAcount.Rows[i].Cells[4].Value.ToString();    
+            cbb_role.Text = dataGridViewAcount.Rows[i].Cells[5].Value.ToString();
         }
-
+        
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
             if (dateStar.Value.Date <= dateEnd.Value.Date)
-            { int SumPrice = 0;
-
-                chart1.Series.Clear();
+            { 
+                int SumPrice = 0;
+                
                 chart1.Series.Add("Doanh Thu");
                 foreach(Revenue i in bll.Get_Revenue(dateStar.Value.Date , dateEnd.Value.Date))
                     {
@@ -221,6 +219,20 @@ namespace PBL3CodeDemo.View
             else 
             {
                 MessageBox.Show("Ngày thống kê bị mâu thuẩn!", "Thông báo");
+            }
+        }
+
+        private void btnSearchAccount_Click(object sender, EventArgs e)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            string Account_Name = txbSearchAccount.Text;
+            if (Account_Name == "") // ALL 
+            {
+                LoadDGV_Account();
+            }
+            else
+            {
+                dataGridViewAcount.DataSource = bll.GetDGV_Account_Search(Account_Name);
             }
         }
     }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -72,31 +73,65 @@ namespace PBL3CodeDemo.BLL
             PBL3Entities db = new PBL3Entities();
             return db.Products.Where(p => p.Flag == true).Select(p => p).ToList();
         }
-        public bool Add_Account(string User_Account, string Name_Account, string Salary, string Adress, string PassWord, string Name_Role)
+        public bool Add_Account(string User_Account, string Name_Account, string Salary, string Adress, string Name_Role)
         {
             PBL3Entities db = new PBL3Entities();
             Account s = db.Accounts.FirstOrDefault();
-            s.Address = Adress;
-            s.Name = Name_Account;
-            s.Salary = Salary;
-            s.UserName = User_Account;
-            s.Password = PassWord;
-            if (Name_Role == "Quản lý")
+            if (db.Accounts.Any(p => p.UserName == User_Account))
             {
-                s.ID_Role = 1;
+                return false;
             }
-            if (Name_Role == "Thu ngân")
+            else
             {
-                s.ID_Role = 2;
+                s.Address = Adress;
+                s.Name = Name_Account;
+                s.Salary = Salary;
+                s.UserName = User_Account;
+                s.Password = Hash("123");
+                if (Name_Role == "Quản lý")
+                {
+                    s.ID_Role = 1;
+                }
+                if (Name_Role == "Thu ngân")
+                {
+                    s.ID_Role = 2;
+                }
+                if (Name_Role == "Nhân Viên")
+                {
+                    s.ID_Role = 3;
+                }
+                s.Flag = true;
+                db.Accounts.Add(s);
+                db.SaveChanges();
+                return true;
             }
-            if (Name_Role == "Nhân Viên")
+            
+            
+        }
+        public List<AccountDatagridview> GetDGV_Account_Search(string Account_Name)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<AccountDatagridview> result = new List<AccountDatagridview>();
+            foreach (Account i in Return_Account())
             {
-                s.ID_Role = 3;
+                foreach (Role j in Return_Role())
+                {
+                    if (i.ID_Role == j.ID_Role)
+                    {
+                        if (i.Name.IndexOf(Account_Name) >= 0)
+                            result.Add(new AccountDatagridview
+                            {
+                                UserName = i.UserName,
+                                Name = i.Name,
+                                Salary = i.Salary,
+                                Address = i.Address,
+                                Phone_Number = i.Phone_Number,
+                                Name_Role = j.Role_Name
+                            });
+                    }
+                }
             }
-            s.Flag=true;
-            db.Accounts.Add(s);
-            db.SaveChanges();
-            return true;
+            return result;
         }
         public List<Table> Return_Table()
         {
@@ -229,7 +264,6 @@ namespace PBL3CodeDemo.BLL
                             Salary = i.Salary,
                             Address = i.Address,
                             Phone_Number = i.Phone_Number,
-                            Password = i.Password,                            
                             Name_Role = j.Role_Name
                         });
                     }
@@ -237,9 +271,9 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }      
-        public bool UpdateAccount(string User_Account, string Name_Account, string Salary,string Phone, string Adress, string PassWord, string Name_Role)
+        public bool UpdateAccount(string User_Account, string Name_Account, string Salary,string Phone, string Adress, string Name_Role)
         {
-            PBL3Entities db = new PBL3Entities();
+            PBL3Entities db = new PBL3Entities();           
             Account s = db.Accounts.Where(p => p.UserName == User_Account).FirstOrDefault();
             if (db.Accounts.Any(p => p.UserName == User_Account))
             {
@@ -248,7 +282,7 @@ namespace PBL3CodeDemo.BLL
                 s.Salary = Salary;
                 s.Phone_Number= Phone;
                 s.UserName = User_Account;
-                s.Password = PassWord;
+                s.Password = Hash("123");
                 if (Name_Role == "Quản lý" || Name_Role=="1")
                 {
                     s.ID_Role = 1;
@@ -260,15 +294,27 @@ namespace PBL3CodeDemo.BLL
                 if (Name_Role == "Nhân viên" || Name_Role == "3")
                 {
                     s.ID_Role = 3;
-                }
-              
+                }             
                 db.Accounts.AddOrUpdate(s);
                 db.SaveChanges();
                 return true;
             }
             else return false;
-
-
+        }
+        public bool UpdateAccount_PassWord(string User_Account, string PassWord)
+        {
+            PBL3Entities db = new PBL3Entities();
+            Account s = db.Accounts.Where(p => p.UserName == User_Account).FirstOrDefault();
+            if (db.Accounts.Any(p => p.UserName == User_Account))
+            {
+               
+                s.Password = Hash(PassWord);
+                
+                db.Accounts.AddOrUpdate(s);
+                db.SaveChanges();
+                return true;
+            }
+            else return false;
         }
         public bool DeleteAccount(string User_Account)
         {
@@ -276,12 +322,7 @@ namespace PBL3CodeDemo.BLL
             Account s = db.Accounts.Where(p => p.UserName == User_Account).FirstOrDefault();
             if (db.Accounts.Any(p => p.UserName == User_Account))
             {
-                s.Address ="";
-                s.Name = "";
-                s.Salary = "";
-                s.UserName = "";
-                s.Password = "";
-                s.ID_Role = 0;                
+                         
                 s.Flag = false;
                 db.Accounts.AddOrUpdate(s);
                 db.SaveChanges();
@@ -289,11 +330,26 @@ namespace PBL3CodeDemo.BLL
             }
             else return false;
         }
+         string Hash(string input)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
         public bool CheckAcount(string User_Account, string PassWord_Account)
         {
             PBL3Entities db = new PBL3Entities();
-            Account s = db.Accounts.Where(p => p.UserName == User_Account).FirstOrDefault();
-            if (db.Accounts.Any(p => p.UserName == User_Account && p.Password ==PassWord_Account))
+
+            PassWord_Account = Hash(PassWord_Account);
+            Account s = db.Accounts.Where(p => p.UserName == User_Account && p.Flag == true).FirstOrDefault();
+            if (db.Accounts.Any(p => p.UserName == User_Account && p.Password ==PassWord_Account && p.Flag == true))
             {
                 return true;
             }
@@ -302,7 +358,7 @@ namespace PBL3CodeDemo.BLL
         public string SetNameAcount(string user)
         {   
             PBL3Entities db= new PBL3Entities();
-            var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
+            var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
             string rol="";
             if(s.ID_Role== 1)
             {
@@ -322,28 +378,28 @@ namespace PBL3CodeDemo.BLL
         public string SetAcountName(string user)
         {
             PBL3Entities db = new PBL3Entities();
-            var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
+            var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
             
             return  s.Name ;
         }
         public string SetAcountAddress(string user)
         {
             PBL3Entities db = new PBL3Entities();
-            var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
+            var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
 
             return s.Address;
         }
         public string SetAcountPhone(string user)
         {
             PBL3Entities db = new PBL3Entities();
-            var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
+            var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
 
             return s.Phone_Number;
         }
         public string SetAcountSalary(string user)
         {
             PBL3Entities db = new PBL3Entities();
-            var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
+            var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
 
             return s.Salary;
         }
@@ -351,7 +407,7 @@ namespace PBL3CodeDemo.BLL
         public int CheckAcount_Role(string user)
         {
             PBL3Entities db = new PBL3Entities();
-            var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
+            var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
             return Convert.ToInt32( s.ID_Role.Value);
         }
     }
