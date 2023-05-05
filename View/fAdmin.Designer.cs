@@ -327,15 +327,7 @@
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(373, 49);
-            // txbCatogory
-            // 
-            this.txbCatogory.Location = new System.Drawing.Point(151, 11);
-            this.txbCatogory.Margin = new System.Windows.Forms.Padding(4);
-            this.txbCatogory.Name = "txbCatogory";
-            this.txbCatogory.Size = new System.Drawing.Size(221, 22);
-            this.txbCatogory.TabIndex = 2;
-            // 
-            this.txbCatogory.TabIndex = 2;
+
             // 
             // label10
             // 
@@ -508,14 +500,14 @@
             // 
             this.cbb_role.FormattingEnabled = true;
             this.cbb_role.Items.AddRange(new object[] {
-            "Quản lý",
+            "Quản lý", });
             this.cbb_role.Location = new System.Drawing.Point(152, 11);
             this.cbb_role.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_role.Location = new System.Drawing.Point(151, 16);
             this.cbb_role.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbb_role.Name = "cbb_role";
             this.cbb_role.Size = new System.Drawing.Size(221, 24);
-            this.cbb_role.TabIndex = 1;
+            this.cbb_role.TabIndex = 1; 
             // 
             // label8
             // 
@@ -526,7 +518,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(137, 21);
             this.label8.TabIndex = 0;
-            this.label7.Text = "Mật Khẩu:";
+
             // 
             // panel5
             // 
