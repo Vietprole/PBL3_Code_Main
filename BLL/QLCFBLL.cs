@@ -418,8 +418,6 @@ namespace PBL3CodeDemo.BLL
             PBL3Entities db = new PBL3Entities();
             var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
             return Convert.ToInt32( s.ID_Role.Value);
-            var s = db.Accounts.Where(p => p.UserName == user).FirstOrDefault();
-            return Convert.ToInt32(s.ID_Role.Value);
         }
         public List<TableDataGridView> LoadTable_Button()
         {
