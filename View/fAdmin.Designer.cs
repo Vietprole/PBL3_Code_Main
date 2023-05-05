@@ -49,7 +49,6 @@
             this.dataGridViewTable = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txbCatogory = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.txbPriceProduct = new System.Windows.Forms.TextBox();
@@ -97,6 +96,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateStar = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.cbbCategory = new System.Windows.Forms.ComboBox();
+            this.txbRevenue = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -186,7 +188,7 @@
             this.checkBoxStatus.Location = new System.Drawing.Point(149, 16);
             this.checkBoxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxStatus.Name = "checkBoxStatus";
-            this.checkBoxStatus.Size = new System.Drawing.Size(82, 20);
+            this.checkBoxStatus.Size = new System.Drawing.Size(86, 21);
             this.checkBoxStatus.TabIndex = 1;
             this.checkBoxStatus.Text = "Có người";
             this.checkBoxStatus.UseVisualStyleBackColor = true;
@@ -319,20 +321,20 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.txbCatogory);
+            this.panel9.Controls.Add(this.cbbCategory);
             this.panel9.Controls.Add(this.label10);
             this.panel9.Location = new System.Drawing.Point(645, 166);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(373, 49);
-            this.panel9.TabIndex = 32;
-            // 
             // txbCatogory
             // 
             this.txbCatogory.Location = new System.Drawing.Point(151, 11);
             this.txbCatogory.Margin = new System.Windows.Forms.Padding(4);
             this.txbCatogory.Name = "txbCatogory";
             this.txbCatogory.Size = new System.Drawing.Size(221, 22);
+            this.txbCatogory.TabIndex = 2;
+            // 
             this.txbCatogory.TabIndex = 2;
             // 
             // label10
@@ -422,6 +424,7 @@
             this.btnSearchProduct.TabIndex = 28;
             this.btnSearchProduct.Text = "Tìm";
             this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // btnDelProduct
             // 
@@ -433,6 +436,7 @@
             this.btnDelProduct.TabIndex = 27;
             this.btnDelProduct.Text = "Xóa";
             this.btnDelProduct.UseVisualStyleBackColor = true;
+            this.btnDelProduct.Click += new System.EventHandler(this.btnDelProduct_Click);
             // 
             // btnEditProduct
             // 
@@ -444,6 +448,7 @@
             this.btnEditProduct.TabIndex = 26;
             this.btnEditProduct.Text = "Sửa";
             this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
             // btnAddProduct
             // 
@@ -455,6 +460,7 @@
             this.btnAddProduct.TabIndex = 25;
             this.btnAddProduct.Text = "Thêm";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // dataGridViewProduct
             // 
@@ -491,9 +497,9 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.cbb_role);
-            this.panel7.Controls.Add(this.label8);
             this.panel7.Location = new System.Drawing.Point(643, 321);
+            this.panel7.Location = new System.Drawing.Point(643, 366);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(373, 46);
             this.panel7.TabIndex = 22;
@@ -503,10 +509,10 @@
             this.cbb_role.FormattingEnabled = true;
             this.cbb_role.Items.AddRange(new object[] {
             "Quản lý",
-            "Thu ngân",
-            "Nhân viên"});
             this.cbb_role.Location = new System.Drawing.Point(152, 11);
             this.cbb_role.Margin = new System.Windows.Forms.Padding(4);
+            this.cbb_role.Location = new System.Drawing.Point(151, 16);
+            this.cbb_role.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbb_role.Name = "cbb_role";
             this.cbb_role.Size = new System.Drawing.Size(221, 24);
             this.cbb_role.TabIndex = 1;
@@ -520,7 +526,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(137, 21);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Loại tài khoản:";
+            this.label7.Text = "Mật Khẩu:";
             // 
             // panel5
             // 
@@ -750,8 +756,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1027, 495);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Doanh Thu";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -786,6 +790,8 @@
             this.chart1.Size = new System.Drawing.Size(765, 326);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
+            // 
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnThongKe
             // 
@@ -837,7 +843,15 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1035, 524);
-            this.tabControl1.TabIndex = 0;
+            // cbbCategory
+            // 
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.Location = new System.Drawing.Point(149, 14);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(224, 24);
+            this.cbbCategory.TabIndex = 1;
+            // 
+            this.label15.Text = "Tổng Doanh Thu";
             // 
             // fAdmin
             // 
@@ -906,7 +920,6 @@
         private System.Windows.Forms.DataGridView dataGridViewTable;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txbCatogory;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TextBox txbPriceProduct;
@@ -958,5 +971,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txbRevenue;
+        private System.Windows.Forms.ComboBox cbbCategory;
     }
 }
