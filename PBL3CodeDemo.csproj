@@ -64,9 +64,11 @@
     <Compile Include="DTO\Bill.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BillRevenue.cs" />
     <Compile Include="DTO\Bill_Detail.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Bill_DetailDatagridview.cs" />
     <Compile Include="DTO\Category.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
@@ -93,6 +95,9 @@
     <Compile Include="DTO\Role.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\sysdiagram.cs">
+      <DependentUpon>QLCF.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\Table.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
@@ -114,6 +119,12 @@
     </Compile>
     <Compile Include="View\fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fBill_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fBill_Detail.Designer.cs">
+      <DependentUpon>fBill_Detail.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
@@ -137,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fBill_Detail.resx">
+      <DependentUpon>fBill_Detail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

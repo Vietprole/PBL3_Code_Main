@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace PBL3CodeDemo.BLL
@@ -24,6 +26,20 @@ namespace PBL3CodeDemo.BLL
                     Value = i.ID_Table,
                     Text = i.Position.ToString()
                     
+                });
+            }
+            return result;
+        }
+        public List<CBB_Item> GetCBB_TableName()
+        {
+            List<CBB_Item> result = new List<CBB_Item>();
+            foreach (Table i in Return_Table())
+            {
+                result.Add(new CBB_Item
+                {
+                    Value = i.ID_Table,
+                    Text = "Bàn "+ i.ID_Table.ToString()
+
                 });
             }
             return result;
@@ -108,6 +124,144 @@ namespace PBL3CodeDemo.BLL
             
             
         }
+        public List<Bill_Detail> Return_Bill_Detail()
+        {
+            PBL3Entities db = new PBL3Entities();
+            return db.Bill_Detail.Where(p=>p.Flag==true).ToList();
+        }
+        
+        public string SetNameTableByIDBill( int idBill)
+        {
+            PBL3Entities db = new PBL3Entities();
+            var n = db.Bills.Where(p=>p.ID_Bill == idBill).FirstOrDefault();
+            
+            return "Bàn " + n.ID_Table;
+        }
+        public bool CheckStatusByIdBll( int idBill)
+        {
+            PBL3Entities db = new PBL3Entities();
+            var s = db.Bills.Where(p => p.ID_Bill == idBill).FirstOrDefault();
+            return Convert.ToBoolean( s.Pay_Status);
+        }
+        public string SetDateOrderByIDBill(int idBill)
+        {
+            PBL3Entities db = new PBL3Entities();
+            var s = db.Bills.Where(p => p.ID_Bill == idBill).FirstOrDefault();
+            return Convert.ToString( s.Order_Day);
+        }
+        public string SetTimeDBill(int idBill)
+        {
+            PBL3Entities db = new PBL3Entities();
+            var s = db.Bills.Where(p => p.ID_Bill == idBill).FirstOrDefault();
+            return s.Order_Time.ToString();
+        }
+        public void Add_Food(int idbill, string foodName)
+        {
+            PBL3Entities db = new PBL3Entities();
+            var detail = db.Bill_Detail.FirstOrDefault();
+            var s = db.Products.Where(p=>p.Name==foodName && p.Flag==true).FirstOrDefault();
+            var b = db.Bills.Where(p => p.ID_Bill == idbill).FirstOrDefault();
+            detail.ID_Product = s.ID_Product;
+            detail.ID_Bill = idbill;
+            detail.Flag = true;
+            db.Bill_Detail.Add(detail);
+            b.Price += s.Price;
+            
+            db.Bills.AddOrUpdate(b);
+            db.SaveChanges();
+        }
+        public void Delete_Food(int idbill, string foodName)
+        {
+            PBL3Entities db = new PBL3Entities();
+            
+            var s = db.Products.Where(p => p.Name == foodName && p.Flag ==true ).FirstOrDefault();
+
+            var detail = db.Bill_Detail.Where(p=>p.ID_Product == s.ID_Product && p.ID_Bill == idbill).FirstOrDefault();
+
+            detail.Flag = false;
+            db.Bill_Detail.AddOrUpdate(detail);
+            var b = db.Bills.Where(p => p.ID_Bill == idbill && p.Flag==true).FirstOrDefault();
+            b.Price -= s.Price;
+            db.Bills.AddOrUpdate(b);
+            db.SaveChanges();
+        }
+        public string SetTotalBill(int idbill)
+        {
+            PBL3Entities db = new PBL3Entities();
+            int sumprice = 0;
+            foreach (Bill i in Return_Bill())
+            {
+                foreach (Bill_Detail j in Return_Bill_Detail())
+                {
+                    foreach (Product z in Return_Product())
+                    {
+                       if(idbill == i.ID_Bill && i.ID_Bill == j.ID_Bill&& j.ID_Product == z.ID_Product )
+                      sumprice= sumprice+ Convert.ToInt32( z.Price ) * Convert.ToInt32(j.Quantity);
+                       
+                    }
+                }
+            }
+            return sumprice.ToString();
+        }
+        public bool UpdateBill(int idbill,string txbTotal_Bill, string DateOrder, string txbTimeOrder, string cbb_Table, bool radioButtonTrue)
+        {
+            PBL3Entities db = new PBL3Entities();
+            var bil = db.Bills.Where(p => p.Flag == true && p.ID_Bill==idbill).FirstOrDefault();
+             
+            
+            if (db.Bills.Any(p => p.Flag == true && p.ID_Bill == idbill))
+            {
+                bil.Price =Convert.ToInt32( txbTotal_Bill);
+                bil.Order_Day = DateTime.ParseExact(DateOrder, "M/d/yyyy", CultureInfo.InvariantCulture);
+                TimeSpan timeSpan = TimeSpan.Parse(txbTimeOrder);
+                DateTime dateTime = DateTime.Today.Add(timeSpan);
+                // bil.Order_Time= ;
+                bil.Pay_Status = radioButtonTrue;
+                bil.ID_Table = Int32.Parse(new String(cbb_Table.Where(Char.IsDigit).ToArray()));
+                db.Bills.AddOrUpdate(bil);
+                db.SaveChanges();
+                return true;
+            }
+            else 
+                return false;
+        }
+        public List<Bill_DetailDatagridview> GetDGV_Bill_Detail(int id_Bill)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<Bill_DetailDatagridview> result = new List<Bill_DetailDatagridview>();
+            foreach (Bill i in Return_Bill())
+            {
+                foreach (Bill_Detail j in Return_Bill_Detail())
+                {   
+                    foreach(Product z in Return_Product())
+                    {
+                        int sumprice = 0;
+                        if (Convert.ToInt32(j.Quantity) > 0)
+                        {
+                            for (int x = 1; x <= Convert.ToInt32(j.Quantity); x++)
+                            {
+                                sumprice += Convert.ToInt32(z.Price);
+                            }
+                        }
+                        if ( id_Bill == j.ID_Bill && j.ID_Product == z.ID_Product && id_Bill == i.ID_Bill)
+                            {
+                                result.Add(new Bill_DetailDatagridview
+                                {
+                                    NameSP = z.Name,
+                                    Quantity = Convert.ToInt32(j.Quantity),
+                                    unit_price = Convert.ToInt32(z.Price),
+                                    Total = sumprice
+                                });
+
+                            }
+                        
+                        
+                    }
+                }
+            }
+            return result;
+        }
+
         public List<AccountDatagridview> GetDGV_Account_Search(string Account_Name)
         {
             PBL3Entities db = new PBL3Entities();
@@ -129,6 +283,25 @@ namespace PBL3CodeDemo.BLL
                                 Name_Role = j.Role_Name
                             });
                     }
+                }
+            }
+            return result;
+        }
+        public List<BillRevenue> GetDGV_Bill_Revenuve( DateTime dateTime)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<BillRevenue> result = new List<BillRevenue>();
+            foreach (Bill i in Return_Bill())
+            {
+                if ( i.Order_Day == dateTime && i.Flag == true && i.Pay_Status== true)
+                {
+                    result.Add(new BillRevenue
+                    {
+                       IdBill = i.ID_Bill,
+                       Hour = i.Order_Time.ToString(),
+                       SumPrice=Convert.ToInt32( SetTotalBill(i.ID_Bill)),
+                       NameTable= "Bàn " + i.ID_Table.ToString()
+                    });
                 }
             }
             return result;
@@ -197,7 +370,7 @@ namespace PBL3CodeDemo.BLL
             {
                 result.Add(new Revenue
                 {
-                    day = pair.Key.ToString("dd/MM"),
+                    day = pair.Key.ToString("dd/MM/yyyy"),
                     price = Convert.ToInt32( pair.Value)
                 }) ;
             }

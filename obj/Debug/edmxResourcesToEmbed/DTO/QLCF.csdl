@@ -42,6 +42,7 @@
     <Property Name="Quantity" Type="Int32" />
     <NavigationProperty Name="Bill" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill_Detail" ToRole="Bill" />
     <NavigationProperty Name="Product" Relationship="Self.FK__Bill_Deta__ID_Pr__47DBAE45" FromRole="Bill_Detail" ToRole="Product" />
+    <Property Name="Flag" Type="Boolean" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -71,6 +72,7 @@
     <Property Name="ID_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Role_Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__ID_Role__398D8EEE" FromRole="Role" ToRole="Account" />
+    <Property Name="Flag" Type="Boolean" />
   </EntityType>
   <EntityType Name="Table">
     <Key>
@@ -186,5 +188,16 @@
       <End Role="Category" EntitySet="Categories" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="PBL3Model.sysdiagram" />
   </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
 </Schema>

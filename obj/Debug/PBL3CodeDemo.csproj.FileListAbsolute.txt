@@ -77,3 +77,4 @@ D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.csproj.CoreCompileInputs.cache
 D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.csproj.CopyComplete
 D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.exe
 D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.pdb
+D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.View.fBill_Detail.resources
