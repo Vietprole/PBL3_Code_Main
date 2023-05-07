@@ -113,9 +113,6 @@ namespace PBL3CodeDemo.View
             cbb_role.Text = "";
             txbUserName.Text = "";
         }
-
-
-
         bool CheckForm_Account()
         {
             return (txbUserName.Text == "" || txbDisplayName.Text == "" || txbPhone.Text == "" || txbAdress.Text == "" ||  txbSalary.Text == "" || cbb_role.Text == "");
@@ -257,6 +254,11 @@ namespace PBL3CodeDemo.View
             }
             cbbCategory.SelectedIndex = 0;
         }
+        bool CheckForm_Product()
+        {
+            return (txbNameProduct.Text == "" || txbPriceProduct.Text == "");
+
+        }
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
@@ -290,6 +292,7 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
             bll.Delete_Product(ID);
             LoadDGV_Product();
+            MessageBox.Show("Đã xóa thành công !");
         }
 
         private void btnSearchProduct_Click(object sender, EventArgs e)
