@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -210,7 +210,7 @@
             this.checkBoxStatus.Location = new System.Drawing.Point(149, 16);
             this.checkBoxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxStatus.Name = "checkBoxStatus";
-            this.checkBoxStatus.Size = new System.Drawing.Size(86, 21);
+            this.checkBoxStatus.Size = new System.Drawing.Size(82, 20);
             this.checkBoxStatus.TabIndex = 1;
             this.checkBoxStatus.Text = "Có người";
             this.checkBoxStatus.UseVisualStyleBackColor = true;
@@ -745,7 +745,7 @@
             this.cbb_role.Location = new System.Drawing.Point(151, 16);
             this.cbb_role.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_role.Name = "cbb_role";
-            this.cbb_role.Size = new System.Drawing.Size(221, 25);
+            this.cbb_role.Size = new System.Drawing.Size(221, 24);
             this.cbb_role.TabIndex = 1;
             // 
             // label8
@@ -796,7 +796,7 @@
             this.label_DateBill.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_DateBill.Location = new System.Drawing.Point(442, 86);
             this.label_DateBill.Name = "label_DateBill";
-            this.label_DateBill.Size = new System.Drawing.Size(0, 19);
+            this.label_DateBill.Size = new System.Drawing.Size(0, 24);
             this.label_DateBill.TabIndex = 21;
             // 
             // datagridViewBillThongKe
@@ -804,6 +804,7 @@
             this.datagridViewBillThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridViewBillThongKe.Location = new System.Drawing.Point(347, 120);
             this.datagridViewBillThongKe.Name = "datagridViewBillThongKe";
+            this.datagridViewBillThongKe.RowHeadersWidth = 51;
             this.datagridViewBillThongKe.Size = new System.Drawing.Size(391, 207);
             this.datagridViewBillThongKe.TabIndex = 20;
             this.datagridViewBillThongKe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridViewBillThongKe_CellClick);
@@ -814,7 +815,7 @@
             this.label15.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(26, 366);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(136, 19);
+            this.label15.Size = new System.Drawing.Size(166, 24);
             this.label15.TabIndex = 19;
             this.label15.Text = "Tổng Doanh Thu:";
             // 
@@ -829,16 +830,16 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(-12, 92);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(369, 271);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
@@ -1075,6 +1076,7 @@
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fAdmin_FormClosed);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel8.ResumeLayout(false);

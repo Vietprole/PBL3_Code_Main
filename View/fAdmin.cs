@@ -19,6 +19,10 @@ namespace PBL3CodeDemo.View
     public partial class fAdmin : Form
     {
         public int Old_ID_Table { get; set; }
+        public delegate void ReLoadFTableManager();
+        public ReLoadFTableManager reloadTable { get; set; }
+        public ReLoadFTableManager reloadCBBCategory { get; set; }
+
         public fAdmin()
         {
             InitializeComponent();
@@ -357,5 +361,12 @@ namespace PBL3CodeDemo.View
              id_Bill = Convert.ToInt32(datagridViewBillThongKe.Rows[i].Cells[0].Value);
         }
         int id_Bill=-1;
+
+        private void fAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            reloadTable();
+            reloadCBBCategory();
+        }
     }
 }

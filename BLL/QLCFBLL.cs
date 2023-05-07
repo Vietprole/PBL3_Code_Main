@@ -655,9 +655,9 @@ namespace PBL3CodeDemo.BLL
             //MessageBox.Show(id_Bill.ToString());
             return db.Bill_Detail.Where(p => p.ID_Bill == id_Bill).Select(p => p).ToList();
         }
-        public List<BillDetail_DataGridView> Get_Bill_Detail(int id_Table)
+        public List<Bill_DetailDatagridview> Get_Bill_Detail(int id_Table)
         {
-            List<BillDetail_DataGridView> result = new List<BillDetail_DataGridView>();
+            List<Bill_DetailDatagridview> result = new List<Bill_DetailDatagridview>();
             int id_Bill = 0;
             foreach (Bill i in Return_Bill())
             {
@@ -673,11 +673,11 @@ namespace PBL3CodeDemo.BLL
                 //MessageBox.Show(i.ID_Product.ToString());
                 if (i.Flag == true)
                 {
-                    result.Add(new BillDetail_DataGridView
+                    result.Add(new Bill_DetailDatagridview
                     {
-                        Food_Name = Return_ProductName(Convert.ToInt32(i.ID_Product)),
+                        NameSP = Return_ProductName(Convert.ToInt32(i.ID_Product)),
                         Quantity = Convert.ToInt32(i.Quantity),
-                        Price = Return_ProductPrice(Convert.ToInt32(i.ID_Product))
+                        unit_price = Return_ProductPrice(Convert.ToInt32(i.ID_Product))
                         
                 });
                 }

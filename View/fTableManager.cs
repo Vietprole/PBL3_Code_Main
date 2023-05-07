@@ -86,7 +86,8 @@ namespace PBL3CodeDemo.View
             if (bll.CheckAcount_Role(useName) == 1)
             {
                 View.fAdmin a = new View.fAdmin();
-               
+                a.reloadTable += new fAdmin.ReLoadFTableManager(LoadTable);
+                a.reloadCBBCategory += new fAdmin.ReLoadFTableManager(setCBBCategory);
                 a.ShowDialog();
             }
             else
@@ -114,7 +115,6 @@ namespace PBL3CodeDemo.View
                     {
                         bll.CheckOut_Bill(idTable, Price);
                         ShowBill(idTable);
-                        flbTable.Controls.Clear();
                         bll.SetTableStatus(idTable, 0);
                         LoadTable();
                         nmDisCount.Value = 0;
@@ -141,6 +141,7 @@ namespace PBL3CodeDemo.View
     
         private void LoadTable()
         {
+            flbTable.Controls.Clear();
             string s;
             List<TableDataGridView> list_table = bll.LoadTable_Button();
             int count = list_table.Count;
@@ -172,14 +173,14 @@ namespace PBL3CodeDemo.View
         private void ShowBill(int id_Table)
         {
             int Price = 0;
-            List<BillDetail_DataGridView> list_Bill = new List<BillDetail_DataGridView>();
+            List<Bill_DetailDatagridview> list_Bill = new List<Bill_DetailDatagridview>();
             list_Bill = bll.Get_Bill_Detail(id_Table);
             if(list_Bill.Count > 0)
             {
                 BillTable_DGV.DataSource = list_Bill;
-                foreach (BillDetail_DataGridView bill_details in list_Bill)
+                foreach (Bill_DetailDatagridview bill_details in list_Bill)
                 {
-                    Price += bill_details.Price;
+                    Price += bill_details.unit_price;
                 }
                 textBoxPrice.Text = Price.ToString();
             }
@@ -206,7 +207,6 @@ namespace PBL3CodeDemo.View
             bll.Add_Food_ToTable(idTable, foodName, Quantity);
             bll.SetTableStatus(idTable, 1);
             ShowBill(idTable);
-            flbTable.Controls.Clear();
             LoadTable();
         }
 
@@ -222,12 +222,11 @@ namespace PBL3CodeDemo.View
                 {
                     foreach (DataGridViewRow row in BillTable_DGV.SelectedRows)
                     {
-                        foodName = row.Cells["Food_Name"].Value.ToString();
+                        foodName = row.Cells["NameSP"].Value.ToString();
                         Quantity = Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
                         bll.Delete_BillDetails(idTable, foodName, Quantity);
                     }
                     ShowBill(idTable);
-                    flbTable.Controls.Clear();
                     LoadTable();
                 }
                 else if (result == DialogResult.No)
@@ -243,14 +242,14 @@ namespace PBL3CodeDemo.View
         private void ResetPrice(int id_Table)
         {
             int Price = 0;
-            List<BillDetail_DataGridView> list_Bill = new List<BillDetail_DataGridView>();
+            List<Bill_DetailDatagridview> list_Bill = new List<Bill_DetailDatagridview>();
             list_Bill = bll.Get_Bill_Detail(id_Table);
             if (list_Bill.Count > 0)
             {
                 BillTable_DGV.DataSource = list_Bill;
-                foreach (BillDetail_DataGridView bill_details in list_Bill)
+                foreach (Bill_DetailDatagridview bill_details in list_Bill)
                 {
-                    Price += bill_details.Price;
+                    Price += bill_details.unit_price;
                 }
                 textBoxPrice.Text = Price.ToString();
             }
