@@ -53,13 +53,15 @@ namespace PBL3CodeDemo.View
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View.fAccountProfile a = new View.fAccountProfile( useName, passWord);    
+            View.fAccountProfile a = new View.fAccountProfile( useName, passWord);
+           
             a.ShowDialog();
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.ChangePassWord a = new ChangePassWord(useName, passWord);
+           
             a.ShowDialog();
         }
 
@@ -84,7 +86,8 @@ namespace PBL3CodeDemo.View
             if (bll.CheckAcount_Role(useName) == 1)
             {
                 View.fAdmin a = new View.fAdmin();
-                a.Show();
+               
+                a.ShowDialog();
             }
             else
             {

@@ -79,6 +79,16 @@
           <Property Name="Role_Name" Type="nvarchar" MaxLength="60" />
           <Property Name="Flag" Type="bit" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Table">
           <Key>
             <PropertyRef Name="ID_Table" />
@@ -88,7 +98,7 @@
           <Property Name="Position" Type="nvarchar" MaxLength="40" />
           <Property Name="Flag" Type="bit" />
         </EntityType>
-        <Association Name="FK__Account__ID_Role__267ABA7A">
+        <Association Name="FK__Account__ID_Role__398D8EEE">
           <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="Account" Type="Self.Account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -100,7 +110,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__ID_Account__2B3F6F97">
+        <Association Name="FK__Bill__ID_Account__3E52440B">
           <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -112,7 +122,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__ID_Table__2C3393D0">
+        <Association Name="FK__Bill__ID_Table__3F466844">
           <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -124,7 +134,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill_Deta__ID_Bi__33D4B598">
+        <Association Name="FK__Bill_Deta__ID_Bi__46E78A0C">
           <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
           <End Role="Bill_Detail" Type="Self.Bill_Detail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -136,7 +146,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill_Deta__ID_Pr__34C8D9D1">
+        <Association Name="FK__Bill_Deta__ID_Pr__47DBAE45">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Bill_Detail" Type="Self.Bill_Detail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -148,7 +158,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__ID_Cate__30F848ED">
+        <Association Name="FK__Product__ID_Cate__440B1D61">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -168,28 +178,29 @@
           <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Account__ID_Role__267ABA7A" Association="Self.FK__Account__ID_Role__267ABA7A">
+          <AssociationSet Name="FK__Account__ID_Role__398D8EEE" Association="Self.FK__Account__ID_Role__398D8EEE">
             <End Role="Role" EntitySet="Role" />
             <End Role="Account" EntitySet="Account" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__ID_Account__2B3F6F97" Association="Self.FK__Bill__ID_Account__2B3F6F97">
+          <AssociationSet Name="FK__Bill__ID_Account__3E52440B" Association="Self.FK__Bill__ID_Account__3E52440B">
             <End Role="Account" EntitySet="Account" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__ID_Table__2C3393D0" Association="Self.FK__Bill__ID_Table__2C3393D0">
+          <AssociationSet Name="FK__Bill__ID_Table__3F466844" Association="Self.FK__Bill__ID_Table__3F466844">
             <End Role="Table" EntitySet="Table" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill_Deta__ID_Bi__33D4B598" Association="Self.FK__Bill_Deta__ID_Bi__33D4B598">
+          <AssociationSet Name="FK__Bill_Deta__ID_Bi__46E78A0C" Association="Self.FK__Bill_Deta__ID_Bi__46E78A0C">
             <End Role="Bill" EntitySet="Bill" />
             <End Role="Bill_Detail" EntitySet="Bill_Detail" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill_Deta__ID_Pr__34C8D9D1" Association="Self.FK__Bill_Deta__ID_Pr__34C8D9D1">
+          <AssociationSet Name="FK__Bill_Deta__ID_Pr__47DBAE45" Association="Self.FK__Bill_Deta__ID_Pr__47DBAE45">
             <End Role="Product" EntitySet="Product" />
             <End Role="Bill_Detail" EntitySet="Bill_Detail" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__ID_Cate__30F848ED" Association="Self.FK__Product__ID_Cate__30F848ED">
+          <AssociationSet Name="FK__Product__ID_Cate__440B1D61" Association="Self.FK__Product__ID_Cate__440B1D61">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
@@ -386,8 +397,19 @@
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="PBL3Model.sysdiagram" />
           <EntitySet Name="Inventories" EntityType="PBL3Model.Inventory" />
         </EntityContainer>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="Inventory">
           <Key>
             <PropertyRef Name="ID_Item" />
@@ -481,6 +503,17 @@
                 <ScalarProperty Name="ID_Table" ColumnName="ID_Table" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PBL3Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
