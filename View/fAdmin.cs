@@ -262,27 +262,51 @@ namespace PBL3CodeDemo.View
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
-            Product product = new Product
+
+            if (CheckForm_Product() == false)
             {
-                Name = txbNameProduct.Text,
-                Price = int.Parse(txbPriceProduct.Text),
-                ID_Category = cbbCategory.SelectedIndex + 1
-            };
-            bll.Add_Product(product);
+                Product product = new Product
+                {
+                    Name = txbNameProduct.Text,
+                    Price = int.Parse(txbPriceProduct.Text),
+                    ID_Category = cbbCategory.SelectedIndex + 1,
+                    Flag = true
+                };
+                if (bll.Add_Product(product)) 
+                    MessageBox.Show("Đã thêm món ăn thành công !", "Thông báo!");
+            else
+                MessageBox.Show("Thêm Thất Bại", "Thông báo!");
+            }
+            else
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo!");
+            }
             LoadDGV_Product();
         }
 
         private void btnEditProduct_Click(object sender, EventArgs e)
         {
-            Product product = new Product
-            {
-                ID_Product = int.Parse(dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString()),
-                Name = txbNameProduct.Text,
-                Price = int.Parse(txbPriceProduct.Text),
-                ID_Category = cbbCategory.SelectedIndex + 1
-            };
             QLCFBLL bll = new QLCFBLL();
-            bll.Edit_Product(product);
+
+            if (CheckForm_Product() == false)
+            {
+                Product product = new Product
+                {
+                    ID_Product = int.Parse(dataGridViewProduct.SelectedRows[0].Cells[0].Value.ToString()),
+                    Name = txbNameProduct.Text,
+                    Price = int.Parse(txbPriceProduct.Text),
+                    ID_Category = cbbCategory.SelectedIndex + 1,
+                    Flag = true
+                };
+                if (bll.Edit_Product(product))
+                    MessageBox.Show("Đã cập nhật món ăn thành công !", "Thông báo!");
+                else
+                    MessageBox.Show("Cập nhật Thất Bại", "Thông báo!");
+            }
+            else
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo!");
+            }
             LoadDGV_Product();
         }
 

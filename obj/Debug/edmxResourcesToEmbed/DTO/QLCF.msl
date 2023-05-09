@@ -80,5 +80,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="PBL3Model.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID_Item" ColumnName="ID_Item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

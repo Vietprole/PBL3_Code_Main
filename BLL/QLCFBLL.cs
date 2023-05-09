@@ -625,22 +625,32 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public void Add_Product(Product product)
+        public bool Add_Product(Product product)
         {
-            using (PBL3Entities db = new PBL3Entities())
+            PBL3Entities db = new PBL3Entities();
+            if (db.Products.Any(p => p.Name == product.Name))
+            {
+                return false;
+            }
+            else
             {
                 db.Products.Add(product);
                 db.SaveChanges();
+                return true;
             }
         }
-        public void Edit_Product(Product product)
+        public bool Edit_Product(Product product)
         {
-            using (PBL3Entities db = new PBL3Entities())
+            PBL3Entities db = new PBL3Entities();
+
+            if (db.Products.Any(p => p.ID_Product == product.ID_Product))
             {
                 var s = db.Products.Where(p => p.ID_Product == product.ID_Product).FirstOrDefault();
                 s = product;
                 db.SaveChanges();
+                return true;
             }
+            else return false;
         }
         public void Delete_Product(int ID_Product)
         {
