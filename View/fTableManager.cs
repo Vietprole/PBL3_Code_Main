@@ -16,33 +16,36 @@ namespace PBL3CodeDemo.View
 {
     public partial class fTableManager : Form
     {
-        public fTableManager( string use, string pass)
+        string useName;
+        string passWord;
+        QLCFBLL bll = new QLCFBLL();
+        void setNameForm(string user)
         {
-            InitializeComponent();
-            useName = use;
-            passWord = pass;
-            setNameForm(useName);
-            LoadTable();
-            setCBBCategory();
-            textBoxPrice.Text = "0";
+            this.Text = bll.SetNameAcount(user);
         }
         void setCBBCategory()
         {
             QLCFBLL bll = new QLCFBLL();
 
-            cbCategory.DataSource = bll.GetCBB_Category().ToArray(); 
+            cbCategory.DataSource = bll.GetCBB_Category().ToArray();
         }
         void setCBBFood(int ID_Category)
         {
             QLCFBLL bll = new QLCFBLL();
             cbFood.DataSource = bll.GetCBB_Food(ID_Category).ToArray();
-           
+        }
+        public fTableManager( string use, string pass)
+        {
+            InitializeComponent();
+            useName = use;
+            passWord = pass;
+            setNameForm(useName);            
+            setCBBCategory();
+            setNameForm(useName);
+            LoadTable();
+            textBoxPrice.Text = "0";
         }
        
-       
-        string useName;
-        string passWord;
-
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn Muốn Thoát Ứng Dụng?", "Thông báo!", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -68,26 +71,21 @@ namespace PBL3CodeDemo.View
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn Muốn Đăng Xuất Ứng Dụng?", "Thông báo!", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
+            { 
                 this.Hide();
+                fLogin a = new fLogin();
+                a.ShowDialog();
+                
             }
-
-            fLogin a = new fLogin();
-            a.ShowDialog();
-            this.Close();
+            
         }
-        QLCFBLL bll = new QLCFBLL();
-        void setNameForm(string user)
-        {
-            this.Text = bll.SetNameAcount(user);
-        }
+       
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (bll.CheckAcount_Role(useName) == 1)
             {
-                View.fAdmin a = new View.fAdmin();
-                a.reloadTable += new fAdmin.ReLoadFTableManager(LoadTable);
-                a.reloadCBBCategory += new fAdmin.ReLoadFTableManager(setCBBCategory);
+                View.fAdmin a = new View.fAdmin(useName);
+               
                 a.ShowDialog();
             }
             else
@@ -168,6 +166,21 @@ namespace PBL3CodeDemo.View
                 flbTable.Controls.Add(btn);
             }
            
+        }
+
+        private void thanhToánCtrlShiftTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // điền chức năng Thanh Toán
+        }
+
+        private void chuyểnBànCtrlShiftTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Chức năng Chuyển bàn
+        }
+
+        private void ctrlShiftTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //chức năng thêm món
         }
         private void ShowBill(int id_Table)
         {

@@ -5,8 +5,10 @@ using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.AxHost;
@@ -45,6 +47,8 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
+       
+        
 
         public List<CBB_Item> GetCBB_Category()
         {
@@ -130,20 +134,16 @@ namespace PBL3CodeDemo.BLL
             PBL3Entities db = new PBL3Entities();
             return db.Bill_Detail.Where(p => p.Flag == true).ToList();
         }
-
-        public string SetNameTableByIDBill(int idBill)
+        
+        public int SetIDTableByIDBill( int idBill)
         {
             PBL3Entities db = new PBL3Entities();
-            var n = db.Bills.Where(p => p.ID_Bill == idBill).FirstOrDefault();
-
-            return "Bàn " + n.ID_Table;
+            var n = db.Bills.Where(p=>p.ID_Bill == idBill && p.Flag== true).FirstOrDefault();
+            
+            return Convert.ToInt32( n.ID_Table);
         }
-        public bool CheckStatusByIdBll(int idBill)
-        {
-            PBL3Entities db = new PBL3Entities();
-            var s = db.Bills.Where(p => p.ID_Bill == idBill).FirstOrDefault();
-            return Convert.ToBoolean(s.Pay_Status);
-        }
+       
+      
         public string SetDateOrderByIDBill(int idBill)
         {
             PBL3Entities db = new PBL3Entities();
@@ -216,8 +216,6 @@ namespace PBL3CodeDemo.BLL
                 bil.Order_Day = DateTime.ParseExact(DateOrder, "M/d/yyyy", CultureInfo.InvariantCulture);
                 TimeSpan timeSpan = TimeSpan.Parse(txbTimeOrder);
                 DateTime dateTime = DateTime.Today.Add(timeSpan);
-                // bil.Order_Time= ;
-                bil.Pay_Status = radioButtonTrue;
                 bil.ID_Table = Int32.Parse(new String(cbb_Table.Where(Char.IsDigit).ToArray()));
                 db.Bills.AddOrUpdate(bil);
                 db.SaveChanges();
@@ -345,9 +343,12 @@ namespace PBL3CodeDemo.BLL
             PBL3Entities db = new PBL3Entities();
             List<Revenue> result = new List<Revenue>();
             Dictionary<DateTime, int> dailySales = new Dictionary<DateTime, int>();
-            foreach (Bill i in Return_Bill())
-            {
-                if (startDate.Value.Date <= i.Order_Day.Value.Date && i.Order_Day.Value.Date <= endDate.Value.Date)
+            List<Bill> bills = Return_Bill().OrderBy(b => b.Order_Day).ToList();
+            foreach (Bill i in bills)
+            {   
+
+
+                if (startDate.Value.Date <= i.Order_Day.Value.Date && i.Order_Day.Value.Date <= endDate.Value.Date && i.Pay_Status == true)
                 {
                     DateTime orderDay = Convert.ToDateTime(i.Order_Day);
                     int sales = Convert.ToInt32(i.Price);
@@ -363,14 +364,17 @@ namespace PBL3CodeDemo.BLL
                 }
 
             }
+            
             foreach (KeyValuePair<DateTime, int> pair in dailySales)
-            {
+            {   
+                
                 result.Add(new Revenue
                 {
                     day = pair.Key.ToString("dd/MM/yyyy"),
                     price = Convert.ToInt32(pair.Value)
                 });
             }
+          
 
             return result;
         }
@@ -524,10 +528,8 @@ namespace PBL3CodeDemo.BLL
         public bool CheckAcount(string User_Account, string PassWord_Account)
         {
             PBL3Entities db = new PBL3Entities();
-
-            PassWord_Account = Hash(PassWord_Account);
-            Account s = db.Accounts.Where(p => p.UserName == User_Account && p.Flag == true).FirstOrDefault();
-            if (db.Accounts.Any(p => p.UserName == User_Account && p.Password == PassWord_Account && p.Flag == true))
+            PassWord_Account = Hash(PassWord_Account);            
+            if (db.Accounts.Any(p => p.UserName == User_Account && p.Password ==PassWord_Account && p.Flag == true))
             {
                 return true;
             }

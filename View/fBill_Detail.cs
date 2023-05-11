@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,34 +16,30 @@ namespace PBL3CodeDemo.View
 {
     public partial class fBill_Detail : Form
     {
-        public fBill_Detail()
-        {
-            InitializeComponent();
-        }
-         int ID;
+        int ID;
+        string nameSP = "";
         QLCFBLL bll = new QLCFBLL();
-        public fBill_Detail(int id_bill)
-        {
+        string useName;
+        public fBill_Detail(int id_bill, string use)
+        {   
+            useName = use;
             InitializeComponent();
             loadDatagridviewBillDetail(id_bill);
             
             setCBBCategory();
-            setCBBTableByIdBill(id_bill);
-            
+           
+            setCBB_Tablet( bll.SetIDTableByIDBill(id_bill));
             setDateOrderByIDBill(id_bill);
             setTimeOrderByIDBill(id_bill);
-            CheckStatus(id_bill);
+           
             ID = id_bill;
         }
-        void setCBB_NameTable()
+       
+        void setCBB_Tablet(int i)
         {
             QLCFBLL bll = new QLCFBLL();
             cbb_Table.Items.AddRange(bll.GetCBB_TableName().ToArray());
-            cbb_Table.SelectedIndex = 0;
-        }
-        void setCBBTableByIdBill(int idbll)
-        {
-            cbb_Table.Text= bll.SetNameTableByIDBill(idbll);
+            cbb_Table.Text = "Bàn " + i + "";
         }
         void setDateOrderByIDBill(int idbll)
         {
@@ -53,13 +50,17 @@ namespace PBL3CodeDemo.View
             txbTimeOrder.Text = bll.SetTimeDBill(idbll);
         }
         void setTotalByIDBill(int idBill)
-        {
+        {          
             txbTotal_Bill.Text = bll.SetTotalBill(idBill);
         }
         void loadDatagridviewBillDetail(int id_bill)
         {
             dataGridView_BillDetail.DataSource = bll.GetDGV_Bill_Detail(id_bill);
             setTotalByIDBill(id_bill);
+            dataGridView_BillDetail.Columns[0].HeaderText = "Tên Nước";
+            dataGridView_BillDetail.Columns[1].HeaderText = "Số Lượng";
+            dataGridView_BillDetail.Columns[2].HeaderText = "Đơn Giá";
+            dataGridView_BillDetail.Columns[3].HeaderText = "Thành Tiền";
 
         }
         void setCBBCategory()
@@ -74,17 +75,7 @@ namespace PBL3CodeDemo.View
             cbFood.DataSource = bll.GetCBB_Food(ID_Category).ToArray();
 
         }
-        void CheckStatus(int idBill)
-        {
-            if (bll.CheckStatusByIdBll(idBill))
-            {
-                radioButtonTrue.Checked = true;
-            }
-            else
-            {
-                radioButtonfalse.Checked = true;
-            }
-        }
+        
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -109,7 +100,7 @@ namespace PBL3CodeDemo.View
             }
             txbTotal_Bill.Text = sum.ToString();
         }
-        string nameSP = "";
+       
         private void button1_Click(object sender, EventArgs e)
         {
            
@@ -142,17 +133,17 @@ namespace PBL3CodeDemo.View
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            fAdmin f = new fAdmin();
+            fAdmin f = new fAdmin(useName);
             this.Hide();
             f.ShowDialog();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (bll.UpdateBill(ID,txbTotal_Bill.Text,DateOrder.Text, txbTimeOrder.Text, cbb_Table.Text, radioButtonTrue.Checked))
+            if (bll.UpdateBill(ID,txbTotal_Bill.Text,DateOrder.Text, txbTimeOrder.Text, cbb_Table.Text))
             {
                 this.Hide();
-                fAdmin f = new fAdmin();
+                fAdmin f = new fAdmin(useName);
                 f.ShowDialog();
             }
             else
@@ -167,9 +158,6 @@ namespace PBL3CodeDemo.View
             nameSP = Convert.ToString(dataGridView_BillDetail.Rows[i].Cells[0].Value);
         }
 
-        private void cbb_Table_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
     }
 }

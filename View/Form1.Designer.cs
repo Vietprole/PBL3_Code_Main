@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Login = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.checkBoxShowPass = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +99,7 @@
             // Login
             // 
             this.Login.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login.Location = new System.Drawing.Point(119, 164);
+            this.Login.Location = new System.Drawing.Point(83, 177);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(154, 37);
             this.Login.TabIndex = 4;
@@ -109,7 +110,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(317, 164);
+            this.btnExit.Location = new System.Drawing.Point(304, 180);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(154, 37);
             this.btnExit.TabIndex = 5;
@@ -117,11 +118,24 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // checkBoxShowPass
+            // 
+            this.checkBoxShowPass.AutoSize = true;
+            this.checkBoxShowPass.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxShowPass.Location = new System.Drawing.Point(214, 129);
+            this.checkBoxShowPass.Name = "checkBoxShowPass";
+            this.checkBoxShowPass.Size = new System.Drawing.Size(179, 27);
+            this.checkBoxShowPass.TabIndex = 6;
+            this.checkBoxShowPass.Text = "Hiển thị mật khẩu";
+            this.checkBoxShowPass.UseVisualStyleBackColor = true;
+            this.checkBoxShowPass.CheckedChanged += new System.EventHandler(this.checkBoxShowPass_CheckedChanged);
+            // 
             // fLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 227);
+            this.ClientSize = new System.Drawing.Size(503, 234);
+            this.Controls.Add(this.checkBoxShowPass);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.panel2);
@@ -134,6 +148,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,6 +162,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Login;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.CheckBox checkBoxShowPass;
     }
 }
 
