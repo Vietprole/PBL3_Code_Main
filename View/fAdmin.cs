@@ -22,10 +22,11 @@ namespace PBL3CodeDemo.View
         public delegate void ReLoadFTableManager();
         public ReLoadFTableManager reloadTable { get; set; }
         public ReLoadFTableManager reloadCBBCategory { get; set; }
-
-        public fAdmin()
+        private fTableManager _fTableManager;
+        public fAdmin(/*fTableManager fTableManager*/)
         {
             InitializeComponent();
+            //_fTableManager = fTableManager;
             setCBB_ViTriBan();
             LoadDGV_Table();
             LoadDGV_Account();
@@ -59,10 +60,10 @@ namespace PBL3CodeDemo.View
             if (e.RowIndex >= 0) // Make sure the click was on a row and not on the column header
             {
                 DataGridViewRow row = dataGridViewTable.Rows[e.RowIndex];
-                txbNameTable.Text = row.Cells[0].Value.ToString();
-                checkBoxStatus.Checked = Convert.ToBoolean(row.Cells[1].Value); // Transfer data of second column to TextBox2
-                cbbPosition.Text = row.Cells[2].Value.ToString(); // Transfer data of third column to TextBox3
-                Old_ID_Table = int.Parse(txbNameTable.Text);
+                txbNameTable.Text = row.Cells[1].Value.ToString();
+                checkBoxStatus.Checked = Convert.ToBoolean(row.Cells[2].Value); // Transfer data of second column to TextBox2
+                cbbPosition.Text = row.Cells[3].Value.ToString(); // Transfer data of third column to TextBox3
+                Old_ID_Table = Convert.ToInt32(row.Cells[0].Value);
             }
         }
 
@@ -83,22 +84,12 @@ namespace PBL3CodeDemo.View
         private void btnEditTable_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
-            int New_ID_Table;
+            string Table_Name= txbNameTable.Text;
             bool Status = checkBoxStatus.Checked;
             string Position = cbbPosition.Text;
-            bool isNumber = int.TryParse(txbNameTable.Text, out New_ID_Table);
-            if (isNumber)// check xem tên bàn có chuyển được sang số nguyên hay không
+            if (bll.UpdateTable(Old_ID_Table, Table_Name, Status, Position)) //Update Table thành công
             {
-                New_ID_Table = int.Parse(txbNameTable.Text);
-                if (bll.UpdateTable(Old_ID_Table, New_ID_Table, Status, Position)) //Update Table thành công
-                {
-                    MessageBox.Show("Đã cập nhật bàn thành công !");
-                }
-                else MessageBox.Show("Tên bàn này đã bị trùng, vui lòng chọn tên khác !");
-            }
-            else
-            {
-                MessageBox.Show("Tên bàn phải là một số nguyên, vui lòng nhập lại !");
+                MessageBox.Show("Đã cập nhật bàn thành công !");
             }
             LoadDGV_Table();
         }
@@ -365,8 +356,24 @@ namespace PBL3CodeDemo.View
         private void fAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
 
-            reloadTable();
-            reloadCBBCategory();
+            //reloadTable();
+            //reloadCBBCategory();
+            //if (e.CloseReason == CloseReason.UserClosing)
+            //{
+            //    _fTableManager.Refresh(); // or any other method to reload Form1
+            //}
+        }
+        private void btnAddTable_Click_1(object sender, EventArgs e)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            string Table_Name = txbNameTable.Text;
+            bool Status = checkBoxStatus.Checked;
+            string Position = cbbPosition.Text;
+            if (bll.Add_Table(Table_Name, Status, Position)) //Update Table thành công
+            {
+                MessageBox.Show("Đã cập nhật bàn thành công !");
+            }
+            LoadDGV_Table();
         }
     }
 }

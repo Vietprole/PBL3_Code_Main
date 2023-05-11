@@ -144,7 +144,6 @@ namespace PBL3CodeDemo.View
             flbTable.Controls.Clear();
             string s;
             List<TableDataGridView> list_table = bll.LoadTable_Button();
-            int count = list_table.Count;
             foreach (TableDataGridView table in list_table)
             {
                 Button btn = new Button()
@@ -156,7 +155,7 @@ namespace PBL3CodeDemo.View
                     s = "Có người";
                 }
                 else s = "Trống";
-                btn.Text = "Bàn " + table.ID_Table.ToString() + Environment.NewLine + Environment.NewLine + s;
+                btn.Text = table.Name.ToString() + Environment.NewLine + Environment.NewLine + s;
                 btn.Click += btn_Click;
                 btn.Tag = table;
                 switch (table.Status.ToString())

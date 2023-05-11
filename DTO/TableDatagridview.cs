@@ -9,6 +9,7 @@ namespace PBL3CodeDemo.DTO
     public class TableDataGridView
     {
         public int ID_Table { get; set; }
+        public string Name { get; set; }
         public bool Status { get; set; }
         public string Position { get; set; }
         /*public TableDataGridView(int ID_Table, bool Status, string Position)
