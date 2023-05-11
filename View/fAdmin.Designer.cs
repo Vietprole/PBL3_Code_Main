@@ -138,7 +138,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 400);
+            this.tabPage3.Size = new System.Drawing.Size(1016, 428);
             this.tabPage3.TabIndex = 6;
             this.tabPage3.Text = "Bàn";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             // 
             this.panel8.Controls.Add(this.cbbPosition);
             this.panel8.Controls.Add(this.label9);
-            this.panel8.Location = new System.Drawing.Point(482, 142);
+            this.panel8.Location = new System.Drawing.Point(728, 136);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(280, 41);
             this.panel8.TabIndex = 32;
@@ -175,7 +175,7 @@
             // 
             this.panel10.Controls.Add(this.checkBoxStatus);
             this.panel10.Controls.Add(this.label11);
-            this.panel10.Location = new System.Drawing.Point(484, 100);
+            this.panel10.Location = new System.Drawing.Point(730, 94);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(280, 41);
             this.panel10.TabIndex = 31;
@@ -204,7 +204,7 @@
             // 
             this.panel11.Controls.Add(this.txbNameTable);
             this.panel11.Controls.Add(this.label12);
-            this.panel11.Location = new System.Drawing.Point(484, 61);
+            this.panel11.Location = new System.Drawing.Point(730, 55);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(280, 38);
             this.panel11.TabIndex = 30;
@@ -228,7 +228,7 @@
             // 
             // txbSearchTable
             // 
-            this.txbSearchTable.Location = new System.Drawing.Point(484, 18);
+            this.txbSearchTable.Location = new System.Drawing.Point(730, 12);
             this.txbSearchTable.Name = "txbSearchTable";
             this.txbSearchTable.Size = new System.Drawing.Size(159, 20);
             this.txbSearchTable.TabIndex = 29;
@@ -236,7 +236,7 @@
             // btnSearchTbale
             // 
             this.btnSearchTbale.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchTbale.Location = new System.Drawing.Point(649, 12);
+            this.btnSearchTbale.Location = new System.Drawing.Point(895, 6);
             this.btnSearchTbale.Name = "btnSearchTbale";
             this.btnSearchTbale.Size = new System.Drawing.Size(113, 37);
             this.btnSearchTbale.TabIndex = 28;
@@ -247,7 +247,7 @@
             // btnDelTable
             // 
             this.btnDelTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelTable.Location = new System.Drawing.Point(353, 351);
+            this.btnDelTable.Location = new System.Drawing.Point(561, 383);
             this.btnDelTable.Name = "btnDelTable";
             this.btnDelTable.Size = new System.Drawing.Size(113, 37);
             this.btnDelTable.TabIndex = 27;
@@ -258,7 +258,7 @@
             // btnEditTable
             // 
             this.btnEditTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditTable.Location = new System.Drawing.Point(184, 351);
+            this.btnEditTable.Location = new System.Drawing.Point(259, 381);
             this.btnEditTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditTable.Name = "btnEditTable";
             this.btnEditTable.Size = new System.Drawing.Size(113, 37);
@@ -270,7 +270,7 @@
             // btnAddTable
             // 
             this.btnAddTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTable.Location = new System.Drawing.Point(18, 351);
+            this.btnAddTable.Location = new System.Drawing.Point(28, 381);
             this.btnAddTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.Size = new System.Drawing.Size(113, 37);
@@ -284,7 +284,7 @@
             this.dataGridViewTable.Location = new System.Drawing.Point(5, 6);
             this.dataGridViewTable.Name = "dataGridViewTable";
             this.dataGridViewTable.RowHeadersWidth = 51;
-            this.dataGridViewTable.Size = new System.Drawing.Size(473, 330);
+            this.dataGridViewTable.Size = new System.Drawing.Size(717, 363);
             this.dataGridViewTable.TabIndex = 23;
             this.dataGridViewTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTable_CellClick);
             // 
@@ -302,7 +302,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(768, 400);
+            this.tabPage4.Size = new System.Drawing.Size(1016, 428);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Món Ăn";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -311,7 +311,7 @@
             // 
             this.panel9.Controls.Add(this.txbCatogory);
             this.panel9.Controls.Add(this.label10);
-            this.panel9.Location = new System.Drawing.Point(484, 135);
+            this.panel9.Location = new System.Drawing.Point(730, 144);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(280, 40);
             this.panel9.TabIndex = 32;
@@ -337,7 +337,7 @@
             // 
             this.panel12.Controls.Add(this.txbPriceProduct);
             this.panel12.Controls.Add(this.label13);
-            this.panel12.Location = new System.Drawing.Point(484, 95);
+            this.panel12.Location = new System.Drawing.Point(730, 104);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(280, 41);
             this.panel12.TabIndex = 31;
@@ -363,7 +363,7 @@
             // 
             this.panel13.Controls.Add(this.txbNameProduct);
             this.panel13.Controls.Add(this.label14);
-            this.panel13.Location = new System.Drawing.Point(484, 55);
+            this.panel13.Location = new System.Drawing.Point(730, 64);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(280, 38);
             this.panel13.TabIndex = 30;
@@ -387,7 +387,7 @@
             // 
             // txbSearchProduct
             // 
-            this.txbSearchProduct.Location = new System.Drawing.Point(484, 18);
+            this.txbSearchProduct.Location = new System.Drawing.Point(730, 27);
             this.txbSearchProduct.Name = "txbSearchProduct";
             this.txbSearchProduct.Size = new System.Drawing.Size(159, 20);
             this.txbSearchProduct.TabIndex = 29;
@@ -395,7 +395,7 @@
             // btnSearchProduct
             // 
             this.btnSearchProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchProduct.Location = new System.Drawing.Point(649, 12);
+            this.btnSearchProduct.Location = new System.Drawing.Point(895, 21);
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Size = new System.Drawing.Size(113, 37);
             this.btnSearchProduct.TabIndex = 28;
@@ -405,7 +405,7 @@
             // btnDelProduct
             // 
             this.btnDelProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelProduct.Location = new System.Drawing.Point(345, 351);
+            this.btnDelProduct.Location = new System.Drawing.Point(572, 381);
             this.btnDelProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelProduct.Name = "btnDelProduct";
             this.btnDelProduct.Size = new System.Drawing.Size(113, 37);
@@ -416,7 +416,7 @@
             // btnEditProduct
             // 
             this.btnEditProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProduct.Location = new System.Drawing.Point(182, 351);
+            this.btnEditProduct.Location = new System.Drawing.Point(273, 381);
             this.btnEditProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(113, 37);
@@ -427,7 +427,7 @@
             // btnAddProduct
             // 
             this.btnAddProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddProduct.Location = new System.Drawing.Point(17, 351);
+            this.btnAddProduct.Location = new System.Drawing.Point(17, 381);
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(113, 37);
@@ -441,7 +441,7 @@
             this.dataGridViewProduct.Location = new System.Drawing.Point(5, 6);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.RowHeadersWidth = 51;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(473, 330);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(719, 359);
             this.dataGridViewProduct.TabIndex = 23;
             // 
             // tabPage2
@@ -461,7 +461,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 400);
+            this.tabPage2.Size = new System.Drawing.Size(1016, 428);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tài Khoản";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -470,7 +470,7 @@
             // 
             this.panel7.Controls.Add(this.cbb_role);
             this.panel7.Controls.Add(this.label8);
-            this.panel7.Location = new System.Drawing.Point(482, 257);
+            this.panel7.Location = new System.Drawing.Point(712, 266);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(280, 37);
             this.panel7.TabIndex = 22;
@@ -501,7 +501,7 @@
             // 
             this.panel5.Controls.Add(this.txbPhone);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(481, 218);
+            this.panel5.Location = new System.Drawing.Point(711, 227);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(280, 37);
             this.panel5.TabIndex = 20;
@@ -527,7 +527,7 @@
             // 
             this.panel4.Controls.Add(this.txbAdress);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(481, 176);
+            this.panel4.Location = new System.Drawing.Point(711, 185);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(280, 41);
             this.panel4.TabIndex = 19;
@@ -553,7 +553,7 @@
             // 
             this.panel3.Controls.Add(this.txbSalary);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(482, 135);
+            this.panel3.Location = new System.Drawing.Point(712, 144);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(280, 40);
             this.panel3.TabIndex = 18;
@@ -579,7 +579,7 @@
             // 
             this.panel2.Controls.Add(this.txbDisplayName);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(482, 95);
+            this.panel2.Location = new System.Drawing.Point(712, 104);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 41);
             this.panel2.TabIndex = 17;
@@ -605,7 +605,7 @@
             // 
             this.panel1.Controls.Add(this.txbUserName);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(482, 55);
+            this.panel1.Location = new System.Drawing.Point(712, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 38);
             this.panel1.TabIndex = 16;
@@ -629,7 +629,7 @@
             // 
             // txbSearchAccount
             // 
-            this.txbSearchAccount.Location = new System.Drawing.Point(482, 18);
+            this.txbSearchAccount.Location = new System.Drawing.Point(712, 27);
             this.txbSearchAccount.Name = "txbSearchAccount";
             this.txbSearchAccount.Size = new System.Drawing.Size(160, 20);
             this.txbSearchAccount.TabIndex = 15;
@@ -637,7 +637,7 @@
             // btnSearchAccount
             // 
             this.btnSearchAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchAccount.Location = new System.Drawing.Point(648, 12);
+            this.btnSearchAccount.Location = new System.Drawing.Point(878, 21);
             this.btnSearchAccount.Name = "btnSearchAccount";
             this.btnSearchAccount.Size = new System.Drawing.Size(113, 37);
             this.btnSearchAccount.TabIndex = 14;
@@ -648,7 +648,7 @@
             // btnDelAccount
             // 
             this.btnDelAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelAccount.Location = new System.Drawing.Point(344, 345);
+            this.btnDelAccount.Location = new System.Drawing.Point(568, 374);
             this.btnDelAccount.Name = "btnDelAccount";
             this.btnDelAccount.Size = new System.Drawing.Size(113, 37);
             this.btnDelAccount.TabIndex = 13;
@@ -659,19 +659,19 @@
             // btnEditAccount
             // 
             this.btnEditAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAccount.Location = new System.Drawing.Point(182, 345);
+            this.btnEditAccount.Location = new System.Drawing.Point(303, 374);
             this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(113, 37);
             this.btnEditAccount.TabIndex = 12;
-            this.btnEditAccount.Text = "Sửa";
+            this.btnEditAccount.Text = "Cập Nhật";
             this.btnEditAccount.UseVisualStyleBackColor = true;
             this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
             // btnAddAccount
             // 
             this.btnAddAccount.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAccount.Location = new System.Drawing.Point(19, 345);
+            this.btnAddAccount.Location = new System.Drawing.Point(20, 374);
             this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(113, 37);
@@ -686,7 +686,7 @@
             this.dataGridViewAcount.Location = new System.Drawing.Point(3, 6);
             this.dataGridViewAcount.Name = "dataGridViewAcount";
             this.dataGridViewAcount.RowHeadersWidth = 51;
-            this.dataGridViewAcount.Size = new System.Drawing.Size(473, 330);
+            this.dataGridViewAcount.Size = new System.Drawing.Size(702, 348);
             this.dataGridViewAcount.TabIndex = 0;
             this.dataGridViewAcount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAcount_CellClick);
             // 
@@ -705,7 +705,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 400);
+            this.tabPage1.Size = new System.Drawing.Size(1016, 428);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Doanh Thu";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -713,7 +713,7 @@
             // btnCheckBill
             // 
             this.btnCheckBill.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckBill.Location = new System.Drawing.Point(470, 356);
+            this.btnCheckBill.Location = new System.Drawing.Point(778, 363);
             this.btnCheckBill.Name = "btnCheckBill";
             this.btnCheckBill.Size = new System.Drawing.Size(172, 29);
             this.btnCheckBill.TabIndex = 22;
@@ -725,7 +725,7 @@
             // 
             this.label_DateBill.AutoSize = true;
             this.label_DateBill.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_DateBill.Location = new System.Drawing.Point(442, 86);
+            this.label_DateBill.Location = new System.Drawing.Point(693, 90);
             this.label_DateBill.Name = "label_DateBill";
             this.label_DateBill.Size = new System.Drawing.Size(0, 19);
             this.label_DateBill.TabIndex = 21;
@@ -733,9 +733,9 @@
             // datagridViewBillThongKe
             // 
             this.datagridViewBillThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridViewBillThongKe.Location = new System.Drawing.Point(347, 120);
+            this.datagridViewBillThongKe.Location = new System.Drawing.Point(680, 123);
             this.datagridViewBillThongKe.Name = "datagridViewBillThongKe";
-            this.datagridViewBillThongKe.Size = new System.Drawing.Size(391, 207);
+            this.datagridViewBillThongKe.Size = new System.Drawing.Size(332, 207);
             this.datagridViewBillThongKe.TabIndex = 20;
             this.datagridViewBillThongKe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridViewBillThongKe_CellClick);
             // 
@@ -743,7 +743,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(26, 366);
+            this.label15.Location = new System.Drawing.Point(39, 377);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(136, 19);
             this.label15.TabIndex = 19;
@@ -751,7 +751,7 @@
             // 
             // txbRevenue
             // 
-            this.txbRevenue.Location = new System.Drawing.Point(162, 368);
+            this.txbRevenue.Location = new System.Drawing.Point(192, 376);
             this.txbRevenue.Name = "txbRevenue";
             this.txbRevenue.ReadOnly = true;
             this.txbRevenue.Size = new System.Drawing.Size(120, 20);
@@ -764,13 +764,13 @@
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(-12, 92);
+            this.chart1.Location = new System.Drawing.Point(-27, 93);
             this.chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(369, 271);
+            this.chart1.Size = new System.Drawing.Size(731, 277);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
             this.chart1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseClick);
@@ -778,7 +778,7 @@
             // btnThongKe
             // 
             this.btnThongKe.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.Location = new System.Drawing.Point(607, 26);
+            this.btnThongKe.Location = new System.Drawing.Point(810, 22);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(131, 29);
             this.btnThongKe.TabIndex = 16;
@@ -788,7 +788,7 @@
             // 
             // dateEnd
             // 
-            this.dateEnd.Location = new System.Drawing.Point(385, 31);
+            this.dateEnd.Location = new System.Drawing.Point(562, 30);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(200, 20);
             this.dateEnd.TabIndex = 15;
@@ -797,7 +797,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(273, 32);
+            this.label1.Location = new System.Drawing.Point(379, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 19);
             this.label1.TabIndex = 14;
@@ -805,7 +805,7 @@
             // 
             // dateStar
             // 
-            this.dateStar.Location = new System.Drawing.Point(30, 30);
+            this.dateStar.Location = new System.Drawing.Point(92, 31);
             this.dateStar.Name = "dateStar";
             this.dateStar.Size = new System.Drawing.Size(200, 20);
             this.dateStar.TabIndex = 13;
@@ -819,14 +819,14 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 426);
+            this.tabControl1.Size = new System.Drawing.Size(1024, 454);
             this.tabControl1.TabIndex = 0;
             // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1048, 478);
             this.Controls.Add(this.tabControl1);
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

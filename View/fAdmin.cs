@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -18,24 +19,20 @@ namespace PBL3CodeDemo.View
 {
     public partial class fAdmin : Form
     {
-        public int Old_ID_Table { get; set; }
-        public fAdmin()
+        CultureInfo culture = new CultureInfo("vi-VN");
+        int id_Bill = -1;
+        void LoadRevenue(DateTime dateStar, DateTime dateEnd)
         {
-            InitializeComponent();
-            setCBB_ViTriBan();
-            LoadDGV_Table();
-            LoadDGV_Account();
             QLCFBLL bll = new QLCFBLL();
-            chart1.Series.Clear();
             int SumPrice = 0;
             chart1.Series.Clear();
             chart1.Series.Add("Doanh Thu");
-            foreach (Revenue i in bll.Get_Revenue(Convert.ToDateTime("01/01/2023"), dateEnd.Value.Date))
+            foreach (Revenue i in bll.Get_Revenue(dateStar, dateEnd))
             {
                 chart1.Series["Doanh Thu"].Points.AddXY(i.day, i.price);
                 SumPrice += i.price;
             }
-            txbRevenue.Text = SumPrice.ToString();
+            txbRevenue.Text = SumPrice.ToString("c", culture);
         }
         void setCBB_ViTriBan()
         {
@@ -48,6 +45,52 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
             dataGridViewTable.DataSource = bll.GetDGV_Table();
         }
+        void LoadDGV_Account()
+        {
+            QLCFBLL bll = new QLCFBLL();
+
+            dataGridViewAcount.DataSource = bll.GetDGV_Account();
+            dataGridViewAcount.Columns[0].HeaderText = "Tên Đăng Nhập";
+            dataGridViewAcount.Columns[1].HeaderText = "Tên Hiển Thị";
+            dataGridViewAcount.Columns[2].HeaderText = "Lương";
+            dataGridViewAcount.Columns[3].HeaderText = "Địa Chỉ";
+            dataGridViewAcount.Columns[4].HeaderText = "Số Điện Thoại";
+            dataGridViewAcount.Columns[5].HeaderText = "Loại Tài Khoản";
+            txbDisplayName.Text = "";
+            txbUserName.ReadOnly = false;
+
+            txbPhone.Text = "";
+            txbSalary.Text = "";
+            txbSearchAccount.Text = "";
+            txbAdress.Text = "";
+            cbb_role.Text = "";
+            txbUserName.Text = "";
+        }
+
+
+
+        bool CheckForm_Account()
+        {
+            return (txbUserName.Text == "" || txbDisplayName.Text == "" || txbPhone.Text == "" || txbAdress.Text == "" || txbSalary.Text == "" || cbb_role.Text == "");
+
+        }
+
+        public int Old_ID_Table { get; set; }
+         string user;
+        
+        public fAdmin( string userName)
+        {
+            user = userName;
+           
+            InitializeComponent();
+            setCBB_ViTriBan();
+            LoadDGV_Table();
+            LoadDGV_Account();
+            QLCFBLL bll = new QLCFBLL();
+            chart1.Series.Clear();
+            LoadRevenue(Convert.ToDateTime(" 01/01/2023"), dateEnd.Value.Date);           
+        }
+        
         private void dataGridViewTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Make sure the click was on a row and not on the column header
@@ -108,29 +151,7 @@ namespace PBL3CodeDemo.View
             LoadDGV_Table();
             MessageBox.Show("Đã xóa thành công !");
         }
-        void LoadDGV_Account()
-        {
-            QLCFBLL bll = new QLCFBLL();
-            dataGridViewAcount.DataSource = bll.GetDGV_Account();
-            txbDisplayName.Text = "";
-            txbUserName.ReadOnly = false;
-
-            txbPhone.Text = "";
-            txbSalary.Text = "";
-            txbSearchAccount.Text = "";
-            txbAdress.Text = "";
-            cbb_role.Text = "";
-            txbUserName.Text = "";
-        }
-
-
-
-        bool CheckForm_Account()
-        {
-            return (txbUserName.Text == "" || txbDisplayName.Text == "" || txbPhone.Text == "" || txbAdress.Text == "" || txbSalary.Text == "" || cbb_role.Text == "");
-
-        }
-
+        
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
@@ -169,7 +190,8 @@ namespace PBL3CodeDemo.View
             string Role = cbb_role.Text;
 
             if (CheckForm_Account() == false)
-            {
+            {   
+                
                 if (bll.UpdateAccount(User_Account, Name_Account, Salary, Phone, Adress, Role))
                     MessageBox.Show("Đã cập nhật tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 else
@@ -188,9 +210,15 @@ namespace PBL3CodeDemo.View
 
 
             if (CheckForm_Account() == false)
-            {
-                if (bll.DeleteAccount(txbUserName.Text))
+            {   if( user == txbUserName.Text)
+                {
+                    MessageBox.Show("Không thể xóa tài khoản đang đăng nhập!", "Thông báo");
+                }
+                else if (bll.DeleteAccount(txbUserName.Text))
+                {
                     MessageBox.Show("Xóa tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
+                }
+                    
                 else
                     MessageBox.Show("Xóa tài khoản Thất Bại", "Thông báo!");
             }
@@ -214,18 +242,10 @@ namespace PBL3CodeDemo.View
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            QLCFBLL bll = new QLCFBLL();
+            
             if (dateStar.Value.Date <= dateEnd.Value.Date)
             {
-                int SumPrice = 0;
-                chart1.Series.Clear();
-                chart1.Series.Add("Doanh Thu");
-                foreach (Revenue i in bll.Get_Revenue(dateStar.Value.Date, dateEnd.Value.Date))
-                {
-                    chart1.Series["Doanh Thu"].Points.AddXY(i.day, i.price);
-                    SumPrice += i.price;
-                }
-                txbRevenue.Text = SumPrice.ToString();
+               LoadRevenue(dateStar.Value.Date, dateEnd.Value.Date);
             }
             else
             {
@@ -252,16 +272,15 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
 
             HitTestResult result = chart1.HitTest(e.X, e.Y);
-            if (result.ChartElementType == ChartElementType.DataPoint)
-            {
-                string seriesName = result.Series.Name;
-                string day = result.Series.Points[result.PointIndex].AxisLabel;
-                if (seriesName == "Doanh Thu")
-                {                   
-                    datagridViewBillThongKe.DataSource = bll.GetDGV_Bill_Revenuve(DateTime.ParseExact(day, "d/M/yyyy", CultureInfo.InvariantCulture));
-                }
-                label_DateBill.Text =   "Danh sách hóa đơn ngày " + day;
-            }
+              
+            string day = result.Series.Points[result.PointIndex].AxisLabel;                
+            datagridViewBillThongKe.DataSource = bll.GetDGV_Bill_Revenuve(DateTime.ParseExact(day, "d/M/yyyy", CultureInfo.InvariantCulture));
+            datagridViewBillThongKe.Columns[0].HeaderText = "Mã Hóa Đơn";
+            datagridViewBillThongKe.Columns[1].HeaderText = "Giờ Thanh Toán";
+            datagridViewBillThongKe.Columns[2].HeaderText = "Tổng Giá";
+            datagridViewBillThongKe.Columns[3].HeaderText = "Tên Bàn";   
+            label_DateBill.Text =   "Danh sách hóa đơn ngày " + day;
+            
         }
 
         private void btnCheckBill_Click(object sender, EventArgs e)
@@ -272,7 +291,7 @@ namespace PBL3CodeDemo.View
                 MessageBox.Show("Vui lòng chọn hóa đơn!", "Thông báo");
             } else
             {
-                fBill_Detail f = new fBill_Detail(id_Bill);
+                fBill_Detail f = new fBill_Detail(id_Bill, user);
                 this.Hide();
                 f.ShowDialog();
             }    
@@ -283,6 +302,6 @@ namespace PBL3CodeDemo.View
             int i = datagridViewBillThongKe.CurrentRow.Index;
              id_Bill = Convert.ToInt32(datagridViewBillThongKe.Rows[i].Cells[0].Value);
         }
-        int id_Bill=-1;
+        
     }
 }

@@ -81,32 +81,47 @@
             this.ctrlShiftTToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.doanhMụcToolStripMenuItem.Name = "doanhMụcToolStripMenuItem";
-            this.doanhMụcToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.doanhMụcToolStripMenuItem.Text = "Doanh Mục";
+            this.doanhMụcToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.doanhMụcToolStripMenuItem.Text = "Chức Năng";
             // 
             // thanhToánCtrlShiftTToolStripMenuItem
             // 
             this.thanhToánCtrlShiftTToolStripMenuItem.Name = "thanhToánCtrlShiftTToolStripMenuItem";
-            this.thanhToánCtrlShiftTToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.thanhToánCtrlShiftTToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+            this.thanhToánCtrlShiftTToolStripMenuItem.ShowShortcutKeys = false;
+            this.thanhToánCtrlShiftTToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.thanhToánCtrlShiftTToolStripMenuItem.Text = "Thanh Toán      Ctrl + Shift + T";
+            this.thanhToánCtrlShiftTToolStripMenuItem.Click += new System.EventHandler(this.thanhToánCtrlShiftTToolStripMenuItem_Click);
             // 
             // chuyểnBànCtrlShiftTToolStripMenuItem
             // 
             this.chuyểnBànCtrlShiftTToolStripMenuItem.Name = "chuyểnBànCtrlShiftTToolStripMenuItem";
-            this.chuyểnBànCtrlShiftTToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.chuyểnBànCtrlShiftTToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.chuyểnBànCtrlShiftTToolStripMenuItem.ShowShortcutKeys = false;
+            this.chuyểnBànCtrlShiftTToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.chuyểnBànCtrlShiftTToolStripMenuItem.Text = "Chuyển Bàn     Ctrl + Shift + C";
+            this.chuyểnBànCtrlShiftTToolStripMenuItem.Click += new System.EventHandler(this.chuyểnBànCtrlShiftTToolStripMenuItem_Click);
             // 
             // ctrlShiftTToolStripMenuItem
             // 
             this.ctrlShiftTToolStripMenuItem.Name = "ctrlShiftTToolStripMenuItem";
-            this.ctrlShiftTToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.ctrlShiftTToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.A)));
+            this.ctrlShiftTToolStripMenuItem.ShowShortcutKeys = false;
+            this.ctrlShiftTToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.ctrlShiftTToolStripMenuItem.Text = "Thêm món        Ctrl + Shift + A";
+            this.ctrlShiftTToolStripMenuItem.Click += new System.EventHandler(this.ctrlShiftTToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.thoátToolStripMenuItem.Text = "Thoát               Ctrl + Shift + Q";
+            this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.E)));
+            this.thoátToolStripMenuItem.ShowShortcutKeys = false;
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.thoátToolStripMenuItem.Text = "Thoát               Ctrl + Shift + E";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // tàiKhoảnToolStripMenuItem
@@ -122,27 +137,35 @@
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.thôngTinTàiKhoảnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.X)));
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             this.thôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.thôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.Y)));
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.đăngXuấtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.Z)));
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.A)));
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);

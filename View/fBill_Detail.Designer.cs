@@ -52,17 +52,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.radioButtonTrue = new System.Windows.Forms.RadioButton();
-            this.radioButtonfalse = new System.Windows.Forms.RadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BillDetail)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView_BillDetail
@@ -243,11 +237,10 @@
             // cbb_Table
             // 
             this.cbb_Table.FormattingEnabled = true;
-            this.cbb_Table.Location = new System.Drawing.Point(123, 6);
+            this.cbb_Table.Location = new System.Drawing.Point(126, 6);
             this.cbb_Table.Name = "cbb_Table";
             this.cbb_Table.Size = new System.Drawing.Size(210, 21);
             this.cbb_Table.TabIndex = 4;
-            this.cbb_Table.SelectedIndexChanged += new System.EventHandler(this.cbb_Table_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -270,7 +263,7 @@
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(12, 479);
+            this.btnOK.Location = new System.Drawing.Point(12, 451);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(167, 25);
             this.btnOK.TabIndex = 23;
@@ -281,64 +274,13 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(296, 479);
+            this.btnExit.Location = new System.Drawing.Point(296, 451);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(167, 25);
             this.btnExit.TabIndex = 24;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Thanh Toán:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(376, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
-            this.label5.TabIndex = 3;
-            // 
-            // radioButtonTrue
-            // 
-            this.radioButtonTrue.AutoSize = true;
-            this.radioButtonTrue.Location = new System.Drawing.Point(123, 10);
-            this.radioButtonTrue.Name = "radioButtonTrue";
-            this.radioButtonTrue.Size = new System.Drawing.Size(93, 17);
-            this.radioButtonTrue.TabIndex = 4;
-            this.radioButtonTrue.TabStop = true;
-            this.radioButtonTrue.Text = "Đã thanh toán";
-            this.radioButtonTrue.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonfalse
-            // 
-            this.radioButtonfalse.AutoSize = true;
-            this.radioButtonfalse.Location = new System.Drawing.Point(244, 10);
-            this.radioButtonfalse.Name = "radioButtonfalse";
-            this.radioButtonfalse.Size = new System.Drawing.Size(104, 17);
-            this.radioButtonfalse.TabIndex = 5;
-            this.radioButtonfalse.TabStop = true;
-            this.radioButtonfalse.Text = "Chưa thanh toán";
-            this.radioButtonfalse.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.radioButtonfalse);
-            this.panel4.Controls.Add(this.radioButtonTrue);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(12, 427);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(451, 38);
-            this.panel4.TabIndex = 20;
             // 
             // fBill_Detail
             // 
@@ -348,7 +290,6 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label_DateBill);
@@ -359,6 +300,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView_BillDetail);
             this.Name = "fBill_Detail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thông tin chi tiết hóa đơn";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_BillDetail)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -369,8 +311,6 @@
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,10 +342,5 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txbTimeOrder;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButtonTrue;
-        private System.Windows.Forms.RadioButton radioButtonfalse;
-        private System.Windows.Forms.Panel panel4;
     }
 }

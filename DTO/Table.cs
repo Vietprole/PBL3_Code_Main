@@ -24,6 +24,7 @@ namespace PBL3CodeDemo.DTO
         public Nullable<bool> Status { get; set; }
         public string Position { get; set; }
         public Nullable<bool> Flag { get; set; }
+        public string Table_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }

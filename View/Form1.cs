@@ -44,8 +44,8 @@ namespace PBL3CodeDemo
                 MessageBox.Show("Vui lòng nhập thông tin Tài Khoản và Mật Khẩu!","Thông Báo");
             }
             else
-            {   
-                QLCFBLL bll = new QLCFBLL();
+             {   
+                 QLCFBLL bll = new QLCFBLL();
                 if (bll.CheckAcount(txbUserName.Text,txbPassWord.Text) == true)
                 {
                     View.fTableManager a = new View.fTableManager(txbUserName.Text, txbPassWord.Text);
@@ -59,6 +59,19 @@ namespace PBL3CodeDemo
 
                 
             }
+        }
+
+        private void checkBoxShowPass_CheckedChanged(object sender, EventArgs e)
+        {   
+            if(checkBoxShowPass.Checked == true)
+            {
+                txbPassWord.UseSystemPasswordChar = false;
+            }
+            else 
+            {
+                txbPassWord.UseSystemPasswordChar = true;
+            }
+            
         }
     }
 }
