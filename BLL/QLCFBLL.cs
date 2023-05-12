@@ -646,7 +646,10 @@ namespace PBL3CodeDemo.BLL
             if (db.Products.Any(p => p.ID_Product == product.ID_Product))
             {
                 var s = db.Products.Where(p => p.ID_Product == product.ID_Product).FirstOrDefault();
-                s = product;
+                s.Name = product.Name;
+                s.Price = product.Price;
+                s.ID_Category = product.ID_Category;
+                s.Flag = product.Flag;
                 db.SaveChanges();
                 return true;
             }
@@ -667,7 +670,7 @@ namespace PBL3CodeDemo.BLL
             List<ProductDatagridview> result = new List<ProductDatagridview>();
             foreach (Product i in Return_Product())
             {
-                if (i.ID_Product.ToString() == (Product_Name))
+                if (i.ID_Product.ToString().Contains(Product_Name))
                 {
                     result.Add(new ProductDatagridview
                     {
@@ -680,18 +683,18 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public List<InventoryItem> Return_Inventory()
+        public List<Item> Return_Item()
         {
             PBL3Entities db = new PBL3Entities();
-            return db.InventoryItems.Where(p => p.Flag == true).Select(p => p).ToList();
+            return db.Items.Where(p => p.Flag == true).Select(p => p).ToList();
         }
-        public List<InventoryItemDatagridview> GetDGV_Inventory()
+        public List<ItemDatagridview> GetDGV_Item()
         {
             PBL3Entities db = new PBL3Entities();
-            List<InventoryItemDatagridview> result = new List<InventoryItemDatagridview>();
-            foreach (InventoryItem i in Return_Inventory())
+            List<ItemDatagridview> result = new List<ItemDatagridview>();
+            foreach (Item i in Return_Item())
             {
-                result.Add(new InventoryItemDatagridview
+                result.Add(new ItemDatagridview
                 {
                     ID_Item = i.ID_Item,
                     Name = i.Name,
@@ -702,51 +705,55 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public bool Add_Inventory(InventoryItem InventoryItem)
+        public bool Add_Item(Item Item)
         {
             PBL3Entities db = new PBL3Entities();
-            if (db.InventoryItems.Any(p => p.Name == InventoryItem.Name))
+            if (db.Items.Any(p => p.Name == Item.Name))
             {
                 return false;
             }
             else
             {
-                db.InventoryItems.Add(InventoryItem);
+                db.Items.Add(Item);
                 db.SaveChanges();
                 return true;
             }
         }
-        public bool Edit_Inventory(InventoryItem InventoryItem)
+        public bool Edit_Item(Item item)
         {
             PBL3Entities db = new PBL3Entities();
 
-            if (db.InventoryItems.Any(p => p.ID_Item == InventoryItem.ID_Item))
+            if (db.Items.Any(p => p.ID_Item == item.ID_Item))
             {
-                var s = db.InventoryItems.Where(p => p.ID_Item == InventoryItem.ID_Item).FirstOrDefault();
-                s = InventoryItem;
+                var s = db.Items.Where(p => p.ID_Item == item.ID_Item).FirstOrDefault();
+                s.Name = item.Name;
+                s.Category = item.Category;
+                s.Quantity = item.Quantity;
+                s.Unit = item.Unit;
+                s.Flag = item.Flag;
                 db.SaveChanges();
                 return true;
             }
             else return false;
         }
-        public void Delete_Inventory(int ID_Item)
+        public void Delete_Item(int ID_Item)
         {
             using (PBL3Entities db = new PBL3Entities())
             {
-                var s = db.InventoryItems.Where(p => p.ID_Item == ID_Item).FirstOrDefault();
-                db.InventoryItems.Remove(s);
+                var s = db.Items.Where(p => p.ID_Item == ID_Item).FirstOrDefault();
+                db.Items.Remove(s);
                 db.SaveChanges();
             }
         }
-        public List<InventoryItemDatagridview> GetDGV_Inventory_Search(string Inventory_Name)
+        public List<ItemDatagridview> GetDGV_Item_Search(string Item_Name)
         {
             PBL3Entities db = new PBL3Entities();
-            List<InventoryItemDatagridview> result = new List<InventoryItemDatagridview>();
-            foreach (InventoryItem i in Return_Inventory())
+            List<ItemDatagridview> result = new List<ItemDatagridview>();
+            foreach (Item i in Return_Item())
             {
-                if (i.ID_Item.ToString() == (Inventory_Name))
+                if (i.ID_Item.ToString().Contains(Item_Name))
                 {
-                    result.Add(new InventoryItemDatagridview
+                    result.Add(new ItemDatagridview
                     {
                         ID_Item = i.ID_Item,
                         Name = i.Name,

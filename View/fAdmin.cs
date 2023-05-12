@@ -25,8 +25,8 @@ namespace PBL3CodeDemo.View
             LoadDGV_Account();
             LoadDGV_Product();
             setCBBCategory();
+            LoadDGV_Item();
             chart1.Series.Clear();
-
         }
         void setCBB_ViTriBan()
         {
@@ -332,10 +332,10 @@ namespace PBL3CodeDemo.View
                 dataGridViewTable.DataSource = bll.GetDGV_Product_Search(Product_Name);
             }
         }
-        void LoadDGV_Inventory()
+        void LoadDGV_Item()
         {
             QLCFBLL bll = new QLCFBLL();
-            dataGridViewProduct.DataSource = bll.GetDGV_Inventory();
+            dataGridViewItem.DataSource = bll.GetDGV_Item();
         }
         bool CheckForm_Item()
         {
@@ -347,15 +347,15 @@ namespace PBL3CodeDemo.View
 
             if (CheckForm_Item() == false)
             {
-                InventoryItem inventoryItem = new InventoryItem
+                Item item = new Item
                 {
                     Name = txbNameItem.Text,
                     Category = txbCategoryItem.Text,
-                    Quantity = float.Parse(txbQuantityItem.Text),
+                    Quantity = double.Parse(txbQuantityItem.Text),
                     Unit = txbUnitItem.Text,
                     Flag = true
                 };
-                if (bll.Add_InventoryItem(inventoryItem))
+                if (bll.Add_Item(item))
                     MessageBox.Show("Đã thêm hàng hóa thành công !", "Thông báo!");
                 else
                     MessageBox.Show("Thêm Thất Bại", "Thông báo!");
@@ -364,22 +364,57 @@ namespace PBL3CodeDemo.View
             {
                 MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo!");
             }
-            LoadDGV_Inventory();
+            LoadDGV_Item();
         }
 
         private void btnEditItem_Click(object sender, EventArgs e)
         {
+            QLCFBLL bll = new QLCFBLL();
 
+            if (CheckForm_Item() == false)
+            {
+                Item item = new Item
+                {
+                    ID_Item = int.Parse(dataGridViewItem.SelectedRows[0].Cells[0].Value.ToString()),
+                    Name = txbNameItem.Text,
+                    Category = txbCategoryItem.Text,
+                    Quantity = double.Parse(txbQuantityItem.Text),
+                    Unit = txbUnitItem.Text,
+                    Flag = true
+                };
+                if (bll.Edit_Item(item))
+                    MessageBox.Show("Đã cập nhật hàng hóa thành công !", "Thông báo!");
+                else
+                    MessageBox.Show("Cập nhật Thất Bại", "Thông báo!");
+            }
+            else
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo!");
+            }
+            LoadDGV_Item();
         }
 
         private void btnDelItem_Click(object sender, EventArgs e)
         {
-
+            int ID = int.Parse(dataGridViewItem.SelectedRows[0].Cells[0].Value.ToString());
+            QLCFBLL bll = new QLCFBLL();
+            bll.Delete_Item(ID);
+            LoadDGV_Item();
+            MessageBox.Show("Đã xóa thành công !");
         }
 
         private void btnSearchItem_Click(object sender, EventArgs e)
         {
-
+            QLCFBLL bll = new QLCFBLL();
+            string Item_Name = txbSearchItem.Text;
+            if (Item_Name == "") // ALL 
+            {
+                LoadDGV_Item();
+            }
+            else
+            {
+                dataGridViewTable.DataSource = bll.GetDGV_Item_Search(Item_Name);
+            }
         }
     }
 }

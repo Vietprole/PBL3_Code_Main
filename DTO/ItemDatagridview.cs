@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PBL3CodeDemo.DTO
 {
-    internal class InventoryItemDatagridview
+    internal class ItemDatagridview
     {
         public int ID_Item { get; set; }
         public string Name { get; set; }

@@ -72,10 +72,10 @@
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CBB_Item.cs" />
-    <Compile Include="DTO\InventoryItem.cs">
+    <Compile Include="DTO\ItemDatagridview.cs" />
+    <Compile Include="DTO\Item.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\InventoryItemDatagridview.cs" />
     <Compile Include="DTO\Product.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>

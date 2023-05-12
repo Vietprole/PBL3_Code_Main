@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -115,7 +115,7 @@
             this.btnDelItem = new System.Windows.Forms.Button();
             this.btnEditItem = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewItem = new System.Windows.Forms.DataGridView();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -141,7 +141,7 @@
             this.panel6.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItem)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -797,16 +797,16 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 71);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(765, 326);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
@@ -875,7 +875,7 @@
             this.tabPage5.Controls.Add(this.btnDelItem);
             this.tabPage5.Controls.Add(this.btnEditItem);
             this.tabPage5.Controls.Add(this.btnAddItem);
-            this.tabPage5.Controls.Add(this.dataGridView1);
+            this.tabPage5.Controls.Add(this.dataGridViewItem);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -1056,15 +1056,15 @@
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
-            // dataGridView1
+            // dataGridViewItem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 12);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(631, 406);
-            this.dataGridView1.TabIndex = 33;
+            this.dataGridViewItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewItem.Location = new System.Drawing.Point(8, 12);
+            this.dataGridViewItem.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewItem.Name = "dataGridViewItem";
+            this.dataGridViewItem.RowHeadersWidth = 51;
+            this.dataGridViewItem.Size = new System.Drawing.Size(631, 406);
+            this.dataGridViewItem.TabIndex = 33;
             // 
             // fAdmin
             // 
@@ -1121,7 +1121,7 @@
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1208,7 +1208,7 @@
         private System.Windows.Forms.Button btnDelItem;
         private System.Windows.Forms.Button btnEditItem;
         private System.Windows.Forms.Button btnAddItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewItem;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.TextBox txbUnitItem;
         private System.Windows.Forms.Label label18;

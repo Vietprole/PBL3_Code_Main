@@ -12,7 +12,7 @@ namespace PBL3CodeDemo.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class InventoryItem
+    public partial class Item
     {
         public int ID_Item { get; set; }
         public string Name { get; set; }
@@ -20,10 +20,5 @@ namespace PBL3CodeDemo.DTO
         public Nullable<double> Quantity { get; set; }
         public string Unit { get; set; }
         public Nullable<bool> Flag { get; set; }
-
-        public static implicit operator InventoryItem(InventoryItem v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

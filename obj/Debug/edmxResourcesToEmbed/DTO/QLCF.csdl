@@ -83,6 +83,7 @@
     <Property Name="Position" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__ID_Table__3F466844" FromRole="Table" ToRole="Bill" />
     <Property Name="Flag" Type="Boolean" />
+    <Property Name="Table_Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK__Account__ID_Role__398D8EEE">
     <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
@@ -188,9 +189,9 @@
       <End Role="Category" EntitySet="Categories" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
-    <EntitySet Name="Inventories" EntityType="PBL3Model.Inventory" />
+    <EntitySet Name="Items" EntityType="PBL3Model.Item" />
   </EntityContainer>
-  <EntityType Name="Inventory">
+  <EntityType Name="Item">
     <Key>
       <PropertyRef Name="ID_Item" />
     </Key>

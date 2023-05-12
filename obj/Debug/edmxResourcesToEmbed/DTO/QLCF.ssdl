@@ -45,7 +45,7 @@
     <Property Name="Category_Name" Type="nvarchar" MaxLength="60" />
     <Property Name="Flag" Type="bit" />
   </EntityType>
-  <EntityType Name="Inventory">
+  <EntityType Name="Item">
     <Key>
       <PropertyRef Name="ID_Item" />
     </Key>
@@ -82,6 +82,7 @@
     <Property Name="Status" Type="bit" />
     <Property Name="Position" Type="nvarchar" MaxLength="40" />
     <Property Name="Flag" Type="bit" />
+    <Property Name="Table_Name" Type="nvarchar" MaxLength="40" />
   </EntityType>
   <Association Name="FK__Account__ID_Role__398D8EEE">
     <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
@@ -160,7 +161,7 @@
     <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Bill_Detail" EntityType="Self.Bill_Detail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />

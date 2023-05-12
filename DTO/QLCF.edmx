@@ -50,7 +50,7 @@
           <Property Name="Category_Name" Type="nvarchar" MaxLength="60" />
           <Property Name="Flag" Type="bit" />
         </EntityType>
-        <EntityType Name="InventoryItem">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ID_Item" />
           </Key>
@@ -87,6 +87,7 @@
           <Property Name="Status" Type="bit" />
           <Property Name="Position" Type="nvarchar" MaxLength="40" />
           <Property Name="Flag" Type="bit" />
+          <Property Name="Table_Name" Type="nvarchar" MaxLength="40" />
         </EntityType>
         <Association Name="FK__Account__ID_Role__398D8EEE">
           <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
@@ -165,7 +166,7 @@
           <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill_Detail" EntityType="Self.Bill_Detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="InventoryItem" EntityType="Self.InventoryItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
@@ -281,6 +282,7 @@
           <Property Name="Position" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__ID_Table__3F466844" FromRole="Table" ToRole="Bill" />
           <Property Name="Flag" Type="Boolean" />
+          <Property Name="Table_Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__Account__ID_Role__398D8EEE">
           <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
@@ -386,9 +388,9 @@
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <EntitySet Name="InventoryItems" EntityType="PBL3Model.InventoryItem" />
+          <EntitySet Name="Items" EntityType="PBL3Model.Item" />
         </EntityContainer>
-        <EntityType Name="InventoryItem">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ID_Item" />
           </Key>
@@ -477,6 +479,7 @@
           <EntitySetMapping Name="Tables">
             <EntityTypeMapping TypeName="PBL3Model.Table">
               <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Table_Name" ColumnName="Table_Name" />
                 <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="ID_Table" ColumnName="ID_Table" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
@@ -484,9 +487,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="InventoryItems">
-            <EntityTypeMapping TypeName="PBL3Model.InventoryItem">
-              <MappingFragment StoreEntitySet="InventoryItem">
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="PBL3Model.Item">
+              <MappingFragment StoreEntitySet="Item">
                 <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
