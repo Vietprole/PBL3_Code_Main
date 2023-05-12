@@ -86,6 +86,8 @@ namespace PBL3CodeDemo.View
             setCBB_ViTriBan();
             LoadDGV_Table();
             LoadDGV_Account();
+            LoadDGV_Product();
+            setCBBCategory();
             QLCFBLL bll = new QLCFBLL();
             chart1.Series.Clear();
             LoadRevenue(Convert.ToDateTime(" 01/01/2023"), dateEnd.Value.Date);           
@@ -140,25 +142,6 @@ namespace PBL3CodeDemo.View
             }
             LoadDGV_Table();
             MessageBox.Show("Đã xóa thành công !");
-        }
-        void LoadDGV_Account()
-        {
-            QLCFBLL bll = new QLCFBLL();
-            dataGridViewAcount.DataSource = bll.GetDGV_Account();
-            txbDisplayName.Text = "";
-            txbUserName.ReadOnly = false;
-
-            txbPhone.Text = "";
-            txbSalary.Text = "";
-            txbSearchAccount.Text = "";
-            txbAdress.Text = "";
-            cbb_role.Text = "";
-            txbUserName.Text = "";
-        }
-        bool CheckForm_Account()
-        {
-            return (txbUserName.Text == "" || txbDisplayName.Text == "" || txbPhone.Text == "" || txbAdress.Text == "" || txbSalary.Text == "" || cbb_role.Text == "");
-
         }
 
         private void btnAddAccount_Click(object sender, EventArgs e)
@@ -307,7 +290,8 @@ namespace PBL3CodeDemo.View
             {
                 Name = txbNameProduct.Text,
                 Price = int.Parse(txbPriceProduct.Text),
-                ID_Category = cbbCategory.SelectedIndex + 1
+                ID_Category = cbbCategory.SelectedIndex + 1,
+                Flag = true
             };
             bll.Add_Product(product);
             LoadDGV_Product();
@@ -385,8 +369,6 @@ namespace PBL3CodeDemo.View
             int i = datagridViewBillThongKe.CurrentRow.Index;
              id_Bill = Convert.ToInt32(datagridViewBillThongKe.Rows[i].Cells[0].Value);
         }
-        int id_Bill=-1;
-
         private void fAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
 

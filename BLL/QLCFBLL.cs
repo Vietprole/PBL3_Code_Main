@@ -204,7 +204,7 @@ namespace PBL3CodeDemo.BLL
             }
             return sumprice.ToString();
         }
-        public bool UpdateBill(int idbill, string txbTotal_Bill, string DateOrder, string txbTimeOrder, string cbb_Table, bool radioButtonTrue)
+        public bool UpdateBill(int idbill, string txbTotal_Bill, string DateOrder, string txbTimeOrder, string cbb_Table)
         {
             PBL3Entities db = new PBL3Entities();
             var bil = db.Bills.Where(p => p.Flag == true && p.ID_Bill == idbill).FirstOrDefault();

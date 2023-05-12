@@ -146,7 +146,8 @@ namespace PBL3CodeDemo.View
             {
                 Button btn = new Button()
                 {
-                    Width = 100, Height = 100
+                    Width = 100,
+                    Height = 100
                 };
                 if (table.Status == true)
                 {
@@ -165,7 +166,7 @@ namespace PBL3CodeDemo.View
                 }
                 flbTable.Controls.Add(btn);
             }
-           
+
         }
 
         private void thanhToánCtrlShiftTToolStripMenuItem_Click(object sender, EventArgs e)
