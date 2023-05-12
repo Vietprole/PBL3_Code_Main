@@ -118,16 +118,16 @@ namespace PBL3CodeDemo.View
                             DialogResult merge = MessageBox.Show("Bàn này đã được một bàn khác nhập vào. Bạn có muốn thanh toán chung không ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (merge == DialogResult.Yes)
                             {//Thanh toán chung
-                                bll.CheckOut_Bill_Merge(idTable, Price);
+                                bll.CheckOut_Bill_Merge(idTable, Price, useName);
                             }
                             else if (merge == DialogResult.No)
                             {//Thanh toán riêng
-                                bll.CheckOut_Bill_Split(idTable, Price);
+                                bll.CheckOut_Bill_Split(idTable, Price, useName);
                             }
                         }
                         else
                         {
-                            bll.CheckOut_Bill(idTable, Price);
+                            bll.CheckOut_Bill(idTable, Price, useName);
                         }
                         ShowBill(idTable);
                         bll.SetTableStatus(idTable, 0);
@@ -228,7 +228,7 @@ namespace PBL3CodeDemo.View
             string foodName = cbFood.Text;
             int Quantity = Convert.ToInt32(nmFoodCount.Value);
             int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
-            bll.Add_Food_ToTable(idTable, foodName, Quantity);
+            bll.Add_Food_ToTable(idTable, foodName, Quantity, useName);
             bll.SetTableStatus(idTable, 1);
             ShowBill(idTable);
             LoadTable();

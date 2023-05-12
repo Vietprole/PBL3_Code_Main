@@ -689,10 +689,11 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public void Add_Food_ToTable(int idTable, string foodName, int Quantity)
+        public void Add_Food_ToTable(int idTable, string foodName, int Quantity, string useName)
         {
             PBL3Entities db = new PBL3Entities();
             int id_Bill = 0;
+            Account acc = db.Accounts.Where(p => p.UserName == useName && p.Flag == true).FirstOrDefault();
             foreach (Bill i in Return_Bill())
             {
                 if (i.Pay_Status == false && i.ID_Table == idTable 
@@ -708,7 +709,7 @@ namespace PBL3CodeDemo.BLL
                 string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
                 string currentTime = DateTime.Now.ToString("HH:mm:ss");
                 Bill bill = new Bill();
-                bill.ID_Account = 1; // SỬA LẠI CHỖ NÀY !!!!!!!!!!!!!!!!!!! ID_Account là id của acc đang đăng nhập
+                bill.ID_Account = acc.ID_Account; // SỬA LẠI CHỖ NÀY !!!!!!!!!!!!!!!!!!! ID_Account là id của acc đang đăng nhập
                 bill.ID_Table = idTable;
                 bill.Pay_Status = false;
                 bill.Order_Day = DateTime.Parse(currentDate);
@@ -768,7 +769,7 @@ namespace PBL3CodeDemo.BLL
             db.SaveChanges();
         }
 
-        public void CheckOut_Bill(int idTable, int Price)
+        public void CheckOut_Bill(int idTable, int Price, string useName)
         {
             int idBill = 0;
             foreach (Bill i in Return_Bill())
@@ -934,11 +935,11 @@ namespace PBL3CodeDemo.BLL
             return 0;
 
         }
-        public void CheckOut_Bill_Merge(int idTable, int Price)
+        public void CheckOut_Bill_Merge(int idTable, int Price, string useName)
         {//Thanh toán Bill gộp
             PBL3Entities db = new PBL3Entities();
             int idRootTable = Return_ID_RootTable(idTable);
-            CheckOut_Bill(idTable, Price);
+            CheckOut_Bill(idTable, Price, useName);
 
             Bill selectedBill = db.Bills.Where(p => p.ID_Table == idRootTable
                                     && p.Pay_Status == false
@@ -956,7 +957,7 @@ namespace PBL3CodeDemo.BLL
             db.SaveChanges();
         }
 
-        public void CheckOut_Bill_Split(int idTable, int priceTargetBill)
+        public void CheckOut_Bill_Split(int idTable, int priceTargetBill, string useName)
         {
             PBL3Entities db = new PBL3Entities();
             int idRootTable = Return_ID_RootTable(idTable);
