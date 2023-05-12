@@ -26,6 +26,8 @@
     <Property Name="Order_Time" Type="time" Precision="7" />
     <Property Name="Price" Type="int" />
     <Property Name="Flag" Type="bit" />
+    <Property Name="New_ID_Table" Type="int" />
+    <Property Name="Root_ID_Table" Type="int" />
   </EntityType>
   <EntityType Name="Bill_Detail">
     <Key>
@@ -36,6 +38,7 @@
     <Property Name="ID_Product" Type="int" />
     <Property Name="Quantity" Type="int" />
     <Property Name="Flag" Type="bit" />
+    <Property Name="Flag_Merge" Type="bit" />
   </EntityType>
   <EntityType Name="Category">
     <Key>

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3df66d34ac054a54a040b500f5769ea3" Name="Diagram1" ZoomLevel="94">
+      <Diagram DiagramId="3df66d34ac054a54a040b500f5769ea3" Name="Diagram1" ZoomLevel="90">
         <EntityTypeShape EntityType="PBL3Model.Account" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.Bill" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="PBL3Model.Bill_Detail" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
@@ -19,7 +19,7 @@
         <AssociationConnector Association="PBL3Model.FK__Bill_Deta__ID_Pr__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="PBL3Model.FK__Product__ID_Cate__440B1D61" ManuallyRouted="false" />
         <EntityTypeShape EntityType="PBL3Model.sysdiagram" Width="1.5" PointX="7.375" PointY="4.75" />
-        <EntityTypeShape EntityType="PBL3Model.Inventory" Width="1.5" PointX="9.5" PointY="1.75" />
+        <EntityTypeShape EntityType="PBL3Model.Inventory" Width="1.5" PointX="9.375" PointY="1.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

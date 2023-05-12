@@ -177,7 +177,7 @@
             // 
             this.panel2.Controls.Add(this.BillTable_DGV);
             this.panel2.Location = new System.Drawing.Point(588, 107);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(448, 398);
             this.panel2.TabIndex = 2;
@@ -186,7 +186,7 @@
             // 
             this.BillTable_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BillTable_DGV.Location = new System.Drawing.Point(1, 1);
-            this.BillTable_DGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BillTable_DGV.Margin = new System.Windows.Forms.Padding(4);
             this.BillTable_DGV.Name = "BillTable_DGV";
             this.BillTable_DGV.RowHeadersWidth = 51;
             this.BillTable_DGV.Size = new System.Drawing.Size(444, 394);
@@ -196,7 +196,7 @@
             // 
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(588, 36);
-            this.cbCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(284, 24);
             this.cbCategory.TabIndex = 3;
@@ -207,7 +207,7 @@
             // 
             this.cbFood.FormattingEnabled = true;
             this.cbFood.Location = new System.Drawing.Point(588, 69);
-            this.cbFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFood.Margin = new System.Windows.Forms.Padding(4);
             this.cbFood.Name = "cbFood";
             this.cbFood.Size = new System.Drawing.Size(284, 24);
             this.cbFood.TabIndex = 4;
@@ -217,7 +217,7 @@
             // 
             this.btnAddFood.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFood.Location = new System.Drawing.Point(881, 36);
-            this.btnAddFood.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(96, 59);
             this.btnAddFood.TabIndex = 6;
@@ -228,7 +228,7 @@
             // nmFoodCount
             // 
             this.nmFoodCount.Location = new System.Drawing.Point(985, 58);
-            this.nmFoodCount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nmFoodCount.Margin = new System.Windows.Forms.Padding(4);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
             0,
@@ -249,18 +249,19 @@
             // 
             this.btnSwithTable.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSwithTable.Location = new System.Drawing.Point(1041, 111);
-            this.btnSwithTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSwithTable.Margin = new System.Windows.Forms.Padding(4);
             this.btnSwithTable.Name = "btnSwithTable";
             this.btnSwithTable.Size = new System.Drawing.Size(156, 59);
             this.btnSwithTable.TabIndex = 8;
             this.btnSwithTable.Text = "Chuyển Bàn";
             this.btnSwithTable.UseVisualStyleBackColor = true;
+            this.btnSwithTable.Click += new System.EventHandler(this.btnSwithTable_Click);
             // 
             // cbSwithTable
             // 
             this.cbSwithTable.FormattingEnabled = true;
             this.cbSwithTable.Location = new System.Drawing.Point(1041, 177);
-            this.cbSwithTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSwithTable.Margin = new System.Windows.Forms.Padding(4);
             this.cbSwithTable.Name = "cbSwithTable";
             this.cbSwithTable.Size = new System.Drawing.Size(156, 24);
             this.cbSwithTable.TabIndex = 9;
@@ -269,7 +270,7 @@
             // 
             this.btnCheckOut.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOut.Location = new System.Drawing.Point(1044, 443);
-            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(157, 59);
             this.btnCheckOut.TabIndex = 10;
@@ -280,7 +281,7 @@
             // nmDisCount
             // 
             this.nmDisCount.Location = new System.Drawing.Point(1043, 298);
-            this.nmDisCount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nmDisCount.Margin = new System.Windows.Forms.Padding(4);
             this.nmDisCount.Minimum = new decimal(new int[] {
             100,
             0,
@@ -304,7 +305,7 @@
             // textBoxPrice
             // 
             this.textBoxPrice.Location = new System.Drawing.Point(1041, 389);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.ReadOnly = true;
             this.textBoxPrice.Size = new System.Drawing.Size(155, 22);
@@ -315,7 +316,7 @@
             // 
             this.btnDiscount.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscount.Location = new System.Drawing.Point(1041, 234);
-            this.btnDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Size = new System.Drawing.Size(156, 59);
             this.btnDiscount.TabIndex = 15;
@@ -374,7 +375,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý bàn ";
