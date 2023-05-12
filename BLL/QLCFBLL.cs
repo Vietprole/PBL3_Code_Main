@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Diagnostics;
 
 namespace PBL3CodeDemo.BLL
 {
@@ -699,7 +700,7 @@ namespace PBL3CodeDemo.BLL
                     ID_Item = i.ID_Item,
                     Name = i.Name,
                     Category = i.Category,
-                    Quantity = (float)i.Quantity,
+                    Quantity = (double)i.Quantity,
                     Unit = i.Unit
                 });
             }
@@ -751,14 +752,15 @@ namespace PBL3CodeDemo.BLL
             List<ItemDatagridview> result = new List<ItemDatagridview>();
             foreach (Item i in Return_Item())
             {
-                if (i.ID_Item.ToString().Contains(Item_Name))
+                if (i.Name.ToString().Contains(Item_Name))
                 {
+                    Debug.WriteLine("Contained");
                     result.Add(new ItemDatagridview
                     {
                         ID_Item = i.ID_Item,
                         Name = i.Name,
                         Category = i.Category,
-                        Quantity = (float)i.Quantity,
+                        Quantity = (double)i.Quantity,
                         Unit = i.Unit
                     });
                 }

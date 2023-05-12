@@ -329,7 +329,7 @@ namespace PBL3CodeDemo.View
             }
             else
             {
-                dataGridViewTable.DataSource = bll.GetDGV_Product_Search(Product_Name);
+                dataGridViewProduct.DataSource = bll.GetDGV_Product_Search(Product_Name);
             }
         }
         void LoadDGV_Item()
@@ -413,7 +413,7 @@ namespace PBL3CodeDemo.View
             }
             else
             {
-                dataGridViewTable.DataSource = bll.GetDGV_Item_Search(Item_Name);
+                dataGridViewItem.DataSource = bll.GetDGV_Item_Search(Item_Name);
             }
         }
     }
