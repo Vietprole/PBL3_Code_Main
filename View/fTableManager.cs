@@ -295,23 +295,28 @@ namespace PBL3CodeDemo.View
 
         private void btnSwithTable_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc là chuyển bàn không ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (BillTable_DGV.DataSource == null)
             {
-                string newTableName = cbSwithTable.Text;
-                int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
-                bll.SwitchTable(idTable, newTableName);
-                //Gán NewIDTable = newIDTable
-                //Chuyển tất cả các món sang bàn đã chọn
-                ShowBill(idTable);//Bill của bàn cũ lúc này sẽ trống
-                bll.SetTableStatus(idTable, 0);
-                LoadTable();
+                MessageBox.Show("Hóa đơn chưa có sản phẩm, vui lòng thêm ít nhất 1 sản phẩm để chuyển bàn", "Thông báo");
             }
-            else if (result == DialogResult.No)
+            else
             {
+                DialogResult result = MessageBox.Show("Bạn có chắc là chuyển bàn không ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    string newTableName = cbSwithTable.Text;
+                    int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
+                    bll.SwitchTable(idTable, newTableName);
+                    //Gán NewIDTable = newIDTable
+                    //Chuyển tất cả các món sang bàn đã chọn
+                    ShowBill(idTable);//Bill của bàn cũ lúc này sẽ trống
+                    bll.SetTableStatus(idTable, 0);
+                    LoadTable();
+                }
+                else if (result == DialogResult.No)
+                {
+                }
             }
-
-
         }
     }
 }
