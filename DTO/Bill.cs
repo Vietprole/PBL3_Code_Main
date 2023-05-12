@@ -29,6 +29,7 @@ namespace PBL3CodeDemo.DTO
         public Nullable<int> Price { get; set; }
         public Nullable<bool> Flag { get; set; }
         public Nullable<int> New_ID_Table { get; set; }
+        public Nullable<int> Root_ID_Table { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual Table Table { get; set; }

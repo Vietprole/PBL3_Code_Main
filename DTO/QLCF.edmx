@@ -32,6 +32,7 @@
           <Property Name="Price" Type="int" />
           <Property Name="Flag" Type="bit" />
           <Property Name="New_ID_Table" Type="int" />
+          <Property Name="Root_ID_Table" Type="int" />
         </EntityType>
         <EntityType Name="Bill_Detail">
           <Key>
@@ -42,6 +43,7 @@
           <Property Name="ID_Product" Type="int" />
           <Property Name="Quantity" Type="int" />
           <Property Name="Flag" Type="bit" />
+          <Property Name="Flag_Merge" Type="bit" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -51,7 +53,7 @@
           <Property Name="Category_Name" Type="nvarchar" MaxLength="60" />
           <Property Name="Flag" Type="bit" />
         </EntityType>
-        <EntityType Name="Inventory">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ID_Item" />
           </Key>
@@ -177,7 +179,7 @@
           <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill_Detail" EntityType="Self.Bill_Detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -243,6 +245,7 @@
           <NavigationProperty Name="Bill_Detail" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill" ToRole="Bill_Detail" />
           <Property Name="Flag" Type="Boolean" />
           <Property Name="New_ID_Table" Type="Int32" />
+          <Property Name="Root_ID_Table" Type="Int32" />
         </EntityType>
         <EntityType Name="Bill_Detail">
           <Key>
@@ -255,6 +258,7 @@
           <NavigationProperty Name="Bill" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill_Detail" ToRole="Bill" />
           <NavigationProperty Name="Product" Relationship="Self.FK__Bill_Deta__ID_Pr__47DBAE45" FromRole="Bill_Detail" ToRole="Product" />
           <Property Name="Flag" Type="Boolean" />
+          <Property Name="Flag_Merge" Type="Boolean" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -402,7 +406,7 @@
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
           <EntitySet Name="sysdiagrams" EntityType="PBL3Model.sysdiagram" />
-          <EntitySet Name="Inventories" EntityType="PBL3Model.Inventory" />
+          <EntitySet Name="Items" EntityType="PBL3Model.Item" />
         </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -414,7 +418,7 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Inventory">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ID_Item" />
           </Key>
@@ -449,6 +453,7 @@
           <EntitySetMapping Name="Bills">
             <EntityTypeMapping TypeName="PBL3Model.Bill">
               <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="Root_ID_Table" ColumnName="Root_ID_Table" />
                 <ScalarProperty Name="New_ID_Table" ColumnName="New_ID_Table" />
                 <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
@@ -464,6 +469,7 @@
           <EntitySetMapping Name="Bill_Detail">
             <EntityTypeMapping TypeName="PBL3Model.Bill_Detail">
               <MappingFragment StoreEntitySet="Bill_Detail">
+                <ScalarProperty Name="Flag_Merge" ColumnName="Flag_Merge" />
                 <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
@@ -523,9 +529,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Inventories">
-            <EntityTypeMapping TypeName="PBL3Model.Inventory">
-              <MappingFragment StoreEntitySet="Inventory">
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="PBL3Model.Item">
+              <MappingFragment StoreEntitySet="Item">
                 <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />

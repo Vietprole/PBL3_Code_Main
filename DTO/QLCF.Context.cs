@@ -33,6 +33,6 @@ namespace PBL3CodeDemo.DTO
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Table> Tables { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Inventory> Inventories { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
     }
 }
