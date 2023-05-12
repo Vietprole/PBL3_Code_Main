@@ -31,6 +31,8 @@
     <NavigationProperty Name="Table" Relationship="Self.FK__Bill__ID_Table__3F466844" FromRole="Bill" ToRole="Table" />
     <NavigationProperty Name="Bill_Detail" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill" ToRole="Bill_Detail" />
     <Property Name="Flag" Type="Boolean" />
+    <Property Name="New_ID_Table" Type="Int32" />
+    <Property Name="Root_ID_Table" Type="Int32" />
   </EntityType>
   <EntityType Name="Bill_Detail">
     <Key>
@@ -43,6 +45,7 @@
     <NavigationProperty Name="Bill" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill_Detail" ToRole="Bill" />
     <NavigationProperty Name="Product" Relationship="Self.FK__Bill_Deta__ID_Pr__47DBAE45" FromRole="Bill_Detail" ToRole="Product" />
     <Property Name="Flag" Type="Boolean" />
+    <Property Name="Flag_Merge" Type="Boolean" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -190,7 +193,7 @@
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
     <EntitySet Name="sysdiagrams" EntityType="PBL3Model.sysdiagram" />
-    <EntitySet Name="Inventories" EntityType="PBL3Model.Inventory" />
+    <EntitySet Name="Items" EntityType="PBL3Model.Item" />
   </EntityContainer>
   <EntityType Name="sysdiagram">
     <Key>
@@ -202,7 +205,7 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="Inventory">
+  <EntityType Name="Item">
     <Key>
       <PropertyRef Name="ID_Item" />
     </Key>

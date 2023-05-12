@@ -12,7 +12,7 @@ namespace PBL3CodeDemo.DTO
     using System;
     using System.Collections.Generic;
     
-    public partial class Inventory
+    public partial class Item
     {
         public int ID_Item { get; set; }
         public string Name { get; set; }

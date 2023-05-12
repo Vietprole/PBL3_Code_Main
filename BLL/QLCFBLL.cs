@@ -1,4 +1,5 @@
 ﻿using PBL3CodeDemo.DTO;
+using PBL3CodeDemo.View;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
@@ -10,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -660,7 +662,8 @@ namespace PBL3CodeDemo.BLL
             int id_Bill = 0;
             foreach (Bill i in Return_Bill())
             {
-                if (i.Pay_Status == false && i.ID_Table == id_Table)
+                if (i.Pay_Status == false && i.ID_Table == id_Table
+                    && i.ID_Table == i.New_ID_Table)
                 {//Chưa thanh toán 
 
                     id_Bill = i.ID_Bill;
@@ -688,13 +691,15 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public void Add_Food_ToTable(int idTable, string foodName, int Quantity)
+        public void Add_Food_ToTable(int idTable, string foodName, int Quantity, string useName)
         {
             PBL3Entities db = new PBL3Entities();
             int id_Bill = 0;
+            Account acc = db.Accounts.Where(p => p.UserName == useName && p.Flag == true).FirstOrDefault();
             foreach (Bill i in Return_Bill())
             {
-                if (i.Pay_Status == false && i.ID_Table == idTable)
+                if (i.Pay_Status == false && i.ID_Table == idTable 
+                    && i.ID_Table == i.New_ID_Table)
                 {
 
                     id_Bill = i.ID_Bill; //Lấy cái idBill chưa thanh toán của bàn
@@ -706,19 +711,21 @@ namespace PBL3CodeDemo.BLL
                 string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
                 string currentTime = DateTime.Now.ToString("HH:mm:ss");
                 Bill bill = new Bill();
-                bill.ID_Account = 1; // SỬA LẠI CHỖ NÀY !!!!!!!!!!!!!!!!!!! ID_Account là id của acc đang đăng nhập
+                bill.ID_Account = acc.ID_Account; // SỬA LẠI CHỖ NÀY !!!!!!!!!!!!!!!!!!! ID_Account là id của acc đang đăng nhập
                 bill.ID_Table = idTable;
                 bill.Pay_Status = false;
                 bill.Order_Day = DateTime.Parse(currentDate);
                 bill.Order_Time = TimeSpan.Parse(currentTime);
                 bill.Price = 0;
                 bill.Flag = true;
+                bill.New_ID_Table = idTable;
                 db.Bills.Add(bill);
                 db.SaveChanges();
             }
             foreach (Bill i in Return_Bill())
             {
-                if (i.Pay_Status == false && i.ID_Table == idTable)
+                if (i.Pay_Status == false && i.ID_Table == idTable
+                    && i.ID_Table == i.New_ID_Table)
                 {
 
                     id_Bill = i.ID_Bill; //Lấy cái idBill chưa thanh toán của bàn
@@ -764,12 +771,13 @@ namespace PBL3CodeDemo.BLL
             db.SaveChanges();
         }
 
-        public void CheckOut_Bill(int idTable, int Price)
+        public void CheckOut_Bill(int idTable, int Price, string useName)
         {
             int idBill = 0;
             foreach (Bill i in Return_Bill())
             {
-                if (i.Pay_Status == false && i.ID_Table == idTable)
+                if (i.Pay_Status == false && i.ID_Table == idTable
+                    && i.New_ID_Table == i.ID_Table && i.Flag == true)
                 {//Chưa thanh toán 
                     idBill = i.ID_Bill;
                     break;
@@ -857,6 +865,136 @@ namespace PBL3CodeDemo.BLL
             db.SaveChanges();
             return true;
 
+        }
+
+        public List<CBB_Item> GetCBB_Table(int table_ID)
+        {
+            List<CBB_Item> result = new List<CBB_Item>();
+            foreach (Table i in Return_Table())
+            {
+                if (i.ID_Table != table_ID)
+                {
+                    result.Add(new CBB_Item
+                    {
+                        Value = i.ID_Table,
+                        Text = i.Table_Name.ToString()
+
+                    });
+                }
+
+            }
+            return result;
+        }
+
+        public void SwitchTable(int selectedIDTable, string newTableName)
+        {
+            int newTableID = 0;
+            foreach (Table i in Return_Table())
+            {
+                if (i.Table_Name == newTableName)
+                {//Lấy ID của bàn sắp chuyển tới thông qua tên của nó
+                    newTableID = i.ID_Table;
+                }
+            }
+            PBL3Entities db = new PBL3Entities();
+            Bill selectedBill = db.Bills.Where(p => p.ID_Table == selectedIDTable
+                                    && p.Pay_Status == false
+                                    && p.Flag == true).FirstOrDefault();
+            //selectedBill là Bill của bàn bị chuyển
+            selectedBill.New_ID_Table = newTableID;
+            db.SaveChanges();
+            Bill targetBill = db.Bills.Where(p => p.ID_Table == newTableID
+                                    && p.Pay_Status == false
+                                    && p.ID_Table == p.New_ID_Table
+                                    && p.Flag == true).FirstOrDefault();
+            //targetBill là Bill của bàn cần chuyển tới
+            foreach (Bill_Detail bd in Return_BillDetails(selectedBill.ID_Bill))
+            {//Lấy từng Bill_Detail ở selectedBill copy qua targetBill
+                Bill_Detail bill_Detail = new Bill_Detail();
+                bill_Detail.ID_Bill = targetBill.ID_Bill;
+                bill_Detail.ID_Product = bd.ID_Product;
+                bill_Detail.Quantity = bd.Quantity;
+                bill_Detail.Flag = true;
+                bill_Detail.Flag_Merge = true;
+                db.Bill_Detail.Add(bill_Detail);
+                db.SaveChanges();
+            }
+            targetBill.Root_ID_Table = selectedIDTable;
+            db.SaveChanges();
+
+        }
+
+        public int Return_ID_RootTable(int idTable)
+        {
+            foreach (Bill i in Return_Bill())
+            {
+                if (i.ID_Table == idTable && i.Flag == true
+                    && i.ID_Table == i.New_ID_Table && i.Pay_Status == false)
+                {
+                    return Convert.ToInt32(i.Root_ID_Table); //Ko có bàn nào nhập vào nó
+                }
+            }
+            return 0;
+
+        }
+        public void CheckOut_Bill_Merge(int idTable, int Price, string useName)
+        {//Thanh toán Bill gộp
+            PBL3Entities db = new PBL3Entities();
+            int idRootTable = Return_ID_RootTable(idTable);
+            CheckOut_Bill(idTable, Price, useName);
+
+            Bill selectedBill = db.Bills.Where(p => p.ID_Table == idRootTable
+                                    && p.Pay_Status == false
+                                    && p.Flag == true).FirstOrDefault();
+            //selectedBill là Bill của bàn bị chuyển
+            List<Bill_Detail> bd = Return_BillDetails(selectedBill.ID_Bill);
+            for (int i = 0; i < bd.Count; i++)
+            {//Xóa hết món của selectedBill
+                var billDetail = db.Bill_Detail.Where(p => p.ID_Bill == selectedBill.ID_Bill).FirstOrDefault();
+                db.Bill_Detail.Remove(billDetail);
+                db.SaveChanges();
+            }
+            db.Bills.Remove(selectedBill);
+            //Xóa cứng selectedBill
+            db.SaveChanges();
+        }
+
+        public void CheckOut_Bill_Split(int idTable, int priceTargetBill, string useName)
+        {
+            PBL3Entities db = new PBL3Entities();
+            int idRootTable = Return_ID_RootTable(idTable);
+            int priceSelectedBill = 0;
+            Bill selectedBill = db.Bills.Where(p => p.ID_Table == idRootTable
+                                    && p.Pay_Status == false
+                                    && p.New_ID_Table != p.ID_Table
+                                    && p.Flag == true).FirstOrDefault();
+            //selectedBill là Bill của bàn bị chuyển
+            Bill targetBill = db.Bills.Where(p => p.ID_Table == idTable
+                                    && p.Pay_Status == false
+                                    && p.ID_Table == p.New_ID_Table
+                                    && p.Flag == true).FirstOrDefault();
+            //targetBill là Bill của bàn cần chuyển tới
+            List<Bill_Detail> bd = Return_BillDetails(targetBill.ID_Bill);
+            for (int i = 0; i < bd.Count; i++)
+            {//Xóa hết món đã merge ở targetBill
+                var billDetail = db.Bill_Detail.Where(p => p.ID_Bill == targetBill.ID_Bill
+                                                    && p.Flag_Merge == true).FirstOrDefault();
+                if (billDetail != null)
+                {
+                    db.Bill_Detail.Remove(billDetail);
+                    db.SaveChanges();
+                }
+            }
+            foreach (Bill_Detail billDetail in Return_BillDetails(targetBill.ID_Bill))
+            {
+                priceSelectedBill += Return_ProductPrice(Convert.ToInt32(billDetail.ID_Product));
+            }
+            selectedBill.Pay_Status = true;
+            selectedBill.Price = priceSelectedBill;
+            db.SaveChanges();
+            targetBill.Pay_Status = true;
+            targetBill.Price = priceTargetBill;
+            db.SaveChanges();
         }
     }
 }
