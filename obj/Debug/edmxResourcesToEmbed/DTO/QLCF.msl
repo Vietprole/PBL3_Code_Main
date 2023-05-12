@@ -19,6 +19,7 @@
     <EntitySetMapping Name="Bills">
       <EntityTypeMapping TypeName="PBL3Model.Bill">
         <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="New_ID_Table" ColumnName="New_ID_Table" />
           <ScalarProperty Name="Flag" ColumnName="Flag" />
           <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
           <ScalarProperty Name="ID_Account" ColumnName="ID_Account" />

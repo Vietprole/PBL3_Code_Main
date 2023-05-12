@@ -31,6 +31,7 @@
           <Property Name="Order_Time" Type="time" Precision="7" />
           <Property Name="Price" Type="int" />
           <Property Name="Flag" Type="bit" />
+          <Property Name="New_ID_Table" Type="int" />
         </EntityType>
         <EntityType Name="Bill_Detail">
           <Key>
@@ -241,6 +242,7 @@
           <NavigationProperty Name="Table" Relationship="Self.FK__Bill__ID_Table__3F466844" FromRole="Bill" ToRole="Table" />
           <NavigationProperty Name="Bill_Detail" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill" ToRole="Bill_Detail" />
           <Property Name="Flag" Type="Boolean" />
+          <Property Name="New_ID_Table" Type="Int32" />
         </EntityType>
         <EntityType Name="Bill_Detail">
           <Key>
@@ -447,6 +449,7 @@
           <EntitySetMapping Name="Bills">
             <EntityTypeMapping TypeName="PBL3Model.Bill">
               <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="New_ID_Table" ColumnName="New_ID_Table" />
                 <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
                 <ScalarProperty Name="ID_Account" ColumnName="ID_Account" />

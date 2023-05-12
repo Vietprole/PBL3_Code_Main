@@ -31,6 +31,7 @@
     <NavigationProperty Name="Table" Relationship="Self.FK__Bill__ID_Table__3F466844" FromRole="Bill" ToRole="Table" />
     <NavigationProperty Name="Bill_Detail" Relationship="Self.FK__Bill_Deta__ID_Bi__46E78A0C" FromRole="Bill" ToRole="Bill_Detail" />
     <Property Name="Flag" Type="Boolean" />
+    <Property Name="New_ID_Table" Type="Int32" />
   </EntityType>
   <EntityType Name="Bill_Detail">
     <Key>

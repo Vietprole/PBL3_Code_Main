@@ -1,4 +1,5 @@
 ﻿using PBL3CodeDemo.DTO;
+using PBL3CodeDemo.View;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
@@ -658,7 +659,8 @@ namespace PBL3CodeDemo.BLL
             int id_Bill = 0;
             foreach (Bill i in Return_Bill())
             {
-                if (i.Pay_Status == false && i.ID_Table == id_Table)
+                if (i.Pay_Status == false && i.ID_Table == id_Table 
+                    && i.ID_Table == i.New_ID_Table)
                 {//Chưa thanh toán 
 
                     id_Bill = i.ID_Bill;
@@ -711,6 +713,7 @@ namespace PBL3CodeDemo.BLL
                 bill.Order_Time = TimeSpan.Parse(currentTime);
                 bill.Price = 0;
                 bill.Flag = true;
+                bill.New_ID_Table = idTable;
                 db.Bills.Add(bill);
                 db.SaveChanges();
             }
@@ -767,7 +770,8 @@ namespace PBL3CodeDemo.BLL
             int idBill = 0;
             foreach (Bill i in Return_Bill())
             {
-                if (i.Pay_Status == false && i.ID_Table == idTable)
+                if (i.Pay_Status == false && i.ID_Table == idTable
+                    && i.New_ID_Table == i.ID_Table)
                 {//Chưa thanh toán 
                     idBill = i.ID_Bill;
                     break;
@@ -855,6 +859,59 @@ namespace PBL3CodeDemo.BLL
             db.SaveChanges();
             return true;
 
+        }
+
+        public List<CBB_Item> GetCBB_Table(int table_ID)
+        {
+            List<CBB_Item> result = new List<CBB_Item>();
+            foreach (Table i in Return_Table())
+            {
+                if(i.ID_Table != table_ID)
+                {
+                    result.Add(new CBB_Item
+                    {
+                        Value = i.ID_Table,
+                        Text = i.Table_Name.ToString()
+
+                    });
+                }
+                
+            }
+            return result;
+        }
+
+        public void SwitchTable(int OldIDTable, string newTableName)
+        {
+            int newTableID = 0;
+            foreach(Table i in Return_Table())
+            {
+                if(i.Table_Name == newTableName)
+                {//Lấy ID của bàn sắp chuyển tới thông qua tên của nó
+                    newTableID = i.ID_Table;
+                }
+            }
+            PBL3Entities db = new PBL3Entities();
+            Bill selectedBill = db.Bills.Where(p => p.ID_Table == OldIDTable 
+                                    && p.Pay_Status == false
+                                    && p.Flag == true).FirstOrDefault();
+            //selectedBill là Bill của bàn cần chuyển
+            selectedBill.New_ID_Table = newTableID;
+            db.SaveChanges();
+            Bill targetBill = db.Bills.Where(p => p.ID_Table == newTableID
+                                    && p.Pay_Status == false
+                                    && p.Flag == true).FirstOrDefault();
+            //targetBill là Bill của bàn cần chuyển tới
+            foreach(Bill_Detail bd in Return_BillDetails(selectedBill.ID_Bill))
+            {//Lấy từng Bill_Detail ở 
+                Bill_Detail bill_Detail = new Bill_Detail();
+                bill_Detail.ID_Bill = targetBill.ID_Bill;
+                bill_Detail.ID_Product = bd.ID_Product;
+                bill_Detail.Quantity = bd.Quantity;
+                bill_Detail.Flag = true;
+                db.Bill_Detail.Add(bill_Detail);
+                db.SaveChanges();
+            }
+            
         }
     }
 }

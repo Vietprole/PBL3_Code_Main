@@ -16,7 +16,7 @@ namespace PBL3CodeDemo.View
 {
     public partial class fTableManager : Form
     {
-        public fTableManager( string use, string pass)
+        public fTableManager(string use, string pass)
         {
             InitializeComponent();
             useName = use;
@@ -30,16 +30,16 @@ namespace PBL3CodeDemo.View
         {
             QLCFBLL bll = new QLCFBLL();
 
-            cbCategory.DataSource = bll.GetCBB_Category().ToArray(); 
+            cbCategory.DataSource = bll.GetCBB_Category().ToArray();
         }
         void setCBBFood(int ID_Category)
         {
             QLCFBLL bll = new QLCFBLL();
             cbFood.DataSource = bll.GetCBB_Food(ID_Category).ToArray();
-           
+
         }
-       
-       
+
+
         string useName;
         string passWord;
 
@@ -53,15 +53,15 @@ namespace PBL3CodeDemo.View
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View.fAccountProfile a = new View.fAccountProfile( useName, passWord);
-           
+            View.fAccountProfile a = new View.fAccountProfile(useName, passWord);
+
             a.ShowDialog();
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.ChangePassWord a = new ChangePassWord(useName, passWord);
-           
+
             a.ShowDialog();
         }
 
@@ -92,7 +92,7 @@ namespace PBL3CodeDemo.View
             }
             else
             {
-                MessageBox.Show("Tài khoản này không có chức năng quản lý!","Thông báo");
+                MessageBox.Show("Tài khoản này không có chức năng quản lý!", "Thông báo");
             }
 
         }
@@ -105,7 +105,7 @@ namespace PBL3CodeDemo.View
             }
             else
             {
-                
+
                 int Price = Convert.ToInt32(textBoxPrice.Text);
                 int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
                 if (bll.CheckAcount_Role(useName) == 1 || bll.CheckAcount_Role(useName) == 2)
@@ -129,16 +129,16 @@ namespace PBL3CodeDemo.View
                 }
 
             }
-            
+
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {   
+        {
 
             setCBBFood(Convert.ToInt32(cbCategory.SelectedIndex) + 1);
-            
+
         }
-    
+
         private void LoadTable()
         {
             flbTable.Controls.Clear();
@@ -148,7 +148,8 @@ namespace PBL3CodeDemo.View
             {
                 Button btn = new Button()
                 {
-                    Width = 100, Height = 100
+                    Width = 100,
+                    Height = 100
                 };
                 if (table.Status == true)
                 {
@@ -167,14 +168,14 @@ namespace PBL3CodeDemo.View
                 }
                 flbTable.Controls.Add(btn);
             }
-           
+
         }
         private void ShowBill(int id_Table)
         {
             int Price = 0;
             List<Bill_DetailDatagridview> list_Bill = new List<Bill_DetailDatagridview>();
             list_Bill = bll.Get_Bill_Detail(id_Table);
-            if(list_Bill.Count > 0)
+            if (list_Bill.Count > 0)
             {
                 BillTable_DGV.DataSource = list_Bill;
                 foreach (Bill_DetailDatagridview bill_details in list_Bill)
@@ -189,14 +190,22 @@ namespace PBL3CodeDemo.View
                 bll.SetTableStatus(id_Table, 0);
                 textBoxPrice.Text = "0";
             }
-            
+
         }
-         void btn_Click(object sender, EventArgs e)
+        void btn_Click(object sender, EventArgs e)
         {
             int table_ID = ((sender as Button).Tag as TableDataGridView).ID_Table;
             id_Table_Last_Pressed.Text = table_ID.ToString();
             ShowBill(table_ID);
+            setCBBSwitchTable(table_ID);
         }
+
+        private void setCBBSwitchTable(int table_ID)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            cbSwithTable.DataSource = bll.GetCBB_Table(table_ID).ToArray();
+        }
+
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
@@ -211,7 +220,7 @@ namespace PBL3CodeDemo.View
 
         private void bttDeleteFood_Click(object sender, EventArgs e)
         {
-            string foodName="";
+            string foodName = "";
             int Quantity = 0;
             int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
             if (BillTable_DGV.SelectedRows.Count > 0)
@@ -236,7 +245,7 @@ namespace PBL3CodeDemo.View
             {
                 MessageBox.Show("Vui lòng chọn ít nhất 1 món để xóa", "Thông báo");
             }
-            
+
         }
         private void ResetPrice(int id_Table)
         {
@@ -266,6 +275,19 @@ namespace PBL3CodeDemo.View
         private void btnDiscount_Click(object sender, EventArgs e)
         {
             DisCount();
+        }
+
+        private void btnSwithTable_Click(object sender, EventArgs e)
+        {
+            string newTableName = cbSwithTable.Text;
+            int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
+            bll.SwitchTable(idTable, newTableName);
+            //Gán NewIDTable = newIDTable
+            //Chuyển tất cả các món sang bàn đã chọn
+            ShowBill(idTable);//Bill của bàn cũ lúc này sẽ trống
+            bll.SetTableStatus(idTable, 0);
+            LoadTable();
+
         }
     }
 }
