@@ -255,7 +255,6 @@
             this.btnSwithTable.TabIndex = 8;
             this.btnSwithTable.Text = "Chuyển Bàn";
             this.btnSwithTable.UseVisualStyleBackColor = true;
-            this.btnSwithTable.Click += new System.EventHandler(this.btnSwithTable_Click);
             // 
             // cbSwithTable
             // 

@@ -19,7 +19,6 @@ namespace PBL3CodeDemo.DTO
         public Nullable<int> ID_Product { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<bool> Flag { get; set; }
-        public Nullable<bool> Flag_Merge { get; set; }
     
         public virtual Bill Bill { get; set; }
         public virtual Product Product { get; set; }

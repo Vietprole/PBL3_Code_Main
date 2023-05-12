@@ -33,7 +33,6 @@ namespace PBL3CodeDemo.View
         {
             QLCFBLL bll = new QLCFBLL();
             cbFood.DataSource = bll.GetCBB_Food(ID_Category).ToArray();
-
         }
         public fTableManager( string use, string pass)
         {
@@ -57,15 +56,15 @@ namespace PBL3CodeDemo.View
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View.fAccountProfile a = new View.fAccountProfile(useName, passWord);
-
+            View.fAccountProfile a = new View.fAccountProfile( useName, passWord);
+           
             a.ShowDialog();
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.ChangePassWord a = new ChangePassWord(useName, passWord);
-
+           
             a.ShowDialog();
         }
 
@@ -91,7 +90,7 @@ namespace PBL3CodeDemo.View
             }
             else
             {
-                MessageBox.Show("Tài khoản này không có chức năng quản lý!", "Thông báo");
+                MessageBox.Show("Tài khoản này không có chức năng quản lý!","Thông báo");
             }
 
         }
@@ -104,7 +103,7 @@ namespace PBL3CodeDemo.View
             }
             else
             {
-
+                
                 int Price = Convert.ToInt32(textBoxPrice.Text);
                 int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
                 if (bll.CheckAcount_Role(useName) == 1 || bll.CheckAcount_Role(useName) == 2)
@@ -112,27 +111,11 @@ namespace PBL3CodeDemo.View
                     DialogResult result = MessageBox.Show("Bạn có chắc là muốn thanh toán không ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        if (bll.Return_ID_RootTable(idTable) != 0)
-                        {//Có bàn nhập vào nó
-                            DialogResult merge = MessageBox.Show("Bàn này đã được một bàn khác nhập vào. Bạn có muốn thanh toán chung không ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (merge == DialogResult.Yes)
-                            {//Thanh toán chung
-                                bll.CheckOut_Bill_Merge(idTable, Price, useName);
-                            }
-                            else if (merge == DialogResult.No)
-                            {//Thanh toán riêng
-                                bll.CheckOut_Bill_Split(idTable, Price, useName);
-                            }
-                        }
-                        else
-                        {
-                            bll.CheckOut_Bill(idTable, Price, useName);
-                        }
+                        bll.CheckOut_Bill(idTable, Price);
                         ShowBill(idTable);
                         bll.SetTableStatus(idTable, 0);
                         LoadTable();
                         nmDisCount.Value = 0;
-
                     }
                     else if (result == DialogResult.No)
                     {
@@ -144,16 +127,16 @@ namespace PBL3CodeDemo.View
                 }
 
             }
-
+            
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {   
 
             setCBBFood(Convert.ToInt32(cbCategory.SelectedIndex) + 1);
-
+            
         }
-
+    
         private void LoadTable()
         {
             flbTable.Controls.Clear();
@@ -205,7 +188,7 @@ namespace PBL3CodeDemo.View
             int Price = 0;
             List<Bill_DetailDatagridview> list_Bill = new List<Bill_DetailDatagridview>();
             list_Bill = bll.Get_Bill_Detail(id_Table);
-            if (list_Bill.Count > 0)
+            if(list_Bill.Count > 0)
             {
                 BillTable_DGV.DataSource = list_Bill;
                 foreach (Bill_DetailDatagridview bill_details in list_Bill)
@@ -220,29 +203,21 @@ namespace PBL3CodeDemo.View
                 bll.SetTableStatus(id_Table, 0);
                 textBoxPrice.Text = "0";
             }
-
+            
         }
-        void btn_Click(object sender, EventArgs e)
+         void btn_Click(object sender, EventArgs e)
         {
             int table_ID = ((sender as Button).Tag as TableDataGridView).ID_Table;
             id_Table_Last_Pressed.Text = table_ID.ToString();
             ShowBill(table_ID);
-            setCBBSwitchTable(table_ID);
         }
-
-        private void setCBBSwitchTable(int table_ID)
-        {
-            QLCFBLL bll = new QLCFBLL();
-            cbSwithTable.DataSource = bll.GetCBB_Table(table_ID).ToArray();
-        }
-
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             string foodName = cbFood.Text;
             int Quantity = Convert.ToInt32(nmFoodCount.Value);
             int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
-            bll.Add_Food_ToTable(idTable, foodName, Quantity, useName);
+            bll.Add_Food_ToTable(idTable, foodName, Quantity);
             bll.SetTableStatus(idTable, 1);
             ShowBill(idTable);
             LoadTable();
@@ -250,7 +225,7 @@ namespace PBL3CodeDemo.View
 
         private void bttDeleteFood_Click(object sender, EventArgs e)
         {
-            string foodName = "";
+            string foodName="";
             int Quantity = 0;
             int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
             if (BillTable_DGV.SelectedRows.Count > 0)
@@ -275,7 +250,7 @@ namespace PBL3CodeDemo.View
             {
                 MessageBox.Show("Vui lòng chọn ít nhất 1 món để xóa", "Thông báo");
             }
-
+            
         }
         private void ResetPrice(int id_Table)
         {
@@ -305,27 +280,6 @@ namespace PBL3CodeDemo.View
         private void btnDiscount_Click(object sender, EventArgs e)
         {
             DisCount();
-        }
-
-        private void btnSwithTable_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắc là chuyển bàn không ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                string newTableName = cbSwithTable.Text;
-                int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
-                bll.SwitchTable(idTable, newTableName);
-                //Gán NewIDTable = newIDTable
-                //Chuyển tất cả các món sang bàn đã chọn
-                ShowBill(idTable);//Bill của bàn cũ lúc này sẽ trống
-                bll.SetTableStatus(idTable, 0);
-                LoadTable();
-            }
-            else if (result == DialogResult.No)
-            {
-            }
-
-
         }
     }
 }

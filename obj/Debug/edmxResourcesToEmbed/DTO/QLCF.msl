@@ -19,8 +19,6 @@
     <EntitySetMapping Name="Bills">
       <EntityTypeMapping TypeName="PBL3Model.Bill">
         <MappingFragment StoreEntitySet="Bill">
-          <ScalarProperty Name="Root_ID_Table" ColumnName="Root_ID_Table" />
-          <ScalarProperty Name="New_ID_Table" ColumnName="New_ID_Table" />
           <ScalarProperty Name="Flag" ColumnName="Flag" />
           <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
           <ScalarProperty Name="ID_Account" ColumnName="ID_Account" />
@@ -35,7 +33,6 @@
     <EntitySetMapping Name="Bill_Detail">
       <EntityTypeMapping TypeName="PBL3Model.Bill_Detail">
         <MappingFragment StoreEntitySet="Bill_Detail">
-          <ScalarProperty Name="Flag_Merge" ColumnName="Flag_Merge" />
           <ScalarProperty Name="Flag" ColumnName="Flag" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ID_Bill" ColumnName="ID_Bill" />
@@ -95,9 +92,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Items">
-      <EntityTypeMapping TypeName="PBL3Model.Item">
-        <MappingFragment StoreEntitySet="Item">
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="PBL3Model.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
           <ScalarProperty Name="Flag" ColumnName="Flag" />
           <ScalarProperty Name="Unit" ColumnName="Unit" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
