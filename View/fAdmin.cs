@@ -332,5 +332,54 @@ namespace PBL3CodeDemo.View
                 dataGridViewTable.DataSource = bll.GetDGV_Product_Search(Product_Name);
             }
         }
+        void LoadDGV_Inventory()
+        {
+            QLCFBLL bll = new QLCFBLL();
+            dataGridViewProduct.DataSource = bll.GetDGV_Inventory();
+        }
+        bool CheckForm_Item()
+        {
+            return ( txbNameItem.Text == "" || txbCategoryItem.Text == "" || txbQuantityItem.Text == "" || txbUnitItem.Text == "");
+        }
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            QLCFBLL bll = new QLCFBLL();
+
+            if (CheckForm_Item() == false)
+            {
+                InventoryItem inventoryItem = new InventoryItem
+                {
+                    Name = txbNameItem.Text,
+                    Category = txbCategoryItem.Text,
+                    Quantity = float.Parse(txbQuantityItem.Text),
+                    Unit = txbUnitItem.Text,
+                    Flag = true
+                };
+                if (bll.Add_InventoryItem(inventoryItem))
+                    MessageBox.Show("Đã thêm hàng hóa thành công !", "Thông báo!");
+                else
+                    MessageBox.Show("Thêm Thất Bại", "Thông báo!");
+            }
+            else
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo!");
+            }
+            LoadDGV_Inventory();
+        }
+
+        private void btnEditItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearchItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

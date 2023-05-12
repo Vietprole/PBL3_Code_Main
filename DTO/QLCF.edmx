@@ -50,7 +50,7 @@
           <Property Name="Category_Name" Type="nvarchar" MaxLength="60" />
           <Property Name="Flag" Type="bit" />
         </EntityType>
-        <EntityType Name="Inventory">
+        <EntityType Name="InventoryItem">
           <Key>
             <PropertyRef Name="ID_Item" />
           </Key>
@@ -165,7 +165,7 @@
           <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill_Detail" EntityType="Self.Bill_Detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryItem" EntityType="Self.InventoryItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
@@ -386,9 +386,9 @@
             <End Role="Category" EntitySet="Categories" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <EntitySet Name="Inventories" EntityType="PBL3Model.Inventory" />
+          <EntitySet Name="InventoryItems" EntityType="PBL3Model.InventoryItem" />
         </EntityContainer>
-        <EntityType Name="Inventory">
+        <EntityType Name="InventoryItem">
           <Key>
             <PropertyRef Name="ID_Item" />
           </Key>
@@ -484,9 +484,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Inventories">
-            <EntityTypeMapping TypeName="PBL3Model.Inventory">
-              <MappingFragment StoreEntitySet="Inventory">
+          <EntitySetMapping Name="InventoryItems">
+            <EntityTypeMapping TypeName="PBL3Model.InventoryItem">
+              <MappingFragment StoreEntitySet="InventoryItem">
                 <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />

@@ -32,6 +32,6 @@ namespace PBL3CodeDemo.DTO
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Table> Tables { get; set; }
-        public virtual DbSet<Inventory> Inventories { get; set; }
+        public virtual DbSet<InventoryItem> InventoryItems { get; set; }
     }
 }
