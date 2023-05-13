@@ -201,3 +201,4 @@ C:\Users\ADMIN\Dropbox\PC\Documents\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj
 C:\Users\ADMIN\Dropbox\PC\Documents\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.CopyComplete
 C:\Users\ADMIN\Dropbox\PC\Documents\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.exe
 C:\Users\ADMIN\Dropbox\PC\Documents\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.pdb
+E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fBill_Detail.resources
