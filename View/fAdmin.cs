@@ -88,6 +88,7 @@ namespace PBL3CodeDemo.View
             LoadDGV_Account();
             LoadDGV_Product();
             setCBBCategory();
+            LoadDGV_Item();
             QLCFBLL bll = new QLCFBLL();
             chart1.Series.Clear();
             LoadRevenue(Convert.ToDateTime(" 01/01/2023"), dateEnd.Value.Date);           
