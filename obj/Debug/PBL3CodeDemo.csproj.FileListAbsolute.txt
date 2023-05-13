@@ -45,7 +45,6 @@ E:\Viet\PBL3_Code_Main\bin\Debug\EntityFramework.dll
 E:\Viet\PBL3_Code_Main\bin\Debug\EntityFramework.SqlServer.dll
 E:\Viet\PBL3_Code_Main\bin\Debug\EntityFramework.xml
 E:\Viet\PBL3_Code_Main\bin\Debug\EntityFramework.SqlServer.xml
-E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.AssemblyReference.cache
 E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.ChangePassWord.resources
 E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fAccountProfile.resources
 E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fAdmin.resources

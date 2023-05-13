@@ -192,7 +192,6 @@
       <End Role="Category" EntitySet="Categories" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
-    <EntitySet Name="sysdiagrams" EntityType="PBL3Model.sysdiagram" />
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -223,19 +222,8 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
-    <EntitySet Name="Inventories" EntityType="PBL3Model.Inventory" />
     <EntitySet Name="Items" EntityType="PBL3Model.Item" />
   </EntityContainer>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
     <Property Type="Binary" Name="definition" Nullable="true" />
@@ -247,17 +235,6 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
-  <EntityType Name="Inventory">
-    <Key>
-      <PropertyRef Name="ID_Item" />
-    </Key>
-    <Property Name="ID_Item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-    <Property Name="Category" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-    <Property Name="Quantity" Type="Double" />
-    <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="Flag" Type="Boolean" />
-  </EntityType>
   <EntityType Name="Item">
     <Key>
       <PropertyRef Name="ID_Item" />

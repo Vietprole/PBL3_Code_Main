@@ -76,6 +76,7 @@
     <Compile Include="DTO\Item.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\ItemDatagridview.cs" />
     <Compile Include="DTO\Product.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>

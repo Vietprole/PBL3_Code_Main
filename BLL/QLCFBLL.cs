@@ -849,7 +849,7 @@ namespace PBL3CodeDemo.BLL
             List<ProductDatagridview> result = new List<ProductDatagridview>();
             foreach (Product i in Return_Product())
             {
-                if (i.ID_Product.ToString().Contains(Product_Name))
+                if (i.Name.ToString().Contains(Product_Name))
                 {
                     result.Add(new ProductDatagridview
                     {
@@ -1074,7 +1074,6 @@ namespace PBL3CodeDemo.BLL
             {
                 if (i.Name.ToString().Contains(Item_Name))
                 {
-                    Debug.WriteLine("Contained");
                     result.Add(new ItemDatagridview
                     {
                         ID_Item = i.ID_Item,
