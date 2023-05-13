@@ -100,6 +100,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateStar = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.txbUnitItem = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txbCategoryItem = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.txbQuantityItem = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.txbNameItem = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txbSearchItem = new System.Windows.Forms.TextBox();
+            this.btnSearchItem = new System.Windows.Forms.Button();
+            this.btnDelItem = new System.Windows.Forms.Button();
+            this.btnEditItem = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.dataGridViewItem = new System.Windows.Forms.DataGridView();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -122,6 +141,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridViewBillThongKe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItem)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -889,6 +914,208 @@
             this.tabControl1.Size = new System.Drawing.Size(1365, 559);
             this.tabControl1.TabIndex = 0;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.panel16);
+            this.tabPage5.Controls.Add(this.panel6);
+            this.tabPage5.Controls.Add(this.panel14);
+            this.tabPage5.Controls.Add(this.panel15);
+            this.tabPage5.Controls.Add(this.txbSearchItem);
+            this.tabPage5.Controls.Add(this.btnSearchItem);
+            this.tabPage5.Controls.Add(this.btnDelItem);
+            this.tabPage5.Controls.Add(this.btnEditItem);
+            this.tabPage5.Controls.Add(this.btnAddItem);
+            this.tabPage5.Controls.Add(this.dataGridViewItem);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1027, 495);
+            this.tabPage5.TabIndex = 7;
+            this.tabPage5.Text = "Kho hàng";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.txbUnitItem);
+            this.panel16.Controls.Add(this.label18);
+            this.panel16.Location = new System.Drawing.Point(644, 228);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(373, 47);
+            this.panel16.TabIndex = 41;
+            // 
+            // txbUnitItem
+            // 
+            this.txbUnitItem.Location = new System.Drawing.Point(149, 9);
+            this.txbUnitItem.Margin = new System.Windows.Forms.Padding(4);
+            this.txbUnitItem.Name = "txbUnitItem";
+            this.txbUnitItem.Size = new System.Drawing.Size(223, 22);
+            this.txbUnitItem.TabIndex = 2;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(5, 14);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(71, 21);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Đơn vị:";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.txbCategoryItem);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Location = new System.Drawing.Point(645, 128);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(373, 49);
+            this.panel6.TabIndex = 32;
+            // 
+            // txbCategoryItem
+            // 
+            this.txbCategoryItem.Location = new System.Drawing.Point(149, 14);
+            this.txbCategoryItem.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCategoryItem.Name = "txbCategoryItem";
+            this.txbCategoryItem.Size = new System.Drawing.Size(223, 22);
+            this.txbCategoryItem.TabIndex = 42;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(5, 14);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Doanh mục:";
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.txbQuantityItem);
+            this.panel14.Controls.Add(this.label16);
+            this.panel14.Location = new System.Drawing.Point(643, 179);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(373, 50);
+            this.panel14.TabIndex = 40;
+            // 
+            // txbQuantityItem
+            // 
+            this.txbQuantityItem.Location = new System.Drawing.Point(149, 14);
+            this.txbQuantityItem.Margin = new System.Windows.Forms.Padding(4);
+            this.txbQuantityItem.Name = "txbQuantityItem";
+            this.txbQuantityItem.Size = new System.Drawing.Size(223, 22);
+            this.txbQuantityItem.TabIndex = 2;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(5, 14);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(93, 21);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Số lượng:";
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.txbNameItem);
+            this.panel15.Controls.Add(this.label17);
+            this.panel15.Location = new System.Drawing.Point(646, 73);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(373, 47);
+            this.panel15.TabIndex = 39;
+            // 
+            // txbNameItem
+            // 
+            this.txbNameItem.Location = new System.Drawing.Point(149, 9);
+            this.txbNameItem.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNameItem.Name = "txbNameItem";
+            this.txbNameItem.Size = new System.Drawing.Size(223, 22);
+            this.txbNameItem.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(5, 14);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(132, 21);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Tên hàng hóa:";
+            // 
+            // txbSearchItem
+            // 
+            this.txbSearchItem.Location = new System.Drawing.Point(646, 27);
+            this.txbSearchItem.Margin = new System.Windows.Forms.Padding(4);
+            this.txbSearchItem.Name = "txbSearchItem";
+            this.txbSearchItem.Size = new System.Drawing.Size(211, 22);
+            this.txbSearchItem.TabIndex = 38;
+            // 
+            // btnSearchItem
+            // 
+            this.btnSearchItem.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchItem.Location = new System.Drawing.Point(866, 20);
+            this.btnSearchItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchItem.Name = "btnSearchItem";
+            this.btnSearchItem.Size = new System.Drawing.Size(151, 46);
+            this.btnSearchItem.TabIndex = 37;
+            this.btnSearchItem.Text = "Tìm";
+            this.btnSearchItem.UseVisualStyleBackColor = true;
+            this.btnSearchItem.Click += new System.EventHandler(this.btnSearchItem_Click);
+            // 
+            // btnDelItem
+            // 
+            this.btnDelItem.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelItem.Location = new System.Drawing.Point(461, 437);
+            this.btnDelItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelItem.Name = "btnDelItem";
+            this.btnDelItem.Size = new System.Drawing.Size(151, 46);
+            this.btnDelItem.TabIndex = 36;
+            this.btnDelItem.Text = "Xóa";
+            this.btnDelItem.UseVisualStyleBackColor = true;
+            this.btnDelItem.Click += new System.EventHandler(this.btnDelItem_Click);
+            // 
+            // btnEditItem
+            // 
+            this.btnEditItem.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditItem.Location = new System.Drawing.Point(244, 437);
+            this.btnEditItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditItem.Name = "btnEditItem";
+            this.btnEditItem.Size = new System.Drawing.Size(151, 46);
+            this.btnEditItem.TabIndex = 35;
+            this.btnEditItem.Text = "Sửa";
+            this.btnEditItem.UseVisualStyleBackColor = true;
+            this.btnEditItem.Click += new System.EventHandler(this.btnEditItem_Click);
+            // 
+            // btnAddItem
+            // 
+            this.btnAddItem.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddItem.Location = new System.Drawing.Point(24, 437);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(151, 46);
+            this.btnAddItem.TabIndex = 34;
+            this.btnAddItem.Text = "Thêm";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // dataGridViewItem
+            // 
+            this.dataGridViewItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewItem.Location = new System.Drawing.Point(8, 12);
+            this.dataGridViewItem.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewItem.Name = "dataGridViewItem";
+            this.dataGridViewItem.RowHeadersWidth = 51;
+            this.dataGridViewItem.Size = new System.Drawing.Size(631, 406);
+            this.dataGridViewItem.TabIndex = 33;
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -937,6 +1164,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridViewBillThongKe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1012,5 +1250,24 @@
         private System.Windows.Forms.Label label_DateBill;
         private System.Windows.Forms.Button btnCheckBill;
         private System.Windows.Forms.ComboBox cbbCategory;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.TextBox txbQuantityItem;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.TextBox txbNameItem;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txbSearchItem;
+        private System.Windows.Forms.Button btnSearchItem;
+        private System.Windows.Forms.Button btnDelItem;
+        private System.Windows.Forms.Button btnEditItem;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.DataGridView dataGridViewItem;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.TextBox txbUnitItem;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txbCategoryItem;
     }
 }

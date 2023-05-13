@@ -14,6 +14,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Diagnostics;
 
 namespace PBL3CodeDemo.BLL
 {
@@ -803,22 +804,35 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public void Add_Product(Product product)
+        public bool Add_Product(Product product)
         {
-            using (PBL3Entities db = new PBL3Entities())
+            PBL3Entities db = new PBL3Entities();
+            if (db.Products.Any(p => p.Name == product.Name))
+            {
+                return false;
+            }
+            else
             {
                 db.Products.Add(product);
                 db.SaveChanges();
+                return true;
             }
         }
-        public void Edit_Product(Product product)
+        public bool Edit_Product(Product product)
         {
-            using (PBL3Entities db = new PBL3Entities())
+            PBL3Entities db = new PBL3Entities();
+
+            if (db.Products.Any(p => p.ID_Product == product.ID_Product))
             {
                 var s = db.Products.Where(p => p.ID_Product == product.ID_Product).FirstOrDefault();
-                s = product;
+                s.Name = product.Name;
+                s.Price = product.Price;
+                s.ID_Category = product.ID_Category;
+                s.Flag = product.Flag;
                 db.SaveChanges();
+                return true;
             }
+            else return false;
         }
         public void Delete_Product(int ID_Product)
         {
@@ -835,7 +849,7 @@ namespace PBL3CodeDemo.BLL
             List<ProductDatagridview> result = new List<ProductDatagridview>();
             foreach (Product i in Return_Product())
             {
-                if (i.ID_Product.ToString() == (Product_Name))
+                if (i.ID_Product.ToString().Contains(Product_Name))
                 {
                     result.Add(new ProductDatagridview
                     {
@@ -989,6 +1003,89 @@ namespace PBL3CodeDemo.BLL
             targetBill.Pay_Status = true;
             targetBill.Price = priceTargetBill;
             db.SaveChanges();
+        }
+        public List<Item> Return_Item()
+        {
+            PBL3Entities db = new PBL3Entities();
+            return db.Items.Where(p => p.Flag == true).Select(p => p).ToList();
+        }
+        public List<ItemDatagridview> GetDGV_Item()
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<ItemDatagridview> result = new List<ItemDatagridview>();
+            foreach (Item i in Return_Item())
+            {
+                result.Add(new ItemDatagridview
+                {
+                    ID_Item = i.ID_Item,
+                    Name = i.Name,
+                    Category = i.Category,
+                    Quantity = (double)i.Quantity,
+                    Unit = i.Unit
+                });
+            }
+            return result;
+        }
+        public bool Add_Item(Item Item)
+        {
+            PBL3Entities db = new PBL3Entities();
+            if (db.Items.Any(p => p.Name == Item.Name))
+            {
+                return false;
+            }
+            else
+            {
+                db.Items.Add(Item);
+                db.SaveChanges();
+                return true;
+            }
+        }
+        public bool Edit_Item(Item item)
+        {
+            PBL3Entities db = new PBL3Entities();
+
+            if (db.Items.Any(p => p.ID_Item == item.ID_Item))
+            {
+                var s = db.Items.Where(p => p.ID_Item == item.ID_Item).FirstOrDefault();
+                s.Name = item.Name;
+                s.Category = item.Category;
+                s.Quantity = item.Quantity;
+                s.Unit = item.Unit;
+                s.Flag = item.Flag;
+                db.SaveChanges();
+                return true;
+            }
+            else return false;
+        }
+        public void Delete_Item(int ID_Item)
+        {
+            using (PBL3Entities db = new PBL3Entities())
+            {
+                var s = db.Items.Where(p => p.ID_Item == ID_Item).FirstOrDefault();
+                db.Items.Remove(s);
+                db.SaveChanges();
+            }
+        }
+        public List<ItemDatagridview> GetDGV_Item_Search(string Item_Name)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<ItemDatagridview> result = new List<ItemDatagridview>();
+            foreach (Item i in Return_Item())
+            {
+                if (i.Name.ToString().Contains(Item_Name))
+                {
+                    Debug.WriteLine("Contained");
+                    result.Add(new ItemDatagridview
+                    {
+                        ID_Item = i.ID_Item,
+                        Name = i.Name,
+                        Category = i.Category,
+                        Quantity = (double)i.Quantity,
+                        Unit = i.Unit
+                    });
+                }
+            }
+            return result;
         }
     }
 }
