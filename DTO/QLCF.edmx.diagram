@@ -20,6 +20,7 @@
         <AssociationConnector Association="PBL3Model.FK__Product__ID_Cate__440B1D61" ManuallyRouted="false" />
         <EntityTypeShape EntityType="PBL3Model.sysdiagram" Width="1.5" PointX="7.375" PointY="4.75" />
         <EntityTypeShape EntityType="PBL3Model.Inventory" Width="1.5" PointX="9.375" PointY="1.875" />
+        <EntityTypeShape EntityType="PBL3Model.Item" Width="1.5" PointX="7.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

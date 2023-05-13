@@ -53,7 +53,7 @@
           <Property Name="Category_Name" Type="nvarchar" MaxLength="60" />
           <Property Name="Flag" Type="bit" />
         </EntityType>
-        <EntityType Name="Inventory">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ID_Item" />
           </Key>
@@ -82,16 +82,6 @@
           <Property Name="Role_Name" Type="nvarchar" MaxLength="60" />
           <Property Name="Flag" Type="bit" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Table">
           <Key>
             <PropertyRef Name="ID_Table" />
@@ -102,7 +92,7 @@
           <Property Name="Flag" Type="bit" />
           <Property Name="Table_Name" Type="nvarchar" MaxLength="40" />
         </EntityType>
-        <Association Name="FK__Account__ID_Role__267ABA7A">
+        <Association Name="FK__Account__ID_Role__398D8EEE">
           <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="Account" Type="Self.Account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -114,7 +104,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__ID_Account__2B3F6F97">
+        <Association Name="FK__Bill__ID_Account__3E52440B">
           <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -126,7 +116,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__ID_Table__2C3393D0">
+        <Association Name="FK__Bill__ID_Table__3F466844">
           <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
           <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
           <ReferentialConstraint>
@@ -138,7 +128,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill_Deta__ID_Bi__33D4B598">
+        <Association Name="FK__Bill_Deta__ID_Bi__46E78A0C">
           <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
           <End Role="Bill_Detail" Type="Self.Bill_Detail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -150,7 +140,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill_Deta__ID_Pr__34C8D9D1">
+        <Association Name="FK__Bill_Deta__ID_Pr__47DBAE45">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="Bill_Detail" Type="Self.Bill_Detail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -162,7 +152,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__ID_Cate__30F848ED">
+        <Association Name="FK__Product__ID_Cate__440B1D61">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -174,68 +164,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="PBL3ModelStoreContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bill_Detail" EntityType="Self.Bill_Detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Account__ID_Role__267ABA7A" Association="Self.FK__Account__ID_Role__267ABA7A">
+          <AssociationSet Name="FK__Account__ID_Role__398D8EEE" Association="Self.FK__Account__ID_Role__398D8EEE">
             <End Role="Role" EntitySet="Role" />
             <End Role="Account" EntitySet="Account" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__ID_Account__2B3F6F97" Association="Self.FK__Bill__ID_Account__2B3F6F97">
+          <AssociationSet Name="FK__Bill__ID_Account__3E52440B" Association="Self.FK__Bill__ID_Account__3E52440B">
             <End Role="Account" EntitySet="Account" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__ID_Table__2C3393D0" Association="Self.FK__Bill__ID_Table__2C3393D0">
+          <AssociationSet Name="FK__Bill__ID_Table__3F466844" Association="Self.FK__Bill__ID_Table__3F466844">
             <End Role="Table" EntitySet="Table" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill_Deta__ID_Bi__33D4B598" Association="Self.FK__Bill_Deta__ID_Bi__33D4B598">
+          <AssociationSet Name="FK__Bill_Deta__ID_Bi__46E78A0C" Association="Self.FK__Bill_Deta__ID_Bi__46E78A0C">
             <End Role="Bill" EntitySet="Bill" />
             <End Role="Bill_Detail" EntitySet="Bill_Detail" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill_Deta__ID_Pr__34C8D9D1" Association="Self.FK__Bill_Deta__ID_Pr__34C8D9D1">
+          <AssociationSet Name="FK__Bill_Deta__ID_Pr__47DBAE45" Association="Self.FK__Bill_Deta__ID_Pr__47DBAE45">
             <End Role="Product" EntitySet="Product" />
             <End Role="Bill_Detail" EntitySet="Bill_Detail" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__ID_Cate__30F848ED" Association="Self.FK__Product__ID_Cate__30F848ED">
+          <AssociationSet Name="FK__Product__ID_Cate__440B1D61" Association="Self.FK__Product__ID_Cate__440B1D61">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
@@ -468,6 +426,7 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <EntitySet Name="Inventories" EntityType="PBL3Model.Inventory" />
+          <EntitySet Name="Items" EntityType="PBL3Model.Item" />
         </EntityContainer>
         <EntityType Name="sysdiagram">
           <Key>
@@ -491,6 +450,17 @@
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
         <EntityType Name="Inventory">
+          <Key>
+            <PropertyRef Name="ID_Item" />
+          </Key>
+          <Property Name="ID_Item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Double" />
+          <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Flag" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="ID_Item" />
           </Key>
@@ -590,44 +560,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="PBL3Model.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="PBL3Model.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="PBL3Model.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="PBL3Model.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="PBL3Model.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="PBL3Model.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="PBL3Model.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="PBL3Model.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="PBL3Model.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="PBL3Model.Store.sp_upgraddiagrams" />
-          <EntitySetMapping Name="Inventories">
-            <EntityTypeMapping TypeName="PBL3Model.Inventory">
-              <MappingFragment StoreEntitySet="Inventory">
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="PBL3Model.Item">
+              <MappingFragment StoreEntitySet="Item">
                 <ScalarProperty Name="Flag" ColumnName="Flag" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
@@ -637,7 +572,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
