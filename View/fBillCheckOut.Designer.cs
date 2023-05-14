@@ -54,7 +54,7 @@ namespace PBL3CodeDemo.View
             // 
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.Location = new System.Drawing.Point(340, 441);
+            this.labelTime.Location = new System.Drawing.Point(340, 468);
             this.labelTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(163, 17);
@@ -65,7 +65,7 @@ namespace PBL3CodeDemo.View
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(162, 712);
+            this.label9.Location = new System.Drawing.Point(162, 739);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(223, 17);
@@ -76,7 +76,7 @@ namespace PBL3CodeDemo.View
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(226, 688);
+            this.label8.Location = new System.Drawing.Point(226, 715);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 17);
@@ -87,7 +87,7 @@ namespace PBL3CodeDemo.View
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(176, 672);
+            this.label7.Location = new System.Drawing.Point(176, 699);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(193, 17);
@@ -98,7 +98,7 @@ namespace PBL3CodeDemo.View
             // 
             this.labelNameAccount.AutoSize = true;
             this.labelNameAccount.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameAccount.Location = new System.Drawing.Point(171, 654);
+            this.labelNameAccount.Location = new System.Drawing.Point(171, 681);
             this.labelNameAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNameAccount.Name = "labelNameAccount";
             this.labelNameAccount.Size = new System.Drawing.Size(167, 17);
@@ -109,7 +109,7 @@ namespace PBL3CodeDemo.View
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(226, 626);
+            this.label5.Location = new System.Drawing.Point(226, 653);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 17);
@@ -120,7 +120,7 @@ namespace PBL3CodeDemo.View
             // 
             this.labelDay.AutoSize = true;
             this.labelDay.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDay.Location = new System.Drawing.Point(183, 481);
+            this.labelDay.Location = new System.Drawing.Point(183, 508);
             this.labelDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDay.Name = "labelDay";
             this.labelDay.Size = new System.Drawing.Size(223, 17);
@@ -131,7 +131,7 @@ namespace PBL3CodeDemo.View
             // 
             this.labelTotalLast.AutoSize = true;
             this.labelTotalLast.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalLast.Location = new System.Drawing.Point(356, 408);
+            this.labelTotalLast.Location = new System.Drawing.Point(356, 435);
             this.labelTotalLast.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotalLast.Name = "labelTotalLast";
             this.labelTotalLast.Size = new System.Drawing.Size(145, 17);
@@ -142,7 +142,7 @@ namespace PBL3CodeDemo.View
             // 
             this.labelDiscount.AutoSize = true;
             this.labelDiscount.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiscount.Location = new System.Drawing.Point(408, 372);
+            this.labelDiscount.Location = new System.Drawing.Point(408, 399);
             this.labelDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDiscount.Name = "labelDiscount";
             this.labelDiscount.Size = new System.Drawing.Size(106, 17);
@@ -153,7 +153,7 @@ namespace PBL3CodeDemo.View
             // 
             this.labeltotalBill.AutoSize = true;
             this.labeltotalBill.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltotalBill.Location = new System.Drawing.Point(368, 339);
+            this.labeltotalBill.Location = new System.Drawing.Point(368, 366);
             this.labeltotalBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labeltotalBill.Name = "labeltotalBill";
             this.labeltotalBill.Size = new System.Drawing.Size(154, 17);
@@ -164,7 +164,7 @@ namespace PBL3CodeDemo.View
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(163, 22);
+            this.label4.Location = new System.Drawing.Point(163, 49);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(193, 17);
@@ -174,7 +174,7 @@ namespace PBL3CodeDemo.View
             // dataGridView_BillDetail
             // 
             this.dataGridView_BillDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_BillDetail.Location = new System.Drawing.Point(-9, 141);
+            this.dataGridView_BillDetail.Location = new System.Drawing.Point(-9, 168);
             this.dataGridView_BillDetail.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_BillDetail.Name = "dataGridView_BillDetail";
             this.dataGridView_BillDetail.RowHeadersWidth = 51;
@@ -185,18 +185,19 @@ namespace PBL3CodeDemo.View
             // 
             this.labelNameTable.AutoSize = true;
             this.labelNameTable.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameTable.Location = new System.Drawing.Point(238, 110);
+            this.labelNameTable.Location = new System.Drawing.Point(238, 137);
             this.labelNameTable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNameTable.Name = "labelNameTable";
             this.labelNameTable.Size = new System.Drawing.Size(43, 17);
             this.labelNameTable.TabIndex = 30;
             this.labelNameTable.Text = "Bàn 1";
+            this.labelNameTable.Click += new System.EventHandler(this.labelNameTable_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(132, 75);
+            this.label3.Location = new System.Drawing.Point(132, 102);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(260, 29);
@@ -207,7 +208,7 @@ namespace PBL3CodeDemo.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 6);
+            this.label2.Location = new System.Drawing.Point(94, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(332, 17);
@@ -218,7 +219,7 @@ namespace PBL3CodeDemo.View
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mistral", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(122, -35);
+            this.label1.Location = new System.Drawing.Point(123, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 41);
@@ -227,7 +228,7 @@ namespace PBL3CodeDemo.View
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(235, 518);
+            this.pictureBox1.Location = new System.Drawing.Point(235, 545);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 104);
             this.pictureBox1.TabIndex = 43;
@@ -237,7 +238,7 @@ namespace PBL3CodeDemo.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 745);
+            this.ClientSize = new System.Drawing.Size(547, 762);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.label9);

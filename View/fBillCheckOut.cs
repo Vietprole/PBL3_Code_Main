@@ -74,5 +74,9 @@ namespace PBL3CodeDemo.View
 
         }
 
+        private void labelNameTable_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
