@@ -227,7 +227,6 @@
             // 
             // nmFoodCount
             // 
-            this.nmFoodCount.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.nmFoodCount.Location = new System.Drawing.Point(985, 58);
             this.nmFoodCount.Margin = new System.Windows.Forms.Padding(4);
             this.nmFoodCount.Minimum = new decimal(new int[] {
