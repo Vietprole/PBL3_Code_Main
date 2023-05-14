@@ -72,7 +72,7 @@
             this.adminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1208, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1208, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -111,10 +111,10 @@
             // 
             this.ctrlShiftTToolStripMenuItem.Name = "ctrlShiftTToolStripMenuItem";
             this.ctrlShiftTToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.A)));
+            | System.Windows.Forms.Keys.M)));
             this.ctrlShiftTToolStripMenuItem.ShowShortcutKeys = false;
-            this.ctrlShiftTToolStripMenuItem.Size = new System.Drawing.Size(345, 26);
-            this.ctrlShiftTToolStripMenuItem.Text = "Thêm món        Ctrl + Shift + A";
+            this.ctrlShiftTToolStripMenuItem.Size = new System.Drawing.Size(348, 26);
+            this.ctrlShiftTToolStripMenuItem.Text = "Thêm món        Ctrl + Shift + M";
             this.ctrlShiftTToolStripMenuItem.Click += new System.EventHandler(this.ctrlShiftTToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
@@ -194,24 +194,24 @@
             // 
             // cbCategory
             // 
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(588, 36);
             this.cbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(284, 24);
             this.cbCategory.TabIndex = 3;
-            this.cbCategory.Text = "Chọn loại nước";
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // cbFood
             // 
+            this.cbFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFood.FormattingEnabled = true;
             this.cbFood.Location = new System.Drawing.Point(588, 69);
             this.cbFood.Margin = new System.Windows.Forms.Padding(4);
             this.cbFood.Name = "cbFood";
             this.cbFood.Size = new System.Drawing.Size(284, 24);
             this.cbFood.TabIndex = 4;
-            this.cbFood.Text = "Chọn nước";
             // 
             // btnAddFood
             // 
@@ -329,7 +329,7 @@
             this.id_Table_Last_Pressed.AutoSize = true;
             this.id_Table_Last_Pressed.Location = new System.Drawing.Point(538, 12);
             this.id_Table_Last_Pressed.Name = "id_Table_Last_Pressed";
-            this.id_Table_Last_Pressed.Size = new System.Drawing.Size(44, 16);
+            this.id_Table_Last_Pressed.Size = new System.Drawing.Size(46, 17);
             this.id_Table_Last_Pressed.TabIndex = 16;
             this.id_Table_Last_Pressed.Text = "label2";
             this.id_Table_Last_Pressed.Visible = false;

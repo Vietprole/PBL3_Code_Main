@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -181,6 +181,7 @@
             // 
             // cbbPosition
             // 
+            this.cbbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPosition.FormattingEnabled = true;
             this.cbbPosition.Location = new System.Drawing.Point(149, 11);
             this.cbbPosition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -359,6 +360,7 @@
             // 
             // cbbCategory
             // 
+            this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCategory.FormattingEnabled = true;
             this.cbbCategory.Location = new System.Drawing.Point(149, 14);
             this.cbbCategory.Name = "cbbCategory";
@@ -535,6 +537,7 @@
             // 
             // cbb_role
             // 
+            this.cbb_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_role.FormattingEnabled = true;
             this.cbb_role.Items.AddRange(new object[] {
             "Quản lý",
@@ -846,17 +849,17 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(-36, 114);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(975, 341);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";

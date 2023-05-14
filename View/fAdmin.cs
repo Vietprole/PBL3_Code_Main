@@ -87,7 +87,7 @@ namespace PBL3CodeDemo.View
             setCBBCategory();
             LoadDGV_Item();
             QLCFBLL bll = new QLCFBLL();
-            chart1.Series.Clear();
+            
             LoadRevenue(Convert.ToDateTime(" 01/01/2023"), dateEnd.Value.Date);
         }
 
@@ -156,7 +156,7 @@ namespace PBL3CodeDemo.View
             if (CheckForm_Account() == false)
             {
                 if (bll.Add_Account(User_Account, Name_Account, Salary, Adress, Role))
-                    MessageBox.Show("Đã thêm bàn thành công !", "Thông báo!");
+                    MessageBox.Show("Đã thêm tài khoản thành công !", "Thông báo!");
                 else
                     MessageBox.Show("Thêm Thất Bại", "Thông báo!");
             }
