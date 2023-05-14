@@ -229,6 +229,7 @@ namespace PBL3CodeDemo.View
             txbAdress.Text = dataGridViewAcount.Rows[i].Cells[3].Value.ToString();
             txbPhone.Text = dataGridViewAcount.Rows[i].Cells[4].Value.ToString();
             cbb_role.Text = dataGridViewAcount.Rows[i].Cells[5].Value.ToString();
+            //txbUserName.ReadOnly = true;
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
@@ -514,6 +515,62 @@ namespace PBL3CodeDemo.View
                 MessageBox.Show("Đã cập nhật bàn thành công !");
             }
             LoadDGV_Table();
+        }
+        private void txbPriceProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbQuantityItem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dataGridViewProduct.CurrentRow.Index;
+            txbNameProduct.Text = dataGridViewProduct.Rows[i].Cells[1].Value.ToString();
+            txbPriceProduct.Text = dataGridViewProduct.Rows[i].Cells[2].Value.ToString();
+            cbbCategory.Text = dataGridViewProduct.Rows[i].Cells[3].Value.ToString();
+            //txbNameProduct.ReadOnly = true;
+        }
+
+        private void dataGridViewItem_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dataGridViewItem.CurrentRow.Index;
+            txbNameItem.Text = dataGridViewItem.Rows[i].Cells[1].Value.ToString();
+            txbCategoryItem.Text = dataGridViewItem.Rows[i].Cells[2].Value.ToString();
+            txbQuantityItem.Text = dataGridViewItem.Rows[i].Cells[3].Value.ToString();
+            txbUnitItem.Text = dataGridViewItem.Rows[i].Cells[4].Value.ToString();
+            //txbNameItem.ReadOnly = true;
         }
     }
 }

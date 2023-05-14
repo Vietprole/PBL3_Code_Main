@@ -395,6 +395,7 @@
             this.txbPriceProduct.Name = "txbPriceProduct";
             this.txbPriceProduct.Size = new System.Drawing.Size(223, 22);
             this.txbPriceProduct.TabIndex = 2;
+            this.txbPriceProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPriceProduct_KeyPress);
             // 
             // label13
             // 
@@ -501,6 +502,7 @@
             this.dataGridViewProduct.RowHeadersWidth = 51;
             this.dataGridViewProduct.Size = new System.Drawing.Size(956, 447);
             this.dataGridViewProduct.TabIndex = 23;
+            this.dataGridViewProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellClick);
             // 
             // tabPage2
             // 
@@ -577,6 +579,7 @@
             this.txbPhone.Name = "txbPhone";
             this.txbPhone.Size = new System.Drawing.Size(221, 22);
             this.txbPhone.TabIndex = 2;
+            this.txbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPhone_KeyPress);
             // 
             // label5
             // 
@@ -635,6 +638,7 @@
             this.txbSalary.Name = "txbSalary";
             this.txbSalary.Size = new System.Drawing.Size(221, 22);
             this.txbSalary.TabIndex = 2;
+            this.txbSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSalary_KeyPress);
             // 
             // label3
             // 
@@ -1013,6 +1017,7 @@
             this.txbQuantityItem.Name = "txbQuantityItem";
             this.txbQuantityItem.Size = new System.Drawing.Size(223, 22);
             this.txbQuantityItem.TabIndex = 2;
+            this.txbQuantityItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbQuantityItem_KeyPress);
             // 
             // label16
             // 
@@ -1119,6 +1124,7 @@
             this.dataGridViewItem.RowHeadersWidth = 51;
             this.dataGridViewItem.Size = new System.Drawing.Size(938, 434);
             this.dataGridViewItem.TabIndex = 33;
+            this.dataGridViewItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItem_CellClick);
             // 
             // fAdmin
             // 
