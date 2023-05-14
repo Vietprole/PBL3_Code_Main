@@ -15,6 +15,7 @@ using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace PBL3CodeDemo.BLL
 {
@@ -678,8 +679,8 @@ namespace PBL3CodeDemo.BLL
                     {
                         NameSP = Return_ProductName(Convert.ToInt32(i.ID_Product)),
                         Quantity = Convert.ToInt32(i.Quantity),
-                        unit_price = Return_ProductPrice(Convert.ToInt32(i.ID_Product))
-
+                        unit_price = Return_ProductPrice(Convert.ToInt32(i.ID_Product)),
+                        Total = Return_ProductPrice(Convert.ToInt32(i.ID_Product)) * Convert.ToInt32(i.Quantity)
                     });
                 }
                 else
@@ -896,7 +897,7 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public void SwitchTable(int selectedIDTable, string newTableName)
+        public void SwitchTable(int selectedIDTable, string newTableName, string useName)
         {
             int newTableID = 0;
             foreach (Table i in Return_Table())
@@ -907,17 +908,36 @@ namespace PBL3CodeDemo.BLL
                 }
             }
             PBL3Entities db = new PBL3Entities();
+            Bill targetBill = db.Bills.Where(p => p.ID_Table == newTableID
+                        && p.Pay_Status == false
+                        && p.ID_Table == p.New_ID_Table
+                        && p.Flag == true).FirstOrDefault();
+            //targetBill là Bill của bàn cần chuyển tới
+            if(targetBill == null)
+            {
+                Account acc = db.Accounts.Where(p => p.UserName == useName && p.Flag == true).FirstOrDefault();
+                string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+                string currentTime = DateTime.Now.ToString("HH:mm:ss");
+                Bill bill = new Bill();
+                bill.ID_Account = acc.ID_Account; // SỬA LẠI CHỖ NÀY !!!!!!!!!!!!!!!!!!! ID_Account là id của acc đang đăng nhập
+                bill.ID_Table = newTableID;
+                bill.Pay_Status = false;
+                bill.Order_Day = DateTime.Parse(currentDate);
+                bill.Order_Time = TimeSpan.Parse(currentTime);
+                bill.Price = 0;
+                bill.Flag = true;
+                bill.New_ID_Table = newTableID;
+                db.Bills.Add(bill);
+                db.SaveChanges();
+                targetBill = bill;
+                SetTableStatus(newTableID, 1);
+            }
             Bill selectedBill = db.Bills.Where(p => p.ID_Table == selectedIDTable
                                     && p.Pay_Status == false
                                     && p.Flag == true).FirstOrDefault();
             //selectedBill là Bill của bàn bị chuyển
             selectedBill.New_ID_Table = newTableID;
             db.SaveChanges();
-            Bill targetBill = db.Bills.Where(p => p.ID_Table == newTableID
-                                    && p.Pay_Status == false
-                                    && p.ID_Table == p.New_ID_Table
-                                    && p.Flag == true).FirstOrDefault();
-            //targetBill là Bill của bàn cần chuyển tới
             foreach (Bill_Detail bd in Return_BillDetails(selectedBill.ID_Bill))
             {//Lấy từng Bill_Detail ở selectedBill copy qua targetBill
                 Bill_Detail bill_Detail = new Bill_Detail();

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -209,9 +210,13 @@ namespace PBL3CodeDemo.View
                 BillTable_DGV.DataSource = list_Bill;
                 foreach (Bill_DetailDatagridview bill_details in list_Bill)
                 {
-                    Price += bill_details.unit_price;
+                    Price += bill_details.unit_price * bill_details.Quantity;
                 }
                 textBoxPrice.Text = Price.ToString();
+                BillTable_DGV.Columns[0].HeaderText = "Tên món";
+                BillTable_DGV.Columns[1].HeaderText = "Số lượng";
+                BillTable_DGV.Columns[2].HeaderText = "Đơn giá";
+                BillTable_DGV.Columns[2].HeaderText = "Tổng tiền";
             }
             else
             {
@@ -219,6 +224,8 @@ namespace PBL3CodeDemo.View
                 bll.SetTableStatus(id_Table, 0);
                 textBoxPrice.Text = "0";
             }
+
+            //label_DateBill.Text = "Danh sách hóa đơn ngày " + day;
 
         }
          void btn_Click(object sender, EventArgs e)
@@ -256,8 +263,8 @@ namespace PBL3CodeDemo.View
                 {
                     foreach (DataGridViewRow row in BillTable_DGV.SelectedRows)
                     {
-                        foodName = row.Cells["NameSP"].Value.ToString();
-                        Quantity = Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
+                        foodName = row.Cells[0].Value.ToString();
+                        Quantity = Convert.ToInt32(row.Cells[1].Value.ToString());
                         bll.Delete_BillDetails(idTable, foodName, Quantity);
                     }
                     ShowBill(idTable);
@@ -316,7 +323,7 @@ namespace PBL3CodeDemo.View
                 {
                     string newTableName = cbSwithTable.Text;
                     int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
-                    bll.SwitchTable(idTable, newTableName);
+                    bll.SwitchTable(idTable, newTableName, useName);
                     //Gán NewIDTable = newIDTable
                     //Chuyển tất cả các món sang bàn đã chọn
                     ShowBill(idTable);//Bill của bàn cũ lúc này sẽ trống
