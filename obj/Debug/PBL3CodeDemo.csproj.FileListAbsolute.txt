@@ -202,3 +202,4 @@ E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.CoreCompileInputs.cache
 E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.CopyComplete
 E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.exe
 E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.pdb
+E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fBillCheckOut.resources

@@ -199,6 +199,22 @@ namespace PBL3CodeDemo.BLL
             }
             return sumprice.ToString();
         }
+        public int getIdBillByIdTable(int idTable)
+        {
+            PBL3Entities db = new PBL3Entities();
+
+            int id_Bill = 0;
+            foreach (Bill i in Return_Bill())
+            {
+                if (i.Pay_Status == false && i.ID_Table == idTable)
+                {//Chưa thanh toán 
+
+                    id_Bill = i.ID_Bill;
+                    break;
+                }
+            }
+            return id_Bill;
+        }
         public bool UpdateBill(int idbill, string txbTotal_Bill, string DateOrder, string txbTimeOrder, string cbb_Table)
         {
             PBL3Entities db = new PBL3Entities();
@@ -548,7 +564,7 @@ namespace PBL3CodeDemo.BLL
                 rol = "Nhân viên";
             }
 
-            return "Quản lý bàn - " + s.Name + " - " + rol;
+            return  s.Name + " - " + rol;
         }
         public string SetAcountName(string user)
         {

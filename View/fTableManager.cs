@@ -21,7 +21,7 @@ namespace PBL3CodeDemo.View
         QLCFBLL bll = new QLCFBLL();
         void setNameForm(string user)
         {
-            this.Text = bll.SetNameAcount(user);
+            this.Text = "Quản lý Bàn"+ bll.SetNameAcount(user);
         }
         void setCBBCategory()
         {
@@ -125,6 +125,8 @@ namespace PBL3CodeDemo.View
                         }
                         else
                         {
+                            View.fBillCheckOut f = new fBillCheckOut(useName, idTable, Convert.ToInt32(nmDisCount.Value));
+                            f.ShowDialog();
                             bll.CheckOut_Bill(idTable, Price, useName);
                         }
                         ShowBill(idTable);
@@ -187,17 +189,17 @@ namespace PBL3CodeDemo.View
 
         private void thanhToánCtrlShiftTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // điền chức năng Thanh Toán
+            btnAddFood_Click(sender, e);
         }
 
         private void chuyểnBànCtrlShiftTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Chức năng Chuyển bàn
+            btnSwithTable_Click(sender, e);
         }
 
         private void ctrlShiftTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //chức năng thêm món
+            btnAddFood_Click(sender, e);
         }
         private void ShowBill(int id_Table)
         {
