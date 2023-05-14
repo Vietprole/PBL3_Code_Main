@@ -15,8 +15,10 @@ using System.Windows.Forms;
 
 namespace PBL3CodeDemo.View
 {
+
     public partial class fTableManager : Form
     {
+        CultureInfo culture = new CultureInfo("vi-VN");
         string useName;
         string passWord;
         QLCFBLL bll = new QLCFBLL();
@@ -212,7 +214,7 @@ namespace PBL3CodeDemo.View
                 {
                     Price += bill_details.unit_price * bill_details.Quantity;
                 }
-                textBoxPrice.Text = Price.ToString();
+                textBoxPrice.Text = Price.ToString("c", culture);
                 BillTable_DGV.Columns[0].HeaderText = "Tên món";
                 BillTable_DGV.Columns[1].HeaderText = "Số lượng";
                 BillTable_DGV.Columns[2].HeaderText = "Đơn giá";
@@ -292,7 +294,7 @@ namespace PBL3CodeDemo.View
                 {
                     Price += bill_details.unit_price;
                 }
-                textBoxPrice.Text = Price.ToString();
+                textBoxPrice.Text = Price.ToString("c", culture);
             }
 
         }
@@ -303,7 +305,7 @@ namespace PBL3CodeDemo.View
             ResetPrice(idTable);
             int Price = Convert.ToInt32(textBoxPrice.Text);
             Price = Price - Price * discount / 100;
-            textBoxPrice.Text = Price.ToString();
+            textBoxPrice.Text = Price.ToString("c", culture);
         }
         private void btnDiscount_Click(object sender, EventArgs e)
         {
