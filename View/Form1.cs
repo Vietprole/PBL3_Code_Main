@@ -73,5 +73,10 @@ namespace PBL3CodeDemo
             }
             
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

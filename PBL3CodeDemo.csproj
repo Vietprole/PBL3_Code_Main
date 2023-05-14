@@ -181,6 +181,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\fTableManager.resx">
       <DependentUpon>fTableManager.cs</DependentUpon>
@@ -221,6 +222,10 @@
       <DependentUpon>QLCF.edmx</DependentUpon>
       <LastGenOutput>QLCF.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\aIsss2.JPG" />
+    <None Include="Resources\240_F_217720838_zQcOEAOU0plHYh6WWv50te1L9d7iApAz.jpg" />
+    <None Include="Resources\5087579.png" />
+    <None Include="Resources\icon-256x256.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
