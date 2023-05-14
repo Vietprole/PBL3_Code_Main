@@ -48,9 +48,6 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-       
-        
-
         public List<CBB_Item> GetCBB_Category()
         {
             List<CBB_Item> result = new List<CBB_Item>();
@@ -135,7 +132,6 @@ namespace PBL3CodeDemo.BLL
             PBL3Entities db = new PBL3Entities();
             return db.Bill_Detail.Where(p => p.Flag == true).ToList();
         }
-        
         public int SetIDTableByIDBill( int idBill)
         {
             PBL3Entities db = new PBL3Entities();
@@ -143,8 +139,6 @@ namespace PBL3CodeDemo.BLL
             
             return Convert.ToInt32( n.ID_Table);
         }
-       
-      
         public string SetDateOrderByIDBill(int idBill)
         {
             PBL3Entities db = new PBL3Entities();
@@ -839,7 +833,7 @@ namespace PBL3CodeDemo.BLL
             using (PBL3Entities db = new PBL3Entities())
             {
                 var s = db.Products.Where(p => p.ID_Product == ID_Product).FirstOrDefault();
-                db.Products.Remove(s);
+                s.Flag = false;
                 db.SaveChanges();
             }
         }
@@ -1062,7 +1056,7 @@ namespace PBL3CodeDemo.BLL
             using (PBL3Entities db = new PBL3Entities())
             {
                 var s = db.Items.Where(p => p.ID_Item == ID_Item).FirstOrDefault();
-                db.Items.Remove(s);
+                s.Flag = false;
                 db.SaveChanges();
             }
         }

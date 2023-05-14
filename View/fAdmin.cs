@@ -1,19 +1,9 @@
 ﻿using PBL3CodeDemo.BLL;
 using PBL3CodeDemo.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace PBL3CodeDemo.View
 {
@@ -76,12 +66,12 @@ namespace PBL3CodeDemo.View
         }
 
         public int Old_ID_Table { get; set; }
-         string user;
-        
-        public fAdmin( string userName)
+        string user;
+
+        public fAdmin(string userName)
         {
             user = userName;
-           
+
             InitializeComponent();
             setCBB_ViTriBan();
             LoadDGV_Table();
@@ -91,9 +81,9 @@ namespace PBL3CodeDemo.View
             LoadDGV_Item();
             QLCFBLL bll = new QLCFBLL();
             chart1.Series.Clear();
-            LoadRevenue(Convert.ToDateTime(" 01/01/2023"), dateEnd.Value.Date);           
+            LoadRevenue(Convert.ToDateTime(" 01/01/2023"), dateEnd.Value.Date);
         }
-        
+
         private void dataGridViewTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Make sure the click was on a row and not on the column header
@@ -123,7 +113,7 @@ namespace PBL3CodeDemo.View
         private void btnEditTable_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
-            string Table_Name= txbNameTable.Text;
+            string Table_Name = txbNameTable.Text;
             bool Status = checkBoxStatus.Checked;
             string Position = cbbPosition.Text;
             if (bll.UpdateTable(Old_ID_Table, Table_Name, Status, Position)) //Update Table thành công
@@ -183,8 +173,8 @@ namespace PBL3CodeDemo.View
             string Role = cbb_role.Text;
 
             if (CheckForm_Account() == false)
-            {   
-                
+            {
+
                 if (bll.UpdateAccount(User_Account, Name_Account, Salary, Phone, Adress, Role))
                     MessageBox.Show("Đã cập nhật tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 else
@@ -203,7 +193,8 @@ namespace PBL3CodeDemo.View
 
 
             if (CheckForm_Account() == false)
-            {   if( user == txbUserName.Text)
+            {
+                if (user == txbUserName.Text)
                 {
                     MessageBox.Show("Không thể xóa tài khoản đang đăng nhập!", "Thông báo");
                 }
@@ -211,7 +202,7 @@ namespace PBL3CodeDemo.View
                 {
                     MessageBox.Show("Xóa tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 }
-                    
+
                 else
                     MessageBox.Show("Xóa tài khoản Thất Bại", "Thông báo!");
             }
@@ -235,10 +226,10 @@ namespace PBL3CodeDemo.View
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            
+
             if (dateStar.Value.Date <= dateEnd.Value.Date)
             {
-               LoadRevenue(dateStar.Value.Date, dateEnd.Value.Date);
+                LoadRevenue(dateStar.Value.Date, dateEnd.Value.Date);
             }
             else
             {
@@ -297,10 +288,10 @@ namespace PBL3CodeDemo.View
                     ID_Category = cbbCategory.SelectedIndex + 1,
                     Flag = true
                 };
-                if (bll.Add_Product(product)) 
+                if (bll.Add_Product(product))
                     MessageBox.Show("Đã thêm món ăn thành công !", "Thông báo!");
-            else
-                MessageBox.Show("Thêm Thất Bại", "Thông báo!");
+                else
+                    MessageBox.Show("Thêm Thất Bại", "Thông báo!");
             }
             else
             {
@@ -364,7 +355,7 @@ namespace PBL3CodeDemo.View
         }
         bool CheckForm_Item()
         {
-            return ( txbNameItem.Text == "" || txbCategoryItem.Text == "" || txbQuantityItem.Text == "" || txbUnitItem.Text == "");
+            return (txbNameItem.Text == "" || txbCategoryItem.Text == "" || txbQuantityItem.Text == "" || txbUnitItem.Text == "");
         }
         private void btnAddItem_Click(object sender, EventArgs e)
         {
@@ -447,35 +438,36 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
 
             HitTestResult result = chart1.HitTest(e.X, e.Y);
-              
-            string day = result.Series.Points[result.PointIndex].AxisLabel;                
+
+            string day = result.Series.Points[result.PointIndex].AxisLabel;
             datagridViewBillThongKe.DataSource = bll.GetDGV_Bill_Revenuve(DateTime.ParseExact(day, "d/M/yyyy", CultureInfo.InvariantCulture));
             datagridViewBillThongKe.Columns[0].HeaderText = "Mã Hóa Đơn";
             datagridViewBillThongKe.Columns[1].HeaderText = "Giờ Thanh Toán";
             datagridViewBillThongKe.Columns[2].HeaderText = "Tổng Giá";
-            datagridViewBillThongKe.Columns[3].HeaderText = "Tên Bàn";   
-            label_DateBill.Text =   "Danh sách hóa đơn ngày " + day;
-            
+            datagridViewBillThongKe.Columns[3].HeaderText = "Tên Bàn";
+            label_DateBill.Text = "Danh sách hóa đơn ngày " + day;
+
         }
 
         private void btnCheckBill_Click(object sender, EventArgs e)
         {
-            
+
             if (id_Bill == -1)
             {
                 MessageBox.Show("Vui lòng chọn hóa đơn!", "Thông báo");
-            } else
+            }
+            else
             {
                 fBill_Detail f = new fBill_Detail(id_Bill, user);
                 this.Hide();
                 f.ShowDialog();
-            }    
-        } 
+            }
+        }
 
         private void datagridViewBillThongKe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = datagridViewBillThongKe.CurrentRow.Index;
-             id_Bill = Convert.ToInt32(datagridViewBillThongKe.Rows[i].Cells[0].Value);
+            id_Bill = Convert.ToInt32(datagridViewBillThongKe.Rows[i].Cells[0].Value);
         }
         private void fAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {

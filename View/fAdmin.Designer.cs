@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -173,7 +173,7 @@
             // 
             this.panel8.Controls.Add(this.cbbPosition);
             this.panel8.Controls.Add(this.label9);
-            this.panel8.Location = new System.Drawing.Point(971, 167);
+            this.panel8.Location = new System.Drawing.Point(973, 167);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(373, 50);
@@ -262,7 +262,7 @@
             // 
             // txbSearchTable
             // 
-            this.txbSearchTable.Location = new System.Drawing.Point(973, 15);
+            this.txbSearchTable.Location = new System.Drawing.Point(973, 19);
             this.txbSearchTable.Margin = new System.Windows.Forms.Padding(4);
             this.txbSearchTable.Name = "txbSearchTable";
             this.txbSearchTable.Size = new System.Drawing.Size(211, 22);
@@ -283,7 +283,7 @@
             // btnDelTable
             // 
             this.btnDelTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelTable.Location = new System.Drawing.Point(748, 471);
+            this.btnDelTable.Location = new System.Drawing.Point(777, 469);
             this.btnDelTable.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelTable.Name = "btnDelTable";
             this.btnDelTable.Size = new System.Drawing.Size(151, 46);
@@ -295,7 +295,7 @@
             // btnEditTable
             // 
             this.btnEditTable.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditTable.Location = new System.Drawing.Point(345, 469);
+            this.btnEditTable.Location = new System.Drawing.Point(402, 469);
             this.btnEditTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditTable.Name = "btnEditTable";
             this.btnEditTable.Size = new System.Drawing.Size(151, 46);
@@ -351,7 +351,7 @@
             // 
             this.panel9.Controls.Add(this.cbbCategory);
             this.panel9.Controls.Add(this.label10);
-            this.panel9.Location = new System.Drawing.Point(973, 177);
+            this.panel9.Location = new System.Drawing.Point(973, 167);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(373, 49);
@@ -380,7 +380,7 @@
             // 
             this.panel12.Controls.Add(this.txbPriceProduct);
             this.panel12.Controls.Add(this.label13);
-            this.panel12.Location = new System.Drawing.Point(973, 128);
+            this.panel12.Location = new System.Drawing.Point(973, 116);
             this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(373, 50);
@@ -409,7 +409,7 @@
             // 
             this.panel13.Controls.Add(this.txbNameProduct);
             this.panel13.Controls.Add(this.label14);
-            this.panel13.Location = new System.Drawing.Point(973, 79);
+            this.panel13.Location = new System.Drawing.Point(973, 68);
             this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(373, 47);
@@ -436,7 +436,7 @@
             // 
             // txbSearchProduct
             // 
-            this.txbSearchProduct.Location = new System.Drawing.Point(973, 33);
+            this.txbSearchProduct.Location = new System.Drawing.Point(973, 19);
             this.txbSearchProduct.Margin = new System.Windows.Forms.Padding(4);
             this.txbSearchProduct.Name = "txbSearchProduct";
             this.txbSearchProduct.Size = new System.Drawing.Size(211, 22);
@@ -445,7 +445,7 @@
             // btnSearchProduct
             // 
             this.btnSearchProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchProduct.Location = new System.Drawing.Point(1193, 26);
+            this.btnSearchProduct.Location = new System.Drawing.Point(1193, 7);
             this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Size = new System.Drawing.Size(151, 46);
@@ -457,7 +457,7 @@
             // btnDelProduct
             // 
             this.btnDelProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelProduct.Location = new System.Drawing.Point(763, 469);
+            this.btnDelProduct.Location = new System.Drawing.Point(777, 469);
             this.btnDelProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelProduct.Name = "btnDelProduct";
             this.btnDelProduct.Size = new System.Drawing.Size(151, 46);
@@ -469,7 +469,7 @@
             // btnEditProduct
             // 
             this.btnEditProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProduct.Location = new System.Drawing.Point(364, 469);
+            this.btnEditProduct.Location = new System.Drawing.Point(402, 469);
             this.btnEditProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(151, 46);
@@ -481,7 +481,7 @@
             // btnAddProduct
             // 
             this.btnAddProduct.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddProduct.Location = new System.Drawing.Point(23, 469);
+            this.btnAddProduct.Location = new System.Drawing.Point(37, 469);
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(151, 46);
@@ -497,7 +497,7 @@
             this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.RowHeadersWidth = 51;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(959, 442);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(956, 447);
             this.dataGridViewProduct.TabIndex = 23;
             // 
             // tabPage2
@@ -846,17 +846,17 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(-36, 114);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(975, 341);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
