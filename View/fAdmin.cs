@@ -34,6 +34,13 @@ namespace PBL3CodeDemo.View
         {
             QLCFBLL bll = new QLCFBLL();
             dataGridViewTable.DataSource = bll.GetDGV_Table();
+            dataGridViewTable.Columns[0].HeaderText = "Mã Bàn";
+            dataGridViewTable.Columns[1].HeaderText = "Tên Bàn";
+            dataGridViewTable.Columns[2].HeaderText = "Trạng Thái";
+            dataGridViewTable.Columns[3].HeaderText = "Vị Trí";
+
+            txbNameTable.Text = "";
+            checkBoxStatus.Checked = false;
         }
         void LoadDGV_Account()
         {
@@ -254,6 +261,13 @@ namespace PBL3CodeDemo.View
         {
             QLCFBLL bll = new QLCFBLL();
             dataGridViewProduct.DataSource = bll.GetDGV_Product();
+            dataGridViewProduct.Columns[0].HeaderText = "Mã Món ăn";
+            dataGridViewProduct.Columns[1].HeaderText = "Tên Món";
+            dataGridViewProduct.Columns[2].HeaderText = "Giá";
+            dataGridViewProduct.Columns[3].HeaderText = "Doanh mục";
+            
+            txbNameProduct.Text = "";
+            txbPriceProduct.Text = "";
         }
         private void setCBBCategory()
         {
@@ -352,6 +366,16 @@ namespace PBL3CodeDemo.View
         {
             QLCFBLL bll = new QLCFBLL();
             dataGridViewItem.DataSource = bll.GetDGV_Item();
+            dataGridViewItem.Columns[0].HeaderText = "Mã Mặt Hàng";
+            dataGridViewItem.Columns[1].HeaderText = "Tên Mặt Hàng";
+            dataGridViewItem.Columns[2].HeaderText = "Doanh mục";
+            dataGridViewItem.Columns[3].HeaderText = "Số Lượng";
+            dataGridViewItem.Columns[4].HeaderText = "Đơn vị";
+            
+            txbNameItem.Text = "";
+            txbCategoryItem.Text = "";
+            txbQuantityItem.Text = "";
+            txbUnitItem.Text = "";
         }
         bool CheckForm_Item()
         {
