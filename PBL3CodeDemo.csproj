@@ -135,6 +135,12 @@
     <Compile Include="View\fBill_Detail.Designer.cs">
       <DependentUpon>fBill_Detail.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\fCheckShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fCheckShift.Designer.cs">
+      <DependentUpon>fCheckShift.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\fShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fShift.Designer.cs">
+      <DependentUpon>fShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fShiftAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fShiftAssignment.Designer.cs">
+      <DependentUpon>fShiftAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\fTableManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +179,9 @@
     <EmbeddedResource Include="View\fBill_Detail.resx">
       <DependentUpon>fBill_Detail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\fCheckShift.resx">
+      <DependentUpon>fCheckShift.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +194,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\fShift.resx">
+      <DependentUpon>fShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fShiftAssignment.resx">
+      <DependentUpon>fShiftAssignment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\fTableManager.resx">
       <DependentUpon>fTableManager.cs</DependentUpon>
     </EmbeddedResource>

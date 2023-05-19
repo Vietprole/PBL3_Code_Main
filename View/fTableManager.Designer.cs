@@ -53,6 +53,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnDiscount = new System.Windows.Forms.Button();
+            this.đăngKýCaLàmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngKýCaLàmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.xemCaLàmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lsvBill)).BeginInit();
@@ -66,6 +69,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.doanhMụcToolStripMenuItem,
             this.tàiKhoảnToolStripMenuItem,
+            this.đăngKýCaLàmToolStripMenuItem,
             this.adminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -311,6 +315,29 @@
             this.btnDiscount.Text = "Giảm Giá";
             this.btnDiscount.UseVisualStyleBackColor = true;
             // 
+            // đăngKýCaLàmToolStripMenuItem
+            // 
+            this.đăngKýCaLàmToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đăngKýCaLàmToolStripMenuItem1,
+            this.xemCaLàmToolStripMenuItem});
+            this.đăngKýCaLàmToolStripMenuItem.Name = "đăngKýCaLàmToolStripMenuItem";
+            this.đăngKýCaLàmToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.đăngKýCaLàmToolStripMenuItem.Text = "Ca Làm";
+            // 
+            // đăngKýCaLàmToolStripMenuItem1
+            // 
+            this.đăngKýCaLàmToolStripMenuItem1.Name = "đăngKýCaLàmToolStripMenuItem1";
+            this.đăngKýCaLàmToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.đăngKýCaLàmToolStripMenuItem1.Text = "Đăng Ký  Ca Làm";
+            this.đăngKýCaLàmToolStripMenuItem1.Click += new System.EventHandler(this.đăngKýCaLàmToolStripMenuItem1_Click);
+            // 
+            // xemCaLàmToolStripMenuItem
+            // 
+            this.xemCaLàmToolStripMenuItem.Name = "xemCaLàmToolStripMenuItem";
+            this.xemCaLàmToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.xemCaLàmToolStripMenuItem.Text = "Xem Ca Làm";
+            this.xemCaLàmToolStripMenuItem.Click += new System.EventHandler(this.xemCaLàmToolStripMenuItem_Click);
+            // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,5 +399,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngKýCaLàmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngKýCaLàmToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem xemCaLàmToolStripMenuItem;
     }
 }

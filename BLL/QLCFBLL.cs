@@ -453,7 +453,7 @@ namespace PBL3CodeDemo.BLL
                 s.Salary = Salary;
                 s.Phone_Number= Phone;
                 s.UserName = User_Account;
-                s.Password = Hash("123");
+               // s.Password = Hash("123");
                 if (Name_Role == "Quản lý" || Name_Role=="1")
                 {
                     s.ID_Role = 1;

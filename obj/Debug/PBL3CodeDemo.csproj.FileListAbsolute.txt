@@ -78,3 +78,27 @@ D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.csproj.CopyComplete
 D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.exe
 D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.pdb
 D:\CODE\PBL_main\obj\Debug\PBL3CodeDemo.View.fBill_Detail.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\bin\Debug\PBL3CodeDemo.exe.config
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\bin\Debug\PBL3CodeDemo.exe
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\bin\Debug\PBL3CodeDemo.pdb
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\bin\Debug\EntityFramework.dll
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\bin\Debug\EntityFramework.xml
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.AssemblyReference.cache
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.SuggestedBindingRedirects.cache
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.ChangePassWord.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fAccountProfile.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fAdmin.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fBill_Detail.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fCheckShift.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.fLogin.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.Properties.Resources.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fShift.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fShiftAssignment.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fTableManager.resources
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.GenerateResource.cache
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.CoreCompileInputs.cache
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.csproj.CopyComplete
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.exe
+C:\Users\HIEN DOAN\Source\Repos\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.pdb
