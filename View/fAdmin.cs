@@ -4,6 +4,10 @@ using System;
 using System.Globalization;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Status;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace PBL3CodeDemo.View
 {
@@ -183,6 +187,7 @@ namespace PBL3CodeDemo.View
             {
 
                 if (bll.UpdateAccount(User_Account, Name_Account, Salary, Phone, Adress, Role))
+                  
                     MessageBox.Show("Đã cập nhật tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 else
                     MessageBox.Show("Cập Nhật Tài Khoản Thất Bại", "Thông báo!");
@@ -571,6 +576,46 @@ namespace PBL3CodeDemo.View
             txbQuantityItem.Text = dataGridViewItem.Rows[i].Cells[3].Value.ToString();
             txbUnitItem.Text = dataGridViewItem.Rows[i].Cells[4].Value.ToString();
             //txbNameItem.ReadOnly = true;
+        }
+    }
+}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            QLCFBLL bll = new QLCFBLL();
+            if (CheckForm_Account() == false)
+            {
+
+                if (bll.UpdateAccount_PassWord(user, "123") )
+                {
+                    MessageBox.Show("Đặt lại mật khẩu mặt định cho tài khoản " + bll.SetAcountName(user) + " thành công !", "Thông báo!");
+                 
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật không thành công!", "Thông báo");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chọn 1 Tài Khoản", "Thông báo!");
+            }
+            LoadDGV_Account();
+        }
+
+        private void btnShift_Click(object sender, EventArgs e)
+        {
+            if (CheckForm_Account() == false)
+            {
+                View.fShiftAssignment f = new fShiftAssignment(txbUserName.Text);
+                f.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Chọn 1 Tài Khoản", "Thông báo!");
+            }
+           
         }
     }
 }

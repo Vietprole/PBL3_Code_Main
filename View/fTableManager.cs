@@ -338,5 +338,17 @@ namespace PBL3CodeDemo.View
                 }
             }
         }
+
+        private void đăngKýCaLàmToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            View.fShift f = new fShift(useName);
+            f.ShowDialog();
+        }
+
+        private void xemCaLàmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.fCheckShift f = new fCheckShift(useName);
+            f.ShowDialog();
+        }
     }
 }
