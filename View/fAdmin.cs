@@ -537,7 +537,7 @@ namespace PBL3CodeDemo.View
             }
 
             // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -577,19 +577,16 @@ namespace PBL3CodeDemo.View
             txbUnitItem.Text = dataGridViewItem.Rows[i].Cells[4].Value.ToString();
             //txbNameItem.ReadOnly = true;
         }
-    }
-}
-
         private void button1_Click(object sender, EventArgs e)
         {
             QLCFBLL bll = new QLCFBLL();
             if (CheckForm_Account() == false)
             {
 
-                if (bll.UpdateAccount_PassWord(user, "123") )
+                if (bll.UpdateAccount_PassWord(user, "123"))
                 {
                     MessageBox.Show("Đặt lại mật khẩu mặt định cho tài khoản " + bll.SetAcountName(user) + " thành công !", "Thông báo!");
-                 
+
                 }
                 else
                 {
@@ -615,7 +612,7 @@ namespace PBL3CodeDemo.View
             {
                 MessageBox.Show("Chọn 1 Tài Khoản", "Thông báo!");
             }
-           
+
         }
     }
 }

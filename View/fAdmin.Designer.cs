@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -103,18 +103,18 @@
             this.dateStar = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.txbUnitItem = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txbCategoryItem = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.txbQuantityItem = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.txbNameItem = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.txbSearchItem = new System.Windows.Forms.TextBox();
             this.btnSearchItem = new System.Windows.Forms.Button();
             this.btnDelItem = new System.Windows.Forms.Button();
@@ -145,13 +145,13 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.labelT5 = new System.Windows.Forms.Label();
+            this.labelT6 = new System.Windows.Forms.Label();
+            this.labelT7 = new System.Windows.Forms.Label();
+            this.labelCN = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -272,7 +272,7 @@
             this.checkBoxStatus.Location = new System.Drawing.Point(149, 16);
             this.checkBoxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxStatus.Name = "checkBoxStatus";
-            this.checkBoxStatus.Size = new System.Drawing.Size(86, 21);
+            this.checkBoxStatus.Size = new System.Drawing.Size(82, 20);
             this.checkBoxStatus.TabIndex = 1;
             this.checkBoxStatus.Text = "Có người";
             this.checkBoxStatus.UseVisualStyleBackColor = true;
@@ -588,7 +588,7 @@
             // btnShift
             // 
             this.btnShift.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShift.Location = new System.Drawing.Point(878, 317);
+            this.btnShift.Location = new System.Drawing.Point(1209, 388);
             this.btnShift.Margin = new System.Windows.Forms.Padding(2);
             this.btnShift.Name = "btnShift";
             this.btnShift.Size = new System.Drawing.Size(113, 37);
@@ -600,7 +600,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(712, 317);
+            this.button1.Location = new System.Drawing.Point(949, 398);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 37);
@@ -935,17 +935,17 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(-36, 114);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(975, 341);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
@@ -997,6 +997,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(16, 15);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -1024,10 +1025,54 @@
             this.tabPage5.Text = "Kho hàng";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(12, 14);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(93, 21);
+            this.label28.TabIndex = 45;
+            this.label28.Text = "Số lượng:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(9, 10);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(132, 21);
+            this.label27.TabIndex = 44;
+            this.label27.Text = "Tên hàng hóa:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(11, 10);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(71, 21);
+            this.label26.TabIndex = 43;
+            this.label26.Text = "Đơn vị:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(10, 14);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(113, 21);
+            this.label23.TabIndex = 42;
+            this.label23.Text = "Doanh mục:";
+            // 
             // panel16
             // 
+            this.panel16.Controls.Add(this.label26);
             this.panel16.Controls.Add(this.txbUnitItem);
-            this.panel16.Controls.Add(this.label18);
             this.panel16.Location = new System.Drawing.Point(953, 227);
             this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
@@ -1042,21 +1087,10 @@
             this.txbUnitItem.Size = new System.Drawing.Size(223, 22);
             this.txbUnitItem.TabIndex = 2;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(5, 14);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(71, 21);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Đơn vị:";
-            // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label23);
             this.panel6.Controls.Add(this.txbCategoryItem);
-            this.panel6.Controls.Add(this.label7);
             this.panel6.Location = new System.Drawing.Point(954, 127);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
@@ -1071,21 +1105,10 @@
             this.txbCategoryItem.Size = new System.Drawing.Size(223, 22);
             this.txbCategoryItem.TabIndex = 42;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 14);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 21);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Doanh mục:";
-            // 
             // panel14
             // 
+            this.panel14.Controls.Add(this.label28);
             this.panel14.Controls.Add(this.txbQuantityItem);
-            this.panel14.Controls.Add(this.label16);
             this.panel14.Location = new System.Drawing.Point(952, 178);
             this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
@@ -1101,21 +1124,10 @@
             this.txbQuantityItem.TabIndex = 2;
             this.txbQuantityItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbQuantityItem_KeyPress);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(5, 14);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 21);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Số lượng:";
-            // 
             // panel15
             // 
+            this.panel15.Controls.Add(this.label27);
             this.panel15.Controls.Add(this.txbNameItem);
-            this.panel15.Controls.Add(this.label17);
             this.panel15.Location = new System.Drawing.Point(955, 72);
             this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
@@ -1129,17 +1141,6 @@
             this.txbNameItem.Name = "txbNameItem";
             this.txbNameItem.Size = new System.Drawing.Size(223, 22);
             this.txbNameItem.TabIndex = 2;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(5, 14);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(132, 21);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Tên hàng hóa:";
             // 
             // txbSearchItem
             // 
@@ -1233,18 +1234,18 @@
             this.tabPage6.Controls.Add(this.dataGridView3);
             this.tabPage6.Controls.Add(this.dataGridView2);
             this.tabPage6.Controls.Add(this.label22);
-            this.tabPage6.Controls.Add(this.label7);
-            this.tabPage6.Controls.Add(this.label16);
-            this.tabPage6.Controls.Add(this.label17);
-            this.tabPage6.Controls.Add(this.label18);
             this.tabPage6.Controls.Add(this.label19);
             this.tabPage6.Controls.Add(this.label20);
             this.tabPage6.Controls.Add(this.label21);
+            this.tabPage6.Controls.Add(this.labelT5);
+            this.tabPage6.Controls.Add(this.labelT6);
+            this.tabPage6.Controls.Add(this.labelT7);
+            this.tabPage6.Controls.Add(this.labelCN);
             this.tabPage6.Controls.Add(this.dataGridView1);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1016, 428);
+            this.tabPage6.Size = new System.Drawing.Size(1357, 530);
             this.tabPage6.TabIndex = 8;
             this.tabPage6.Text = "Ca Làm";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1252,48 +1253,54 @@
             // dataGridView15
             // 
             this.dataGridView15.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView15.Location = new System.Drawing.Point(877, 278);
+            this.dataGridView15.Location = new System.Drawing.Point(892, 277);
             this.dataGridView15.Name = "dataGridView15";
+            this.dataGridView15.RowHeadersWidth = 51;
             this.dataGridView15.Size = new System.Drawing.Size(127, 109);
             this.dataGridView15.TabIndex = 93;
             // 
             // dataGridView16
             // 
             this.dataGridView16.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView16.Location = new System.Drawing.Point(739, 278);
+            this.dataGridView16.Location = new System.Drawing.Point(754, 277);
             this.dataGridView16.Name = "dataGridView16";
+            this.dataGridView16.RowHeadersWidth = 51;
             this.dataGridView16.Size = new System.Drawing.Size(127, 109);
             this.dataGridView16.TabIndex = 92;
             // 
             // dataGridView17
             // 
             this.dataGridView17.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView17.Location = new System.Drawing.Point(598, 278);
+            this.dataGridView17.Location = new System.Drawing.Point(613, 277);
             this.dataGridView17.Name = "dataGridView17";
+            this.dataGridView17.RowHeadersWidth = 51;
             this.dataGridView17.Size = new System.Drawing.Size(127, 109);
             this.dataGridView17.TabIndex = 91;
             // 
             // dataGridView18
             // 
             this.dataGridView18.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView18.Location = new System.Drawing.Point(461, 278);
+            this.dataGridView18.Location = new System.Drawing.Point(476, 277);
             this.dataGridView18.Name = "dataGridView18";
+            this.dataGridView18.RowHeadersWidth = 51;
             this.dataGridView18.Size = new System.Drawing.Size(127, 109);
             this.dataGridView18.TabIndex = 90;
             // 
             // dataGridView19
             // 
             this.dataGridView19.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView19.Location = new System.Drawing.Point(322, 278);
+            this.dataGridView19.Location = new System.Drawing.Point(337, 277);
             this.dataGridView19.Name = "dataGridView19";
+            this.dataGridView19.RowHeadersWidth = 51;
             this.dataGridView19.Size = new System.Drawing.Size(127, 109);
             this.dataGridView19.TabIndex = 89;
             // 
             // dataGridView20
             // 
             this.dataGridView20.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView20.Location = new System.Drawing.Point(185, 278);
+            this.dataGridView20.Location = new System.Drawing.Point(200, 277);
             this.dataGridView20.Name = "dataGridView20";
+            this.dataGridView20.RowHeadersWidth = 51;
             this.dataGridView20.Size = new System.Drawing.Size(127, 109);
             this.dataGridView20.TabIndex = 88;
             // 
@@ -1301,65 +1308,72 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(3, 315);
+            this.label25.Location = new System.Drawing.Point(14, 314);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(34, 14);
+            this.label25.Size = new System.Drawing.Size(41, 18);
             this.label25.TabIndex = 87;
             this.label25.Text = "Ca 3";
             // 
             // dataGridView21
             // 
             this.dataGridView21.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView21.Location = new System.Drawing.Point(46, 278);
+            this.dataGridView21.Location = new System.Drawing.Point(61, 277);
             this.dataGridView21.Name = "dataGridView21";
+            this.dataGridView21.RowHeadersWidth = 51;
             this.dataGridView21.Size = new System.Drawing.Size(127, 109);
             this.dataGridView21.TabIndex = 86;
             // 
             // dataGridView8
             // 
             this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(877, 164);
+            this.dataGridView8.Location = new System.Drawing.Point(892, 163);
             this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.RowHeadersWidth = 51;
             this.dataGridView8.Size = new System.Drawing.Size(127, 109);
             this.dataGridView8.TabIndex = 85;
             // 
             // dataGridView9
             // 
             this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(739, 164);
+            this.dataGridView9.Location = new System.Drawing.Point(754, 163);
             this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.RowHeadersWidth = 51;
             this.dataGridView9.Size = new System.Drawing.Size(127, 109);
             this.dataGridView9.TabIndex = 84;
             // 
             // dataGridView10
             // 
             this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Location = new System.Drawing.Point(598, 164);
+            this.dataGridView10.Location = new System.Drawing.Point(613, 163);
             this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.RowHeadersWidth = 51;
             this.dataGridView10.Size = new System.Drawing.Size(127, 109);
             this.dataGridView10.TabIndex = 83;
             // 
             // dataGridView11
             // 
             this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView11.Location = new System.Drawing.Point(461, 164);
+            this.dataGridView11.Location = new System.Drawing.Point(476, 163);
             this.dataGridView11.Name = "dataGridView11";
+            this.dataGridView11.RowHeadersWidth = 51;
             this.dataGridView11.Size = new System.Drawing.Size(127, 109);
             this.dataGridView11.TabIndex = 82;
             // 
             // dataGridView12
             // 
             this.dataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView12.Location = new System.Drawing.Point(322, 164);
+            this.dataGridView12.Location = new System.Drawing.Point(337, 163);
             this.dataGridView12.Name = "dataGridView12";
+            this.dataGridView12.RowHeadersWidth = 51;
             this.dataGridView12.Size = new System.Drawing.Size(127, 109);
             this.dataGridView12.TabIndex = 81;
             // 
             // dataGridView13
             // 
             this.dataGridView13.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView13.Location = new System.Drawing.Point(185, 164);
+            this.dataGridView13.Location = new System.Drawing.Point(200, 163);
             this.dataGridView13.Name = "dataGridView13";
+            this.dataGridView13.RowHeadersWidth = 51;
             this.dataGridView13.Size = new System.Drawing.Size(127, 109);
             this.dataGridView13.TabIndex = 80;
             // 
@@ -1367,65 +1381,72 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(3, 201);
+            this.label24.Location = new System.Drawing.Point(14, 200);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(34, 14);
+            this.label24.Size = new System.Drawing.Size(41, 18);
             this.label24.TabIndex = 79;
             this.label24.Text = "Ca 2";
             // 
             // dataGridView14
             // 
             this.dataGridView14.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView14.Location = new System.Drawing.Point(46, 164);
+            this.dataGridView14.Location = new System.Drawing.Point(61, 163);
             this.dataGridView14.Name = "dataGridView14";
+            this.dataGridView14.RowHeadersWidth = 51;
             this.dataGridView14.Size = new System.Drawing.Size(127, 109);
             this.dataGridView14.TabIndex = 78;
             // 
             // dataGridView7
             // 
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(877, 50);
+            this.dataGridView7.Location = new System.Drawing.Point(892, 49);
             this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.RowHeadersWidth = 51;
             this.dataGridView7.Size = new System.Drawing.Size(127, 109);
             this.dataGridView7.TabIndex = 77;
             // 
             // dataGridView6
             // 
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(739, 50);
+            this.dataGridView6.Location = new System.Drawing.Point(754, 49);
             this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersWidth = 51;
             this.dataGridView6.Size = new System.Drawing.Size(127, 109);
             this.dataGridView6.TabIndex = 76;
             // 
             // dataGridView5
             // 
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(598, 50);
+            this.dataGridView5.Location = new System.Drawing.Point(613, 49);
             this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersWidth = 51;
             this.dataGridView5.Size = new System.Drawing.Size(127, 109);
             this.dataGridView5.TabIndex = 75;
             // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(461, 50);
+            this.dataGridView4.Location = new System.Drawing.Point(476, 49);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.Size = new System.Drawing.Size(127, 109);
             this.dataGridView4.TabIndex = 74;
             // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(322, 50);
+            this.dataGridView3.Location = new System.Drawing.Point(337, 49);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.Size = new System.Drawing.Size(127, 109);
             this.dataGridView3.TabIndex = 73;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(185, 50);
+            this.dataGridView2.Location = new System.Drawing.Point(200, 49);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(127, 109);
             this.dataGridView2.TabIndex = 72;
             // 
@@ -1433,59 +1454,19 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(3, 87);
+            this.label22.Location = new System.Drawing.Point(14, 86);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(34, 14);
+            this.label22.Size = new System.Drawing.Size(41, 18);
             this.label22.TabIndex = 70;
             this.label22.Text = "Ca 1";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(895, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 14);
-            this.label7.TabIndex = 69;
-            this.label7.Text = "Chủ nhật";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(775, 24);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 14);
-            this.label16.TabIndex = 68;
-            this.label16.Text = "Thứ 7";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(638, 24);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(43, 14);
-            this.label17.TabIndex = 67;
-            this.label17.Text = "Thứ 6";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(498, 24);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(43, 14);
-            this.label18.TabIndex = 66;
-            this.label18.Text = "Thứ 5";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(353, 24);
+            this.label19.Location = new System.Drawing.Point(368, 23);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(43, 14);
+            this.label19.Size = new System.Drawing.Size(50, 18);
             this.label19.TabIndex = 65;
             this.label19.Text = "Thứ 4";
             // 
@@ -1493,9 +1474,9 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(219, 25);
+            this.label20.Location = new System.Drawing.Point(234, 24);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(43, 14);
+            this.label20.Size = new System.Drawing.Size(50, 18);
             this.label20.TabIndex = 64;
             this.label20.Text = "Thứ 3";
             // 
@@ -1503,17 +1484,58 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(83, 24);
+            this.label21.Location = new System.Drawing.Point(98, 23);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(43, 14);
+            this.label21.Size = new System.Drawing.Size(50, 18);
             this.label21.TabIndex = 63;
             this.label21.Text = "Thứ 2";
+            // 
+            // labelT5
+            // 
+            this.labelT5.AutoSize = true;
+            this.labelT5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelT5.Location = new System.Drawing.Point(513, 23);
+            this.labelT5.Name = "labelT5";
+            this.labelT5.Size = new System.Drawing.Size(50, 18);
+            this.labelT5.TabIndex = 66;
+            this.labelT5.Text = "Thứ 5";
+            // 
+            // labelT6
+            // 
+            this.labelT6.AutoSize = true;
+            this.labelT6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelT6.Location = new System.Drawing.Point(653, 23);
+            this.labelT6.Name = "labelT6";
+            this.labelT6.Size = new System.Drawing.Size(50, 18);
+            this.labelT6.TabIndex = 67;
+            this.labelT6.Text = "Thứ 6";
+            // 
+            // labelT7
+            // 
+            this.labelT7.AutoSize = true;
+            this.labelT7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelT7.Location = new System.Drawing.Point(790, 23);
+            this.labelT7.Name = "labelT7";
+            this.labelT7.Size = new System.Drawing.Size(50, 18);
+            this.labelT7.TabIndex = 68;
+            this.labelT7.Text = "Thứ 7";
+            // 
+            // labelCN
+            // 
+            this.labelCN.AutoSize = true;
+            this.labelCN.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCN.Location = new System.Drawing.Point(910, 23);
+            this.labelCN.Name = "labelCN";
+            this.labelCN.Size = new System.Drawing.Size(73, 18);
+            this.labelCN.TabIndex = 69;
+            this.labelCN.Text = "Chủ nhật";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 50);
+            this.dataGridView1.Location = new System.Drawing.Point(61, 49);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(127, 109);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -1676,13 +1698,13 @@
         private System.Windows.Forms.ComboBox cbbCategory;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelCN;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.TextBox txbQuantityItem;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label labelT7;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox txbNameItem;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label labelT6;
         private System.Windows.Forms.TextBox txbSearchItem;
         private System.Windows.Forms.Button btnSearchItem;
         private System.Windows.Forms.Button btnDelItem;
@@ -1691,7 +1713,7 @@
         private System.Windows.Forms.DataGridView dataGridViewItem;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.TextBox txbUnitItem;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label labelT5;
         private System.Windows.Forms.TextBox txbCategoryItem;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -1720,12 +1742,12 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label23;
     }
 }
