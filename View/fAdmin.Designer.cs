@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -103,17 +103,17 @@
             this.dateStar = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
             this.txbUnitItem = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
             this.txbCategoryItem = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
             this.txbQuantityItem = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
             this.txbNameItem = new System.Windows.Forms.TextBox();
             this.txbSearchItem = new System.Windows.Forms.TextBox();
             this.btnSearchItem = new System.Windows.Forms.Button();
@@ -272,7 +272,7 @@
             this.checkBoxStatus.Location = new System.Drawing.Point(149, 16);
             this.checkBoxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxStatus.Name = "checkBoxStatus";
-            this.checkBoxStatus.Size = new System.Drawing.Size(82, 20);
+            this.checkBoxStatus.Size = new System.Drawing.Size(86, 21);
             this.checkBoxStatus.TabIndex = 1;
             this.checkBoxStatus.Text = "Có người";
             this.checkBoxStatus.UseVisualStyleBackColor = true;
@@ -935,17 +935,17 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(-36, 114);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(975, 341);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
@@ -1025,27 +1025,15 @@
             this.tabPage5.Text = "Kho hàng";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label28
+            // panel16
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(12, 14);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(93, 21);
-            this.label28.TabIndex = 45;
-            this.label28.Text = "Số lượng:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(9, 10);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(132, 21);
-            this.label27.TabIndex = 44;
-            this.label27.Text = "Tên hàng hóa:";
+            this.panel16.Controls.Add(this.label26);
+            this.panel16.Controls.Add(this.txbUnitItem);
+            this.panel16.Location = new System.Drawing.Point(953, 227);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(373, 47);
+            this.panel16.TabIndex = 41;
             // 
             // label26
             // 
@@ -1057,27 +1045,6 @@
             this.label26.Size = new System.Drawing.Size(71, 21);
             this.label26.TabIndex = 43;
             this.label26.Text = "Đơn vị:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(10, 14);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(113, 21);
-            this.label23.TabIndex = 42;
-            this.label23.Text = "Doanh mục:";
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.label26);
-            this.panel16.Controls.Add(this.txbUnitItem);
-            this.panel16.Location = new System.Drawing.Point(953, 227);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(373, 47);
-            this.panel16.TabIndex = 41;
             // 
             // txbUnitItem
             // 
@@ -1097,6 +1064,17 @@
             this.panel6.Size = new System.Drawing.Size(373, 49);
             this.panel6.TabIndex = 32;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(10, 14);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(113, 21);
+            this.label23.TabIndex = 42;
+            this.label23.Text = "Doanh mục:";
+            // 
             // txbCategoryItem
             // 
             this.txbCategoryItem.Location = new System.Drawing.Point(149, 14);
@@ -1114,6 +1092,17 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(373, 50);
             this.panel14.TabIndex = 40;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(12, 14);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(93, 21);
+            this.label28.TabIndex = 45;
+            this.label28.Text = "Số lượng:";
             // 
             // txbQuantityItem
             // 
@@ -1133,6 +1122,17 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(373, 47);
             this.panel15.TabIndex = 39;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(9, 10);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(132, 21);
+            this.label27.TabIndex = 44;
+            this.label27.Text = "Tên hàng hóa:";
             // 
             // txbNameItem
             // 

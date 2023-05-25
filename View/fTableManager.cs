@@ -36,10 +36,10 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
             cbFood.DataSource = bll.GetCBB_Food(ID_Category).ToArray();
         }
-        public fTableManager( string use, string pass)
+        public fTableManager( string user, string pass)
         {
             InitializeComponent();
-            useName = use;
+            useName = user;
             passWord = pass;
             setNameForm(useName);            
             setCBBCategory();

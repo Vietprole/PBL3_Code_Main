@@ -77,6 +77,26 @@
     <Property Name="Role_Name" Type="nvarchar" MaxLength="60" />
     <Property Name="Flag" Type="bit" />
   </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="IdShift" />
+    </Key>
+    <Property Name="IdShift" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdAccount" Type="int" />
+    <Property Name="ShiftNumber" Type="int" />
+    <Property Name="Date" Type="int" />
+    <Property Name="FlagAssigned" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Table">
     <Key>
       <PropertyRef Name="ID_Table" />
@@ -159,6 +179,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Shift_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Shift" Type="Self.Shift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="ID_Account" />
+      </Principal>
+      <Dependent Role="Shift">
+        <PropertyRef Name="IdAccount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="PBL3ModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
@@ -167,6 +199,8 @@
     <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shift" EntityType="Self.Shift" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Account__ID_Role__398D8EEE" Association="Self.FK__Account__ID_Role__398D8EEE">
       <End Role="Role" EntitySet="Role" />
@@ -191,6 +225,10 @@
     <AssociationSet Name="FK__Product__ID_Cate__440B1D61" Association="Self.FK__Product__ID_Cate__440B1D61">
       <End Role="Category" EntitySet="Category" />
       <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shift_Account" Association="Self.FK_Shift_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Shift" EntitySet="Shift" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

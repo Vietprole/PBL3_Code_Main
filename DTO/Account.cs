@@ -18,6 +18,7 @@ namespace PBL3CodeDemo.DTO
         public Account()
         {
             this.Bills = new HashSet<Bill>();
+            this.Shifts = new HashSet<Shift>();
         }
     
         public int ID_Account { get; set; }
@@ -33,5 +34,7 @@ namespace PBL3CodeDemo.DTO
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Shift> Shifts { get; set; }
     }
 }

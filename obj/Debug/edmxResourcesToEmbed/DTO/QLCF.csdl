@@ -15,6 +15,7 @@
     <NavigationProperty Name="Role" Relationship="Self.FK__Account__ID_Role__398D8EEE" FromRole="Account" ToRole="Role" />
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__ID_Account__3E52440B" FromRole="Account" ToRole="Bill" />
     <Property Name="Flag" Type="Boolean" />
+    <NavigationProperty Name="Shifts" Relationship="PBL3Model.FK_Shift_Account" FromRole="Account" ToRole="Shift" />
   </EntityType>
   <EntityType Name="Bill">
     <Key>
@@ -223,6 +224,12 @@
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
     <EntitySet Name="Items" EntityType="PBL3Model.Item" />
+    <EntitySet Name="Shifts" EntityType="PBL3Model.Shift" />
+    <EntitySet Name="sysdiagrams" EntityType="PBL3Model.sysdiagram" />
+    <AssociationSet Name="FK_Shift_Account" Association="PBL3Model.FK_Shift_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Shift" EntitySet="Shifts" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -246,4 +253,37 @@
     <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="Flag" Type="Boolean" />
   </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="IdShift" />
+    </Key>
+    <Property Name="IdShift" Type="Int32" Nullable="false" />
+    <Property Name="IdAccount" Type="Int32" />
+    <Property Name="ShiftNumber" Type="Int32" />
+    <Property Name="Date" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="PBL3Model.FK_Shift_Account" FromRole="Shift" ToRole="Account" />
+    <Property Name="FlagAssigned" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Shift_Account">
+    <End Type="PBL3Model.Account" Role="Account" Multiplicity="0..1" />
+    <End Type="PBL3Model.Shift" Role="Shift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="ID_Account" />
+      </Principal>
+      <Dependent Role="Shift">
+        <PropertyRef Name="IdAccount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

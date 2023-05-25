@@ -228,3 +228,6 @@ D:\Hoc.NET\CLoneTest\obj\Debug\PBL3CodeDemo.pdb
 D:\Hoc.NET\CLoneTest\obj\Debug\PBL3CodeDemo.View.fCheckShift.resources
 D:\Hoc.NET\CLoneTest\obj\Debug\PBL3CodeDemo.View.fShift.resources
 D:\Hoc.NET\CLoneTest\obj\Debug\PBL3CodeDemo.View.fShiftAssignment.resources
+E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fCheckShift.resources
+E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fShift.resources
+E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.fShiftAssignment.resources

@@ -601,6 +601,12 @@ namespace PBL3CodeDemo.BLL
             var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
             return Convert.ToInt32(s.ID_Role.Value);
         }
+        public int Return_IDAccount(string user)
+        {
+            PBL3Entities db = new PBL3Entities();
+            var s = db.Accounts.Where(p => p.UserName == user && p.Flag == true).FirstOrDefault();
+            return s.ID_Account; 
+        }
         public List<TableDataGridView> LoadTable_Button()
         {
             List<TableDataGridView> list_table = new List<TableDataGridView>();
@@ -1114,6 +1120,69 @@ namespace PBL3CodeDemo.BLL
                 }
             }
             return result;
+        }
+        public bool Add_Selected_Shift(Shift shift)
+        {
+            PBL3Entities db = new PBL3Entities();
+            if (db.Shifts.Any(p => p.IdAccount == shift.IdAccount && p.ShiftNumber == shift.ShiftNumber && p.Date == shift.Date))
+            {
+                return false;
+            }
+            else
+            {
+                db.Shifts.Add(shift);
+                db.SaveChanges();
+                return true;
+            }
+        }
+        public List<Shift> Return_Shift(string username)
+        {
+            PBL3Entities db = new PBL3Entities();
+            int IDAccount = Return_IDAccount(username);
+            return db.Shifts.Where(p => p.IdAccount == IDAccount).Select(p => p).ToList();
+        }
+        public bool CheckShift(Shift shift)
+        {
+            PBL3Entities db = new PBL3Entities();
+            if (db.Shifts.Any(p => p.IdAccount == shift.IdAccount && p.ShiftNumber == shift.ShiftNumber && p.Date == shift.Date))
+            {
+                return true;
+            }
+            else return false;
+        }
+        public bool DeleteShift(Shift shift)
+        {
+            PBL3Entities db = new PBL3Entities();
+            if (db.Shifts.Any(p => p.IdAccount == shift.IdAccount && p.ShiftNumber == shift.ShiftNumber && p.Date == shift.Date))
+            {
+                var s = db.Shifts.Where(p => p.IdAccount == shift.IdAccount && p.ShiftNumber == shift.ShiftNumber && p.Date == shift.Date).FirstOrDefault();
+                db.Shifts.Remove(s);
+                db.SaveChanges();
+                return true;
+            }
+            else return false;
+        }
+        public bool Assign_Selected_Shift(Shift shift)
+        {
+            PBL3Entities db = new PBL3Entities();
+            if (db.Shifts.Any(p => p.IdAccount == shift.IdAccount && p.ShiftNumber == shift.ShiftNumber && p.Date == shift.Date))
+            {
+                var s = db.Shifts.Where(p => p.IdAccount == shift.IdAccount && p.ShiftNumber == shift.ShiftNumber && p.Date == shift.Date).FirstOrDefault();
+                if (s.FlagAssigned == false)
+                {
+                    
+                    s.FlagAssigned = true;
+                    db.SaveChanges();
+                    return true;
+                }
+                else return false;
+            }
+            else
+            {
+                db.Shifts.Add(shift);
+                db.SaveChanges();
+                return true;
+            }
         }
     }
 }
