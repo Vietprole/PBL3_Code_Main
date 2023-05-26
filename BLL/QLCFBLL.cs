@@ -1141,7 +1141,7 @@ namespace PBL3CodeDemo.BLL
             int IDAccount = Return_IDAccount(username);
             return db.Shifts.Where(p => p.IdAccount == IDAccount).Select(p => p).ToList();
         }
-        public List<Shift> Return_AssignedShift(string username)
+        public List<Shift> Return_AssignedShiftById(string username)
         {
             PBL3Entities db = new PBL3Entities();
             int IDAccount = Return_IDAccount(username);
@@ -1190,16 +1190,16 @@ namespace PBL3CodeDemo.BLL
                 return true;
             }
         }
-        public List<Shift> Return_Shift(int shiftNumber, int date)
+        public List<Shift> Return_AssignedShift(int shiftNumber, int date)
         {
             PBL3Entities db = new PBL3Entities();
-            return db.Shifts.Where(p => p.ShiftNumber == shiftNumber && p.Date == date).Select(p => p).ToList();
+            return db.Shifts.Where(p => p.ShiftNumber == shiftNumber && p.Date == date && p.FlagAssigned == true).Select(p => p).ToList();
         }
         public List<ShiftDatagridview> GetDGV_Shift(int shiftNumber, int date)
         {
             PBL3Entities db = new PBL3Entities();
             List<ShiftDatagridview> result = new List<ShiftDatagridview>();
-            foreach (Shift i in Return_Shift(shiftNumber, date))
+            foreach (Shift i in Return_AssignedShift(shiftNumber, date))
             {
                 result.Add(new ShiftDatagridview
                 {

@@ -25,7 +25,7 @@ namespace PBL3CodeDemo.View
         }
         private void LoadCheckBox()
         {
-            foreach (Shift i in bll.Return_AssignedShift(userName))
+            foreach (Shift i in bll.Return_AssignedShiftById(userName))
             {
                 foreach (CheckBox j in this.Controls.OfType<CheckBox>())
                 {
