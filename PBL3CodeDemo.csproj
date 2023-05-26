@@ -104,6 +104,7 @@
     <Compile Include="DTO\Shift.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\ShiftDatagridview.cs" />
     <Compile Include="DTO\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>QLCF.tt</DependentUpon>
     </Compile>
