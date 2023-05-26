@@ -1135,7 +1135,7 @@ namespace PBL3CodeDemo.BLL
                 return true;
             }
         }
-        public List<Shift> Return_Shift(string username)
+        public List<Shift> Return_ShiftByUserID(string username)
         {
             PBL3Entities db = new PBL3Entities();
             int IDAccount = Return_IDAccount(username);
@@ -1183,6 +1183,24 @@ namespace PBL3CodeDemo.BLL
                 db.SaveChanges();
                 return true;
             }
+        }
+        public List<Shift> Return_Shift(int shiftNumber, int date)
+        {
+            PBL3Entities db = new PBL3Entities();
+            return db.Shifts.Where(p => p.ShiftNumber == shiftNumber && p.Date == date).Select(p => p).ToList();
+        }
+        public List<ShiftDatagridview> GetDGV_Shift(int shiftNumber, int date)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<ShiftDatagridview> result = new List<ShiftDatagridview>();
+            foreach (Shift i in Return_Shift(shiftNumber, date))
+            {
+                result.Add(new ShiftDatagridview
+                {
+                    AccountName = i.Account.Name
+                });
+            }
+            return result;
         }
     }
 }

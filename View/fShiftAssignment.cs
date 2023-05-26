@@ -31,7 +31,7 @@ namespace PBL3CodeDemo.View
         //nên dùng ToString() trước khi chuyển kiểu int.Parse()
         private void LoadCheckBox()
         {
-            foreach (Shift i in bll.Return_Shift(userName))
+            foreach (Shift i in bll.Return_ShiftByUserID(userName))
             {
                 foreach(CheckBox j in this.Controls.OfType<CheckBox>())
                 {
@@ -48,7 +48,7 @@ namespace PBL3CodeDemo.View
         //nên dùng ToString() trước khi chuyển kiểu int.Parse()
         private void LoadRecommend()
         {
-            foreach (Shift i in bll.Return_Shift(userName))
+            foreach (Shift i in bll.Return_ShiftByUserID(userName))
             {
                 foreach (Label j in this.Controls.OfType<Label>())
                 {
@@ -69,6 +69,7 @@ namespace PBL3CodeDemo.View
             {
                 if (i.Checked == true)
                 {
+                    count++;
                     Shift shift = new Shift
                     {
                         IdAccount = bll.Return_IDAccount(userName),
@@ -85,7 +86,7 @@ namespace PBL3CodeDemo.View
                 }
                 if (i.Checked == false)
                 {
-                    Debug.Write("Duyet " + i.Name);
+                    //Debug.Write("Duyet " + i.Name);
                     Shift shift = new Shift
                     {
                         IdAccount = bll.Return_IDAccount(userName),
@@ -93,10 +94,10 @@ namespace PBL3CodeDemo.View
                         Date = int.Parse(i.Name[3].ToString()),
                         FlagAssigned = false
                     };
-                    Debug.Write(" Tao new Shift thanh cong ");
+                    //Debug.Write(" Tao new Shift thanh cong ");
                     if (bll.CheckShift(shift))
                     {
-                        Debug.Write("Shift " + i.Name + " can delete");
+                        //Debug.Write("Shift " + i.Name + " can delete");
                         bll.DeleteShift(shift);
                     }
 

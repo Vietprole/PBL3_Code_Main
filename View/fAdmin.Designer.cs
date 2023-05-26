@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -122,28 +122,28 @@
             this.btnAddItem = new System.Windows.Forms.Button();
             this.dataGridViewItem = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.dataGridView15 = new System.Windows.Forms.DataGridView();
-            this.dataGridView16 = new System.Windows.Forms.DataGridView();
-            this.dataGridView17 = new System.Windows.Forms.DataGridView();
-            this.dataGridView18 = new System.Windows.Forms.DataGridView();
-            this.dataGridView19 = new System.Windows.Forms.DataGridView();
-            this.dataGridView20 = new System.Windows.Forms.DataGridView();
+            this.dgvT8_Ca3 = new System.Windows.Forms.DataGridView();
+            this.dgvT7_Ca3 = new System.Windows.Forms.DataGridView();
+            this.dgvT6_Ca3 = new System.Windows.Forms.DataGridView();
+            this.dgvT5_Ca3 = new System.Windows.Forms.DataGridView();
+            this.dgvT4_Ca3 = new System.Windows.Forms.DataGridView();
+            this.dgvT3_Ca3 = new System.Windows.Forms.DataGridView();
             this.label25 = new System.Windows.Forms.Label();
-            this.dataGridView21 = new System.Windows.Forms.DataGridView();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
-            this.dataGridView10 = new System.Windows.Forms.DataGridView();
-            this.dataGridView11 = new System.Windows.Forms.DataGridView();
-            this.dataGridView12 = new System.Windows.Forms.DataGridView();
-            this.dataGridView13 = new System.Windows.Forms.DataGridView();
+            this.dgvT2_Ca3 = new System.Windows.Forms.DataGridView();
+            this.dgvT8_Ca2 = new System.Windows.Forms.DataGridView();
+            this.dgvT7_Ca2 = new System.Windows.Forms.DataGridView();
+            this.dgvT6_Ca2 = new System.Windows.Forms.DataGridView();
+            this.dgvT5_Ca2 = new System.Windows.Forms.DataGridView();
+            this.dgvT4_Ca2 = new System.Windows.Forms.DataGridView();
+            this.dgvT3_Ca2 = new System.Windows.Forms.DataGridView();
             this.label24 = new System.Windows.Forms.Label();
-            this.dataGridView14 = new System.Windows.Forms.DataGridView();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvT2_Ca2 = new System.Windows.Forms.DataGridView();
+            this.dgvT8_Ca1 = new System.Windows.Forms.DataGridView();
+            this.dgvT7_Ca1 = new System.Windows.Forms.DataGridView();
+            this.dgvT6_Ca1 = new System.Windows.Forms.DataGridView();
+            this.dgvT5_Ca1 = new System.Windows.Forms.DataGridView();
+            this.dgvT4_Ca1 = new System.Windows.Forms.DataGridView();
+            this.dgvT3_Ca1 = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -152,7 +152,7 @@
             this.labelT6 = new System.Windows.Forms.Label();
             this.labelT7 = new System.Windows.Forms.Label();
             this.labelCN = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvT2_Ca1 = new System.Windows.Forms.DataGridView();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -182,27 +182,27 @@
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItem)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT8_Ca3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT7_Ca3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT6_Ca3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT5_Ca3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT4_Ca3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT3_Ca3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT2_Ca3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT8_Ca2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT7_Ca2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT6_Ca2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT5_Ca2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT4_Ca2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT3_Ca2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT2_Ca2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT8_Ca1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT7_Ca1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT6_Ca1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT5_Ca1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT4_Ca1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT3_Ca1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT2_Ca1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -935,17 +935,17 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(-36, 114);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(975, 341);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
@@ -1211,28 +1211,28 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.dataGridView15);
-            this.tabPage6.Controls.Add(this.dataGridView16);
-            this.tabPage6.Controls.Add(this.dataGridView17);
-            this.tabPage6.Controls.Add(this.dataGridView18);
-            this.tabPage6.Controls.Add(this.dataGridView19);
-            this.tabPage6.Controls.Add(this.dataGridView20);
+            this.tabPage6.Controls.Add(this.dgvT8_Ca3);
+            this.tabPage6.Controls.Add(this.dgvT7_Ca3);
+            this.tabPage6.Controls.Add(this.dgvT6_Ca3);
+            this.tabPage6.Controls.Add(this.dgvT5_Ca3);
+            this.tabPage6.Controls.Add(this.dgvT4_Ca3);
+            this.tabPage6.Controls.Add(this.dgvT3_Ca3);
             this.tabPage6.Controls.Add(this.label25);
-            this.tabPage6.Controls.Add(this.dataGridView21);
-            this.tabPage6.Controls.Add(this.dataGridView8);
-            this.tabPage6.Controls.Add(this.dataGridView9);
-            this.tabPage6.Controls.Add(this.dataGridView10);
-            this.tabPage6.Controls.Add(this.dataGridView11);
-            this.tabPage6.Controls.Add(this.dataGridView12);
-            this.tabPage6.Controls.Add(this.dataGridView13);
+            this.tabPage6.Controls.Add(this.dgvT2_Ca3);
+            this.tabPage6.Controls.Add(this.dgvT8_Ca2);
+            this.tabPage6.Controls.Add(this.dgvT7_Ca2);
+            this.tabPage6.Controls.Add(this.dgvT6_Ca2);
+            this.tabPage6.Controls.Add(this.dgvT5_Ca2);
+            this.tabPage6.Controls.Add(this.dgvT4_Ca2);
+            this.tabPage6.Controls.Add(this.dgvT3_Ca2);
             this.tabPage6.Controls.Add(this.label24);
-            this.tabPage6.Controls.Add(this.dataGridView14);
-            this.tabPage6.Controls.Add(this.dataGridView7);
-            this.tabPage6.Controls.Add(this.dataGridView6);
-            this.tabPage6.Controls.Add(this.dataGridView5);
-            this.tabPage6.Controls.Add(this.dataGridView4);
-            this.tabPage6.Controls.Add(this.dataGridView3);
-            this.tabPage6.Controls.Add(this.dataGridView2);
+            this.tabPage6.Controls.Add(this.dgvT2_Ca2);
+            this.tabPage6.Controls.Add(this.dgvT8_Ca1);
+            this.tabPage6.Controls.Add(this.dgvT7_Ca1);
+            this.tabPage6.Controls.Add(this.dgvT6_Ca1);
+            this.tabPage6.Controls.Add(this.dgvT5_Ca1);
+            this.tabPage6.Controls.Add(this.dgvT4_Ca1);
+            this.tabPage6.Controls.Add(this.dgvT3_Ca1);
             this.tabPage6.Controls.Add(this.label22);
             this.tabPage6.Controls.Add(this.label19);
             this.tabPage6.Controls.Add(this.label20);
@@ -1241,7 +1241,7 @@
             this.tabPage6.Controls.Add(this.labelT6);
             this.tabPage6.Controls.Add(this.labelT7);
             this.tabPage6.Controls.Add(this.labelCN);
-            this.tabPage6.Controls.Add(this.dataGridView1);
+            this.tabPage6.Controls.Add(this.dgvT2_Ca1);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -1250,205 +1250,205 @@
             this.tabPage6.Text = "Ca Làm";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // dataGridView15
+            // dgvT8_Ca3
             // 
-            this.dataGridView15.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView15.Location = new System.Drawing.Point(892, 277);
-            this.dataGridView15.Name = "dataGridView15";
-            this.dataGridView15.RowHeadersWidth = 51;
-            this.dataGridView15.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView15.TabIndex = 93;
+            this.dgvT8_Ca3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT8_Ca3.Location = new System.Drawing.Point(1184, 379);
+            this.dgvT8_Ca3.Name = "dgvT8_Ca3";
+            this.dgvT8_Ca3.RowHeadersWidth = 51;
+            this.dgvT8_Ca3.Size = new System.Drawing.Size(136, 130);
+            this.dgvT8_Ca3.TabIndex = 93;
             // 
-            // dataGridView16
+            // dgvT7_Ca3
             // 
-            this.dataGridView16.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView16.Location = new System.Drawing.Point(754, 277);
-            this.dataGridView16.Name = "dataGridView16";
-            this.dataGridView16.RowHeadersWidth = 51;
-            this.dataGridView16.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView16.TabIndex = 92;
+            this.dgvT7_Ca3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT7_Ca3.Location = new System.Drawing.Point(994, 379);
+            this.dgvT7_Ca3.Name = "dgvT7_Ca3";
+            this.dgvT7_Ca3.RowHeadersWidth = 51;
+            this.dgvT7_Ca3.Size = new System.Drawing.Size(136, 130);
+            this.dgvT7_Ca3.TabIndex = 92;
             // 
-            // dataGridView17
+            // dgvT6_Ca3
             // 
-            this.dataGridView17.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView17.Location = new System.Drawing.Point(613, 277);
-            this.dataGridView17.Name = "dataGridView17";
-            this.dataGridView17.RowHeadersWidth = 51;
-            this.dataGridView17.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView17.TabIndex = 91;
+            this.dgvT6_Ca3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT6_Ca3.Location = new System.Drawing.Point(807, 379);
+            this.dgvT6_Ca3.Name = "dgvT6_Ca3";
+            this.dgvT6_Ca3.RowHeadersWidth = 51;
+            this.dgvT6_Ca3.Size = new System.Drawing.Size(136, 130);
+            this.dgvT6_Ca3.TabIndex = 91;
             // 
-            // dataGridView18
+            // dgvT5_Ca3
             // 
-            this.dataGridView18.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView18.Location = new System.Drawing.Point(476, 277);
-            this.dataGridView18.Name = "dataGridView18";
-            this.dataGridView18.RowHeadersWidth = 51;
-            this.dataGridView18.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView18.TabIndex = 90;
+            this.dgvT5_Ca3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT5_Ca3.Location = new System.Drawing.Point(618, 379);
+            this.dgvT5_Ca3.Name = "dgvT5_Ca3";
+            this.dgvT5_Ca3.RowHeadersWidth = 51;
+            this.dgvT5_Ca3.Size = new System.Drawing.Size(136, 130);
+            this.dgvT5_Ca3.TabIndex = 90;
             // 
-            // dataGridView19
+            // dgvT4_Ca3
             // 
-            this.dataGridView19.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView19.Location = new System.Drawing.Point(337, 277);
-            this.dataGridView19.Name = "dataGridView19";
-            this.dataGridView19.RowHeadersWidth = 51;
-            this.dataGridView19.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView19.TabIndex = 89;
+            this.dgvT4_Ca3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT4_Ca3.Location = new System.Drawing.Point(427, 379);
+            this.dgvT4_Ca3.Name = "dgvT4_Ca3";
+            this.dgvT4_Ca3.RowHeadersWidth = 51;
+            this.dgvT4_Ca3.Size = new System.Drawing.Size(136, 130);
+            this.dgvT4_Ca3.TabIndex = 89;
             // 
-            // dataGridView20
+            // dgvT3_Ca3
             // 
-            this.dataGridView20.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView20.Location = new System.Drawing.Point(200, 277);
-            this.dataGridView20.Name = "dataGridView20";
-            this.dataGridView20.RowHeadersWidth = 51;
-            this.dataGridView20.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView20.TabIndex = 88;
+            this.dgvT3_Ca3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT3_Ca3.Location = new System.Drawing.Point(242, 379);
+            this.dgvT3_Ca3.Name = "dgvT3_Ca3";
+            this.dgvT3_Ca3.RowHeadersWidth = 51;
+            this.dgvT3_Ca3.Size = new System.Drawing.Size(136, 130);
+            this.dgvT3_Ca3.TabIndex = 88;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(14, 314);
+            this.label25.Location = new System.Drawing.Point(14, 437);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(41, 18);
             this.label25.TabIndex = 87;
             this.label25.Text = "Ca 3";
             // 
-            // dataGridView21
+            // dgvT2_Ca3
             // 
-            this.dataGridView21.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView21.Location = new System.Drawing.Point(61, 277);
-            this.dataGridView21.Name = "dataGridView21";
-            this.dataGridView21.RowHeadersWidth = 51;
-            this.dataGridView21.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView21.TabIndex = 86;
+            this.dgvT2_Ca3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT2_Ca3.Location = new System.Drawing.Point(61, 379);
+            this.dgvT2_Ca3.Name = "dgvT2_Ca3";
+            this.dgvT2_Ca3.RowHeadersWidth = 51;
+            this.dgvT2_Ca3.Size = new System.Drawing.Size(136, 130);
+            this.dgvT2_Ca3.TabIndex = 86;
             // 
-            // dataGridView8
+            // dgvT8_Ca2
             // 
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(892, 163);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.RowHeadersWidth = 51;
-            this.dataGridView8.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView8.TabIndex = 85;
+            this.dgvT8_Ca2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT8_Ca2.Location = new System.Drawing.Point(1184, 219);
+            this.dgvT8_Ca2.Name = "dgvT8_Ca2";
+            this.dgvT8_Ca2.RowHeadersWidth = 51;
+            this.dgvT8_Ca2.Size = new System.Drawing.Size(136, 130);
+            this.dgvT8_Ca2.TabIndex = 85;
             // 
-            // dataGridView9
+            // dgvT7_Ca2
             // 
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(754, 163);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.RowHeadersWidth = 51;
-            this.dataGridView9.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView9.TabIndex = 84;
+            this.dgvT7_Ca2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT7_Ca2.Location = new System.Drawing.Point(994, 219);
+            this.dgvT7_Ca2.Name = "dgvT7_Ca2";
+            this.dgvT7_Ca2.RowHeadersWidth = 51;
+            this.dgvT7_Ca2.Size = new System.Drawing.Size(136, 130);
+            this.dgvT7_Ca2.TabIndex = 84;
             // 
-            // dataGridView10
+            // dgvT6_Ca2
             // 
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Location = new System.Drawing.Point(613, 163);
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.RowHeadersWidth = 51;
-            this.dataGridView10.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView10.TabIndex = 83;
+            this.dgvT6_Ca2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT6_Ca2.Location = new System.Drawing.Point(807, 219);
+            this.dgvT6_Ca2.Name = "dgvT6_Ca2";
+            this.dgvT6_Ca2.RowHeadersWidth = 51;
+            this.dgvT6_Ca2.Size = new System.Drawing.Size(136, 130);
+            this.dgvT6_Ca2.TabIndex = 83;
             // 
-            // dataGridView11
+            // dgvT5_Ca2
             // 
-            this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView11.Location = new System.Drawing.Point(476, 163);
-            this.dataGridView11.Name = "dataGridView11";
-            this.dataGridView11.RowHeadersWidth = 51;
-            this.dataGridView11.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView11.TabIndex = 82;
+            this.dgvT5_Ca2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT5_Ca2.Location = new System.Drawing.Point(618, 219);
+            this.dgvT5_Ca2.Name = "dgvT5_Ca2";
+            this.dgvT5_Ca2.RowHeadersWidth = 51;
+            this.dgvT5_Ca2.Size = new System.Drawing.Size(136, 130);
+            this.dgvT5_Ca2.TabIndex = 82;
             // 
-            // dataGridView12
+            // dgvT4_Ca2
             // 
-            this.dataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView12.Location = new System.Drawing.Point(337, 163);
-            this.dataGridView12.Name = "dataGridView12";
-            this.dataGridView12.RowHeadersWidth = 51;
-            this.dataGridView12.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView12.TabIndex = 81;
+            this.dgvT4_Ca2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT4_Ca2.Location = new System.Drawing.Point(427, 219);
+            this.dgvT4_Ca2.Name = "dgvT4_Ca2";
+            this.dgvT4_Ca2.RowHeadersWidth = 51;
+            this.dgvT4_Ca2.Size = new System.Drawing.Size(136, 130);
+            this.dgvT4_Ca2.TabIndex = 81;
             // 
-            // dataGridView13
+            // dgvT3_Ca2
             // 
-            this.dataGridView13.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView13.Location = new System.Drawing.Point(200, 163);
-            this.dataGridView13.Name = "dataGridView13";
-            this.dataGridView13.RowHeadersWidth = 51;
-            this.dataGridView13.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView13.TabIndex = 80;
+            this.dgvT3_Ca2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT3_Ca2.Location = new System.Drawing.Point(242, 219);
+            this.dgvT3_Ca2.Name = "dgvT3_Ca2";
+            this.dgvT3_Ca2.RowHeadersWidth = 51;
+            this.dgvT3_Ca2.Size = new System.Drawing.Size(136, 130);
+            this.dgvT3_Ca2.TabIndex = 80;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(14, 200);
+            this.label24.Location = new System.Drawing.Point(14, 278);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 18);
             this.label24.TabIndex = 79;
             this.label24.Text = "Ca 2";
             // 
-            // dataGridView14
+            // dgvT2_Ca2
             // 
-            this.dataGridView14.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView14.Location = new System.Drawing.Point(61, 163);
-            this.dataGridView14.Name = "dataGridView14";
-            this.dataGridView14.RowHeadersWidth = 51;
-            this.dataGridView14.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView14.TabIndex = 78;
+            this.dgvT2_Ca2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT2_Ca2.Location = new System.Drawing.Point(61, 219);
+            this.dgvT2_Ca2.Name = "dgvT2_Ca2";
+            this.dgvT2_Ca2.RowHeadersWidth = 51;
+            this.dgvT2_Ca2.Size = new System.Drawing.Size(136, 130);
+            this.dgvT2_Ca2.TabIndex = 78;
             // 
-            // dataGridView7
+            // dgvT8_Ca1
             // 
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(892, 49);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.RowHeadersWidth = 51;
-            this.dataGridView7.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView7.TabIndex = 77;
+            this.dgvT8_Ca1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT8_Ca1.Location = new System.Drawing.Point(1184, 49);
+            this.dgvT8_Ca1.Name = "dgvT8_Ca1";
+            this.dgvT8_Ca1.RowHeadersWidth = 51;
+            this.dgvT8_Ca1.Size = new System.Drawing.Size(136, 130);
+            this.dgvT8_Ca1.TabIndex = 77;
             // 
-            // dataGridView6
+            // dgvT7_Ca1
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(754, 49);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowHeadersWidth = 51;
-            this.dataGridView6.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView6.TabIndex = 76;
+            this.dgvT7_Ca1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT7_Ca1.Location = new System.Drawing.Point(994, 49);
+            this.dgvT7_Ca1.Name = "dgvT7_Ca1";
+            this.dgvT7_Ca1.RowHeadersWidth = 51;
+            this.dgvT7_Ca1.Size = new System.Drawing.Size(136, 130);
+            this.dgvT7_Ca1.TabIndex = 76;
             // 
-            // dataGridView5
+            // dgvT6_Ca1
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(613, 49);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersWidth = 51;
-            this.dataGridView5.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView5.TabIndex = 75;
+            this.dgvT6_Ca1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT6_Ca1.Location = new System.Drawing.Point(807, 49);
+            this.dgvT6_Ca1.Name = "dgvT6_Ca1";
+            this.dgvT6_Ca1.RowHeadersWidth = 51;
+            this.dgvT6_Ca1.Size = new System.Drawing.Size(136, 130);
+            this.dgvT6_Ca1.TabIndex = 75;
             // 
-            // dataGridView4
+            // dgvT5_Ca1
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(476, 49);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView4.TabIndex = 74;
+            this.dgvT5_Ca1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT5_Ca1.Location = new System.Drawing.Point(618, 49);
+            this.dgvT5_Ca1.Name = "dgvT5_Ca1";
+            this.dgvT5_Ca1.RowHeadersWidth = 51;
+            this.dgvT5_Ca1.Size = new System.Drawing.Size(136, 130);
+            this.dgvT5_Ca1.TabIndex = 74;
             // 
-            // dataGridView3
+            // dgvT4_Ca1
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(337, 49);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView3.TabIndex = 73;
+            this.dgvT4_Ca1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT4_Ca1.Location = new System.Drawing.Point(427, 49);
+            this.dgvT4_Ca1.Name = "dgvT4_Ca1";
+            this.dgvT4_Ca1.RowHeadersWidth = 51;
+            this.dgvT4_Ca1.Size = new System.Drawing.Size(136, 130);
+            this.dgvT4_Ca1.TabIndex = 73;
             // 
-            // dataGridView2
+            // dgvT3_Ca1
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(200, 49);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView2.TabIndex = 72;
+            this.dgvT3_Ca1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT3_Ca1.Location = new System.Drawing.Point(242, 49);
+            this.dgvT3_Ca1.Name = "dgvT3_Ca1";
+            this.dgvT3_Ca1.RowHeadersWidth = 51;
+            this.dgvT3_Ca1.Size = new System.Drawing.Size(136, 130);
+            this.dgvT3_Ca1.TabIndex = 72;
             // 
             // label22
             // 
@@ -1464,7 +1464,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(368, 23);
+            this.label19.Location = new System.Drawing.Point(472, 23);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(50, 18);
             this.label19.TabIndex = 65;
@@ -1474,7 +1474,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(234, 24);
+            this.label20.Location = new System.Drawing.Point(288, 23);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(50, 18);
             this.label20.TabIndex = 64;
@@ -1484,17 +1484,18 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(98, 23);
+            this.label21.Location = new System.Drawing.Point(102, 23);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(50, 18);
             this.label21.TabIndex = 63;
             this.label21.Text = "Thứ 2";
+            //this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // labelT5
             // 
             this.labelT5.AutoSize = true;
             this.labelT5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelT5.Location = new System.Drawing.Point(513, 23);
+            this.labelT5.Location = new System.Drawing.Point(660, 23);
             this.labelT5.Name = "labelT5";
             this.labelT5.Size = new System.Drawing.Size(50, 18);
             this.labelT5.TabIndex = 66;
@@ -1504,7 +1505,7 @@
             // 
             this.labelT6.AutoSize = true;
             this.labelT6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelT6.Location = new System.Drawing.Point(653, 23);
+            this.labelT6.Location = new System.Drawing.Point(848, 23);
             this.labelT6.Name = "labelT6";
             this.labelT6.Size = new System.Drawing.Size(50, 18);
             this.labelT6.TabIndex = 67;
@@ -1514,7 +1515,7 @@
             // 
             this.labelT7.AutoSize = true;
             this.labelT7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelT7.Location = new System.Drawing.Point(790, 23);
+            this.labelT7.Location = new System.Drawing.Point(1035, 23);
             this.labelT7.Name = "labelT7";
             this.labelT7.Size = new System.Drawing.Size(50, 18);
             this.labelT7.TabIndex = 68;
@@ -1524,20 +1525,20 @@
             // 
             this.labelCN.AutoSize = true;
             this.labelCN.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCN.Location = new System.Drawing.Point(910, 23);
+            this.labelCN.Location = new System.Drawing.Point(1211, 23);
             this.labelCN.Name = "labelCN";
             this.labelCN.Size = new System.Drawing.Size(73, 18);
             this.labelCN.TabIndex = 69;
             this.labelCN.Text = "Chủ nhật";
             // 
-            // dataGridView1
+            // dgvT2_Ca1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 49);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(127, 109);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvT2_Ca1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvT2_Ca1.Location = new System.Drawing.Point(61, 49);
+            this.dgvT2_Ca1.Name = "dgvT2_Ca1";
+            this.dgvT2_Ca1.RowHeadersWidth = 51;
+            this.dgvT2_Ca1.Size = new System.Drawing.Size(136, 130);
+            this.dgvT2_Ca1.TabIndex = 0;
             // 
             // fAdmin
             // 
@@ -1600,27 +1601,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItem)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT8_Ca3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT7_Ca3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT6_Ca3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT5_Ca3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT4_Ca3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT3_Ca3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT2_Ca3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT8_Ca2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT7_Ca2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT6_Ca2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT5_Ca2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT4_Ca2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT3_Ca2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT2_Ca2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT8_Ca1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT7_Ca1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT6_Ca1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT5_Ca1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT4_Ca1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT3_Ca1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvT2_Ca1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1716,31 +1717,31 @@
         private System.Windows.Forms.Label labelT5;
         private System.Windows.Forms.TextBox txbCategoryItem;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvT2_Ca1;
         private System.Windows.Forms.Button btnShift;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView15;
-        private System.Windows.Forms.DataGridView dataGridView16;
-        private System.Windows.Forms.DataGridView dataGridView17;
-        private System.Windows.Forms.DataGridView dataGridView18;
-        private System.Windows.Forms.DataGridView dataGridView19;
-        private System.Windows.Forms.DataGridView dataGridView20;
+        private System.Windows.Forms.DataGridView dgvT8_Ca3;
+        private System.Windows.Forms.DataGridView dgvT7_Ca3;
+        private System.Windows.Forms.DataGridView dgvT6_Ca3;
+        private System.Windows.Forms.DataGridView dgvT5_Ca3;
+        private System.Windows.Forms.DataGridView dgvT4_Ca3;
+        private System.Windows.Forms.DataGridView dgvT3_Ca3;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.DataGridView dataGridView21;
-        private System.Windows.Forms.DataGridView dataGridView8;
-        private System.Windows.Forms.DataGridView dataGridView9;
-        private System.Windows.Forms.DataGridView dataGridView10;
-        private System.Windows.Forms.DataGridView dataGridView11;
-        private System.Windows.Forms.DataGridView dataGridView12;
-        private System.Windows.Forms.DataGridView dataGridView13;
+        private System.Windows.Forms.DataGridView dgvT2_Ca3;
+        private System.Windows.Forms.DataGridView dgvT8_Ca2;
+        private System.Windows.Forms.DataGridView dgvT7_Ca2;
+        private System.Windows.Forms.DataGridView dgvT6_Ca2;
+        private System.Windows.Forms.DataGridView dgvT5_Ca2;
+        private System.Windows.Forms.DataGridView dgvT4_Ca2;
+        private System.Windows.Forms.DataGridView dgvT3_Ca2;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DataGridView dataGridView14;
-        private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvT2_Ca2;
+        private System.Windows.Forms.DataGridView dgvT8_Ca1;
+        private System.Windows.Forms.DataGridView dgvT7_Ca1;
+        private System.Windows.Forms.DataGridView dgvT6_Ca1;
+        private System.Windows.Forms.DataGridView dgvT5_Ca1;
+        private System.Windows.Forms.DataGridView dgvT4_Ca1;
+        private System.Windows.Forms.DataGridView dgvT3_Ca1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;

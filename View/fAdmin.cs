@@ -2,6 +2,7 @@
 using PBL3CodeDemo.DTO;
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -93,6 +94,7 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
             
             LoadRevenue(Convert.ToDateTime(" 01/01/2023"), dateEnd.Value.Date);
+            LoadDGV_Shift();
         }
 
         private void dataGridViewTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -613,6 +615,17 @@ namespace PBL3CodeDemo.View
                 MessageBox.Show("Chọn 1 Tài Khoản", "Thông báo!");
             }
 
+        }
+        private void LoadDGV_Shift()
+        {
+            QLCFBLL bll = new QLCFBLL();
+            foreach(DataGridView i in tabPage6.Controls.OfType<DataGridView>())
+            {
+                i.DataSource = bll.GetDGV_Shift(int.Parse(i.Name[8].ToString()), int.Parse(i.Name[4].ToString()));//dgvT2_Ca1
+                i.RowHeadersVisible = false;
+                i.ColumnHeadersVisible = false;
+                i.ScrollBars = ScrollBars.None;
+            }
         }
     }
 }
