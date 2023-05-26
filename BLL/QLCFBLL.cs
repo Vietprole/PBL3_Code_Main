@@ -1141,6 +1141,12 @@ namespace PBL3CodeDemo.BLL
             int IDAccount = Return_IDAccount(username);
             return db.Shifts.Where(p => p.IdAccount == IDAccount).Select(p => p).ToList();
         }
+        public List<Shift> Return_AssignedShift(string username)
+        {
+            PBL3Entities db = new PBL3Entities();
+            int IDAccount = Return_IDAccount(username);
+            return db.Shifts.Where(p => p.IdAccount == IDAccount && p.FlagAssigned == true).Select(p => p).ToList();
+        }
         public bool CheckShift(Shift shift)
         {
             PBL3Entities db = new PBL3Entities();

@@ -84,24 +84,6 @@ namespace PBL3CodeDemo.View
                     else
                         Debug.Write("Truyền ca làm " + i.Name[7] + ", ngày thứ " + i.Name[3] + " thất bại");
                 }
-                if (i.Checked == false)
-                {
-                    //Debug.Write("Duyet " + i.Name);
-                    Shift shift = new Shift
-                    {
-                        IdAccount = bll.Return_IDAccount(userName),
-                        ShiftNumber = int.Parse(i.Name[7].ToString()),
-                        Date = int.Parse(i.Name[3].ToString()),
-                        FlagAssigned = false
-                    };
-                    //Debug.Write(" Tao new Shift thanh cong ");
-                    if (bll.CheckShift(shift))
-                    {
-                        //Debug.Write("Shift " + i.Name + " can delete");
-                        bll.DeleteShift(shift);
-                    }
-
-                }
             }
             if (count == 0)
             {
