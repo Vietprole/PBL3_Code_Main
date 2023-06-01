@@ -59,18 +59,19 @@
             this.panel1.Controls.Add(this.txbUserName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(26, 221);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(612, 64);
             this.panel1.TabIndex = 2;
             // 
             // txbUserName
             // 
+            this.txbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUserName.Location = new System.Drawing.Point(267, 18);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.ReadOnly = true;
-            this.txbUserName.Size = new System.Drawing.Size(327, 22);
+            this.txbUserName.Size = new System.Drawing.Size(327, 27);
             this.txbUserName.TabIndex = 2;
             // 
             // label1
@@ -89,17 +90,18 @@
             this.panel2.Controls.Add(this.txbDisplayName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(26, 292);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(612, 64);
             this.panel2.TabIndex = 3;
             // 
             // txbDisplayName
             // 
+            this.txbDisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDisplayName.Location = new System.Drawing.Point(267, 18);
-            this.txbDisplayName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbDisplayName.Margin = new System.Windows.Forms.Padding(4);
             this.txbDisplayName.Name = "txbDisplayName";
-            this.txbDisplayName.Size = new System.Drawing.Size(327, 22);
+            this.txbDisplayName.Size = new System.Drawing.Size(327, 27);
             this.txbDisplayName.TabIndex = 2;
             // 
             // label2
@@ -118,18 +120,19 @@
             this.panel3.Controls.Add(this.txbSalary);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(26, 364);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(612, 64);
             this.panel3.TabIndex = 4;
             // 
             // txbSalary
             // 
+            this.txbSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSalary.Location = new System.Drawing.Point(267, 18);
-            this.txbSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbSalary.Margin = new System.Windows.Forms.Padding(4);
             this.txbSalary.Name = "txbSalary";
             this.txbSalary.ReadOnly = true;
-            this.txbSalary.Size = new System.Drawing.Size(327, 22);
+            this.txbSalary.Size = new System.Drawing.Size(327, 27);
             this.txbSalary.TabIndex = 2;
             // 
             // label3
@@ -148,17 +151,18 @@
             this.panel4.Controls.Add(this.txbAdress);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(26, 435);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(612, 64);
             this.panel4.TabIndex = 5;
             // 
             // txbAdress
             // 
+            this.txbAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbAdress.Location = new System.Drawing.Point(267, 18);
-            this.txbAdress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbAdress.Margin = new System.Windows.Forms.Padding(4);
             this.txbAdress.Name = "txbAdress";
-            this.txbAdress.Size = new System.Drawing.Size(327, 22);
+            this.txbAdress.Size = new System.Drawing.Size(327, 27);
             this.txbAdress.TabIndex = 2;
             // 
             // label4
@@ -177,17 +181,18 @@
             this.panel5.Controls.Add(this.txbPhone);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(26, 506);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(612, 64);
             this.panel5.TabIndex = 6;
             // 
             // txbPhone
             // 
+            this.txbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPhone.Location = new System.Drawing.Point(267, 18);
-            this.txbPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txbPhone.Name = "txbPhone";
-            this.txbPhone.Size = new System.Drawing.Size(327, 22);
+            this.txbPhone.Size = new System.Drawing.Size(327, 27);
             this.txbPhone.TabIndex = 2;
             // 
             // label5
@@ -205,7 +210,7 @@
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(75, 600);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(205, 46);
             this.btnUpdate.TabIndex = 7;
@@ -217,7 +222,7 @@
             // 
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(350, 600);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(205, 46);
             this.btnExit.TabIndex = 8;
@@ -248,7 +253,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fAccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông Tin Tài Khoản";
