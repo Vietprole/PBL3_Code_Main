@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbbPosition = new System.Windows.Forms.ComboBox();
@@ -116,6 +116,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.txbNameItem = new System.Windows.Forms.TextBox();
+            this.txbSearchItem = new System.Windows.Forms.TextBox();
             this.btnSearchItem = new System.Windows.Forms.Button();
             this.btnDelItem = new System.Windows.Forms.Button();
             this.btnEditItem = new System.Windows.Forms.Button();
@@ -153,7 +154,6 @@
             this.labelT7 = new System.Windows.Forms.Label();
             this.labelCN = new System.Windows.Forms.Label();
             this.dgvT2_Ca1 = new System.Windows.Forms.DataGridView();
-            this.txbSearchItem = new System.Windows.Forms.TextBox();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -445,7 +445,7 @@
             // btt_Edit_DoanhMuc
             // 
             this.btt_Edit_DoanhMuc.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.btt_Edit_DoanhMuc.Location = new System.Drawing.Point(204, 68);
+            this.btt_Edit_DoanhMuc.Location = new System.Drawing.Point(10, 71);
             this.btt_Edit_DoanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btt_Edit_DoanhMuc.Name = "btt_Edit_DoanhMuc";
             this.btt_Edit_DoanhMuc.Size = new System.Drawing.Size(203, 46);
@@ -966,17 +966,17 @@
             // 
             // chart1
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chart1.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(-36, 114);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chart1.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(975, 341);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "Doanh Thu";
@@ -1178,6 +1178,15 @@
             this.txbNameItem.Name = "txbNameItem";
             this.txbNameItem.Size = new System.Drawing.Size(235, 30);
             this.txbNameItem.TabIndex = 2;
+            // 
+            // txbSearchItem
+            // 
+            this.txbSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearchItem.Location = new System.Drawing.Point(920, 26);
+            this.txbSearchItem.Margin = new System.Windows.Forms.Padding(4);
+            this.txbSearchItem.Name = "txbSearchItem";
+            this.txbSearchItem.Size = new System.Drawing.Size(246, 30);
+            this.txbSearchItem.TabIndex = 38;
             // 
             // btnSearchItem
             // 
@@ -1567,15 +1576,6 @@
             this.dgvT2_Ca1.RowHeadersWidth = 51;
             this.dgvT2_Ca1.Size = new System.Drawing.Size(160, 130);
             this.dgvT2_Ca1.TabIndex = 0;
-            // 
-            // txbSearchItem
-            // 
-            this.txbSearchItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSearchItem.Location = new System.Drawing.Point(920, 26);
-            this.txbSearchItem.Margin = new System.Windows.Forms.Padding(4);
-            this.txbSearchItem.Name = "txbSearchItem";
-            this.txbSearchItem.Size = new System.Drawing.Size(246, 30);
-            this.txbSearchItem.TabIndex = 38;
             // 
             // fAdmin
             // 
