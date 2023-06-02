@@ -1,6 +1,7 @@
 ﻿using PBL3CodeDemo.BLL;
 using PBL3CodeDemo.DTO;
 using System;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -46,6 +47,12 @@ namespace PBL3CodeDemo.View
 
             txbNameTable.Text = "";
             checkBoxStatus.Checked = false;
+            int newWidth = 144; // Replace 200 with the desired width in pixels
+
+            dataGridViewTable.Columns[0].Width = newWidth;
+            dataGridViewTable.Columns[1].Width = newWidth;
+            dataGridViewTable.Columns[2].Width = newWidth;
+            dataGridViewTable.Columns[3].Width = 195;
         }
         void LoadDGV_Account()
         {
@@ -67,6 +74,13 @@ namespace PBL3CodeDemo.View
             txbAdress.Text = "";
             cbb_role.Text = "";
             txbUserName.Text = "";
+            int newWidth = 140; // Replace 200 with the desired width in pixels
+
+            dataGridViewAcount.Columns[0].Width = newWidth;
+            dataGridViewAcount.Columns[1].Width = newWidth;
+            dataGridViewAcount.Columns[2].Width = newWidth;
+            dataGridViewAcount.Columns[4].Width = newWidth;
+            dataGridViewAcount.Columns[5].Width = newWidth;
         }
 
 
@@ -276,18 +290,29 @@ namespace PBL3CodeDemo.View
             
             txbNameProduct.Text = "";
             txbPriceProduct.Text = "";
+
+            int newWidth = 144; // Replace 200 with the desired width in pixels
+
+            dataGridViewProduct.Columns[0].Width = newWidth;
+            dataGridViewProduct.Columns[1].Width = newWidth;
+            dataGridViewProduct.Columns[2].Width = newWidth;
+            dataGridViewProduct.Columns[3].Width = newWidth;
         }
         private void setCBBCategory()
         {
+            cbbCategory.Items.Clear();
             using (PBL3Entities db = new PBL3Entities())
             {
                 foreach (Category i in db.Categories)
                 {
-                    cbbCategory.Items.Add(new CBB_Item
+                    if (i.Flag == true)
                     {
-                        Value = i.ID_Category,
-                        Text = i.Category_Name
-                    });
+                        cbbCategory.Items.Add(new CBB_Item
+                        {
+                            Value = i.ID_Category,
+                            Text = i.Category_Name
+                        });
+                    }
                 }
             }
             cbbCategory.SelectedIndex = 0;
@@ -384,6 +409,14 @@ namespace PBL3CodeDemo.View
             txbCategoryItem.Text = "";
             txbQuantityItem.Text = "";
             txbUnitItem.Text = "";
+
+            int newWidth = 125; // Replace 200 with the desired width in pixels
+
+            dataGridViewItem.Columns[0].Width = newWidth;
+            dataGridViewItem.Columns[1].Width = newWidth;
+            dataGridViewItem.Columns[2].Width = newWidth;
+            dataGridViewItem.Columns[3].Width = newWidth;
+            dataGridViewItem.Columns[4].Width = newWidth;
         }
         bool CheckForm_Item()
         {
@@ -517,9 +550,17 @@ namespace PBL3CodeDemo.View
             string Table_Name = txbNameTable.Text;
             bool Status = checkBoxStatus.Checked;
             string Position = cbbPosition.Text;
-            if (bll.Add_Table(Table_Name, Status, Position)) //Update Table thành công
+            LoadDGV_Table();
+            if (Table_Name != "")
             {
-                MessageBox.Show("Đã cập nhật bàn thành công !");
+                if (bll.Add_Table(Table_Name, Status, Position)) //Update Table thành công
+                {
+                    MessageBox.Show("Đã cập nhật bàn thành công !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin", "Thông báo!");
             }
             LoadDGV_Table();
         }
@@ -625,7 +666,24 @@ namespace PBL3CodeDemo.View
                 i.RowHeadersVisible = false;
                 i.ColumnHeadersVisible = false;
                 i.ScrollBars = ScrollBars.None;
+                i.Columns[0].Width = 130;
             }
+        }
+
+        private void btt_Edit_DoanhMuc_Click(object sender, EventArgs e)
+        {
+            View.FormEditDoanhMuc a = new View.FormEditDoanhMuc();
+            a.ShowDialog();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

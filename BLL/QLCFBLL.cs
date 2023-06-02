@@ -15,6 +15,7 @@ using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace PBL3CodeDemo.BLL
 {
@@ -53,12 +54,15 @@ namespace PBL3CodeDemo.BLL
             List<CBB_Item> result = new List<CBB_Item>();
             foreach (Category i in Return_Category())
             {
-                result.Add(new CBB_Item
+                if(i.Flag == true)
                 {
-                    Value = i.ID_Category,
-                    Text = i.Category_Name.ToString()
+                    result.Add(new CBB_Item
+                    {
+                        Value = i.ID_Category,
+                        Text = i.Category_Name.ToString()
 
-                });
+                    });
+                }
             }
             return result;
         }
@@ -747,13 +751,25 @@ namespace PBL3CodeDemo.BLL
                     break;
                 }
             }
-            Bill_Detail bill_Detail = new Bill_Detail();
-            bill_Detail.ID_Bill = id_Bill;
-            bill_Detail.ID_Product = Return_ProductId(foodName);
-            bill_Detail.Quantity = Quantity;
-            bill_Detail.Flag = true;
-            db.Bill_Detail.Add(bill_Detail);
-            db.SaveChanges();
+            int ID_Selected_Product = Convert.ToInt32(Return_ProductId(foodName));
+            Bill_Detail s = db.Bill_Detail.Where(i => i.Flag_Merge == null && i.ID_Product == ID_Selected_Product && i.ID_Bill == id_Bill).FirstOrDefault();
+            if (s == null) 
+            {
+                Bill_Detail bill_Detail = new Bill_Detail();
+                bill_Detail.ID_Bill = id_Bill;
+                bill_Detail.ID_Product = Return_ProductId(foodName);
+                bill_Detail.Quantity = Quantity;
+                bill_Detail.Flag = true;
+                db.Bill_Detail.Add(bill_Detail);
+                db.SaveChanges();
+            }
+            else
+            {
+                s.Quantity += Quantity;
+                db.SaveChanges();
+            }
+            
+            
         }
 
         public void SetTableStatus(int idTable, int status)
@@ -1207,6 +1223,41 @@ namespace PBL3CodeDemo.BLL
                 });
             }
             return result;
+        }
+
+        internal bool Add_Category(string category_Name)
+        {
+            PBL3Entities db = new PBL3Entities();
+            Category cat = db.Categories.FirstOrDefault();
+            if (db.Categories.Any(p => p.Category_Name == category_Name && p.Flag == true))
+            {
+                return false;
+            }
+            else
+            {
+                cat.Category_Name = category_Name;
+                cat.Flag = true;
+                db.Categories.Add(cat);
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        internal bool Edit_Category(string old_Category_Name, string new_Category_Name)
+        {
+            PBL3Entities db = new PBL3Entities();
+            Category s = db.Categories.Where(p => p.Category_Name == old_Category_Name).FirstOrDefault();
+            s.Category_Name = new_Category_Name;
+            db.SaveChanges();
+            return true;
+        }
+
+        internal void Delete_Category(string category_Name)
+        {
+            PBL3Entities db = new PBL3Entities();
+            Category s = db.Categories.Where(p => p.Category_Name == category_Name).FirstOrDefault();
+            s.Flag = false;
+            db.SaveChanges();
         }
     }
 }

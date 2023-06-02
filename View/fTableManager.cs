@@ -169,8 +169,9 @@ namespace PBL3CodeDemo.View
                 Button btn = new Button()
                 {
                     Width = 100,
-                    Height = 100
-                };
+                    Height = 100,
+                    Font = new System.Drawing.Font(Font.FontFamily, 11f)
+            };
                 if (table.Status == true)
                 {
                     s = "Có người";
@@ -182,9 +183,9 @@ namespace PBL3CodeDemo.View
                 switch (table.Status.ToString())
                 {
                     case "False":
-                        btn.BackColor = Color.Aqua; break;
+                        btn.BackColor = System.Drawing.ColorTranslator.FromHtml("#8FC1D4"); break;
                     default:
-                        btn.BackColor = Color.LightPink; break;
+                        btn.BackColor = System.Drawing.ColorTranslator.FromHtml("#C65D7B"); break;
                 }
                 flbTable.Controls.Add(btn);
             }

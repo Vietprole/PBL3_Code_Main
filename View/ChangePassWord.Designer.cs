@@ -59,18 +59,19 @@
             this.panel2.Controls.Add(this.txbDisplayName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(54, 254);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 64);
             this.panel2.TabIndex = 5;
             // 
             // txbDisplayName
             // 
+            this.txbDisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDisplayName.Location = new System.Drawing.Point(267, 18);
-            this.txbDisplayName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbDisplayName.Margin = new System.Windows.Forms.Padding(4);
             this.txbDisplayName.Name = "txbDisplayName";
             this.txbDisplayName.ReadOnly = true;
-            this.txbDisplayName.Size = new System.Drawing.Size(327, 22);
+            this.txbDisplayName.Size = new System.Drawing.Size(327, 27);
             this.txbDisplayName.TabIndex = 2;
             // 
             // label2
@@ -89,18 +90,19 @@
             this.panel1.Controls.Add(this.txbUserName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(54, 183);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(620, 64);
             this.panel1.TabIndex = 4;
             // 
             // txbUserName
             // 
+            this.txbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUserName.Location = new System.Drawing.Point(267, 18);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txbUserName.Name = "txbUserName";
             this.txbUserName.ReadOnly = true;
-            this.txbUserName.Size = new System.Drawing.Size(327, 22);
+            this.txbUserName.Size = new System.Drawing.Size(327, 27);
             this.txbUserName.TabIndex = 2;
             // 
             // label1
@@ -119,17 +121,18 @@
             this.panel3.Controls.Add(this.txbPassWord);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(54, 326);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(620, 64);
             this.panel3.TabIndex = 6;
             // 
             // txbPassWord
             // 
+            this.txbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPassWord.Location = new System.Drawing.Point(267, 18);
-            this.txbPassWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(327, 22);
+            this.txbPassWord.Size = new System.Drawing.Size(327, 27);
             this.txbPassWord.TabIndex = 2;
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
@@ -149,17 +152,18 @@
             this.panel4.Controls.Add(this.txbNewPass);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(54, 397);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(620, 64);
             this.panel4.TabIndex = 7;
             // 
             // txbNewPass
             // 
+            this.txbNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNewPass.Location = new System.Drawing.Point(267, 18);
-            this.txbNewPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNewPass.Margin = new System.Windows.Forms.Padding(4);
             this.txbNewPass.Name = "txbNewPass";
-            this.txbNewPass.Size = new System.Drawing.Size(327, 22);
+            this.txbNewPass.Size = new System.Drawing.Size(327, 27);
             this.txbNewPass.TabIndex = 2;
             this.txbNewPass.UseSystemPasswordChar = true;
             // 
@@ -179,17 +183,18 @@
             this.panel5.Controls.Add(this.txbReEnterPass);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(54, 468);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(620, 64);
             this.panel5.TabIndex = 8;
             // 
             // txbReEnterPass
             // 
+            this.txbReEnterPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbReEnterPass.Location = new System.Drawing.Point(267, 18);
-            this.txbReEnterPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbReEnterPass.Margin = new System.Windows.Forms.Padding(4);
             this.txbReEnterPass.Name = "txbReEnterPass";
-            this.txbReEnterPass.Size = new System.Drawing.Size(327, 22);
+            this.txbReEnterPass.Size = new System.Drawing.Size(327, 27);
             this.txbReEnterPass.TabIndex = 2;
             this.txbReEnterPass.UseSystemPasswordChar = true;
             // 
@@ -208,7 +213,7 @@
             // 
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(378, 573);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(205, 46);
             this.btnExit.TabIndex = 10;
@@ -220,7 +225,7 @@
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(104, 573);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(205, 46);
             this.btnUpdate.TabIndex = 9;
@@ -231,9 +236,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PBL3CodeDemo.Properties.Resources._240_F_217720838_zQcOEAOU0plHYh6WWv50te1L9d7iApAz;
-            this.pictureBox1.Location = new System.Drawing.Point(287, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(274, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 172);
+            this.pictureBox1.Size = new System.Drawing.Size(198, 172);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -251,7 +256,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChangePassWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi Mật Khẩu";

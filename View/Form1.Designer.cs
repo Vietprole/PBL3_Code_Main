@@ -59,17 +59,18 @@
             this.panel1.Controls.Add(this.txbUserName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(328, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(612, 64);
             this.panel1.TabIndex = 1;
             // 
             // txbUserName
             // 
+            this.txbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUserName.Location = new System.Drawing.Point(267, 18);
-            this.txbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(327, 22);
+            this.txbUserName.Size = new System.Drawing.Size(327, 30);
             this.txbUserName.TabIndex = 2;
             this.txbUserName.Text = "dvv";
             // 
@@ -78,17 +79,18 @@
             this.panel2.Controls.Add(this.txbPassWord);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(328, 95);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(612, 64);
             this.panel2.TabIndex = 3;
             // 
             // txbPassWord
             // 
+            this.txbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPassWord.Location = new System.Drawing.Point(267, 18);
-            this.txbPassWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(327, 22);
+            this.txbPassWord.Size = new System.Drawing.Size(327, 30);
             this.txbPassWord.TabIndex = 2;
             this.txbPassWord.Text = "123";
             this.txbPassWord.UseSystemPasswordChar = true;
@@ -108,7 +110,7 @@
             // 
             this.Login.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.Location = new System.Drawing.Point(423, 216);
-            this.Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Login.Margin = new System.Windows.Forms.Padding(4);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(205, 46);
             this.Login.TabIndex = 4;
@@ -120,7 +122,7 @@
             // 
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(717, 220);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(205, 46);
             this.btnExit.TabIndex = 5;
@@ -133,7 +135,7 @@
             this.checkBoxShowPass.AutoSize = true;
             this.checkBoxShowPass.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxShowPass.Location = new System.Drawing.Point(597, 157);
-            this.checkBoxShowPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxShowPass.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxShowPass.Name = "checkBoxShowPass";
             this.checkBoxShowPass.Size = new System.Drawing.Size(224, 33);
             this.checkBoxShowPass.TabIndex = 6;
@@ -163,7 +165,7 @@
             this.Controls.Add(this.Login);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
