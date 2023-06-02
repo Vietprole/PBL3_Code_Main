@@ -9,5 +9,6 @@ namespace PBL3CodeDemo.DTO
     public class ShiftDatagridview
     {
         public string AccountName { get; set; }
+        public bool? FlagAssigned { get; set; }
     }
 }

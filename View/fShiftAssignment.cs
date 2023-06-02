@@ -15,6 +15,8 @@ namespace PBL3CodeDemo.View
 {
     public partial class fShiftAssignment : Form
     {
+        public delegate void MyDel(string txt);
+        public MyDel d { get; set; }
         string userName;
         QLCFBLL bll = new QLCFBLL();
         public fShiftAssignment( string user)
@@ -90,6 +92,7 @@ namespace PBL3CodeDemo.View
                 MessageBox.Show("Bạn chưa chọn ca làm nào", "Thông báo!");
             }
             else MessageBox.Show("Phân công ca làm thành công", "Thông báo!");
+            d("");
         }
     }
 }

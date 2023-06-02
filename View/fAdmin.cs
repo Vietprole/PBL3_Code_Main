@@ -108,7 +108,7 @@ namespace PBL3CodeDemo.View
             QLCFBLL bll = new QLCFBLL();
             
             LoadRevenue(Convert.ToDateTime(" 01/01/2023"), dateEnd.Value.Date);
-            LoadDGV_Shift();
+            LoadDGV_Shift("");
         }
 
         private void dataGridViewTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -648,6 +648,7 @@ namespace PBL3CodeDemo.View
             if (CheckForm_Account() == false)
             {
                 View.fShiftAssignment f = new fShiftAssignment(txbUserName.Text);
+                f.d += LoadDGV_Shift;
                 f.ShowDialog();
 
             }
@@ -657,12 +658,12 @@ namespace PBL3CodeDemo.View
             }
 
         }
-        private void LoadDGV_Shift()
+        private void LoadDGV_Shift(string txt)
         {
             QLCFBLL bll = new QLCFBLL();
             foreach(DataGridView i in tabPage6.Controls.OfType<DataGridView>())
             {
-                i.DataSource = bll.GetDGV_Shift(int.Parse(i.Name[8].ToString()), int.Parse(i.Name[4].ToString()));//dgvT2_Ca1
+                i.DataSource = bll.GetDGV_AssignedShift(int.Parse(i.Name[8].ToString()), int.Parse(i.Name[4].ToString()));//dgvT2_Ca1
                 i.RowHeadersVisible = false;
                 i.ColumnHeadersVisible = false;
                 i.ScrollBars = ScrollBars.None;
@@ -684,6 +685,39 @@ namespace PBL3CodeDemo.View
         private void label27_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkboxDisplayUnassigned.Checked == true)
+            {
+                LoadDGV_ShiftWithUnassigned();
+            }
+            if (checkboxDisplayUnassigned.Checked == false)
+            {
+                LoadDGV_Shift("");
+            }
+        }
+
+        private void LoadDGV_ShiftWithUnassigned()
+        {
+            QLCFBLL bll = new QLCFBLL();
+            foreach (DataGridView i in tabPage6.Controls.OfType<DataGridView>())
+            {
+                i.DataSource = bll.GetDGV_Shift(int.Parse(i.Name[8].ToString()), int.Parse(i.Name[4].ToString()));//dgvT2_Ca1
+                foreach(DataGridViewRow j in i.Rows)
+                {
+                    if ((bool)j.Cells[1].Value == false)
+                    {
+                        j.Cells[0].Style.BackColor = Color.Red;
+                        j.Cells[0].Style.SelectionBackColor = Color.Red;
+                    }
+                } 
+                i.RowHeadersVisible = false;
+                i.ColumnHeadersVisible = false;
+                i.ScrollBars = ScrollBars.None;
+                i.Columns[0].Width = 130;
+            }
         }
     }
 }

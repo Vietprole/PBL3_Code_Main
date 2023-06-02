@@ -1211,7 +1211,12 @@ namespace PBL3CodeDemo.BLL
             PBL3Entities db = new PBL3Entities();
             return db.Shifts.Where(p => p.ShiftNumber == shiftNumber && p.Date == date && p.FlagAssigned == true).Select(p => p).ToList();
         }
-        public List<ShiftDatagridview> GetDGV_Shift(int shiftNumber, int date)
+        public List<Shift> Return_Shift(int shiftNumber, int date)
+        {
+            PBL3Entities db = new PBL3Entities();
+            return db.Shifts.Where(p => p.ShiftNumber == shiftNumber && p.Date == date).Select(p => p).ToList();
+        }
+        public List<ShiftDatagridview> GetDGV_AssignedShift(int shiftNumber, int date)
         {
             PBL3Entities db = new PBL3Entities();
             List<ShiftDatagridview> result = new List<ShiftDatagridview>();
@@ -1219,12 +1224,27 @@ namespace PBL3CodeDemo.BLL
             {
                 result.Add(new ShiftDatagridview
                 {
-                    AccountName = i.Account.Name
+                    AccountName = i.Account.Name,
+                    FlagAssigned = i.FlagAssigned
                 });
             }
             return result;
         }
 
+        public List<ShiftDatagridview> GetDGV_Shift(int shiftNumber, int date)
+        {
+            PBL3Entities db = new PBL3Entities();
+            List<ShiftDatagridview> result = new List<ShiftDatagridview>();
+            foreach (Shift i in Return_Shift(shiftNumber, date))
+            {
+                result.Add(new ShiftDatagridview
+                {
+                    AccountName = i.Account.Name,
+                    FlagAssigned = i.FlagAssigned
+                });
+            }
+            return result;
+        }
         internal bool Add_Category(string category_Name)
         {
             PBL3Entities db = new PBL3Entities();
