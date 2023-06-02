@@ -257,3 +257,4 @@ D:\Hoc.NET\CloneCaLam\obj\Debug\PBL3CodeDemo.csproj.CopyComplete
 D:\Hoc.NET\CloneCaLam\obj\Debug\PBL3CodeDemo.exe
 D:\Hoc.NET\CloneCaLam\obj\Debug\PBL3CodeDemo.pdb
 D:\Hoc.NET\CloneCaLam\obj\Debug\PBL3CodeDemo.View.FormEditDoanhMuc.resources
+E:\Viet\PBL3_Code_Main\obj\Debug\PBL3CodeDemo.View.FormEditDoanhMuc.resources
