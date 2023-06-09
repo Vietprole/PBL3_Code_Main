@@ -94,5 +94,10 @@ namespace PBL3CodeDemo.View
             else MessageBox.Show("Phân công ca làm thành công", "Thông báo!");
             d("");
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -269,7 +269,6 @@
             this.labelT7.Size = new System.Drawing.Size(23, 18);
             this.labelT7.TabIndex = 92;
             this.labelT7.Text = "6.";
-            //this.labelT7.Click += new System.EventHandler(this.labelT7_Click);
             // 
             // labelT8
             // 
@@ -523,6 +522,7 @@
             this.btnExit.TabIndex = 121;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // fShiftAssignment
             // 
