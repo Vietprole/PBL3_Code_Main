@@ -33,9 +33,21 @@ namespace PBL3CodeDemo.View
                 foreach (CheckBox j in this.Controls.OfType<CheckBox>())
                 {
                     if (int.Parse(j.Name[7].ToString()) == i.ShiftNumber &&
-                        int.Parse(j.Name[3].ToString()) == i.Date)
+                        int.Parse(j.Name[3].ToString()) == i.Date &&
+                        i.FlagAssigned == true)//Duyet roi
+
                     {
                         j.Checked = true;
+                        j.Enabled = false;
+                        j.ForeColor = System.Drawing.Color.Gray;
+                    }
+                    if (int.Parse(j.Name[7].ToString()) == i.ShiftNumber &&
+                        int.Parse(j.Name[3].ToString()) == i.Date &&
+                        i.FlagAssigned == false)//Chua duyet 
+
+                    {
+                        j.Checked = true;
+                        j.Enabled = true;
                     }
                 }
             }
@@ -62,7 +74,7 @@ namespace PBL3CodeDemo.View
                 }
                 if (i.Checked == false)
                 {
-                    //Debug.Write("Duyet " + i.Name);
+                    //MessageBox.Show("Duyet " + i.Name);
                     Shift shift = new Shift
                     {
                         IdAccount = bll.Return_IDAccount(userName),

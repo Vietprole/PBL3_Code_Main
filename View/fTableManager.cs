@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PBL3CodeDemo.View
 {
@@ -23,7 +24,7 @@ namespace PBL3CodeDemo.View
         QLCFBLL bll = new QLCFBLL();
         void setNameForm(string user)
         {
-            this.Text = "Quản lý Bàn"+ bll.SetNameAcount(user);
+            this.Text = "Quản lý Bàn "+ bll.SetNameAcount(user);
         }
         void setCBBCategory()
         {
@@ -45,7 +46,7 @@ namespace PBL3CodeDemo.View
             setCBBCategory();
             setNameForm(useName);
             LoadTable();
-            textBoxPrice.Text = "0";
+            textBoxPrice.Text = "0" + " VND";
         }
        
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,8 +106,9 @@ namespace PBL3CodeDemo.View
             }
             else
             {
-
-                int Price = Convert.ToInt32(textBoxPrice.Text);
+                string input = textBoxPrice.Text;
+                string digitsOnly = new string(input.Where(char.IsDigit).ToArray());
+                int Price = Convert.ToInt32(digitsOnly);
                 int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
                 if (bll.CheckAcount_Role(useName) == 1 || bll.CheckAcount_Role(useName) == 2)
                 {
@@ -166,7 +168,7 @@ namespace PBL3CodeDemo.View
             List<TableDataGridView> list_table = bll.LoadTable_Button();
             foreach (TableDataGridView table in list_table)
             {
-                Button btn = new Button()
+                System.Windows.Forms.Button btn = new System.Windows.Forms.Button()
                 {
                     Width = 100,
                     Height = 100,
@@ -218,7 +220,7 @@ namespace PBL3CodeDemo.View
                 {
                     Price += bill_details.unit_price * bill_details.Quantity;
                 }
-                textBoxPrice.Text = Price.ToString();
+                textBoxPrice.Text = Price.ToString() +" VND";
                 BillTable_DGV.Columns[0].HeaderText = "Tên món";
                 BillTable_DGV.Columns[1].HeaderText = "Số lượng";
                 BillTable_DGV.Columns[2].HeaderText = "Đơn giá";
@@ -228,13 +230,13 @@ namespace PBL3CodeDemo.View
             {
                 BillTable_DGV.DataSource = null;
                 bll.SetTableStatus(id_Table, 0);
-                textBoxPrice.Text = "0";
+                textBoxPrice.Text = "0" +" VND";
             }
 
         }
          void btn_Click(object sender, EventArgs e)
         {
-            int table_ID = ((sender as Button).Tag as TableDataGridView).ID_Table;
+            int table_ID = ((sender as System.Windows.Forms.Button).Tag as TableDataGridView).ID_Table;
             id_Table_Last_Pressed.Text = table_ID.ToString();
             ShowBill(table_ID);
             setCBBSwitchTable(table_ID);
@@ -296,7 +298,7 @@ namespace PBL3CodeDemo.View
                 {
                     Price += bill_details.unit_price;
                 }
-                textBoxPrice.Text = Price.ToString();
+                textBoxPrice.Text = Price.ToString() + " VND";
             }
 
         }
@@ -305,9 +307,11 @@ namespace PBL3CodeDemo.View
             int idTable = Convert.ToInt32(id_Table_Last_Pressed.Text);
             int discount = Convert.ToInt32(nmDisCount.Value);
             ResetPrice(idTable);
-            int Price = Convert.ToInt32(textBoxPrice.Text);
+            string input = textBoxPrice.Text;
+            string digitsOnly = new string(input.Where(char.IsDigit).ToArray());
+            int Price = Convert.ToInt32(digitsOnly);
             Price = Price - Price * discount / 100;
-            textBoxPrice.Text = Price.ToString();
+            textBoxPrice.Text = Price.ToString() + " VND";
         }
         private void btnDiscount_Click(object sender, EventArgs e)
         {
@@ -351,5 +355,7 @@ namespace PBL3CodeDemo.View
             View.fCheckShift f = new fCheckShift(useName);
             f.ShowDialog();
         }
+
+
     }
 }

@@ -33,13 +33,13 @@ namespace PBL3CodeDemo.View
         void setTotal(int idBill)
         {
             int SumPrice = Convert.ToInt32(bll.SetTotalBill(idBill));
-            labeltotalBill.Text = "Tổng giá :" + SumPrice.ToString("c", culture);
+            labeltotalBill.Text = "Tổng giá :" + SumPrice.ToString() + " VND";
         }
         void setTotalLast(int idBill, int discount)
         {
             int SumPrice = Convert.ToInt32(bll.SetTotalBill(idBill));
             SumPrice = SumPrice - SumPrice * discount / 100;
-            labelTotalLast.Text = "Còn lại: " + SumPrice.ToString("c", culture);
+            labelTotalLast.Text = "Còn lại: " + SumPrice.ToString() + " VND";
         }
         void setDiscount(int discount)
         {

@@ -713,7 +713,7 @@ namespace PBL3CodeDemo.View
                         j.Cells[0].Style.BackColor = Color.Red;
                         j.Cells[0].Style.SelectionBackColor = Color.Red;
                     }
-                } 
+                }
                 i.RowHeadersVisible = false;
                 i.ColumnHeadersVisible = false;
                 i.ScrollBars = ScrollBars.None;

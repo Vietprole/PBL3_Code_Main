@@ -1180,6 +1180,7 @@ namespace PBL3CodeDemo.BLL
                 var s = db.Shifts.Where(p => p.IdAccount == shift.IdAccount && p.ShiftNumber == shift.ShiftNumber && p.Date == shift.Date).FirstOrDefault();
                 db.Shifts.Remove(s);
                 db.SaveChanges();
+                //MessageBox.Show("DELETE");
                 return true;
             }
             else return false;

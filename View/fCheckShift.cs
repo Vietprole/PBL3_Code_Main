@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace PBL3CodeDemo.View
 {
@@ -27,12 +28,17 @@ namespace PBL3CodeDemo.View
         {
             foreach (Shift i in bll.Return_AssignedShiftById(userName))
             {
-                foreach (CheckBox j in this.Controls.OfType<CheckBox>())
+                foreach (System.Windows.Forms.CheckBox j in this.Controls.OfType<System.Windows.Forms.CheckBox>())
                 {
+                    j.Enabled = false;
                     if (int.Parse(j.Name[7].ToString()) == i.ShiftNumber &&
-                        int.Parse(j.Name[3].ToString()) == i.Date)
+                        int.Parse(j.Name[3].ToString()) == i.Date &&
+                        i.FlagAssigned == true)//Duyet roi
+                        
                     {
                         j.Checked = true;
+                        j.Enabled = false;
+                        j.ForeColor = System.Drawing.Color.Blue;
                     }
                 }
             }
