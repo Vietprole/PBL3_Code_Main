@@ -144,6 +144,7 @@
             this.btnAddItem = new System.Windows.Forms.Button();
             this.dataGridViewItem = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.checkboxDisplayUnassigned = new System.Windows.Forms.CheckBox();
             this.dgvT8_Ca3 = new System.Windows.Forms.DataGridView();
             this.dgvT7_Ca3 = new System.Windows.Forms.DataGridView();
             this.dgvT6_Ca3 = new System.Windows.Forms.DataGridView();
@@ -175,7 +176,6 @@
             this.labelT7 = new System.Windows.Forms.Label();
             this.labelCN = new System.Windows.Forms.Label();
             this.dgvT2_Ca1 = new System.Windows.Forms.DataGridView();
-            this.checkboxDisplayUnassigned = new System.Windows.Forms.CheckBox();
             this.tabPage3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -982,7 +982,7 @@
             this.txbRevenue.Margin = new System.Windows.Forms.Padding(4);
             this.txbRevenue.Name = "txbRevenue";
             this.txbRevenue.ReadOnly = true;
-            this.txbRevenue.Size = new System.Drawing.Size(159, 27);
+            this.txbRevenue.Size = new System.Drawing.Size(245, 27);
             this.txbRevenue.TabIndex = 18;
             this.txbRevenue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1230,7 +1230,7 @@
             this.btnDelItem.Name = "btnDelItem";
             this.btnDelItem.Size = new System.Drawing.Size(151, 46);
             this.btnDelItem.TabIndex = 36;
-            this.btnDelItem.Text = "Xóa";
+            this.btnDelItem.Text = "Xóa hàng";
             this.btnDelItem.UseVisualStyleBackColor = true;
             this.btnDelItem.Click += new System.EventHandler(this.btnDelItem_Click);
             // 
@@ -1242,7 +1242,7 @@
             this.btnEditItem.Name = "btnEditItem";
             this.btnEditItem.Size = new System.Drawing.Size(151, 46);
             this.btnEditItem.TabIndex = 35;
-            this.btnEditItem.Text = "Sửa";
+            this.btnEditItem.Text = "Kiểm kho";
             this.btnEditItem.UseVisualStyleBackColor = true;
             this.btnEditItem.Click += new System.EventHandler(this.btnEditItem_Click);
             // 
@@ -1254,7 +1254,7 @@
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(151, 46);
             this.btnAddItem.TabIndex = 34;
-            this.btnAddItem.Text = "Thêm";
+            this.btnAddItem.Text = "Nhập hàng";
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
@@ -1310,6 +1310,17 @@
             this.tabPage6.TabIndex = 8;
             this.tabPage6.Text = "Ca Làm";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // checkboxDisplayUnassigned
+            // 
+            this.checkboxDisplayUnassigned.AutoSize = true;
+            this.checkboxDisplayUnassigned.Location = new System.Drawing.Point(504, 7);
+            this.checkboxDisplayUnassigned.Name = "checkboxDisplayUnassigned";
+            this.checkboxDisplayUnassigned.Size = new System.Drawing.Size(392, 24);
+            this.checkboxDisplayUnassigned.TabIndex = 94;
+            this.checkboxDisplayUnassigned.Text = "Hiển thị ca làm đã đăng ký nhưng chưa phân công";
+            this.checkboxDisplayUnassigned.UseVisualStyleBackColor = true;
+            this.checkboxDisplayUnassigned.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // dgvT8_Ca3
             // 
@@ -1767,17 +1778,6 @@
             this.dgvT2_Ca1.RowHeadersWidth = 51;
             this.dgvT2_Ca1.Size = new System.Drawing.Size(160, 130);
             this.dgvT2_Ca1.TabIndex = 0;
-            // 
-            // checkboxDisplayUnassigned
-            // 
-            this.checkboxDisplayUnassigned.AutoSize = true;
-            this.checkboxDisplayUnassigned.Location = new System.Drawing.Point(504, 7);
-            this.checkboxDisplayUnassigned.Name = "checkboxDisplayUnassigned";
-            this.checkboxDisplayUnassigned.Size = new System.Drawing.Size(392, 24);
-            this.checkboxDisplayUnassigned.TabIndex = 94;
-            this.checkboxDisplayUnassigned.Text = "Hiển thị ca làm đã đăng ký nhưng chưa phân công";
-            this.checkboxDisplayUnassigned.UseVisualStyleBackColor = true;
-            this.checkboxDisplayUnassigned.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // fAdmin
             // 

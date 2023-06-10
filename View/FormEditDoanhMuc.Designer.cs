@@ -97,7 +97,7 @@
             this.Controls.Add(this.btt_Del_DoanhMuc);
             this.Controls.Add(this.btt_Add_DoanhMuc);
             this.Name = "FormEditDoanhMuc";
-            this.Text = "FormEditDoanhMuc";
+            this.Text = "Sửa doanh mục";
             this.ResumeLayout(false);
             this.PerformLayout();
 

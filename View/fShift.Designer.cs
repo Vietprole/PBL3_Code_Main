@@ -468,7 +468,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fShift";
-            this.Text = "Đăng Ký Ca Làm - Tên NV";
+            this.Text = "Đăng ký ca làm - Tên NV";
             this.ResumeLayout(false);
             this.PerformLayout();
 

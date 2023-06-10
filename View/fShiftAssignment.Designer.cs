@@ -572,7 +572,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fShiftAssignment";
-            this.Text = "fShiftAssignment";
+            this.Text = "Phân công ca làm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

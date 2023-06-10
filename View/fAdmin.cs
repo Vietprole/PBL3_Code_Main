@@ -28,7 +28,7 @@ namespace PBL3CodeDemo.View
                 chart1.Series["Doanh Thu"].Points.AddXY(i.day, i.price);
                 SumPrice += i.price;
             }
-            txbRevenue.Text = SumPrice.ToString("c", culture);
+            txbRevenue.Text = SumPrice + " VND";
         }
         void setCBB_ViTriBan()
         {
