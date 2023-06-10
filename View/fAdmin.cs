@@ -192,17 +192,18 @@ namespace PBL3CodeDemo.View
         {
             QLCFBLL bll = new QLCFBLL();
             string Name_Account = txbDisplayName.Text;
-            txbUserName.ReadOnly = true;
+            //txbUserName.ReadOnly = true;
             string User_Account = txbUserName.Text;
             string Phone = txbPhone.Text;
             string Salary = txbSalary.Text;
             string Adress = txbAdress.Text;
             string Role = cbb_role.Text;
 
+            string SelectedUser_Account = dataGridViewAcount.SelectedRows[0].Cells[0].Value.ToString();
             if (CheckForm_Account() == false)
             {
 
-                if (bll.UpdateAccount(User_Account, Name_Account, Salary, Phone, Adress, Role))
+                if (bll.UpdateAccount(SelectedUser_Account, User_Account, Name_Account, Salary, Phone, Adress, Role))
                   
                     MessageBox.Show("Đã cập nhật tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");
                 else
@@ -398,12 +399,12 @@ namespace PBL3CodeDemo.View
         void LoadDGV_Item()
         {
             QLCFBLL bll = new QLCFBLL();
-            dataGridViewItem.DataSource = bll.GetDGV_Item();
-            dataGridViewItem.Columns[0].HeaderText = "Mã Mặt Hàng";
-            dataGridViewItem.Columns[1].HeaderText = "Tên Mặt Hàng";
-            dataGridViewItem.Columns[2].HeaderText = "Doanh mục";
-            dataGridViewItem.Columns[3].HeaderText = "Số Lượng";
-            dataGridViewItem.Columns[4].HeaderText = "Đơn vị";
+            dataGridViewAccount.DataSource = bll.GetDGV_Item();
+            dataGridViewAccount.Columns[0].HeaderText = "Mã Mặt Hàng";
+            dataGridViewAccount.Columns[1].HeaderText = "Tên Mặt Hàng";
+            dataGridViewAccount.Columns[2].HeaderText = "Doanh mục";
+            dataGridViewAccount.Columns[3].HeaderText = "Số Lượng";
+            dataGridViewAccount.Columns[4].HeaderText = "Đơn vị";
             
             txbNameItem.Text = "";
             txbCategoryItem.Text = "";
@@ -412,11 +413,11 @@ namespace PBL3CodeDemo.View
 
             int newWidth = 125; // Replace 200 with the desired width in pixels
 
-            dataGridViewItem.Columns[0].Width = newWidth;
-            dataGridViewItem.Columns[1].Width = newWidth;
-            dataGridViewItem.Columns[2].Width = newWidth;
-            dataGridViewItem.Columns[3].Width = newWidth;
-            dataGridViewItem.Columns[4].Width = newWidth;
+            dataGridViewAccount.Columns[0].Width = newWidth;
+            dataGridViewAccount.Columns[1].Width = newWidth;
+            dataGridViewAccount.Columns[2].Width = newWidth;
+            dataGridViewAccount.Columns[3].Width = newWidth;
+            dataGridViewAccount.Columns[4].Width = newWidth;
         }
         bool CheckForm_Item()
         {
@@ -456,7 +457,7 @@ namespace PBL3CodeDemo.View
             {
                 Item item = new Item
                 {
-                    ID_Item = int.Parse(dataGridViewItem.SelectedRows[0].Cells[0].Value.ToString()),
+                    ID_Item = int.Parse(dataGridViewAccount.SelectedRows[0].Cells[0].Value.ToString()),
                     Name = txbNameItem.Text,
                     Category = txbCategoryItem.Text,
                     Quantity = double.Parse(txbQuantityItem.Text),
@@ -477,7 +478,7 @@ namespace PBL3CodeDemo.View
 
         private void btnDelItem_Click(object sender, EventArgs e)
         {
-            int ID = int.Parse(dataGridViewItem.SelectedRows[0].Cells[0].Value.ToString());
+            int ID = int.Parse(dataGridViewAccount.SelectedRows[0].Cells[0].Value.ToString());
             QLCFBLL bll = new QLCFBLL();
             bll.Delete_Item(ID);
             LoadDGV_Item();
@@ -494,7 +495,7 @@ namespace PBL3CodeDemo.View
             }
             else
             {
-                dataGridViewItem.DataSource = bll.GetDGV_Item_Search(Item_Name);
+                dataGridViewAccount.DataSource = bll.GetDGV_Item_Search(Item_Name);
             }
         }
 
@@ -613,11 +614,11 @@ namespace PBL3CodeDemo.View
 
         private void dataGridViewItem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i = dataGridViewItem.CurrentRow.Index;
-            txbNameItem.Text = dataGridViewItem.Rows[i].Cells[1].Value.ToString();
-            txbCategoryItem.Text = dataGridViewItem.Rows[i].Cells[2].Value.ToString();
-            txbQuantityItem.Text = dataGridViewItem.Rows[i].Cells[3].Value.ToString();
-            txbUnitItem.Text = dataGridViewItem.Rows[i].Cells[4].Value.ToString();
+            int i = dataGridViewAccount.CurrentRow.Index;
+            txbNameItem.Text = dataGridViewAccount.Rows[i].Cells[1].Value.ToString();
+            txbCategoryItem.Text = dataGridViewAccount.Rows[i].Cells[2].Value.ToString();
+            txbQuantityItem.Text = dataGridViewAccount.Rows[i].Cells[3].Value.ToString();
+            txbUnitItem.Text = dataGridViewAccount.Rows[i].Cells[4].Value.ToString();
             //txbNameItem.ReadOnly = true;
         }
         private void button1_Click(object sender, EventArgs e)

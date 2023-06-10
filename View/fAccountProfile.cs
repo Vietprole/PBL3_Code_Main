@@ -39,7 +39,8 @@ namespace PBL3CodeDemo.View
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (bll.UpdateAccount(txbUserName.Text, txbDisplayName.Text, txbSalary.Text,txbPhone.Text, txbAdress.Text, bll.CheckAcount_Role(userName).ToString()))
+            string selectedUserName = txbDisplayName.Text;
+            if (bll.UpdateAccount(selectedUserName, txbUserName.Text, txbDisplayName.Text, txbSalary.Text,txbPhone.Text, txbAdress.Text, bll.CheckAcount_Role(userName).ToString()))
             {   
                 bll.UpdateAccount_PassWord(userName, passWord); 
                 MessageBox.Show("Đã cập nhật tài khoản " + txbDisplayName.Text + " thành công !", "Thông báo!");

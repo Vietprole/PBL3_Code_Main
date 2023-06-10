@@ -142,7 +142,7 @@
             this.btnDelItem = new System.Windows.Forms.Button();
             this.btnEditItem = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
-            this.dataGridViewItem = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAccount = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.checkboxDisplayUnassigned = new System.Windows.Forms.CheckBox();
             this.dgvT8_Ca3 = new System.Windows.Forms.DataGridView();
@@ -203,7 +203,7 @@
             this.panel6.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvT8_Ca3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvT7_Ca3)).BeginInit();
@@ -1070,7 +1070,7 @@
             this.tabPage5.Controls.Add(this.btnDelItem);
             this.tabPage5.Controls.Add(this.btnEditItem);
             this.tabPage5.Controls.Add(this.btnAddItem);
-            this.tabPage5.Controls.Add(this.dataGridViewItem);
+            this.tabPage5.Controls.Add(this.dataGridViewAccount);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -1260,14 +1260,14 @@
             // 
             // dataGridViewItem
             // 
-            this.dataGridViewItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewItem.Location = new System.Drawing.Point(8, 12);
-            this.dataGridViewItem.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridViewItem.Name = "dataGridViewItem";
-            this.dataGridViewItem.RowHeadersWidth = 51;
-            this.dataGridViewItem.Size = new System.Drawing.Size(902, 434);
-            this.dataGridViewItem.TabIndex = 33;
-            this.dataGridViewItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItem_CellClick);
+            this.dataGridViewAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAccount.Location = new System.Drawing.Point(8, 12);
+            this.dataGridViewAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewAccount.Name = "dataGridViewItem";
+            this.dataGridViewAccount.RowHeadersWidth = 51;
+            this.dataGridViewAccount.Size = new System.Drawing.Size(902, 434);
+            this.dataGridViewAccount.TabIndex = 33;
+            this.dataGridViewAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItem_CellClick);
             // 
             // tabPage6
             // 
@@ -1837,7 +1837,7 @@
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvT8_Ca3)).EndInit();
@@ -1949,7 +1949,7 @@
         private System.Windows.Forms.Button btnDelItem;
         private System.Windows.Forms.Button btnEditItem;
         private System.Windows.Forms.Button btnAddItem;
-        private System.Windows.Forms.DataGridView dataGridViewItem;
+        private System.Windows.Forms.DataGridView dataGridViewAccount;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.TextBox txbUnitItem;
         private System.Windows.Forms.Label labelT5;

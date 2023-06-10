@@ -454,18 +454,18 @@ namespace PBL3CodeDemo.BLL
             }
             return result;
         }
-        public bool UpdateAccount(string User_Account, string Name_Account, string Salary, string Phone, string Adress, string Name_Role)
+        public bool UpdateAccount(string SelectedUser_Account, string User_Account, string Name_Account, string Salary, string Phone, string Adress, string Name_Role)
         {
             PBL3Entities db = new PBL3Entities();
-            Account s = db.Accounts.Where(p => p.UserName == User_Account).FirstOrDefault();
-            if (db.Accounts.Any(p => p.UserName == User_Account))
+            Account s = db.Accounts.Where(p => p.UserName == SelectedUser_Account).FirstOrDefault();
+            if (db.Accounts.Any(p => p.UserName == SelectedUser_Account))
             {
                 s.Address = Adress;
                 s.Name = Name_Account;
                 s.Salary = Salary;
                 s.Phone_Number = Phone;
                 s.UserName = User_Account;
-                s.Password = Hash("123");
+                //s.Password = Hash("123");
                 if (Name_Role == "Quản lý" || Name_Role == "1")
                 {
                     s.ID_Role = 1;
